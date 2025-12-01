@@ -5,7 +5,7 @@ const faqs=[
 ["¿Online o presencial?","Ambas. Presencial en Olivos (si estás en Argentina) y online en todos los casos."],
 ["¿Cómo es la primera sesión?","Escuchamos lo que trae el síntoma hoy. Delimitamos el campo de trabajo del primer mes."],
 ["¿Frecuencia?","Primer mes semanal; luego podemos pasar a cada 15 días si querés."],
-["¿Honorarios?","Argentina: $29.000 ARS. Exterior: USD 35. Se confirman por WhatsApp."],
+["¿Honorarios?","Argentina: $35.000 ARS. Exterior: USD 35. Se confirman por WhatsApp."],
 ];
 return (
 <>
