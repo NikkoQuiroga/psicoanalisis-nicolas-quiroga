@@ -11,7 +11,7 @@ export const posts = [
     date: "2025-09-07", // ajustá si querés
     tags: ["Budismo zen", "Psicoanálisis", "Crítica cultural", "Žižek", "Japón"],
     readMinutes: 7,
-    hero: "./zen-hero.webp", // opcional
+    hero: "/media/zen-hero.webp", // opcional
     Component: ZenOscura,
   },
   {
@@ -22,7 +22,7 @@ export const posts = [
     date: "2025-09-07",
     tags: ["Japón", "Ikigai", "Psicoanálisis", "Cultura"],
     readMinutes: 6,
-    hero: "./ikigai-hero.webp",
+    hero: "/media/ikigai-hero.webp",
     Component: Ikigai,
   },
   {
@@ -33,7 +33,7 @@ export const posts = [
     date: "2025-09-05",
     tags: ["Psicoanálisis", "Japón", "Nostalgia", "mono no aware"],
     readMinutes: 6,
-    hero: "./nostalgia-hero.webp",
+    hero: "/media/nostalgia-hero.webp",
     Component: Nostalgia,
   },
 ];
