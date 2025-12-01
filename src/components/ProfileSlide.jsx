@@ -55,9 +55,8 @@ export default function ProfileSlide({ open = false }) {
                   <h4 className="font-medium">Hobbies</h4>
                 </div>
                 <p className="mt-3 text-sm text-sumi/80">
-                  <li>Aikido.</li>
-                  <li>Bonsai.</li>
-                  <li>Horimono (Tatuaje Japonés).</li>
+                  <li>Aikido</li>
+                  <li>Bonsai</li>
                 </p>
               </div>
             </div>

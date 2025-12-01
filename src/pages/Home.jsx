@@ -32,7 +32,10 @@ export default function Home() {
           name="keywords"
           content="Nicolás Quiroga psicólogo, psicoanálisis en Olivos, Rodrigo Nicolás Quiroga Martínez, psicólogo online Argentina, terapia psicoanalítica, psicólogo Vicente López"
         />
-        <meta property="og:image" content={placeholderPortrait} />
+        <meta
+          property="og:image"
+          content="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
+        />
         <meta
           property="og:image:alt"
           content="Retrato del psicoanalista Rodrigo Nicolás Quiroga Martínez en su consultorio"
@@ -53,7 +56,7 @@ export default function Home() {
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Soy psicoanalista (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
+              Soy psicólogo (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">
@@ -98,7 +101,7 @@ export default function Home() {
             className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-black/5 bg-white shadow-md"
           >
             <img
-              src={placeholderPortrait}
+              src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
               alt="Rodrigo Nicolás Quiroga Martínez, psicólogo y psicoanalista en Olivos"
               loading="eager"
               fetchpriority="high"
@@ -223,9 +226,6 @@ export default function Home() {
                 <p className="mt-2 text-sm text-sumi/75 flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
                   Olivos (Vicente López) y online
-                </p>
-                <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-gold/15 px-3 py-2 text-sm font-medium text-sumi">
-                  Honorario por sesión en Argentina: $35.000 ARS
                 </p>
               </div>
               <div className="md:w-1/2" id="agenda-form">

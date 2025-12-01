@@ -10,7 +10,7 @@ const lines = [
 `Urgencia: ${data.urgency || '-'}`,
 `Franja: ${data.slot || '-'}`,
 `Modalidad: ${data.mode || 'Online'}`,
-`Confirmo honorarios: ${data.isAR ? `$${Number(29000).toLocaleString('es-AR')} ARS` : `USD 35`}`,
+`Confirmo honorarios: ${data.isAR ? `$${Number(35000).toLocaleString('es-AR')} ARS` : `USD 35`}`,
 data.note ? `Nota: ${data.note}` : null,
 `Ciudad: ${data.city || '-'}`,
 `País: ${data.country || '-'}`,
