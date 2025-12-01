@@ -2,14 +2,14 @@ export default {
 content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
 theme: {
 extend: {
-colors: {
-sumi: "#111311",
-washi: "#F7F4EF",
-gold: "#BFA06A",
-gold2: "#9F824F",
-moss: "#5B6B4A",
-clay: "#B48B7D",
-},
+      colors: {
+        sumi: "#0F172A",
+        washi: "#F8F7F2",
+        gold: "#2FA8A0",
+        gold2: "#278E87",
+        moss: "#1F4F6E",
+        clay: "#E3C3B5",
+      },
 borderRadius: {
 "3xl": "1.5rem",
 },

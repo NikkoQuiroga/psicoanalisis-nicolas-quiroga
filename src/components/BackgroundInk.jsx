@@ -10,9 +10,9 @@ export default function BackgroundInk() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 40% at 10% 10%, #5B6B4A 0%, transparent 35%), radial-gradient(45% 35% at 90% 10%, #B48B7D 0%, transparent 35%), radial-gradient(30% 25% at 20% 80%, #BFA06A 0%, transparent 30%)",
-          mixBlendMode: "multiply",
-          filter: "saturate(0.8)",
+            "radial-gradient(60% 40% at 12% 12%, #278E87 0%, transparent 35%), radial-gradient(45% 35% at 88% 12%, #E3C3B5 0%, transparent 35%), radial-gradient(32% 26% at 20% 78%, #1F4F6E 0%, transparent 32%)",
+          mixBlendMode: "soft-light",
+          filter: "saturate(0.9)",
         }}
       />
     </motion.div>
