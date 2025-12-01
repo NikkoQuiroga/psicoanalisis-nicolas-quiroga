@@ -87,7 +87,7 @@ export default function Home() {
             className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-black/5 bg-white shadow-md"
           >
             <img
-              src="/media/lic-rodrigo-nicolas-quiroga-martinez.jpg"
+              src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
               alt="Retrato del Lic. Rodrigo Nicolás Quiroga Martínez con saco teal"
               loading="eager"
               fetchpriority="high"
