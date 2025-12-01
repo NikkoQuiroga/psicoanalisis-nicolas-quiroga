@@ -14,6 +14,8 @@ import ProfileSlide from "../components/ProfileSlide.jsx";
 import { motion } from "framer-motion";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
+const placeholderPortrait =
+  "https://dummyimage.com/1200x1600/0f172a/ffffff.png&text=Rodrigo+Nicolas+Quiroga+Psicologo";
 
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
