@@ -24,7 +24,19 @@ export default function Home() {
         <title>Psicólogo en Olivos y online — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoterapia presencial en Olivos y online. Honorario por sesión: $35.000 ARS. Acompañamiento cálido para ansiedad, duelos, vínculos y sentido personal."
+          content="Psicoanálisis presencial en Olivos y online con el Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Honorario por sesión: $35.000 ARS. Acompañamiento cálido para ansiedad, duelos, vínculos y sentido personal."
+        />
+        <meta
+          name="keywords"
+          content="Nicolás Quiroga psicólogo, psicoanálisis en Olivos, Rodrigo Nicolás Quiroga Martínez, psicólogo online Argentina, terapia psicoanalítica, psicólogo Vicente López"
+        />
+        <meta
+          property="og:image"
+          content="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
+        />
+        <meta
+          property="og:image:alt"
+          content="Retrato del psicoanalista Rodrigo Nicolás Quiroga Martínez en su consultorio"
         />
       </Helmet>
 
@@ -35,14 +47,14 @@ export default function Home() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
-              Tu espacio de psicoterapia
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
+              Psicoanálisis y psicoterapia
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Trabajo con personas que quieren alivio y claridad. Integro psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para acompañarte en ansiedad, duelos, vínculos y momentos de cambio.
+              Soy psicoanalista (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">
@@ -88,7 +100,7 @@ export default function Home() {
           >
             <img
               src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
-              alt="Retrato del Lic. Rodrigo Nicolás Quiroga Martínez con saco teal"
+              alt="Rodrigo Nicolás Quiroga Martínez, psicólogo y psicoanalista en Olivos"
               loading="eager"
               fetchpriority="high"
               className="h-full w-full object-cover [filter:saturate(.9)_contrast(1.05)]"
@@ -99,26 +111,26 @@ export default function Home() {
       </Section>
 
       {/* Story-telling en 4 capas */}
-      <Section className="pb-10 md:pb-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 grid gap-4 md:grid-cols-4">
-          {[
-            {
-              t: "Llegás con algo que duele",
-              d: "Partimos de la incomodidad actual para entender qué la sostiene y cómo se siente en tu cuerpo y tu día a día.",
-            },
-            {
-              t: "Hacemos foco",
-              d: "Identificamos patrones, exigencias y fantasías que te empujan a repetir. Ordenamos qué es urgente y qué puede esperar.",
-            },
-            {
-              t: "Herramientas a medida",
-              d: "Sumo recursos breves (respiración, mindfulness, escritura guiada) para que tengas alivio mientras avanzamos en profundidad.",
-            },
-            {
-              t: "Seguimiento claro",
-              d: "Definimos juntos la frecuencia y los objetivos. Ajustamos cada pocas semanas para que el proceso sea sostenible.",
-            },
-          ].map((x, i) => (
+          <Section className="pb-10 md:pb-16">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 grid gap-4 md:grid-cols-4">
+              {[
+                {
+                  t: "Llegás con algo que duele",
+                  d: "Partimos de la urgencia y la leemos desde el psicoanálisis para entender qué la sostiene en tu historia y en tu cuerpo.",
+                },
+                {
+                  t: "Hacemos foco psicoanalítico",
+                  d: "Identificamos repeticiones, exigencias y fantasías. Ordenamos qué es urgente y qué necesita un trabajo de fondo.",
+                },
+                {
+                  t: "Herramientas a medida",
+                  d: "Sumo recursos breves (respiración, mindfulness, escritura guiada) para que tengas alivio mientras avanzamos en profundidad clínica.",
+                },
+                {
+                  t: "Seguimiento claro",
+                  d: "Definimos juntos la frecuencia y los objetivos. Cada pocas semanas revisamos avances para que el proceso psicoanalítico sea sostenible.",
+                },
+              ].map((x, i) => (
             <motion.article
               key={x.t}
               className="rounded-2xl border border-black/5 bg-white/60 p-5 shadow-sm"
