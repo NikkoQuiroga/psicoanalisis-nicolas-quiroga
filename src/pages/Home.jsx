@@ -78,10 +78,9 @@ export default function Home() {
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-sumi/70">
               {[
                 "13 años de experiencia clínica",
-                "Sesiones de 50 minutos",
+                "Sesiones de 45 minutos",
                 "Espacio luminoso en Olivos",
                 "Atención online cuidada",
-                "Recibos para reintegros",
               ].map((x) => (
                 <li
                   key={x}
