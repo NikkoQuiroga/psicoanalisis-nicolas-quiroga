@@ -40,14 +40,18 @@
     <meta name="twitter:description" content="Acompañamiento psicoanalítico con recursos prácticos. Consultorio en Olivos y sesiones online." />
     <meta name="twitter:image" content="%VITE_SITE_URL%/media/lic-rodrigo-nicolas-quiroga-martinez.webp" />
 
-    <!-- GA4 (solo funcionará si VITE_GA_ID está seteado) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9C2QBKL0X"></script>
     <script>
+      const gaId = "G-V9C2QBKL0X";
+      const adsId = "%VITE_GOOGLE_ADS_ID%";
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("consent", "default", { ad_storage: "denied", analytics_storage: "granted" });
-      gtag("config", "%VITE_GA_ID%");
+      gtag("config", gaId);
+      if (adsId) gtag("config", adsId);
     </script>
 
     <!-- JSON-LD LocalBusiness -->
