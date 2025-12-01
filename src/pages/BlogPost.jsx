@@ -34,15 +34,13 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Blog", item: `${site}/blog` },
-    { "@type": "ListItem", position: 2, name: title, item: url },
-  ],
-};
-
-<script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 2, name: title, item: url },
+    ],
+  };
 
   return (
     <>
@@ -51,6 +49,7 @@ export default function BlogPost() {
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
         {hero && <meta property="og:image" content={`${site}${hero}`} />}
+        <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
