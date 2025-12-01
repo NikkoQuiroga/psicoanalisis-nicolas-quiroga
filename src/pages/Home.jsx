@@ -24,7 +24,7 @@ export default function Home() {
         <title>Psicólogo en Olivos y online — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoanálisis con herramientas basadas en evidencia. Honorarios: $29.000 ARS / USD 35. Primer mes semanal; luego cada 15 días si querés."
+          content="Psicoterapia presencial en Olivos y online. Honorario por sesión: $35.000 ARS. Acompañamiento cálido para ansiedad, duelos, vínculos y sentido personal."
         />
       </Helmet>
 
@@ -38,26 +38,40 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
-              Psicoanálisis + herramientas
-              <span className="block font-light">basadas en evidencia</span>
+              Tu espacio de psicoterapia
+              <span className="block font-light">en Olivos y online</span>
             </h1>
-            <p className="mt-4 text-sumi/75 max-w-prose">
-              Consultorio en Olivos (Vicente López) y atención online. Escucha
-              lacaniana con recursos puntuales — mindfulness, logoterapia — para
-              trabajar ansiedad, angustia, duelo, vínculos y desarrollo
-              personal.
+            <p className="mt-4 text-sumi/75 max-w-prose text-base">
+              Trabajo con personas que quieren alivio y claridad. Integro psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para acompañarte en ansiedad, duelos, vínculos y momentos de cambio.
             </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">
+                Honorario por sesión: $35.000 ARS
+              </span>
+              <a
+                href="#agenda"
+                className="inline-flex items-center gap-2 rounded-full border border-transparent bg-sumi px-4 py-2 font-medium text-white shadow hover:bg-sumi/90"
+              >
+                Agenda tu sesión
+              </a>
+              <a
+                href="/honorarios"
+                className="inline-flex items-center gap-2 rounded-full border border-sumi/10 bg-white/80 px-4 py-2 font-medium text-sumi hover:bg-white"
+              >
+                Ver honorarios y modalidad
+              </a>
+            </div>
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-sumi/70">
               {[
-                "13 años de experiencia",
-                "Psicoanálisis",
-                "Logoterapia",
-                "Mindfulness",
-                "Estudios Budistas en Japón",
+                "13 años de experiencia clínica",
+                "Sesiones de 50 minutos",
+                "Espacio luminoso en Olivos",
+                "Atención online cuidada",
+                "Recibos para reintegros",
               ].map((x) => (
                 <li
                   key={x}
-                  className="rounded-full border border-black/5 bg-white/60 px-3 py-1"
+                  className="rounded-full border border-black/5 bg-white/70 px-3 py-1"
                 >
                   {x}
                 </li>
@@ -74,7 +88,7 @@ export default function Home() {
           >
             <img
               src="/media/lic-rodrigo-nicolas-quiroga-martinez.jpg"
-              alt="Lic. Rodrigo Nicolás Quiroga Martínez— Psicólogo"
+              alt="Retrato del Lic. Rodrigo Nicolás Quiroga Martínez con saco teal"
               loading="eager"
               fetchpriority="high"
               className="h-full w-full object-cover [filter:saturate(.9)_contrast(1.05)]"
@@ -89,17 +103,20 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 grid gap-4 md:grid-cols-4">
           {[
             {
-              t: "El Síntoma",
-              d: "Lo que molesta dice algo. Empezamos por ahí.",
+              t: "Llegás con algo que duele",
+              d: "Partimos de la incomodidad actual para entender qué la sostiene y cómo se siente en tu cuerpo y tu día a día.",
             },
             {
-              t: "El Espejo",
-              d: "Reconocer patrones, fantasías y exigencias.",
+              t: "Hacemos foco",
+              d: "Identificamos patrones, exigencias y fantasías que te empujan a repetir. Ordenamos qué es urgente y qué puede esperar.",
             },
-            { t: "La Palabra", d: "Poner en palabras cambia la escena." },
             {
-              t: "El Nudo",
-              d: "Cuando hace falta, sumo herramientas basadas en evidencia.",
+              t: "Herramientas a medida",
+              d: "Sumo recursos breves (respiración, mindfulness, escritura guiada) para que tengas alivio mientras avanzamos en profundidad.",
+            },
+            {
+              t: "Seguimiento claro",
+              d: "Definimos juntos la frecuencia y los objetivos. Ajustamos cada pocas semanas para que el proceso sea sostenible.",
             },
           ].map((x, i) => (
             <motion.article
@@ -132,9 +149,7 @@ export default function Home() {
             Modalidades y áreas de trabajo
           </motion.h2>
           <p className="mt-2 text-sm text-sumi/70 max-w-prose">
-            Presencial en Olivos (Vicente López) y online por videollamada.
-            Trabajo centrado en el sujeto y sus síntomas, con herramientas
-            prácticas cuando hacen falta.
+            Presencial en Olivos (Vicente López) y online por videollamada. Un proceso conversado, sin recetas enlatadas, con herramientas prácticas cuando querés alivio rápido.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
@@ -176,7 +191,7 @@ export default function Home() {
       {/* Agenda + Honorarios */}
       <Section id="agenda">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-10 md:pb-16">
-          <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow">
+          <div className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow">
             <div className="flex flex-col md:flex-row items-start justify-between gap-6">
               <div className="md:w-1/2">
                 <motion.h2
@@ -190,13 +205,16 @@ export default function Home() {
                 </motion.h2>
                 <p className="mt-2 text-sm text-sumi/75">
                   Durante el primer mes, propongo{" "}
-                  <strong>1 sesión semanal</strong> para delimitar el campo de
-                  trabajo. Luego, si querés, podemos pasar a{" "}
-                  <strong>cada 15 días</strong>.
+                  <strong>1 sesión semanal</strong> para entender qué necesitás.
+                  Luego, si querés, podemos pasar a{" "}
+                  <strong>cada 15 días</strong> y sostener los avances.
                 </p>
                 <p className="mt-2 text-sm text-sumi/75 flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
                   Olivos (Vicente López) y online
+                </p>
+                <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-gold/15 px-3 py-2 text-sm font-medium text-sumi">
+                  Honorario por sesión en Argentina: $35.000 ARS
                 </p>
               </div>
               <div className="md:w-1/2" id="agenda-form">
