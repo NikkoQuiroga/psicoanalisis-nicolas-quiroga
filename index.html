@@ -24,41 +24,53 @@
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Psicoanálisis en Olivos y online — Nicolás Quiroga" />
-    <meta property="og:description" content="Psicoanálisis clínico con acompañamiento cercano. Honorarios: $35.000 ARS / USD 35. WhatsApp para coordinar." />
+    <meta
+      property="og:title"
+      content="Psicoanálisis en Olivos y online — Nicolás Quiroga"
+    />
+    <meta
+      property="og:description"
+      content="Psicoanálisis clínico con acompañamiento cercano. Honorarios: $35.000 ARS / USD 35. WhatsApp para coordinar."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="%VITE_SITE_URL%" />
     <meta
       property="og:image"
       content="https://dummyimage.com/1200x1600/0f172a/ffffff.png&text=Rodrigo+Nicolas+Quiroga+Psicologo"
     />
-    <meta property="og:image:alt" content="Retrato del psicoanalista Rodrigo Nicolás Quiroga Martínez" />
+    <meta
+      property="og:image:alt"
+      content="Retrato del psicoanalista Rodrigo Nicolás Quiroga Martínez"
+    />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Psicólogo y psicoanalista en Olivos y online — Nicolás Quiroga" />
-    <meta name="twitter:description" content="Acompañamiento psicoanalítico con recursos prácticos. Consultorio en Olivos y sesiones online." />
-    <meta name="twitter:image" content="%VITE_SITE_URL%/media/lic-rodrigo-nicolas-quiroga-martinez.webp" />
+    <meta
+      name="twitter:title"
+      content="Psicólogo y psicoanalista en Olivos y online — Nicolás Quiroga"
+    />
+    <meta
+      name="twitter:description"
+      content="Acompañamiento psicoanalítico con recursos prácticos. Consultorio en Olivos y sesiones online."
+    />
+    <meta
+      name="twitter:image"
+      content="%VITE_SITE_URL%/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
+    />
 
-    <!-- GA4 / Google Ads (solo funcionará si los IDs están seteados) -->
+    <!-- Google tag (gtag.js) – GA4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V9C2QBKL0X"
+    ></script>
     <script>
-      const gaId = "%VITE_GA_ID%";
-      const adsId = "%VITE_GOOGLE_ADS_ID%";
-      const trackingId = adsId || gaId;
-
-      if (trackingId) {
-        const gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-        document.head.appendChild(gtagScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
 
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
       gtag("js", new Date());
-      gtag("consent", "default", { ad_storage: "denied", analytics_storage: "granted" });
-      if (gaId) gtag("config", gaId);
-      if (adsId) gtag("config", adsId);
+      gtag("config", "G-V9C2QBKL0X");
     </script>
 
     <!-- JSON-LD LocalBusiness -->
@@ -85,18 +97,37 @@
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
-        n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
         if (!f._fbq) f._fbq = n;
-        n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
-        t = b.createElement(e); t.async = !0; t.src = v;
-        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
       fbq("init", "%VITE_FB_PIXEL_ID%");
       fbq("track", "PageView");
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none"
-           src="https://www.facebook.com/tr?id=%VITE_FB_PIXEL_ID%&ev=PageView&noscript=1" />
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=%VITE_FB_PIXEL_ID%&ev=PageView&noscript=1"
+      />
     </noscript>
 
     <div id="root"></div>
