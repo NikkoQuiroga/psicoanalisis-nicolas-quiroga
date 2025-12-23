@@ -23,14 +23,17 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Psicólogo en Olivos y online — Lic. Nicolás Quiroga</title>
+        <title>
+          Psicólogo en Olivos y psicólogo online en Buenos Aires — Lic. Nicolás
+          Quiroga
+        </title>
         <meta
           name="description"
-          content="Psicoanálisis presencial en Olivos y online con el Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Honorario por sesión: $35.000 ARS. Acompañamiento cálido para ansiedad, duelos, vínculos y sentido personal."
+          content="Psicólogo en Olivos y psicólogo online en Buenos Aires. Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Terapia individual para ansiedad, duelos, vínculos y sentido personal. Honorario por sesión: $35.000 ARS."
         />
         <meta
           name="keywords"
-          content="Nicolás Quiroga psicólogo, psicoanálisis en Olivos, Rodrigo Nicolás Quiroga Martínez, psicólogo online Argentina, terapia psicoanalítica, psicólogo Vicente López"
+          content="psicólogo en Olivos, psicólogo online Buenos Aires, psicoterapia online Argentina, terapia individual ansiedad, terapia para duelos, psicólogo Vicente López, psicoterapia en CABA, psicólogo para vínculos, terapia virtual"
         />
         <meta
           property="og:image"
@@ -146,6 +149,91 @@ export default function Home() {
               <p className="mt-1 text-sm text-sumi/75">{x.d}</p>
             </motion.article>
           ))}
+        </div>
+      </Section>
+
+      {/* Orientación y enfoque */}
+      <Section>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14 grid gap-6 md:grid-cols-2">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            <p className="text-sm uppercase tracking-[0.2em] text-sumi/70">
+              Psicólogo en Olivos · Psicólogo online
+            </p>
+            <h2 className="mt-1 text-2xl md:text-3xl font-semibold">
+              Un enfoque integrador para que la terapia sea clara y accionable
+            </h2>
+            <p className="mt-3 text-sm text-sumi/75 leading-relaxed">
+              Trabajo desde el psicoanálisis contemporáneo con herramientas
+              breves y basadas en evidencia. Esto significa que combinamos la
+              profundidad de la historia personal con recursos prácticos que
+              podés aplicar entre sesiones. El foco está en entender lo que te
+              pasa y darte estrategias concretas para ansiedad, duelos,
+              inseguridades en vínculos o bloqueos profesionales.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-sumi/80">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
+                Terapia individual presencial en Olivos (Vicente López) o
+                videollamada segura con audio encriptado.
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
+                Sesiones de 45 minutos con agenda flexible y seguimiento cada
+                cuatro semanas.
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
+                Experiencia en ansiedad, duelos, estrés laboral, autoestima,
+                relaciones y sensación de vacío.
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div
+            className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+          >
+            <h3 className="text-lg font-semibold">
+              Cómo es trabajar conmigo
+            </h3>
+            <ol className="mt-3 space-y-3 text-sm text-sumi/80 list-decimal list-inside">
+              <li>
+                Primera sesión diagnóstica: definimos objetivos, frecuencia y
+                necesidades (presencial en Olivos u online).
+              </li>
+              <li>
+                Plan breve de regulación: ejercicios de respiración,
+                mindfulness y escritura guiada para aliviar síntomas.
+              </li>
+              <li>
+                Profundización psicoanalítica: exploramos repeticiones, deseos y
+                límites para sostener cambios en el tiempo.
+              </li>
+              <li>
+                Revisión periódica: cada pocas semanas evaluamos avances para
+                que la terapia siga siendo útil y ajustada a tu vida.
+              </li>
+            </ol>
+            <div className="mt-4 rounded-2xl bg-gold/10 border border-gold/30 p-4">
+              <p className="text-sm font-medium text-sumi">
+                Palabras clave que me buscan pacientes:
+              </p>
+              <p className="mt-1 text-sm text-sumi/75">
+                psicólogo en Olivos, psicólogo online Buenos Aires, terapia
+                para ansiedad, psicólogo para duelos, psicólogo Vicente López,
+                psicólogo para vínculos.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </Section>
 
