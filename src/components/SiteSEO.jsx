@@ -20,6 +20,37 @@ export default function SiteSEO() {
     },
     url: site,
     telephone: `+${phone}`,
+    knowsAbout: [
+      "psicólogo en Olivos",
+      "terapia online Buenos Aires",
+      "psicólogo para ansiedad",
+      "psicoterapia en Vicente López",
+    ],
+  };
+
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Lic. Rodrigo Nicolás Quiroga Martínez - Psicólogo en Olivos y online",
+    url: site,
+    telephone: `+${phone}`,
+    image: `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Libertador (consultorio a metros de la estación Olivos)",
+      addressLocality: "Olivos",
+      addressRegion: "Buenos Aires",
+      postalCode: "1636",
+      addressCountry: "AR",
+    },
+    areaServed: ["Olivos", "Vicente López", "Buenos Aires", "Argentina"],
+    priceRange: "$$$",
+    sameAs: [
+      "https://wa.me/5491161402223",
+      "https://www.instagram.com/",
+    ],
+    description:
+      "Psicólogo en Olivos y psicólogo online en Buenos Aires. Terapia individual para ansiedad, duelos, vínculos y autoconocimiento con honorarios claros y agenda flexible.",
   };
 
   return (
@@ -37,6 +68,7 @@ export default function SiteSEO() {
 
       {/* JSON-LD Person */}
       <script type="application/ld+json">{JSON.stringify(org)}</script>
+      <script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
     </Helmet>
   );
 }
