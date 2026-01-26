@@ -3,8 +3,32 @@ import Ikigai from "./Ikigai.jsx";
 import ZenOscura from "./ZenOscura.jsx";
 import Autosabotaje from "./Autosabotaje.jsx";
 import AngustiaExistencial from "./AngustiaExistencial.jsx";
+import AnsiedadVidaModerna from "./AnsiedadVidaModerna.jsx";
 
 export const posts = [
+  {
+    slug: "ansiedad-vida-moderna-aumento-como-manejarla",
+    title: "Ansiedad en la vida moderna: por qué va en aumento y cómo manejarla",
+    description:
+      "La ansiedad crece con estrés laboral, hiperconectividad e incertidumbre económica. Un análisis con Marx, Lacan y Žižek, y una práctica respiratoria breve.",
+    date: "2025-09-14",
+    tags: [
+      "Ansiedad en la vida moderna",
+      "Síntomas de ansiedad",
+      "Ataques de pánico",
+      "Estrés laboral",
+      "Hiperconectividad",
+      "Incertidumbre económica",
+      "Plusvalía",
+      "Objeto a",
+      "Goce",
+      "Plus-de-goce",
+      "Superyó contemporáneo",
+    ],
+    readMinutes: 12,
+    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    Component: AnsiedadVidaModerna,
+  },
   {
     slug: "angustia-existencial-sentido-de-la-vida",
     title: "Angustia existencial: cuando la vida pierde sentido y cómo encontrarlo",
