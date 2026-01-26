@@ -48,7 +48,14 @@ export default function BlogPost() {
         <title>{title} — Blog</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         {hero && <meta property="og:image" content={`${site}${hero}`} />}
+        {hero && <meta property="og:image:alt" content={title} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        {hero && <meta name="twitter:image" content={`${site}${hero}`} />}
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
@@ -67,7 +74,7 @@ export default function BlogPost() {
           )}
         </div>
         {hero ? (
-          <img src={hero} alt="" className="mx-auto max-w-5xl w-full h-56 md:h-72 object-cover" />
+          <img src={hero} alt={title} className="mx-auto max-w-5xl w-full h-56 md:h-72 object-cover" />
         ) : (
           <div
             className="mx-auto max-w-5xl h-40 md:h-56"

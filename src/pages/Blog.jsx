@@ -16,7 +16,7 @@ export default function Blog() {
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {posts.map((p) => (
             <Link key={p.slug} to={`/blog/${p.slug}`} className="group rounded-2xl border border-black/5 bg-white/70 hover:bg-white transition overflow-hidden">
-              {p.hero && <img src={p.hero} alt="" className="h-40 w-full object-cover" />}
+              {p.hero && <img src={p.hero} alt={p.title} className="h-40 w-full object-cover" />}
               <div className="p-4">
                 <p className="text-xs text-sumi/60">{new Date(p.date).toLocaleDateString("es-AR")} · {p.readMinutes} min</p>
                 <h2 className="mt-1 text-lg font-semibold group-hover:underline">{p.title}</h2>
