@@ -2,8 +2,26 @@ import Nostalgia from "./Nostalgia.jsx";
 import Ikigai from "./Ikigai.jsx";
 import ZenOscura from "./ZenOscura.jsx";
 import Autosabotaje from "./Autosabotaje.jsx";
+import AngustiaExistencial from "./AngustiaExistencial.jsx";
 
 export const posts = [
+  {
+    slug: "angustia-existencial-sentido-de-la-vida",
+    title: "Angustia existencial: cuando la vida pierde sentido y cómo encontrarlo",
+    description:
+      "Qué es la angustia existencial, por qué aparece aunque “todo esté bien”, y cómo recuperar sentido con Frankl, Hegel y Žižek.",
+    date: "2025-09-12",
+    tags: [
+      "Angustia existencial",
+      "Sentido de la vida",
+      "Logoterapia",
+      "Vínculos",
+      "Psicoanálisis",
+    ],
+    readMinutes: 9,
+    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    Component: AngustiaExistencial,
+  },
   {
     slug: "por-que-nos-autosaboteamos-romper-ciclo-autosabotaje",
     title: "¿Por qué nos autosaboteamos? Cómo romper el ciclo del autosabotaje",
