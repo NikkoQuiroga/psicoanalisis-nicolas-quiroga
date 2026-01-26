@@ -1,8 +1,26 @@
 import Nostalgia from "./Nostalgia.jsx";
 import Ikigai from "./Ikigai.jsx";
 import ZenOscura from "./ZenOscura.jsx";
+import Autosabotaje from "./Autosabotaje.jsx";
 
 export const posts = [
+  {
+    slug: "por-que-nos-autosaboteamos-romper-ciclo-autosabotaje",
+    title: "¿Por qué nos autosaboteamos? Cómo romper el ciclo del autosabotaje",
+    description:
+      "Entendé por qué repetís conductas que te dañan: procrastinación, vínculos, proyectos. Goce, miedo al cambio y una guía práctica para cortar el ciclo.",
+    date: "2025-09-10",
+    tags: [
+      "Autosabotaje",
+      "Procrastinación",
+      "Psicoanálisis",
+      "Autoexigencia",
+      "Vínculos",
+    ],
+    readMinutes: 10,
+    hero: "/media/autosabotaje-hero.svg",
+    Component: Autosabotaje,
+  },
   {
     slug: "oscura-verdad-budismo-zen",
     title: "La oscura verdad del budismo zen",

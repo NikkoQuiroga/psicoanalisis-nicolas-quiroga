@@ -29,11 +29,11 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Psicólogo en Olivos y psicólogo online en Buenos Aires. Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Terapia individual para ansiedad, duelos, vínculos y sentido personal. Honorario por sesión: $35.000 ARS."
+          content="Psicólogo y psicoanalista en Olivos y online en Buenos Aires. Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Terapia individual para ansiedad, duelos, vínculos, autoestima y sentido personal."
         />
         <meta
           name="keywords"
-          content="psicólogo en Olivos, psicólogo online Buenos Aires, psicoterapia online Argentina, terapia individual ansiedad, terapia para duelos, psicólogo Vicente López, psicoterapia en CABA, psicólogo para vínculos, terapia virtual"
+          content="psicólogo en Olivos, psicoanalista online, psicólogo online Buenos Aires, psicoterapia online Argentina, terapia individual ansiedad, terapia para duelos, psicólogo Vicente López, psicoterapia en CABA, psicólogo para vínculos, terapia virtual, autoestima"
         />
         <meta
           property="og:image"
@@ -59,7 +59,7 @@ export default function Home() {
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Soy psicólogo (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
+              Soy psicólogo y psicoanalista (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">

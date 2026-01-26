@@ -22,15 +22,19 @@ export default function SiteSEO() {
     telephone: `+${phone}`,
     knowsAbout: [
       "psicólogo en Olivos",
+      "psicoanalista online",
       "terapia online Buenos Aires",
       "psicólogo para ansiedad",
       "psicoterapia en Vicente López",
+      "autoestima",
+      "duelos",
+      "vínculos",
     ],
   };
 
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Psychologist",
     name: "Lic. Rodrigo Nicolás Quiroga Martínez - Psicólogo en Olivos y online",
     url: site,
     telephone: `+${phone}`,
@@ -50,7 +54,32 @@ export default function SiteSEO() {
       "https://www.instagram.com/",
     ],
     description:
-      "Psicólogo en Olivos y psicólogo online en Buenos Aires. Terapia individual para ansiedad, duelos, vínculos y autoconocimiento con honorarios claros y agenda flexible.",
+      "Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos, autoestima y autoconocimiento con honorarios claros y agenda flexible.",
+    availableService: [
+      {
+        "@type": "MedicalTherapy",
+        name: "Psicoanálisis y psicoterapia individual",
+        areaServed: "AR",
+      },
+      {
+        "@type": "MedicalTherapy",
+        name: "Terapia online",
+        areaServed: "AR",
+      },
+    ],
+  };
+
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Nicolás Quiroga — Psicólogo y psicoanalista",
+    url: site,
+    inLanguage: "es-AR",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${site}/blog?query={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
@@ -59,6 +88,7 @@ export default function SiteSEO() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#F8F7F2" />
       <meta name="author" content="Rodrigo Nicolás Quiroga Martínez" />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
       <link rel="canonical" href={site} />
 
       {/* OG por defecto (las páginas pueden sobreescribir) */}
@@ -69,6 +99,7 @@ export default function SiteSEO() {
       {/* JSON-LD Person */}
       <script type="application/ld+json">{JSON.stringify(org)}</script>
       <script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
+      <script type="application/ld+json">{JSON.stringify(website)}</script>
     </Helmet>
   );
 }

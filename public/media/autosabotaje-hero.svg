@@ -1,0 +1,34 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Autosabotaje: romper el ciclo</title>
+  <desc id="desc">Ilustración abstracta con formas suaves y un fondo cálido para acompañar el artículo sobre autosabotaje.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7F4EF" />
+      <stop offset="100%" stop-color="#E7D8C7" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 200) rotate(50) scale(360 300)">
+      <stop offset="0%" stop-color="#C8A979" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#C8A979" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1380 220) rotate(30) scale(320 260)">
+      <stop offset="0%" stop-color="#B58B7D" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#B58B7D" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1220 700) rotate(-15) scale(360 260)">
+      <stop offset="0%" stop-color="#7C8F78" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#7C8F78" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect width="1600" height="900" fill="url(#glow1)" />
+  <rect width="1600" height="900" fill="url(#glow2)" />
+  <rect width="1600" height="900" fill="url(#glow3)" />
+
+  <text x="120" y="360" font-family="'Inter', 'Segoe UI', sans-serif" font-size="58" font-weight="700" fill="#2F2A25">
+    ¿Por qué nos autosaboteamos?
+  </text>
+  <text x="120" y="440" font-family="'Inter', 'Segoe UI', sans-serif" font-size="44" font-weight="500" fill="#3A342D">
+    Romper el ciclo del autosabotaje
+  </text>
+</svg>
