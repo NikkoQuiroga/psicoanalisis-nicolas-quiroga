@@ -4,8 +4,30 @@ import ZenOscura from "./ZenOscura.jsx";
 import Autosabotaje from "./Autosabotaje.jsx";
 import AngustiaExistencial from "./AngustiaExistencial.jsx";
 import AnsiedadVidaModerna from "./AnsiedadVidaModerna.jsx";
+import PsicoanalisisPseudociencia from "./PsicoanalisisPseudociencia.jsx";
 
 export const posts = [
+  {
+    slug: "psicoanalisis-es-pseudociencia-lacan",
+    title:
+      "¿El psicoanálisis es una pseudociencia? La respuesta incómoda que casi nadie explica bien",
+    description:
+      "Debate serio sobre si el psicoanálisis es pseudociencia: Lacan, formalización, topología, criterios de cientificidad y diferencias con TCC/conductismo.",
+    date: "2026-03-04",
+    tags: [
+      "Psicoanálisis es pseudociencia",
+      "Lacan",
+      "Inconsciente estructurado como un lenguaje",
+      "Topología lacaniana",
+      "Nudo borromeo",
+      "Cientificidad del psicoanálisis",
+      "Lakatos",
+      "Psicoanálisis vs TCC",
+    ],
+    readMinutes: 11,
+    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    Component: PsicoanalisisPseudociencia,
+  },
   {
     slug: "ansiedad-vida-moderna-aumento-como-manejarla",
     title: "Ansiedad en la vida moderna: por qué va en aumento y cómo manejarla",
