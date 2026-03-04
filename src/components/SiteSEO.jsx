@@ -1,9 +1,13 @@
 // src/components/SiteSEO.jsx
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { useLocation } from "react-router-dom";
 
 export default function SiteSEO() {
-  const site = import.meta.env.VITE_SITE_URL || window.location.origin;
+  const location = useLocation();
+  const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
+  const pageUrl = `${site}${location.pathname}`;
+  const defaultImage = `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
 
   const org = {
@@ -89,12 +93,22 @@ export default function SiteSEO() {
       <meta name="theme-color" content="#F8F7F2" />
       <meta name="author" content="Rodrigo Nicolás Quiroga Martínez" />
       <meta name="robots" content="index, follow, max-image-preview:large" />
-      <link rel="canonical" href={site} />
+      <link rel="canonical" href={pageUrl} />
+      <meta
+        name="description"
+        content="Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos y autoestima con enfoque clínico y herramientas basadas en evidencia."
+      />
 
       {/* OG por defecto (las páginas pueden sobreescribir) */}
       <meta property="og:site_name" content="Rodrigo Nicolás Quiroga Martínez · Psicólogo (M.N. 59.272)" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={site} />
+      <meta property="og:locale" content="es_AR" />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:image" content={defaultImage} />
+      <meta property="og:image:alt" content="Retrato del psicólogo Rodrigo Nicolás Quiroga Martínez" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={defaultImage} />
 
       {/* JSON-LD Person */}
       <script type="application/ld+json">{JSON.stringify(org)}</script>
