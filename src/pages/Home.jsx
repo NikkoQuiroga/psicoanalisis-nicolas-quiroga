@@ -6,6 +6,10 @@ import {
   MapPin,
   ChevronDown,
   ChevronUp,
+  GraduationCap,
+  Microscope,
+  BookText,
+  BadgeCheck,
 } from "lucide-react";
 import AgendaForm from "../components/AgendaForm.jsx";
 import TestimonialCard from "../components/TestimonialCard.jsx";
@@ -14,9 +18,6 @@ import ProfileSlide from "../components/ProfileSlide.jsx";
 import { motion } from "framer-motion";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
-const placeholderPortrait =
-  "https://dummyimage.com/1200x1600/0f172a/ffffff.png&text=Rodrigo+Nicolas+Quiroga+Psicologo";
-
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
 
@@ -52,14 +53,17 @@ export default function Home() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
-              Psicoanálisis y psicoterapia
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
+              Psicoanálisis clínico
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Soy psicólogo y psicoanalista (M.N. 59.272) y acompaño a personas que buscan alivio y claridad. Integro el psicoanálisis con recursos basados en evidencia — respiración consciente, logoterapia, mindfulness — para trabajar ansiedad, duelos, vínculos y momentos de cambio.
+              Soy psicólogo y psicoanalista (M.N. 59.272). Trabajo con un
+              modelo integrador: profundidad psicoanalítica + recursos basados
+              en evidencia (mindfulness, respiración y logoterapia) para que
+              avances con alivio real y cambios sostenibles.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">
@@ -81,9 +85,9 @@ export default function Home() {
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-sumi/70">
               {[
                 "13 años de experiencia clínica",
+                "Lic. en Psicología (UBA)",
                 "Sesiones de 45 minutos",
-                "Espacio luminoso en Olivos",
-                "Atención online cuidada",
+                "Posgrados en psicoanálisis y mindfulness",
               ].map((x) => (
                 <li
                   key={x}
@@ -111,6 +115,49 @@ export default function Home() {
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/40" />
           </motion.div>
+        </div>
+      </Section>
+
+      <Section className="pb-4 md:pb-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-3xl border border-black/5 bg-white/70 p-5 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              Confianza profesional
+            </p>
+            <div className="mt-3 grid gap-3 md:grid-cols-4">
+              {[
+                {
+                  icon: GraduationCap,
+                  title: "Formación sólida",
+                  desc: "Licenciatura UBA + posgrados clínicos.",
+                },
+                {
+                  icon: Microscope,
+                  title: "Herramientas basadas en evidencia",
+                  desc: "Protocolos breves para ansiedad y regulación.",
+                },
+                {
+                  icon: BookText,
+                  title: "Actualización constante",
+                  desc: "Estudio continuo en clínica contemporánea.",
+                },
+                {
+                  icon: BadgeCheck,
+                  title: "Matrícula nacional activa",
+                  desc: "M.N. 59.272 con práctica en consultorio y online.",
+                },
+              ].map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-black/5 bg-white p-4"
+                >
+                  <item.icon className="h-5 w-5 text-moss" />
+                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                  <p className="mt-1 text-xs text-sumi/70">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -234,6 +281,72 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 md:py-12">
+          <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-3xl border border-black/5 bg-sumi text-white p-6 md:p-8 shadow-md">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/75">
+                Autoridad clínica
+              </p>
+              <h2 className="mt-2 text-2xl md:text-3xl font-semibold">
+                Un marco de trabajo serio, humano y verificable
+              </h2>
+              <p className="mt-3 text-sm text-white/85 max-w-prose">
+                La terapia funciona mejor cuando hay método, vínculo y
+                seguimiento. Por eso mi trabajo combina evaluación inicial,
+                hipótesis clínica, herramientas concretas entre sesiones y
+                revisión periódica de resultados.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-white/85">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
+                  Primera sesión diagnóstica con objetivos claros.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
+                  Intervenciones ajustadas a tu momento vital.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
+                  Revisión de avances cada 4 semanas.
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-3xl border border-gold/30 bg-gold/10 p-6 md:p-8 shadow-sm">
+              <h3 className="text-lg font-semibold">Perfil académico visible</h3>
+              <p className="mt-2 text-sm text-sumi/75">
+                Si querés reforzar la percepción de autoridad sin perder
+                autenticidad, este sitio puede mostrar: participaciones en
+                jornadas, clases, certificaciones y publicaciones breves.
+              </p>
+              <div className="mt-4 space-y-3 text-sm text-sumi/80">
+                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
+                  <p className="font-medium">Docencia y conferencias</p>
+                  <p className="text-xs mt-1">
+                    Sumá fotos reales de clases, charlas o seminarios para
+                    aumentar confianza.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
+                  <p className="font-medium">Producción escrita</p>
+                  <p className="text-xs mt-1">
+                    Destacá artículos del blog con enfoque clínico y evidencia.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
+                  <p className="font-medium">Transparencia profesional</p>
+                  <p className="text-xs mt-1">
+                    Matrícula, enfoque y límites del tratamiento en lenguaje
+                    claro.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
