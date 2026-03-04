@@ -7,7 +7,7 @@ import {
   ChevronDown,
   ChevronUp,
   GraduationCap,
-  Microscope,
+  Award,
   BookText,
   BadgeCheck,
 } from "lucide-react";
@@ -75,28 +75,7 @@ export default function Home() {
               >
                 Agenda tu sesión
               </a>
-              <a
-                href="/honorarios"
-                className="inline-flex items-center gap-2 rounded-full border border-sumi/10 bg-white/80 px-4 py-2 font-medium text-sumi hover:bg-white"
-              >
-                Ver honorarios y modalidad
-              </a>
             </div>
-            <ul className="mt-6 flex flex-wrap gap-2 text-xs text-sumi/70">
-              {[
-                "13 años de experiencia clínica",
-                "Lic. en Psicología (UBA)",
-                "Sesiones de 45 minutos",
-                "Posgrados en psicoanálisis y mindfulness",
-              ].map((x) => (
-                <li
-                  key={x}
-                  className="rounded-full border border-black/5 bg-white/70 px-3 py-1"
-                >
-                  {x}
-                </li>
-              ))}
-            </ul>
           </motion.div>
 
           <motion.div
@@ -132,9 +111,9 @@ export default function Home() {
                   desc: "Licenciatura UBA + posgrados clínicos.",
                 },
                 {
-                  icon: Microscope,
-                  title: "Herramientas basadas en evidencia",
-                  desc: "Protocolos breves para ansiedad y regulación.",
+                  icon: Award,
+                  title: "13 años de experiencia clínica",
+                  desc: "Trayectoria sostenida en atención individual y procesos terapéuticos.",
                 },
                 {
                   icon: BookText,
