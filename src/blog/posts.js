@@ -25,7 +25,7 @@ export const posts = [
       "Psicoanálisis vs TCC",
     ],
     readMinutes: 11,
-    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    hero: "/media/psicoanalisis-es-pseudociencia-lacan.webp",
     Component: PsicoanalisisPseudociencia,
   },
   {
@@ -48,7 +48,7 @@ export const posts = [
       "Superyó contemporáneo",
     ],
     readMinutes: 12,
-    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    hero: "/media/ansiedad-vida-moderna-aumento-como-manejarla.webp",
     Component: AnsiedadVidaModerna,
   },
   {
@@ -65,7 +65,7 @@ export const posts = [
       "Psicoanálisis",
     ],
     readMinutes: 9,
-    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    hero: "/media/angustia-existencial-sentido-de-la-vida.webp",
     Component: AngustiaExistencial,
   },
   {
@@ -82,7 +82,7 @@ export const posts = [
       "Vínculos",
     ],
     readMinutes: 10,
-    hero: "/media/autosabotaje-hero.svg",
+    hero: "/media/por-que-nos-autosaboteamos-romper-ciclo-autosabotaje.webp",
     Component: Autosabotaje,
   },
   {
@@ -93,7 +93,7 @@ export const posts = [
     date: "2025-09-07", // ajustá si querés
     tags: ["Budismo zen", "Psicoanálisis", "Crítica cultural", "Žižek", "Japón"],
     readMinutes: 7,
-    hero: "/media/zen-hero.webp", // opcional
+    hero: "/media/oscura-verdad-budismo-zen.webp", // opcional
     Component: ZenOscura,
   },
   {
@@ -104,7 +104,7 @@ export const posts = [
     date: "2025-09-07",
     tags: ["Japón", "Ikigai", "Psicoanálisis", "Cultura"],
     readMinutes: 6,
-    hero: "/media/ikigai-hero.webp",
+    hero: "/media/ikigai-formula-secreta-japonesa-felicidad.webp",
     Component: Ikigai,
   },
   {
@@ -115,7 +115,7 @@ export const posts = [
     date: "2025-09-05",
     tags: ["Psicoanálisis", "Japón", "Nostalgia", "mono no aware"],
     readMinutes: 6,
-    hero: "/media/nostalgia-hero.webp",
+    hero: "/media/nostalgia-puente-japon-psicoanalisis.webp",
     Component: Nostalgia,
   },
 ];

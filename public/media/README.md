@@ -1,5 +1,17 @@
 # Media placeholders
 
-Este directorio queda vacío en el repositorio para cumplir la política que no admite archivos binarios en las solicitudes de extracción.
+Este directorio queda sin imágenes binarias dentro del repositorio para mantener el historial liviano.
 
-Agregá tus retratos finales en formato `.webp` usando los nombres ya referenciados en el código (por ejemplo `lic-rodrigo-nicolas-quiroga-martinez.webp`, `zen-hero.webp`, etc.). Cuando los ubiques aquí en tu entorno o servidor de hosting, las rutas locales volverán a apuntar a esas imágenes sin necesidad de modificar el código.
+## Nombres esperados para los héroes del blog
+
+Subí acá tus archivos finales (idealmente `.webp`) con estos nombres:
+
+- `psicoanalisis-es-pseudociencia-lacan.webp`
+- `ansiedad-vida-moderna-aumento-como-manejarla.webp`
+- `angustia-existencial-sentido-de-la-vida.webp`
+- `por-que-nos-autosaboteamos-romper-ciclo-autosabotaje.webp`
+- `oscura-verdad-budismo-zen.webp`
+- `ikigai-formula-secreta-japonesa-felicidad.webp`
+- `nostalgia-puente-japon-psicoanalisis.webp`
+
+Con esos nombres, el front ya las toma automáticamente desde `src/blog/posts.js`.
