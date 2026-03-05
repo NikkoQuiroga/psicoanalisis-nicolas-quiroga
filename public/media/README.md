@@ -1,5 +1,15 @@
 # Media placeholders
 
-Este directorio queda vacío en el repositorio para cumplir la política que no admite archivos binarios en las solicitudes de extracción.
+Este directorio versiona únicamente archivos livianos de referencia y evita subir binarios pesados en PRs.
 
-Agregá tus retratos finales en formato `.webp` usando los nombres ya referenciados en el código (por ejemplo `lic-rodrigo-nicolas-quiroga-martinez.webp`, `zen-hero.webp`, etc.). Cuando los ubiques aquí en tu entorno o servidor de hosting, las rutas locales volverán a apuntar a esas imágenes sin necesidad de modificar el código.
+## Estado actual del blog
+
+Hoy los posts están apuntando a estos assets que **sí existen en el repo**:
+
+- `lic-rodrigo-nicolas-quiroga-martinez.webp`
+- `autosabotaje-hero.svg`
+- `zen-hero.webp`
+- `ikigai-hero.webp`
+- `nostalgia-hero.webp`
+
+Si querés cambiar héroes por imágenes nuevas, primero subí los archivos a `public/media/` y después actualizá `src/blog/posts.js` para que el nombre coincida exactamente.
