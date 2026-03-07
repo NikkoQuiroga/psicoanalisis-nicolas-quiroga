@@ -5,8 +5,27 @@ import Autosabotaje from "./Autosabotaje.jsx";
 import AngustiaExistencial from "./AngustiaExistencial.jsx";
 import AnsiedadVidaModerna from "./AnsiedadVidaModerna.jsx";
 import PsicoanalisisPseudociencia from "./PsicoanalisisPseudociencia.jsx";
+import TerapiaCrisisEconomica from "./TerapiaCrisisEconomica.jsx";
 
 export const posts = [
+  {
+    slug: "terapia-en-crisis-economica",
+    title:
+      "Terapia en crisis económica: por qué sostener el proceso también es salud mental",
+    description:
+      "Cómo sostener terapia durante una crisis económica: frecuencia posible, modalidad flexible y trabajo clínico para reducir ansiedad y culpa individual.",
+    date: "2026-03-06",
+    tags: [
+      "Terapia en crisis económica",
+      "Ansiedad económica",
+      "Psicoanálisis",
+      "Salud mental",
+      "Honorarios",
+    ],
+    readMinutes: 8,
+    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    Component: TerapiaCrisisEconomica,
+  },
   {
     slug: "psicoanalisis-es-pseudociencia-lacan",
     title:
