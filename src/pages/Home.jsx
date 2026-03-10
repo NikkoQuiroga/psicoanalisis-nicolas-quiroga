@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
+import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   ShieldCheck,
@@ -16,10 +17,14 @@ import TestimonialCard from "../components/TestimonialCard.jsx";
 import Section from "../components/Section.jsx";
 import ProfileSlide from "../components/ProfileSlide.jsx";
 import { motion } from "framer-motion";
+import { posts } from "../blog/posts.js";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
+  const latestPosts = [...posts]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
 
   return (
     <>
@@ -94,6 +99,35 @@ export default function Home() {
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/40" />
           </motion.div>
+        </div>
+      </Section>
+
+      <Section className="pb-2 md:pb-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-3xl border border-moss/20 bg-moss/5 p-5 md:p-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              ¿Para qué hacer terapia?
+            </p>
+            <h2 className="mt-2 text-xl md:text-2xl font-semibold">
+              Para que lo que hoy te pesa deje de ordenar tu vida
+            </h2>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                "Bajar ansiedad y recuperar calma en el día a día.",
+                "Entender patrones que se repiten en vínculos, trabajo o decisiones.",
+                "Atravesar duelos, crisis o cambios sin quedar solo con la angustia.",
+                "Tomar decisiones con más claridad, deseo propio y menos culpa.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-black/5 bg-white/80 px-4 py-3 text-sm text-sumi/85 flex items-start gap-2"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+                  <span>{item}</span>
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -178,204 +212,63 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Orientación y enfoque */}
       <Section>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14 grid gap-6 md:grid-cols-2">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-          >
-            <p className="text-sm uppercase tracking-[0.2em] text-sumi/70">
-              Psicólogo en Olivos · Psicólogo online
-            </p>
-            <h2 className="mt-1 text-2xl md:text-3xl font-semibold">
-              Un enfoque integrador para que la terapia sea clara y accionable
-            </h2>
-            <p className="mt-3 text-sm text-sumi/75 leading-relaxed">
-              Trabajo desde el psicoanálisis contemporáneo con herramientas
-              breves y basadas en evidencia. Esto significa que combinamos la
-              profundidad de la historia personal con recursos prácticos que
-              podés aplicar entre sesiones. El foco está en entender lo que te
-              pasa y darte estrategias concretas para ansiedad, duelos,
-              inseguridades en vínculos o bloqueos profesionales.
-            </p>
-            <ul className="mt-4 space-y-2 text-sm text-sumi/80">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
-                Terapia individual presencial en Olivos (Vicente López) o
-                videollamada segura con audio encriptado.
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
-                Sesiones de 45 minutos con agenda flexible y seguimiento cada
-                cuatro semanas.
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-moss" />
-                Experiencia en ansiedad, duelos, estrés laboral, autoestima,
-                relaciones y sensación de vacío.
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.05 }}
-          >
-            <h3 className="text-lg font-semibold">
-              Cómo es trabajar conmigo
-            </h3>
-            <ol className="mt-3 space-y-3 text-sm text-sumi/80 list-decimal list-inside">
-              <li>
-                Primera sesión diagnóstica: definimos objetivos, frecuencia y
-                necesidades (presencial en Olivos u online).
-              </li>
-              <li>
-                Plan breve de regulación: ejercicios de respiración,
-                mindfulness y escritura guiada para aliviar síntomas.
-              </li>
-              <li>
-                Profundización psicoanalítica: exploramos repeticiones, deseos y
-                límites para sostener cambios en el tiempo.
-              </li>
-              <li>
-                Revisión periódica: cada pocas semanas evaluamos avances para
-                que la terapia siga siendo útil y ajustada a tu vida.
-              </li>
-            </ol>
-            <div className="mt-4 rounded-2xl bg-gold/10 border border-gold/30 p-4">
-              <p className="text-sm font-medium text-sumi">
-                Palabras clave que me buscan pacientes:
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-sumi/70">
+                Blog
               </p>
-              <p className="mt-1 text-sm text-sumi/75">
-                psicólogo en Olivos, psicólogo online Buenos Aires, terapia
-                para ansiedad, psicólogo para duelos, psicólogo Vicente López,
-                psicólogo para vínculos.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 md:py-12">
-          <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-3xl border border-black/5 bg-sumi text-white p-6 md:p-8 shadow-md">
-              <p className="text-xs uppercase tracking-[0.2em] text-white/75">
-                Autoridad clínica
-              </p>
-              <h2 className="mt-2 text-2xl md:text-3xl font-semibold">
-                Un marco de trabajo serio, humano y verificable
+              <h2 className="mt-1 text-2xl md:text-3xl font-semibold">
+                Últimos posteos
               </h2>
-              <p className="mt-3 text-sm text-white/85 max-w-prose">
-                La terapia funciona mejor cuando hay método, vínculo y
-                seguimiento. Por eso mi trabajo combina evaluación inicial,
-                hipótesis clínica, herramientas concretas entre sesiones y
-                revisión periódica de resultados.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-white/85">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
-                  Primera sesión diagnóstica con objetivos claros.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
-                  Intervenciones ajustadas a tu momento vital.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-gold" />
-                  Revisión de avances cada 4 semanas.
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-3xl border border-gold/30 bg-gold/10 p-6 md:p-8 shadow-sm">
-              <h3 className="text-lg font-semibold">Perfil académico visible</h3>
               <p className="mt-2 text-sm text-sumi/75">
-                Si querés reforzar la percepción de autoridad sin perder
-                autenticidad, este sitio puede mostrar: participaciones en
-                jornadas, clases, certificaciones y publicaciones breves.
+                Referencias de lectura para profundizar ideas que también
+                trabajamos en sesión.
               </p>
-              <div className="mt-4 space-y-3 text-sm text-sumi/80">
-                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
-                  <p className="font-medium">Docencia y conferencias</p>
-                  <p className="text-xs mt-1">
-                    Sumá fotos reales de clases, charlas o seminarios para
-                    aumentar confianza.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
-                  <p className="font-medium">Producción escrita</p>
-                  <p className="text-xs mt-1">
-                    Destacá artículos del blog con enfoque clínico y evidencia.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/5 bg-white/80 p-3">
-                  <p className="font-medium">Transparencia profesional</p>
-                  <p className="text-xs mt-1">
-                    Matrícula, enfoque y límites del tratamiento en lenguaje
-                    claro.
-                  </p>
-                </div>
-              </div>
             </div>
+            <Link
+              to="/blog"
+              className="shrink-0 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium hover:bg-sumi hover:text-white transition"
+            >
+              Ver todos
+            </Link>
           </div>
-        </div>
-      </Section>
 
-      {/* Servicios */}
-      <Section>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-16">
-          <motion.h2
-            className="text-2xl md:text-3xl font-semibold"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            Modalidades y áreas de trabajo
-          </motion.h2>
-          <p className="mt-2 text-sm text-sumi/70 max-w-prose">
-            Presencial en Olivos (Vicente López) y online por videollamada. Un proceso conversado, sin recetas enlatadas, con herramientas prácticas cuando querés alivio rápido.
-          </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                title: "Ansiedad y angustia",
-                desc: "Exploración de la causa y técnicas de regulación para el día a día.",
-              },
-              {
-                title: "Relaciones y vínculos",
-                desc: "Patrones repetidos, límites y deseo propio.",
-              },
-              {
-                title: "Duelo y pérdida",
-                desc: "Acompañamiento en tiempos de tránsito y re-significación.",
-              },
-              {
-                title: "Exploración personal",
-                desc: "Preguntas por el sentido, elecciones y proyectos.",
-              },
-            ].map((c, i) => (
-              <motion.article
-                key={c.title}
-                className="rounded-2xl border border-black/5 bg-white/60 p-5 shadow-sm"
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {latestPosts.map((post, i) => (
+              <motion.div
+                key={post.slug}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: 0.05 * i }}
+                transition={{ duration: 0.45, delay: 0.05 * i }}
               >
-                <h3 className="font-medium flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-moss" /> {c.title}
-                </h3>
-                <p className="mt-1 text-sm text-sumi/75">{c.desc}</p>
-              </motion.article>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="group block h-full overflow-hidden rounded-2xl border border-black/5 bg-white/80 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  {post.hero && (
+                    <img
+                      src={post.hero}
+                      alt={post.title}
+                      className="h-40 w-full object-cover"
+                    />
+                  )}
+                  <div className="p-4">
+                    <p className="text-xs text-sumi/60">
+                      {new Date(post.date).toLocaleDateString("es-AR")} ·{" "}
+                      {post.readMinutes} min
+                    </p>
+                    <h3 className="mt-1 text-lg font-semibold group-hover:underline">
+                      {post.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-sumi/70 line-clamp-3">
+                      {post.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
