@@ -23,7 +23,7 @@ export const posts = [
       "Honorarios",
     ],
     readMinutes: 8,
-    hero: "/media/lic-rodrigo-nicolas-quiroga-martinez.webp",
+    hero: "/media/terapia-en-crisis economica.webp",
     Component: TerapiaCrisisEconomica,
   },
   {

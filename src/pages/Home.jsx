@@ -141,6 +141,21 @@ export default function Home() {
                   title: "Formación sólida",
                   desc: "Licenciatura UBA + posgrados clínicos.",
                 },
+                 {
+                  icon: GraduationCap,
+                  title: "Formación sólida",
+                  desc: "Licenciatura UBA + posgrados clínicos.",
+                },
+                 {
+                  icon: GraduationCap,
+                  title: "Formación sólida",
+                  desc: "Licenciatura UBA + posgrados clínicos.",
+                },
+                 {
+                  icon: GraduationCap,
+                  title: "Formación sólida",
+                  desc: "Licenciatura UBA + posgrados clínicos.",
+                },
               ].map((item) => (
                 <article
                   key={item.title}
