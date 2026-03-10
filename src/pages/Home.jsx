@@ -99,6 +99,35 @@ export default function Home() {
         </div>
       </Section>
 
+      <Section className="pb-2 md:pb-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-3xl border border-moss/20 bg-moss/5 p-5 md:p-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              ¿Para qué hacer terapia?
+            </p>
+            <h2 className="mt-2 text-xl md:text-2xl font-semibold">
+              Para que lo que hoy te pesa deje de ordenar tu vida
+            </h2>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                "Bajar ansiedad y recuperar calma en el día a día.",
+                "Entender patrones que se repiten en vínculos, trabajo o decisiones.",
+                "Atravesar duelos, crisis o cambios sin quedar solo con la angustia.",
+                "Tomar decisiones con más claridad, deseo propio y menos culpa.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-black/5 bg-white/80 px-4 py-3 text-sm text-sumi/85 flex items-start gap-2"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+                  <span>{item}</span>
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
       <Section className="pb-4 md:pb-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="rounded-3xl border border-black/5 bg-white/70 p-5 shadow-sm">
