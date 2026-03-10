@@ -8,6 +8,9 @@ import {
   ChevronDown,
   ChevronUp,
   GraduationCap,
+  Award,
+  Compass,
+  BadgeCheck,
 } from "lucide-react";
 import AgendaForm from "../components/AgendaForm.jsx";
 import TestimonialCard from "../components/TestimonialCard.jsx";
@@ -134,27 +137,27 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
               Confianza profesional
             </p>
-            <div className="mt-3 grid gap-3 md:grid-cols-1">
+            <div className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   icon: GraduationCap,
                   title: "Formación sólida",
                   desc: "Licenciatura UBA + posgrados clínicos.",
                 },
-                 {
-                  icon: GraduationCap,
-                  title: "Formación sólida",
-                  desc: "Licenciatura UBA + posgrados clínicos.",
+                {
+                  icon: Award,
+                  title: "13 años de experiencia clínica",
+                  desc: "Trayectoria sostenida en procesos terapéuticos individuales.",
                 },
-                 {
-                  icon: GraduationCap,
-                  title: "Formación sólida",
-                  desc: "Licenciatura UBA + posgrados clínicos.",
+                {
+                  icon: Compass,
+                  title: "Modo de intervención integrador",
+                  desc: "Psicoanálisis en profundidad + recursos prácticos basados en evidencia.",
                 },
-                 {
-                  icon: GraduationCap,
-                  title: "Formación sólida",
-                  desc: "Licenciatura UBA + posgrados clínicos.",
+                {
+                  icon: BadgeCheck,
+                  title: "Matrícula nacional activa",
+                  desc: "M.N. 59.272 con atención presencial y online.",
                 },
               ].map((item) => (
                 <article
