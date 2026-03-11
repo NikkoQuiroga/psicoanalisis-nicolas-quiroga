@@ -28,12 +28,11 @@ export default function Header() {
 
   const items = [
     ["Inicio", "/"],
-    ["Servicios", "/servicios"],
-    ["Honorarios", "/honorarios"],
-    ["Agenda", "/agenda"],
+    ["Cómo trabajo", "/faq"],
     ["Testimonios", "/testimonios"],
     ["Ubicación", "/ubicacion"],
     ["Blog", "/blog"],
+    ["Contacto", "/contacto"],
   ];
 
   return (

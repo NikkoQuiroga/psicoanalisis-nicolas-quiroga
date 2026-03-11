@@ -184,7 +184,7 @@ export default function AngustiaExistencial() {
 
       <div className="not-prose my-10">
         <a
-          href="/agenda"
+          href="/contacto"
           className="group relative block overflow-hidden rounded-3xl border border-black/10 bg-black/5"
           aria-label="Comenzar psicoanálisis online"
         >
@@ -196,7 +196,7 @@ export default function AngustiaExistencial() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="relative flex flex-col gap-3 px-6 py-10 text-white md:px-10">
             <p className="text-xs uppercase tracking-[0.2em] text-white/70">Psicoanálisis online</p>
-            <h3 className="text-2xl font-semibold">¿Querés empezar un proceso? Reservá una primera sesión.</h3>
+            <h3 className="text-2xl font-semibold">¿Querés empezar un proceso? Coordiná una primera sesión.</h3>
             <p className="max-w-xl text-sm text-white/80">
               Un espacio cuidado, sin recetas enlatadas, para trabajar la angustia existencial y recuperar sentido con pasos
               concretos.

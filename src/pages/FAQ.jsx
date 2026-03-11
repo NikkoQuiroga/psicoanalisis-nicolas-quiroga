@@ -9,7 +9,7 @@ const faqs=[
 ];
 return (
 <>
-<Helmet><title>Preguntas frecuentes</title><meta name="description" content="Frecuencia, primera sesión, online/presencial, honorarios."/></Helmet>
+<Helmet><title>Preguntas frecuentes</title><meta name="description" content="Frecuencia, primera sesión, modalidad online/presencial y dudas habituales de terapia."/></Helmet>
 <section className="mx-auto w-full max-w-3xl px-5 py-10">
 <h1 className="h-serif text-3xl font-semibold">Preguntas frecuentes</h1>
 <div className="mt-6 space-y-4">

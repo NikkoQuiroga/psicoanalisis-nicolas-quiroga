@@ -35,7 +35,7 @@ export default function Consentimiento() {
 
           <section>
             <h2 className="font-medium text-sumi">3) Honorarios</h2>
-            <p>Honorarios vigentes informados en la página de Agenda. El valor puede actualizarse.</p>
+            <p>Honorarios vigentes informados al momento de coordinar por WhatsApp o contacto. El valor puede actualizarse.</p>
           </section>
 
           <section>

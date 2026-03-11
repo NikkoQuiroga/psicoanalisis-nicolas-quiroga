@@ -96,11 +96,11 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Psicólogo y psicoanalista en Olivos y online en Buenos Aires. Lic. Rodrigo Nicolás Quiroga Martínez (M.N. 59.272). Terapia individual para ansiedad, duelos, vínculos, autoestima y sentido personal."
+          content="Psicólogo en Olivos (Vicente López) y atención online para Argentina y exterior. Lic. Nicolás Quiroga (M.N. 59.272). Terapia para ansiedad, duelos, vínculos, crisis vitales y autoestima."
         />
         <meta
           name="keywords"
-          content="psicólogo en Olivos, psicoanalista online, psicólogo online Buenos Aires, psicoterapia online Argentina, terapia individual ansiedad, terapia para duelos, psicólogo Vicente López, psicoterapia en CABA, psicólogo para vínculos, terapia virtual, autoestima"
+          content="psicólogo en Olivos, psicólogo Vicente López, psicoanalista en Olivos, terapia online Argentina, psicoterapia online Buenos Aires, terapia para ansiedad, terapia para duelos, terapia para vínculos, crisis vitales, autoestima"
         />
         <meta
           property="og:image"
@@ -126,15 +126,12 @@ export default function Home() {
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Soy psicólogo y psicoanalista (M.N. 59.272). Trabajo con un
-              modelo integrador: profundidad psicoanalítica + recursos basados
-              en evidencia (mindfulness, respiración y logoterapia) para que
-              avances con alivio real y cambios sostenibles.
+              Soy psicólogo clínico (M.N. 59.272). Atiendo en Olivos y también
+              online. En sesión trabajo desde el psicoanálisis, y cuando hace
+              falta sumo herramientas concretas para bajar ansiedad, ordenar
+              ideas y tomar decisiones con más claridad.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
-              <span className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 font-semibold text-white shadow-soft">
-                Honorario por sesión: $35.000 ARS
-              </span>
               <a
                 href="#agenda"
                 className="inline-flex items-center gap-2 rounded-full border border-transparent bg-sumi px-4 py-2 font-medium text-white shadow hover:bg-sumi/90"
@@ -349,7 +346,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Agenda + Honorarios */}
+
+      {/* Agenda (en Home) */}
       <Section id="agenda">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-10 md:pb-16">
           <div className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow">
@@ -365,9 +363,9 @@ export default function Home() {
                   Agenda tu primera sesión
                 </motion.h2>
                 <p className="mt-2 text-sm text-sumi/75">
-                  Durante el primer mes, propongo{" "}
+                  Durante el primer mes, propongo{' '}
                   <strong>1 sesión semanal</strong> para entender qué necesitás.
-                  Luego, si querés, podemos pasar a{" "}
+                  Luego, si querés, podemos pasar a{' '}
                   <strong>cada 15 días</strong> y sostener los avances.
                 </p>
                 <p className="mt-2 text-sm text-sumi/75 flex items-center gap-2">

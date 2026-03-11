@@ -90,8 +90,8 @@ export default function BlogPost() {
       <section className="mx-auto max-w-3xl px-5 py-10">
         <Component />
         <div className="mt-10 flex flex-wrap items-center gap-3 text-sm">
-          <Link to="/agenda" className="inline-flex rounded-full border border-black/10 bg-white/70 px-3 py-1 hover:bg-white">
-            Agenda una primera sesión
+          <Link to="/contacto" className="inline-flex rounded-full border border-black/10 bg-white/70 px-3 py-1 hover:bg-white">
+            Coordinar una primera sesión
           </Link>
           <Link to="/blog" className="text-sumi/60 underline">← Volver al blog</Link>
         </div>
