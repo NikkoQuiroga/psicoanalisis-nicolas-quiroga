@@ -275,7 +275,7 @@ export default function Home() {
 
       <Section>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
-          <div className="flex items-end justify-between gap-4">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-sumi/70">
                 Blog
@@ -290,52 +290,61 @@ export default function Home() {
             </div>
             <Link
               to="/blog"
-              className="shrink-0 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium hover:bg-sumi hover:text-white transition"
+              className="inline-flex w-full items-center justify-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white sm:w-auto"
             >
               Ver todos
             </Link>
           </div>
 
-          <div
-            ref={blogSliderRef}
-            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            aria-label="Posteos del blog"
-          >
-            {blogPosts.map((post, i) => (
-              <motion.div
-                key={post.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, delay: 0.05 * i }}
-                className="min-w-[84%] snap-start sm:min-w-[65%] md:min-w-[40%] lg:min-w-[32%]"
-              >
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="group block h-full overflow-hidden rounded-2xl border border-black/5 bg-white/80 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+
+
+          <div className="mt-3 flex items-center justify-between gap-3 text-xs text-sumi/60 sm:hidden">
+            <span>Deslizá para leer más artículos</span>
+            <span aria-hidden="true">→</span>
+          </div>
+          <div className="relative">
+            <div
+              ref={blogSliderRef}
+              className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 pr-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              aria-label="Posteos del blog"
+            >
+              {blogPosts.map((post, i) => (
+                <motion.div
+                  key={post.slug}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45, delay: 0.05 * i }}
+                  className="min-w-[78%] snap-start sm:min-w-[65%] md:min-w-[40%] lg:min-w-[32%]"
                 >
-                  {post.hero && (
-                    <img
-                      src={post.hero}
-                      alt={post.title}
-                      className="h-40 w-full object-cover"
-                    />
-                  )}
-                  <div className="p-4">
-                    <p className="text-xs text-sumi/60">
-                      {new Date(post.date).toLocaleDateString("es-AR")} ·{" "}
-                      {post.readMinutes} min
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold group-hover:underline">
-                      {post.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-sumi/70 line-clamp-3">
-                      {post.description}
-                    </p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="group block h-full overflow-hidden rounded-2xl border border-black/5 bg-white/80 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                  >
+                    {post.hero && (
+                      <img
+                        src={post.hero}
+                        alt={post.title}
+                        className="h-40 w-full object-cover"
+                      />
+                    )}
+                    <div className="p-4">
+                      <p className="text-xs text-sumi/60">
+                        {new Date(post.date).toLocaleDateString("es-AR")} ·{" "}
+                        {post.readMinutes} min
+                      </p>
+                      <h3 className="mt-1 text-lg font-semibold group-hover:underline">
+                        {post.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-sumi/70 line-clamp-3">
+                        {post.description}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-ivory to-transparent sm:hidden" />
           </div>
         </div>
       </Section>
