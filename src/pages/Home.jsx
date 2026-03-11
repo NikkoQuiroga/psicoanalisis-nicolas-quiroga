@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
 import {
@@ -22,9 +22,70 @@ import { posts } from "../blog/posts.js";
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
-  const latestPosts = [...posts]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+  const blogPosts = [...posts].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  const blogSliderRef = useRef(null);
+
+  useEffect(() => {
+    const slider = blogSliderRef.current;
+    if (!slider) return;
+
+    let rafId;
+    let direction = 1;
+    let userIsInteracting = false;
+    const speed = 0.3;
+
+    const tick = () => {
+      if (!slider || userIsInteracting) {
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
+
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+      if (maxScroll <= 0) {
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
+
+      if (slider.scrollLeft >= maxScroll - 1) direction = -1;
+      if (slider.scrollLeft <= 1) direction = 1;
+
+      slider.scrollLeft += speed * direction;
+      rafId = requestAnimationFrame(tick);
+    };
+
+    let interactionTimeoutId;
+
+    const stopInteraction = () => {
+      userIsInteracting = true;
+      window.clearTimeout(interactionTimeoutId);
+      interactionTimeoutId = window.setTimeout(() => {
+        userIsInteracting = false;
+      }, 1400);
+    };
+
+    slider.addEventListener("touchstart", stopInteraction, { passive: true });
+    slider.addEventListener("touchmove", stopInteraction, { passive: true });
+    slider.addEventListener("wheel", stopInteraction, { passive: true });
+    slider.addEventListener("pointerdown", stopInteraction);
+    slider.addEventListener("pointerup", stopInteraction);
+    slider.addEventListener("scroll", stopInteraction, { passive: true });
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.clearTimeout(interactionTimeoutId);
+      slider.removeEventListener("touchstart", stopInteraction);
+      slider.removeEventListener("touchmove", stopInteraction);
+      slider.removeEventListener("wheel", stopInteraction);
+      slider.removeEventListener("pointerdown", stopInteraction);
+      slider.removeEventListener("pointerup", stopInteraction);
+      slider.removeEventListener("scroll", stopInteraction);
+    };
+  }, []);
 
   return (
     <>
@@ -220,7 +281,7 @@ export default function Home() {
                 Blog
               </p>
               <h2 className="mt-1 text-2xl md:text-3xl font-semibold">
-                Últimos posteos
+                Posteos del blog
               </h2>
               <p className="mt-2 text-sm text-sumi/75">
                 Referencias de lectura para profundizar ideas que también
@@ -235,14 +296,19 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {latestPosts.map((post, i) => (
+          <div
+            ref={blogSliderRef}
+            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Posteos del blog"
+          >
+            {blogPosts.map((post, i) => (
               <motion.div
                 key={post.slug}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, delay: 0.05 * i }}
+                className="min-w-[84%] snap-start sm:min-w-[65%] md:min-w-[40%] lg:min-w-[32%]"
               >
                 <Link
                   to={`/blog/${post.slug}`}
