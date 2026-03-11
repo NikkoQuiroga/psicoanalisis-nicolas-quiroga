@@ -10,9 +10,6 @@ import BackgroundInk from "./components/BackgroundInk.jsx";
 
 // Páginas
 import Home from "./pages/Home.jsx";
-import Servicios from "./pages/Servicios.jsx";
-import Honorarios from "./pages/Honorarios.jsx";
-import Agenda from "./pages/Agenda.jsx";
 import Testimonios from "./pages/Testimonios.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Ubicacion from "./pages/Ubicacion.jsx";
@@ -64,9 +61,6 @@ export default function App() {
             {/* 👇 ¡IMPORTANTE! Pasamos el location a Routes para que haga match correcto */}
             <Routes location={location}>
               <Route path="/" element={<Home />} />
-              <Route path="/servicios" element={<Servicios />} />
-              <Route path="/honorarios" element={<Honorarios />} />
-              <Route path="/agenda" element={<Agenda />} />
               <Route path="/testimonios" element={<Testimonios />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/ubicacion" element={<Ubicacion />} />
@@ -88,7 +82,6 @@ export default function App() {
       </main>
 
       <Footer />
-      {/* Oculta el botón al entrar a la sección Agenda (id="agenda") */}
       <WhatsAppFab anchorId="agenda-form" showAboveOffset={96} />
     </div>
   );

@@ -58,7 +58,7 @@ export default function SiteSEO() {
       "https://www.instagram.com/",
     ],
     description:
-      "Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos, autoestima y autoconocimiento con honorarios claros y agenda flexible.",
+      "Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos, autoestima y crisis vitales.",
     availableService: [
       {
         "@type": "MedicalTherapy",

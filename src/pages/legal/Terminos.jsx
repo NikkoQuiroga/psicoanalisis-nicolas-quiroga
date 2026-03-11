@@ -7,7 +7,7 @@ export default function Terminos() {
     <>
       <Helmet>
         <title>Términos y condiciones — Nicolás Quiroga</title>
-        <meta name="description" content="Condiciones de uso del sitio, agenda y limitaciones de responsabilidad." />
+        <meta name="description" content="Condiciones de uso del sitio, coordinación de turnos y limitaciones de responsabilidad." />
       </Helmet>
 
       <section className="mx-auto w-full max-w-3xl px-5 py-10">
@@ -25,8 +25,8 @@ export default function Terminos() {
           <section>
             <h2 className="font-medium text-sumi">2) Agenda y honorarios</h2>
             <p>
-              La coordinación de turnos se realiza por formulario o WhatsApp. Honorarios informados en la página de Agenda.
-              Pueden actualizarse sin previo aviso hasta la confirmación del turno.
+              La coordinación de turnos se realiza por formulario o WhatsApp. Los honorarios se informan al momento de
+              coordinar y pueden actualizarse sin previo aviso hasta la confirmación del turno.
             </p>
           </section>
 
