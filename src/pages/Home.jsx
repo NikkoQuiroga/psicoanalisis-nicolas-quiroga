@@ -9,7 +9,6 @@ import {
   ChevronUp,
   GraduationCap,
   Award,
-  Compass,
   BadgeCheck,
 } from "lucide-react";
 import AgendaForm from "../components/AgendaForm.jsx";
@@ -20,6 +19,7 @@ import { motion } from "framer-motion";
 import { posts } from "../blog/posts.js";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } };
+
 export default function Home() {
   const [openCV, setOpenCV] = useState(false);
   const blogPosts = [...posts].sort(
@@ -41,29 +41,19 @@ export default function Home() {
         rafId = requestAnimationFrame(tick);
         return;
       }
-
       const maxScroll = slider.scrollWidth - slider.clientWidth;
-
-      if (maxScroll <= 0) {
-        rafId = requestAnimationFrame(tick);
-        return;
-      }
-
+      if (maxScroll <= 0) { rafId = requestAnimationFrame(tick); return; }
       if (slider.scrollLeft >= maxScroll - 1) direction = -1;
       if (slider.scrollLeft <= 1) direction = 1;
-
       slider.scrollLeft += speed * direction;
       rafId = requestAnimationFrame(tick);
     };
 
     let interactionTimeoutId;
-
     const stopInteraction = () => {
       userIsInteracting = true;
       window.clearTimeout(interactionTimeoutId);
-      interactionTimeoutId = window.setTimeout(() => {
-        userIsInteracting = false;
-      }, 1400);
+      interactionTimeoutId = window.setTimeout(() => { userIsInteracting = false; }, 1400);
     };
 
     slider.addEventListener("touchstart", stopInteraction, { passive: true });
@@ -91,16 +81,15 @@ export default function Home() {
     <>
       <Helmet>
         <title>
-          Psicólogo en Olivos y psicólogo online en Buenos Aires — Lic. Nicolás
-          Quiroga
+          Psicoanalista lacaniano en Olivos y online — Nicolás Quiroga
         </title>
         <meta
           name="description"
-          content="Psicólogo en Olivos (Vicente López) y atención online para Argentina y exterior. Lic. Nicolás Quiroga (M.N. 59.272). Terapia para ansiedad, duelos, vínculos, crisis vitales y autoestima."
+          content="Psicoanalista lacaniano (M.N. 59.272) en Olivos y online para toda Argentina. Sin coaching ni autoayuda — trabajo con síntomas, angustia, repeticiones y vínculos."
         />
         <meta
           name="keywords"
-          content="psicólogo en Olivos, psicólogo Vicente López, psicoanalista en Olivos, terapia online Argentina, psicoterapia online Buenos Aires, terapia para ansiedad, terapia para duelos, terapia para vínculos, crisis vitales, autoestima"
+          content="psicoanalista lacaniano, psicoanalista online Argentina, psicoanalista Olivos, psicoanalista zona norte Buenos Aires, psicoanálisis lacaniano online, psicoanalista Vicente López"
         />
         <meta
           property="og:image"
@@ -108,11 +97,11 @@ export default function Home() {
         />
         <meta
           property="og:image:alt"
-          content="Retrato del psicoanalista Rodrigo Nicolás Quiroga Martínez en su consultorio"
+          content="Nicolás Quiroga, psicoanalista lacaniano en Olivos"
         />
       </Helmet>
 
-      {/* Hero — mobile-first */}
+      {/* Hero */}
       <Section className="pt-6 pb-12 md:pt-10 md:pb-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-6 px-4 sm:px-6 md:grid-cols-2 md:gap-10">
           <motion.div
@@ -122,14 +111,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="h-serif text-[2rem] leading-tight font-semibold sm:text-[2.5rem] md:text-5xl">
-              Psicoanálisis clínico
+              Psicoanálisis lacaniano
               <span className="block font-light">en Olivos y online</span>
             </h1>
             <p className="mt-4 text-sumi/75 max-w-prose text-base">
-              Soy psicólogo clínico (M.N. 59.272). Atiendo en Olivos y también
-              online. En sesión trabajo desde el psicoanálisis, y cuando hace
-              falta sumo herramientas concretas para bajar ansiedad, ordenar
-              ideas y tomar decisiones con más claridad.
+              Soy psicoanalista lacaniano (M.N. 59.272). Atiendo en Olivos y online para toda Argentina. El análisis no es coaching ni autoayuda — es un trabajo sobre lo que se repite, lo que angustia sin nombre y lo que el síntoma dice sin que uno lo sepa.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
               <a
@@ -150,7 +136,7 @@ export default function Home() {
           >
             <img
               src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
-              alt="Rodrigo Nicolás Quiroga Martínez, psicólogo y psicoanalista en Olivos"
+              alt="Nicolás Quiroga, psicoanalista lacaniano en Olivos"
               loading="eager"
               fetchpriority="high"
               className="h-full w-full object-cover [filter:saturate(.9)_contrast(1.05)]"
@@ -160,140 +146,82 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="pb-2 md:pb-4">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="rounded-3xl border border-moss/20 bg-moss/5 p-5 md:p-6">
-            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
-              ¿Para qué hacer terapia?
-            </p>
-            <h2 className="mt-2 text-xl md:text-2xl font-semibold">
-              Para que lo que hoy te pesa deje de ordenar tu vida
-            </h2>
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
-              {[
-                "Bajar ansiedad y recuperar calma en el día a día.",
-                "Entender patrones que se repiten en vínculos, trabajo o decisiones.",
-                "Atravesar duelos, crisis o cambios sin quedar solo con la angustia.",
-                "Tomar decisiones con más claridad, deseo propio y menos culpa.",
-              ].map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-black/5 bg-white/80 px-4 py-3 text-sm text-sumi/85 flex items-start gap-2"
-                >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
-                  <span>{item}</span>
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
+      {/* Podcast
+           TODO: Reemplazá el bloque interno con el embed de tu plataforma.
+           Ejemplos listos para pegar:
+           · Spotify:  <iframe style={{borderRadius:"12px"}} src="https://open.spotify.com/embed/show/TU_SHOW_ID" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+           · YouTube:  <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=TU_PLAYLIST_ID" title="Podcast" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media" allowFullScreen></iframe>
+           · Apple Podcasts: usá el botón "Embed" en tu episodio y pegá el <iframe> que te dan.
+      */}
       <Section className="pb-4 md:pb-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="rounded-3xl border border-black/5 bg-white/70 p-5 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
-              Confianza profesional
+          <div className="rounded-3xl border border-gold/30 bg-gold/5 p-5 md:p-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">Podcast</p>
+            <h2 className="mt-1 text-xl font-semibold">Psicoanálisis en audio</h2>
+            <p className="mt-1 text-sm text-sumi/70 mb-4">
+              Conversaciones sobre clínica, síntoma y deseo.
             </p>
-            <div className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-              {[
-                {
-                  icon: GraduationCap,
-                  title: "Formación sólida",
-                  desc: "Licenciatura UBA + posgrados clínicos.",
-                },
-                {
-                  icon: Award,
-                  title: "13 años de experiencia clínica",
-                  desc: "Trayectoria sostenida en procesos terapéuticos individuales.",
-                },
-                {
-                  icon: Compass,
-                  title: "Modo de intervención integrador",
-                  desc: "Psicoanálisis en profundidad + recursos prácticos basados en evidencia.",
-                },
-                {
-                  icon: BadgeCheck,
-                  title: "Matrícula nacional activa",
-                  desc: "M.N. 59.272 con atención presencial y online.",
-                },
-              ].map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-black/5 bg-white p-4"
-                >
-                  <item.icon className="h-5 w-5 text-moss" />
-                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
-                  <p className="mt-1 text-xs text-sumi/70">{item.desc}</p>
-                </article>
-              ))}
+            {/* REEMPLAZÁ ESTE DIV CON TU EMBED */}
+            <div className="flex items-center justify-center rounded-2xl border border-dashed border-gold/50 bg-white/60 py-10 text-sm text-sumi/40 italic">
+              Embed del podcast — pegá acá el código de tu plataforma
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Story-telling en 4 capas */}
-          <Section className="pb-10 md:pb-16">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 grid gap-4 md:grid-cols-4">
-              {[
-                {
-                  t: "Llegás con algo que duele",
-                  d: "Partimos de la urgencia y la leemos desde el psicoanálisis para entender qué la sostiene en tu historia y en tu cuerpo.",
-                },
-                {
-                  t: "Hacemos foco psicoanalítico",
-                  d: "Identificamos repeticiones, exigencias y fantasías. Ordenamos qué es urgente y qué necesita un trabajo de fondo.",
-                },
-                {
-                  t: "Herramientas a medida",
-                  d: "Sumo recursos breves (respiración, mindfulness, escritura guiada) para que tengas alivio mientras avanzamos en profundidad clínica.",
-                },
-                {
-                  t: "Seguimiento claro",
-                  d: "Definimos juntos la frecuencia y los objetivos. Cada pocas semanas revisamos avances para que el proceso psicoanalítico sea sostenible.",
-                },
-              ].map((x, i) => (
-            <motion.article
-              key={x.t}
-              className="rounded-2xl border border-black/5 bg-white/60 p-5 shadow-sm"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, delay: 0.05 * i }}
-            >
-              <h3 className="font-medium flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5" /> {x.t}
-              </h3>
-              <p className="mt-1 text-sm text-sumi/75">{x.d}</p>
-            </motion.article>
-          ))}
+      {/* Cómo pienso la clínica */}
+      <Section className="pb-4 md:pb-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <motion.div
+            className="rounded-3xl border border-black/5 bg-white/80 p-6 md:p-8 shadow-sm"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              Mi mirada
+            </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold">
+              Cómo pienso la clínica
+            </h2>
+            <div className="mt-4 space-y-3 text-sumi/80 leading-relaxed max-w-2xl">
+              <p>
+                El psicoanálisis no apunta a que te sientas mejor cuanto antes: apunta a que puedas leer lo que te pasa. El síntoma no es el problema a eliminar — es la entrada al trabajo.
+              </p>
+              <p>
+                En sesión, el lenguaje importa. Un lapsus, una imagen que vuelve, una frase que se repite sin que uno la busque — ahí está la materia. El inconsciente habla, y el análisis es un trabajo de escucha sobre ese texto.
+              </p>
+              <p>
+                Trabajo desde Lacan. Eso significa que no tengo protocolo ni manual — tengo escucha, y una apuesta por el sujeto que está más allá de sus síntomas.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </Section>
 
+      {/* Blog — posición elevada, más presencia */}
       <Section>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-12">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-sumi/70">
-                Blog
+                Lecturas
               </p>
               <h2 className="mt-1 text-2xl md:text-3xl font-semibold">
-                Posteos del blog
+                Blog de psicoanálisis
               </h2>
-              <p className="mt-2 text-sm text-sumi/75">
-                Referencias de lectura para profundizar ideas que también
-                trabajamos en sesión.
+              <p className="mt-2 text-sm text-sumi/75 max-w-lg">
+                Artículos sobre clínica, síntoma, cultura y deseo — la misma materia que aparece en sesión.
               </p>
             </div>
             <Link
               to="/blog"
               className="inline-flex w-full items-center justify-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white sm:w-auto"
             >
-              Ver todos
+              Ver todos los artículos
             </Link>
           </div>
-
-
 
           <div className="mt-3 flex items-center justify-between gap-3 text-xs text-sumi/60 sm:hidden">
             <span>Deslizá para leer más artículos</span>
@@ -303,7 +231,7 @@ export default function Home() {
             <div
               ref={blogSliderRef}
               className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 pr-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              aria-label="Posteos del blog"
+              aria-label="Blog de psicoanálisis"
             >
               {blogPosts.map((post, i) => (
                 <motion.div
@@ -346,8 +274,114 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* ¿Es para mí? */}
+      <Section className="pb-2 md:pb-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-3xl border border-moss/20 bg-moss/5 p-5 md:p-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              ¿Es para mí?
+            </p>
+            <h2 className="mt-2 text-xl md:text-2xl font-semibold">
+              Para lo que no cierra, se repite o no tiene nombre
+            </h2>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                "Cuando algo se repite — en vínculos, trabajo o cuerpo — y no entendés por qué.",
+                "Cuando aparece el síntoma: angustia, inhibición, un malestar que no tiene causa clara.",
+                "Para hacer algo con un duelo, una crisis o una ruptura que no termina de cerrar.",
+                "Para escuchar qué quiere tu deseo, más allá de lo que creés que querés.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-black/5 bg-white/80 px-4 py-3 text-sm text-sumi/85 flex items-start gap-2"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+                  <span>{item}</span>
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
 
-      {/* Agenda (en Home) */}
+      {/* Formación */}
+      <Section className="pb-4 md:pb-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-3xl border border-black/5 bg-white/70 p-5 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/70">
+              Formación
+            </p>
+            <div className="mt-3 grid gap-3 md:grid-cols-3">
+              {[
+                {
+                  icon: GraduationCap,
+                  title: "Formación clínica",
+                  desc: "Lic. en Psicología (UBA) + Psicoanálisis en ALEF.",
+                },
+                {
+                  icon: Award,
+                  title: "13 años de clínica",
+                  desc: "Trayectoria sostenida en procesos analíticos individuales.",
+                },
+                {
+                  icon: BadgeCheck,
+                  title: "Matrícula nacional activa",
+                  desc: "M.N. 59.272. Atención presencial en Olivos y online.",
+                },
+              ].map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-black/5 bg-white p-4"
+                >
+                  <item.icon className="h-5 w-5 text-moss" />
+                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                  <p className="mt-1 text-xs text-sumi/70">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* El trabajo analítico */}
+      <Section className="pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 grid gap-4 md:grid-cols-4">
+          {[
+            {
+              t: "El síntoma trae algo",
+              d: "La consulta empieza por lo que duele, lo que insiste o lo que no puede dejar de hacerse. Ese es el punto de entrada.",
+            },
+            {
+              t: "El inconsciente habla",
+              d: "Escuchamos lo que el lenguaje trae: las repeticiones, los sueños, los lapsus, lo que aparece sin que uno lo busque.",
+            },
+            {
+              t: "La palabra opera",
+              d: "La interpretación no explica: abre. Algo se desplaza, algo se afloja. El sujeto empieza a leer su propio texto.",
+            },
+            {
+              t: "El tiempo es del análisis",
+              d: "No hay pasos fijos ni manuales. El proceso dura lo que el analizante necesite — puede ser meses o años.",
+            },
+          ].map((x, i) => (
+            <motion.article
+              key={x.t}
+              className="rounded-2xl border border-black/5 bg-white/60 p-5 shadow-sm"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.05 * i }}
+            >
+              <h3 className="font-medium flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5" /> {x.t}
+              </h3>
+              <p className="mt-1 text-sm text-sumi/75">{x.d}</p>
+            </motion.article>
+          ))}
+        </div>
+      </Section>
+
+      {/* Agenda */}
       <Section id="agenda">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-10 md:pb-16">
           <div className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow">
@@ -362,11 +396,16 @@ export default function Home() {
                 >
                   Agenda tu primera sesión
                 </motion.h2>
-                <p className="mt-2 text-sm text-sumi/75">
-                  Durante el primer mes, propongo{' '}
-                  <strong>1 sesión semanal</strong> para entender qué necesitás.
-                  Luego, si querés, podemos pasar a{' '}
-                  <strong>cada 15 días</strong> y sostener los avances.
+                <p className="mt-3 text-sm text-sumi/85 border-l-2 border-gold pl-3 italic">
+                  Esto es psicoanálisis, no coaching ni autoayuda. Si buscás técnicas rápidas, estrategias de productividad o acompañamiento motivacional — probablemente no sea lo que ofrezco.
+                </p>
+                <p className="mt-3 text-sm text-sumi/75">
+                  Si algo se repite, angustia o no encontrás las palabras para nombrarlo — eso sí es terreno de análisis.
+                </p>
+                <p className="mt-3 text-sm text-sumi/75">
+                  Primer mes:{" "}
+                  <strong>1 sesión semanal</strong> para delimitar el campo de trabajo. Luego podemos pasar a{" "}
+                  <strong>cada 15 días</strong>.
                 </p>
                 <p className="mt-2 text-sm text-sumi/75 flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
@@ -381,19 +420,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Acá va el c.v. */}
+      {/* CV */}
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 -mt-4 mb-2">
         <button
           onClick={() => {
             const next = !openCV;
             setOpenCV(next);
-            try {
-              window.gtag && window.gtag("event", "cv_toggle", { open: next });
-            } catch {}
-            try {
-              window.fbq &&
-                window.fbq("trackCustom", "CvToggle", { open: next });
-            } catch {}
+            try { window.gtag && window.gtag("event", "cv_toggle", { open: next }); } catch {}
+            try { window.fbq && window.fbq("trackCustom", "CvToggle", { open: next }); } catch {}
             if (next) {
               setTimeout(() => {
                 document
@@ -411,9 +445,7 @@ export default function Home() {
           ) : (
             <ChevronDown className="w-4 h-4" />
           )}
-          {openCV
-            ? "Ocultar C.V., cursos y hobbies"
-            : "Ver C.V., cursos y hobbies"}
+          {openCV ? "Ocultar C.V., cursos y hobbies" : "Ver C.V., cursos y hobbies"}
         </button>
 
         <div id="cv-anchor" className="mt-3" />

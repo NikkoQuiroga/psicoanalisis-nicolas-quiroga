@@ -46,6 +46,10 @@ export default function AgendaForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-3">
+      <div className="text-xs text-sumi/70 p-3 rounded-xl bg-sumi/5 border border-sumi/10 leading-relaxed">
+        <strong className="block mb-1 text-sumi/90">Antes de escribir:</strong>
+        Trabajo desde el psicoanálisis — no ofrezco coaching, técnicas de bienestar ni autoayuda. Si lo que buscás es eso, probablemente no sea lo que necesitás acá.
+      </div>
       <div className="text-sm text-sumi/80 p-3 rounded-xl bg-washi border border-black/5">
         Honorario por sesión: <strong>{priceLabel}</strong>
       </div>
@@ -78,11 +82,12 @@ export default function AgendaForm() {
           onChange={(e) => setForm({ ...form, reason: e.target.value })}
         >
           <option value="">Elegí una opción</option>
-          <option>Ansiedad</option>
-          <option>Insomnio</option>
-          <option>Relaciones</option>
-          <option>Duelo</option>
-          <option>Exploración personal</option>
+          <option>Angustia o síntoma sin nombre claro</option>
+          <option>Algo que se repite y no entiendo por qué</option>
+          <option>Ansiedad o crisis</option>
+          <option>Duelo o pérdida</option>
+          <option>Vínculos o relaciones</option>
+          <option>Inhibición o bloqueo</option>
           <option>Otro</option>
         </select>
       </label>
