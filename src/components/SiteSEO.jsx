@@ -10,12 +10,14 @@ export default function SiteSEO() {
   const defaultImage = `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
 
-  const org = {
+  const person = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Rodrigo Nicolás Quiroga Martínez",
-    jobTitle: "Licenciado en Psicología",
+    name: "Nicolás Quiroga",
+    alternateName: "Rodrigo Nicolás Quiroga Martínez",
+    jobTitle: "Psicoanalista clínico",
     identifier: "M.N. 59.272",
+    image: defaultImage,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Olivos",
@@ -25,50 +27,70 @@ export default function SiteSEO() {
     url: site,
     telephone: `+${phone}`,
     knowsAbout: [
-      "psicólogo en Olivos",
-      "psicoanalista online",
-      "terapia online Buenos Aires",
-      "psicólogo para ansiedad",
-      "psicoterapia en Vicente López",
-      "autoestima",
-      "duelos",
-      "vínculos",
+      "Psicoanálisis lacaniano",
+      "Lacan",
+      "Inconsciente",
+      "Síntoma",
+      "Angustia",
+      "Goce",
+      "Objeto a",
+      "Transferencia",
+      "Sujeto",
+      "Deseo",
+      "Psicoanálisis online",
+      "Psicoanalista en Olivos",
+      "Psicoanalista zona norte Buenos Aires",
     ],
   };
 
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "Psychologist",
-    name: "Lic. Rodrigo Nicolás Quiroga Martínez - Psicólogo en Olivos y online",
+    name: "Lic. Nicolás Quiroga — Psicoanalista clínico en Olivos y online",
     url: site,
     telephone: `+${phone}`,
-    image: `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`,
+    image: defaultImage,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Av. Libertador (consultorio a metros de la estación Olivos)",
+      streetAddress: "Av. Libertador (a metros de la Estación Olivos)",
       addressLocality: "Olivos",
       addressRegion: "Buenos Aires",
       postalCode: "1636",
       addressCountry: "AR",
     },
-    areaServed: ["Olivos", "Vicente López", "Buenos Aires", "Argentina"],
-    priceRange: "$$$",
-    sameAs: [
-      "https://wa.me/5491161402223",
-      "https://www.instagram.com/",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -34.5138,
+      longitude: -58.4943,
+    },
+    areaServed: [
+      { "@type": "City", name: "Olivos" },
+      { "@type": "City", name: "Vicente López" },
+      { "@type": "AdministrativeArea", name: "Zona Norte Buenos Aires" },
+      { "@type": "Country", name: "Argentina" },
     ],
+    priceRange: "$$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "21:00",
+      },
+    ],
+    sameAs: [`https://wa.me/${phone}`],
     description:
-      "Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos, autoestima y crisis vitales.",
+      "Psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta. Para quienes atraviesan momentos que no saben cómo nombrar.",
     availableService: [
       {
         "@type": "MedicalTherapy",
-        name: "Psicoanálisis y psicoterapia individual",
-        areaServed: "AR",
+        name: "Psicoanálisis clínico presencial",
+        areaServed: { "@type": "City", name: "Olivos" },
       },
       {
         "@type": "MedicalTherapy",
-        name: "Terapia online",
-        areaServed: "AR",
+        name: "Psicoanálisis clínico online",
+        areaServed: { "@type": "Country", name: "Argentina" },
       },
     ],
   };
@@ -76,7 +98,7 @@ export default function SiteSEO() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Nicolás Quiroga — Psicólogo y psicoanalista",
+    name: "Lic. Nicolás Quiroga — Psicoanalista clínico",
     url: site,
     inLanguage: "es-AR",
     potentialAction: {
@@ -88,30 +110,31 @@ export default function SiteSEO() {
 
   return (
     <Helmet>
-      {/* básicos */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#F8F7F2" />
-      <meta name="author" content="Rodrigo Nicolás Quiroga Martínez" />
-      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="author" content="Nicolás Quiroga" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <link rel="canonical" href={pageUrl} />
       <meta
         name="description"
-        content="Psicólogo y psicoanalista en Olivos y online. Terapia individual para ansiedad, duelos, vínculos y autoestima con enfoque clínico y herramientas basadas en evidencia."
+        content="Lic. Nicolás Quiroga (M.N. 59.272), psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta."
       />
 
-      {/* OG por defecto (las páginas pueden sobreescribir) */}
-      <meta property="og:site_name" content="Rodrigo Nicolás Quiroga Martínez · Psicólogo (M.N. 59.272)" />
+      {/* OG por defecto */}
+      <meta property="og:site_name" content="Lic. Nicolás Quiroga · Psicoanalista clínico (M.N. 59.272)" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="es_AR" />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={defaultImage} />
-      <meta property="og:image:alt" content="Retrato del psicólogo Rodrigo Nicolás Quiroga Martínez" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Nicolás Quiroga, psicoanalista lacaniano en Olivos" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={defaultImage} />
 
-      {/* JSON-LD Person */}
-      <script type="application/ld+json">{JSON.stringify(org)}</script>
+      {/* JSON-LD */}
+      <script type="application/ld+json">{JSON.stringify(person)}</script>
       <script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
       <script type="application/ld+json">{JSON.stringify(website)}</script>
     </Helmet>

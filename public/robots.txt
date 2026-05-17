@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /aviso-internacional
 
+# Sitemap
 Sitemap: https://nicolasquiroga.com.ar/sitemap.xml

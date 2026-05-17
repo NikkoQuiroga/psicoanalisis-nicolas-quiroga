@@ -68,7 +68,7 @@ export default function Header() {
 
           <Link to="/" className="leading-tight">
             <p className="text-sm tracking-wide text-sumi/80">Lic. Nicolás Quiroga</p>
-            <p className="text-xs text-sumi/60">Psicoanalista + Herramientas basadas en evidencia</p>
+            <p className="text-xs text-sumi/60">Psicoanalista clínico · M.N. 59.272</p>
           </Link>
         </div>
 

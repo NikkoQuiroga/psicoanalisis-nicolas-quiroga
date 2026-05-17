@@ -3,7 +3,7 @@ import useGeo from "../hooks/useGeo.js";
 import { buildWhatsAppURL } from "../utils/wa.js";
 import { trackWA } from "../analytics/events.js";
 
-const AR_PRICE = 35000; // ARS
+const AR_PRICE = 50000; // ARS
 const EXT_PRICE = 35;   // USD
 
 export default function AgendaForm() {
@@ -46,6 +46,13 @@ export default function AgendaForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-3">
+      <div className="text-xs text-sumi/75 p-3 rounded-xl bg-white border border-black/5 leading-relaxed flex items-start gap-2">
+        <span className="text-sm shrink-0">🔒</span>
+        <span>
+          <strong className="text-sumi/90">Reserva absoluta.</strong>{" "}
+          Todo lo que compartás —ahora y en sesión— es estrictamente confidencial. No se comparte con terceros bajo ninguna circunstancia.
+        </span>
+      </div>
       <div className="text-sm text-sumi/80 p-3 rounded-xl bg-washi border border-black/5">
         Honorario por sesión: <strong>{priceLabel}</strong>
       </div>
@@ -78,11 +85,12 @@ export default function AgendaForm() {
           onChange={(e) => setForm({ ...form, reason: e.target.value })}
         >
           <option value="">Elegí una opción</option>
-          <option>Ansiedad</option>
-          <option>Insomnio</option>
-          <option>Relaciones</option>
-          <option>Duelo</option>
-          <option>Exploración personal</option>
+          <option>Angustia o síntoma sin nombre claro</option>
+          <option>Algo que se repite y no entiendo por qué</option>
+          <option>Ansiedad o crisis</option>
+          <option>Duelo o pérdida</option>
+          <option>Vínculos o relaciones</option>
+          <option>Inhibición o bloqueo</option>
           <option>Otro</option>
         </select>
       </label>
