@@ -146,50 +146,6 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Último artículo destacado */}
-      <Section className="pb-4 md:pb-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Link
-            to={`/blog/${blogPosts[0].slug}`}
-            className="group block overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <div className="md:flex">
-              {blogPosts[0].hero && (
-                <div className="md:w-2/5 shrink-0">
-                  <img
-                    src={blogPosts[0].hero}
-                    alt={blogPosts[0].title}
-                    className="h-52 w-full object-cover md:h-full"
-                  />
-                </div>
-              )}
-              <div className="flex flex-col justify-between p-6 md:p-8">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.22em] text-sumi/60 mb-2">
-                    Último artículo del blog
-                  </p>
-                  <h2 className="h-serif text-2xl md:text-3xl font-semibold leading-snug group-hover:underline">
-                    {blogPosts[0].title}
-                  </h2>
-                  <p className="mt-3 text-sm text-sumi/70 leading-relaxed line-clamp-3">
-                    {blogPosts[0].description}
-                  </p>
-                </div>
-                <div className="mt-5 flex items-center justify-between">
-                  <p className="text-xs text-sumi/50">
-                    {new Date(blogPosts[0].date).toLocaleDateString("es-AR", { year: "numeric", month: "long", day: "numeric" })}
-                    {" · "}{blogPosts[0].readMinutes} min
-                  </p>
-                  <span className="text-sm font-medium text-sumi flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Leer →
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </Section>
-
       {/* Cómo pienso la clínica */}
       <Section className="pb-4 md:pb-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
