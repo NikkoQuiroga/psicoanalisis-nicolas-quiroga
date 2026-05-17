@@ -64,7 +64,7 @@ export default function BlogPost() {
     author: {
       "@type": "Person",
       name: "Nicolás Quiroga",
-      jobTitle: "Psicoanalista lacaniano",
+      jobTitle: "Psicoanalista clínico",
       url: site,
     },
     datePublished: date,
@@ -191,11 +191,11 @@ export default function BlogPost() {
           <div>
             <p className="font-semibold text-sm">Nicolás Quiroga</p>
             <p className="text-xs text-sumi/60 mt-0.5">
-              Psicoanalista lacaniano · M.N. 59.272 · Olivos y online
+              Psicoanalista clínico · M.N. 59.272 · Olivos y online
             </p>
             <p className="text-xs text-sumi/70 mt-2 leading-relaxed">
               Escribo sobre lo que aparece en la clínica: síntoma, angustia, repetición, deseo.
-              Sin manual ni protocolo — solo escucha.
+              Trabajo con hipótesis clínicas y un encuadre riguroso.
             </p>
           </div>
         </div>
@@ -206,14 +206,14 @@ export default function BlogPost() {
             Si algo de esto resuena, se puede trabajar en sesión.
           </p>
           <p className="mt-1 text-sm text-sumi/60">
-            Psicoanálisis lacaniano · Olivos y online
+            Psicoanálisis clínico · Olivos y online
           </p>
-          <a
-            href="/#agenda"
+          <Link
+            to="/contacto"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
           >
             Agenda tu primera sesión
-          </a>
+          </Link>
         </div>
 
         {/* Prev / Next */}
