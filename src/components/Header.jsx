@@ -28,7 +28,7 @@ export default function Header() {
 
   const items = [
     ["Inicio", "/"],
-    ["Cómo trabajo", "/faq"],
+    ["¿Cómo funciona?", "/faq"],
     ["Testimonios", "/testimonios"],
     ["Ubicación", "/ubicacion"],
     ["Blog", "/blog"],
