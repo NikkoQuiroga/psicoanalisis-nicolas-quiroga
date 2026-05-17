@@ -9,8 +9,62 @@ import TerapiaCrisisEconomica from "./TerapiaCrisisEconomica.jsx";
 import PsicoanalisisOnline from "./PsicoanalisisOnline.jsx";
 import DiferenciaPsicologoPsicoanalista from "./DiferenciaPsicologoPsicoanalista.jsx";
 import ValeLaPenaPagarTerapia from "./ValeLaPenaPagarTerapia.jsx";
+import Burnout from "./Burnout.jsx";
+import Insomnio from "./Insomnio.jsx";
+import IAPsicoanalisis from "./IAPsicoanalisis.jsx";
 
 export const posts = [
+  {
+    slug: "chatgpt-no-te-va-a-analizar",
+    title: "ChatGPT no te va a analizar",
+    description:
+      "Hay algo atractivo en hablarle a una máquina que nunca te juzga. Pero la IA valida siempre, no tiene inconsciente, no puede sorprenderse. Y eso es exactamente el problema.",
+    date: "2026-05-17",
+    tags: [
+      "Inteligencia artificial y psicoanálisis",
+      "IA terapia",
+      "ChatGPT psicólogo",
+      "Transferencia",
+      "Psicoanálisis",
+    ],
+    readMinutes: 7,
+    hero: null,
+    Component: IAPsicoanalisis,
+  },
+  {
+    slug: "burnout-por-que-no-alcanza-con-descansar",
+    title: "Burnout: por qué no alcanza con descansar",
+    description:
+      "El burnout no es una batería que se agotó. Algo te mantuvo corriendo. Y si no entendés qué, el descanso dura hasta que volvés a lo mismo.",
+    date: "2026-05-17",
+    tags: [
+      "Burnout",
+      "Agotamiento laboral",
+      "Estrés laboral",
+      "Psicoanálisis",
+      "Salud mental trabajo",
+    ],
+    readMinutes: 7,
+    hero: null,
+    Component: Burnout,
+  },
+  {
+    slug: "insomnio-las-3-de-la-manana",
+    title: "Las 3 de la mañana saben algo que vos no querés saber",
+    description:
+      "El insomnio no siempre es un problema de sueño. Muchas veces es lo que aparece cuando caen todas las distracciones del día y algo que no encontró lugar finalmente puede hablar.",
+    date: "2026-05-17",
+    tags: [
+      "Insomnio",
+      "No puedo dormir",
+      "Insomnio psicológico",
+      "Ansiedad nocturna",
+      "Psicoanálisis",
+    ],
+    readMinutes: 6,
+    hero: null,
+    Component: Insomnio,
+  },
   {
     slug: "vale-la-pena-pagar-terapia",
     title: "¿Vale la pena pagar por terapia?",

@@ -19,6 +19,24 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://nicolasquiroga.com.ar/blog/chatgpt-no-te-va-a-analizar</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nicolasquiroga.com.ar/blog/burnout-por-que-no-alcanza-con-descansar</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nicolasquiroga.com.ar/blog/insomnio-las-3-de-la-manana</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nicolasquiroga.com.ar/blog/vale-la-pena-pagar-terapia</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
