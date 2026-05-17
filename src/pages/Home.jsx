@@ -264,13 +264,6 @@ export default function Home() {
                   Agenda tu primera sesión
                 </motion.h2>
 
-                <div className="flex items-start gap-3 rounded-2xl border border-black/5 bg-white/70 px-4 py-3">
-                  <span className="shrink-0 text-base">🔒</span>
-                  <p className="text-sm text-sumi/80">
-                    <strong>Reserva absoluta.</strong> Todo lo que ocurre en sesión es estrictamente confidencial. No se comparte con terceros bajo ninguna circunstancia.
-                  </p>
-                </div>
-
                 <div className="space-y-2 text-sm text-sumi/75">
                   <p>La primera sesión no implica compromiso de continuidad. Es el punto de partida para ver si podemos trabajar juntos.</p>
                   <p>Primer mes: <strong>1 sesión semanal</strong>. Luego definimos la frecuencia según el proceso.</p>
