@@ -51,7 +51,7 @@ export default function Contacto() {
               <div className="space-y-2 text-sm text-sumi/75 leading-relaxed">
                 <p className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-gold" />
-                  <span><strong className="text-sumi/90">Presencial</strong> — Olivos, a metros de la Estación (línea Mitre)</span>
+                  <span><strong className="text-sumi/90">Presencial</strong> — Olivos, a metros de la Estación La Lucila (línea Mitre)</span>
                 </p>
                 <p className="flex items-start gap-2">
                   <MessageCircle className="w-4 h-4 shrink-0 mt-0.5 text-gold" />
