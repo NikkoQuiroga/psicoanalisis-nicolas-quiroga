@@ -52,7 +52,7 @@ export default function SiteSEO() {
     image: defaultImage,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Av. Libertador (a metros de la Estación La Lucila)",
+      streetAddress: "Olivos, Vicente López",
       addressLocality: "Olivos",
       addressRegion: "Buenos Aires",
       postalCode: "1636",

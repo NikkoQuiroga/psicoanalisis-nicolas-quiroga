@@ -27,7 +27,7 @@ const categories = [
     items: [
       {
         q: "¿Online o presencial?",
-        a: "Ambas modalidades están disponibles. Las sesiones presenciales se realizan en Olivos, a metros de la Estación La Lucila (línea Mitre). Las sesiones online funcionan igual de bien para quienes viven en otra ciudad o en el exterior.",
+        a: "Ambas modalidades están disponibles. Las sesiones presenciales se realizan en Olivos, Vicente López. La dirección exacta se confirma al coordinar el turno. Las sesiones online funcionan igual de bien para quienes viven en otra ciudad o en el exterior.",
       },
       {
         q: "¿Con qué frecuencia nos vemos?",
