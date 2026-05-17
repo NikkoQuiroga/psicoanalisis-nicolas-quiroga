@@ -28,7 +28,7 @@ export const posts = [
       "Psicoanálisis",
     ],
     readMinutes: 7,
-    hero: null,
+    hero: "/media/chatgpt-no-te-va-a-analizar.webp",
     Component: IAPsicoanalisis,
   },
   {
@@ -45,7 +45,7 @@ export const posts = [
       "Salud mental trabajo",
     ],
     readMinutes: 7,
-    hero: null,
+    hero: "/media/burnout-por-que-no-alcanza-con-descansar.webp",
     Component: Burnout,
   },
   {
@@ -62,7 +62,7 @@ export const posts = [
       "Psicoanálisis",
     ],
     readMinutes: 6,
-    hero: null,
+    hero: "/media/insomnio-las-3-de-la-manana.webp",
     Component: Insomnio,
   },
   {
@@ -79,7 +79,7 @@ export const posts = [
       "Costo psicólogo",
     ],
     readMinutes: 7,
-    hero: null,
+    hero: "/media/vale-la-pena-pagar-terapia.webp",
     Component: ValeLaPenaPagarTerapia,
   },
   {
@@ -96,7 +96,7 @@ export const posts = [
       "Cómo elegir terapeuta",
     ],
     readMinutes: 8,
-    hero: null,
+    hero: "/media/diferencia-psicologo-psicoanalista-coach.webp",
     Component: DiferenciaPsicologoPsicoanalista,
   },
   {
@@ -112,7 +112,7 @@ export const posts = [
       "Transferencia",
     ],
     readMinutes: 6,
-    hero: null,
+    hero: "/media/psicoanalisis-online-funciona.webp",
     Component: PsicoanalisisOnline,
   },
   {
