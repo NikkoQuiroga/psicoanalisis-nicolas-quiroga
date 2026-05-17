@@ -6,8 +6,61 @@ import AngustiaExistencial from "./AngustiaExistencial.jsx";
 import AnsiedadVidaModerna from "./AnsiedadVidaModerna.jsx";
 import PsicoanalisisPseudociencia from "./PsicoanalisisPseudociencia.jsx";
 import TerapiaCrisisEconomica from "./TerapiaCrisisEconomica.jsx";
+import PsicoanalisisOnline from "./PsicoanalisisOnline.jsx";
+import DiferenciaPsicologoPsicoanalista from "./DiferenciaPsicologoPsicoanalista.jsx";
+import ValeLaPenaPagarTerapia from "./ValeLaPenaPagarTerapia.jsx";
 
 export const posts = [
+  {
+    slug: "vale-la-pena-pagar-terapia",
+    title: "¿Vale la pena pagar por terapia?",
+    description:
+      "El costo de la terapia es visible. El costo de no hacerlo es más difuso, pero igual de real. Una mirada honesta sobre el valor del análisis y por qué el 'todavía no es el momento' suele ser parte del problema.",
+    date: "2026-05-17",
+    tags: [
+      "Honorarios",
+      "Psicoanálisis",
+      "Salud mental",
+      "Vale la pena la terapia",
+      "Costo psicólogo",
+    ],
+    readMinutes: 7,
+    hero: null,
+    Component: ValeLaPenaPagarTerapia,
+  },
+  {
+    slug: "diferencia-psicologo-psicoanalista-coach",
+    title: "Psicólogo, psicoanalista, coach: qué hace cada uno y cómo elegir",
+    description:
+      "Los tres trabajan con personas y cobran por hora, pero hacen cosas muy distintas. Una guía sin condescendencia para entender qué encuadre tiene sentido según lo que estás buscando.",
+    date: "2026-05-17",
+    tags: [
+      "Diferencia psicólogo psicoanalista",
+      "Coach vs psicólogo",
+      "Psicoanálisis vs TCC",
+      "Qué es un psicoanalista",
+      "Cómo elegir terapeuta",
+    ],
+    readMinutes: 8,
+    hero: null,
+    Component: DiferenciaPsicologoPsicoanalista,
+  },
+  {
+    slug: "psicoanalisis-online-funciona",
+    title: "¿Funciona el psicoanálisis online?",
+    description:
+      "La transferencia no depende de estar en el mismo cuarto. Qué cambia y qué no cuando el análisis se hace por videollamada, desde adentro de la práctica.",
+    date: "2026-05-17",
+    tags: [
+      "Psicoanálisis online",
+      "Terapia online",
+      "Análisis online Argentina",
+      "Transferencia",
+    ],
+    readMinutes: 6,
+    hero: null,
+    Component: PsicoanalisisOnline,
+  },
   {
     slug: "terapia-en-crisis-economica",
     title:
