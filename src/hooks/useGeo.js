@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 
-function tzIsAR() {
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone.startsWith("America/Argentina");
-  } catch {
-    return false;
-  }
-}
-
 export default function useGeo() {
+  // Asume Argentina por defecto — la mayoría de las visitas son locales.
+  // Solo cambia a internacional si la API confirma explícitamente otro país.
   const [geo, setGeo] = useState({
-    loading: true,
-    country: null,
+    loading: false,
+    country: "Argentina",
     city: null,
-    tz: typeof Intl !== "undefined" ? Intl.DateTimeFormat().resolvedOptions().timeZone : null,
-    cc: tzIsAR() ? "AR" : null, // respuesta inmediata basada en timezone, sin esperar la API
+    tz: typeof Intl !== "undefined"
+      ? Intl.DateTimeFormat().resolvedOptions().timeZone
+      : "America/Argentina/Buenos_Aires",
+    cc: "AR",
   });
 
   useEffect(() => {
@@ -22,23 +18,18 @@ export default function useGeo() {
       try {
         const r = await fetch("https://ipapi.co/json/");
         const j = await r.json();
-        setGeo({
-          loading: false,
-          country: j.country_name,
-          city: j.city,
-          tz: j.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
-          cc: j.country_code,
-        });
+        if (j.country_code) {
+          setGeo({
+            loading: false,
+            country: j.country_name,
+            city: j.city,
+            tz: j.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
+            cc: j.country_code,
+          });
+        }
+        // Si no hay country_code válido, mantiene el default AR
       } catch {
-        // API falló: usar timezone como fallback definitivo
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        setGeo({
-          loading: false,
-          country: null,
-          city: null,
-          tz,
-          cc: tz.startsWith("America/Argentina") ? "AR" : null,
-        });
+        // API falló → mantiene el default AR
       }
     })();
   }, []);
