@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Clock, ArrowLeft, ArrowRight } from "lucide-react";
@@ -176,7 +176,9 @@ export default function BlogPost() {
       >
         {/* Article content */}
         <div className="prose prose-sumi max-w-none">
-          <Component />
+          <Suspense fallback={<div className="space-y-3 animate-pulse"><div className="h-4 bg-black/5 rounded w-3/4"/><div className="h-4 bg-black/5 rounded"/><div className="h-4 bg-black/5 rounded w-5/6"/><div className="h-4 bg-black/5 rounded w-2/3"/></div>}>
+            <Component />
+          </Suspense>
         </div>
 
         {/* Author box */}

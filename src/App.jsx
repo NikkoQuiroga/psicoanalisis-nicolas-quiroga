@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -7,22 +7,30 @@ import Footer from "./components/Footer.jsx";
 import WhatsAppFab from "./components/WhatsAppFab.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
 import BackgroundInk from "./components/BackgroundInk.jsx";
-
-// Páginas
-import Home from "./pages/Home.jsx";
-import Testimonios from "./pages/Testimonios.jsx";
-import FAQ from "./pages/FAQ.jsx";
-import Ubicacion from "./pages/Ubicacion.jsx";
-import Contacto from "./pages/Contacto.jsx";
-import Blog from "./pages/Blog.jsx";
-import BlogPost from "./pages/BlogPost.jsx";
-import Privacidad from "./pages/legal/Privacidad.jsx";
-import Terminos from "./pages/legal/Terminos.jsx";
-import Consentimiento from "./pages/legal/Consentimiento.jsx";
-import AvisoInternacional from "./pages/AvisoInternacional.jsx";
-import Gracias from "./pages/Gracias.jsx";
-import NotFound from "./pages/NotFound.jsx";
 import SiteSEO from "./components/SiteSEO.jsx";
+
+// Páginas — lazy loaded (cada una en su propio chunk)
+const Home            = lazy(() => import("./pages/Home.jsx"));
+const Testimonios     = lazy(() => import("./pages/Testimonios.jsx"));
+const FAQ             = lazy(() => import("./pages/FAQ.jsx"));
+const Ubicacion       = lazy(() => import("./pages/Ubicacion.jsx"));
+const Contacto        = lazy(() => import("./pages/Contacto.jsx"));
+const Blog            = lazy(() => import("./pages/Blog.jsx"));
+const BlogPost        = lazy(() => import("./pages/BlogPost.jsx"));
+const Privacidad      = lazy(() => import("./pages/legal/Privacidad.jsx"));
+const Terminos        = lazy(() => import("./pages/legal/Terminos.jsx"));
+const Consentimiento  = lazy(() => import("./pages/legal/Consentimiento.jsx"));
+const AvisoInternacional = lazy(() => import("./pages/AvisoInternacional.jsx"));
+const Gracias         = lazy(() => import("./pages/Gracias.jsx"));
+const NotFound        = lazy(() => import("./pages/NotFound.jsx"));
+
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[40vh]">
+      <div className="w-6 h-6 rounded-full border-2 border-gold border-t-transparent animate-spin" />
+    </div>
+  );
+}
 
 // Analytics (opcional, como ya venías)
 function usePageAnalytics() {
@@ -58,7 +66,7 @@ export default function App() {
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
           >
-            {/* 👇 ¡IMPORTANTE! Pasamos el location a Routes para que haga match correcto */}
+            <Suspense fallback={<PageLoader />}>
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/testimonios" element={<Testimonios />} />
@@ -77,6 +85,7 @@ export default function App() {
               <Route path="/gracias" element={<Gracias />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>

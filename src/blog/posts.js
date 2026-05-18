@@ -1,17 +1,19 @@
-import Nostalgia from "./Nostalgia.jsx";
-import Ikigai from "./Ikigai.jsx";
-import ZenOscura from "./ZenOscura.jsx";
-import Autosabotaje from "./Autosabotaje.jsx";
-import AngustiaExistencial from "./AngustiaExistencial.jsx";
-import AnsiedadVidaModerna from "./AnsiedadVidaModerna.jsx";
-import PsicoanalisisPseudociencia from "./PsicoanalisisPseudociencia.jsx";
-import TerapiaCrisisEconomica from "./TerapiaCrisisEconomica.jsx";
-import PsicoanalisisOnline from "./PsicoanalisisOnline.jsx";
-import DiferenciaPsicologoPsicoanalista from "./DiferenciaPsicologoPsicoanalista.jsx";
-import ValeLaPenaPagarTerapia from "./ValeLaPenaPagarTerapia.jsx";
-import Burnout from "./Burnout.jsx";
-import Insomnio from "./Insomnio.jsx";
-import IAPsicoanalisis from "./IAPsicoanalisis.jsx";
+import { lazy } from "react";
+
+const Nostalgia                    = lazy(() => import("./Nostalgia.jsx"));
+const Ikigai                       = lazy(() => import("./Ikigai.jsx"));
+const ZenOscura                    = lazy(() => import("./ZenOscura.jsx"));
+const Autosabotaje                 = lazy(() => import("./Autosabotaje.jsx"));
+const AngustiaExistencial          = lazy(() => import("./AngustiaExistencial.jsx"));
+const AnsiedadVidaModerna          = lazy(() => import("./AnsiedadVidaModerna.jsx"));
+const PsicoanalisisPseudociencia   = lazy(() => import("./PsicoanalisisPseudociencia.jsx"));
+const TerapiaCrisisEconomica       = lazy(() => import("./TerapiaCrisisEconomica.jsx"));
+const PsicoanalisisOnline          = lazy(() => import("./PsicoanalisisOnline.jsx"));
+const DiferenciaPsicologoPsicoanalista = lazy(() => import("./DiferenciaPsicologoPsicoanalista.jsx"));
+const ValeLaPenaPagarTerapia       = lazy(() => import("./ValeLaPenaPagarTerapia.jsx"));
+const Burnout                      = lazy(() => import("./Burnout.jsx"));
+const Insomnio                     = lazy(() => import("./Insomnio.jsx"));
+const IAPsicoanalisis              = lazy(() => import("./IAPsicoanalisis.jsx"));
 
 export const posts = [
   {
@@ -181,7 +183,7 @@ export const posts = [
     slug: "angustia-existencial-sentido-de-la-vida",
     title: "Angustia existencial: cuando la vida pierde sentido y cómo encontrarlo",
     description:
-      "Qué es la angustia existencial, por qué aparece aunque “todo esté bien”, y cómo recuperar sentido con Frankl, Hegel y Žižek.",
+      "Qué es la angustia existencial, por qué aparece aunque "todo esté bien", y cómo recuperar sentido con Frankl, Hegel y Žižek.",
     date: "2025-09-12",
     tags: [
       "Angustia existencial",
@@ -216,15 +218,15 @@ export const posts = [
     title: "La oscura verdad del budismo zen",
     description:
       "Una lectura crítico-psicoanalítica del zen: desapego, metanarrativas y condiciones materiales del sufrimiento.",
-    date: "2025-09-07", // ajustá si querés
+    date: "2025-09-07",
     tags: ["Budismo zen", "Psicoanálisis", "Crítica cultural", "Žižek", "Japón"],
     readMinutes: 7,
-    hero: "/media/oscura-verdad-budismo-zen.webp", // opcional
+    hero: "/media/oscura-verdad-budismo-zen.webp",
     Component: ZenOscura,
   },
   {
     slug: "ikigai-formula-secreta-japonesa-felicidad",
-    title: "Ikigai, la “fórmula secreta japonesa” para la felicidad",
+    title: "Ikigai, la "fórmula secreta japonesa" para la felicidad",
     description:
       "Qué es realmente el ikigai y cómo leerlo desde el psicoanálisis: menos receta universal, más causa que alimente el deseo.",
     date: "2025-09-07",
