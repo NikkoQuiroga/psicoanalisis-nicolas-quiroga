@@ -183,7 +183,7 @@ export const posts = [
     slug: "angustia-existencial-sentido-de-la-vida",
     title: "Angustia existencial: cuando la vida pierde sentido y cómo encontrarlo",
     description:
-      "Qué es la angustia existencial, por qué aparece aunque "todo esté bien", y cómo recuperar sentido con Frankl, Hegel y Žižek.",
+      "Qué es la angustia existencial, por qué aparece aunque 'todo esté bien', y cómo recuperar sentido con Frankl, Hegel y Žižek.",
     date: "2025-09-12",
     tags: [
       "Angustia existencial",
