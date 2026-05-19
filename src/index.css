@@ -5,6 +5,10 @@
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/600.css";
 
+/* Evitar CLS por font-swap: el navegador usa la fuente custom solo si ya está cacheada */
+@font-face { font-family: 'EB Garamond'; font-display: optional; src: local('EB Garamond'); }
+@font-face { font-family: 'Inter'; font-display: optional; src: local('Inter'); }
+
 @import "tailwindcss";
 
 

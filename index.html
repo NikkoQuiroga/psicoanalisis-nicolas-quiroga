@@ -91,41 +91,34 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Meta Pixel -->
+    <!-- Meta Pixel — diferido para no bloquear el hilo principal -->
     <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "857300384002896");
-      fbq("track", "PageView");
+      window._fbq_queue = window._fbq_queue || [];
+      window.fbq = function() { window._fbq_queue.push(arguments); };
+      function _loadFbPixel() {
+        if (window._fbqLoaded) return;
+        window._fbqLoaded = true;
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq && f.fbq.loaded) return;
+          n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+          if (!f._fbq) f._fbq = n;
+          n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = window._fbq_queue || [];
+          t = b.createElement(e); t.async = !0; t.src = v;
+          s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        fbq("init", "857300384002896");
+        fbq("track", "PageView");
+      }
+      // Cargar después de que la página sea interactiva
+      if (document.readyState === "complete") {
+        setTimeout(_loadFbPixel, 3000);
+      } else {
+        window.addEventListener("load", function() { setTimeout(_loadFbPixel, 3000); });
+      }
     </script>
     <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=857300384002896&ev=PageView&noscript=1"
-      />
+      <img height="1" width="1" style="display: none"
+        src="https://www.facebook.com/tr?id=857300384002896&ev=PageView&noscript=1" />
     </noscript>
 
     <div id="root"></div>
