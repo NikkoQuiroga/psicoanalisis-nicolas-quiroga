@@ -226,7 +226,7 @@ export const posts = [
   },
   {
     slug: "ikigai-formula-secreta-japonesa-felicidad",
-    title: "Ikigai, la "fórmula secreta japonesa" para la felicidad",
+    title: "Ikigai, la 'fórmula secreta japonesa' para la felicidad",
     description:
       "Qué es realmente el ikigai y cómo leerlo desde el psicoanálisis: menos receta universal, más causa que alimente el deseo.",
     date: "2025-09-07",
