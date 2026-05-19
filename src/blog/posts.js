@@ -132,7 +132,7 @@ export const posts = [
       "Honorarios",
     ],
     readMinutes: 8,
-    hero: "/media/terapia-en-crisis economica.webp",
+    hero: "/media/terapia-en-crisis-economica.webp",
     Component: TerapiaCrisisEconomica,
   },
   {
