@@ -103,19 +103,17 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" animate="show" transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-black/5 bg-white shadow-md"
-          >
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-black/5 bg-white shadow-md">
             <img
               src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
               alt="Lic. Nicolás Quiroga, psicoanalista clínico en Olivos"
               loading="eager"
               fetchpriority="high"
+              decoding="sync"
               className="h-full w-full object-cover [filter:saturate(.9)_contrast(1.05)]"
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/40" />
-          </motion.div>
+          </div>
         </div>
       </Section>
 
