@@ -14,8 +14,26 @@ const ValeLaPenaPagarTerapia       = lazy(() => import("./ValeLaPenaPagarTerapia
 const Burnout                      = lazy(() => import("./Burnout.jsx"));
 const Insomnio                     = lazy(() => import("./Insomnio.jsx"));
 const IAPsicoanalisis              = lazy(() => import("./IAPsicoanalisis.jsx"));
+const PruebasDeFelicidad           = lazy(() => import("./PruebasDeFelicidad.jsx"));
 
 export const posts = [
+  {
+    slug: "pruebas-de-felicidad-posmodernidad-vacio",
+    title: "Un tiempo en el que se piden pruebas de felicidad todo el tiempo",
+    description:
+      "Sobre las trampas de la posmodernidad, el mandato de mostrarse feliz y la dificultad de dejar un vacío cuando se teme no existir si no se habla.",
+    date: "2026-06-16",
+    tags: [
+      "Posmodernidad",
+      "Felicidad",
+      "Vacío",
+      "Redes sociales",
+      "Psicoanálisis",
+    ],
+    readMinutes: 8,
+    hero: "/media/oscura-verdad-budismo-zen.webp",
+    Component: PruebasDeFelicidad,
+  },
   {
     slug: "chatgpt-no-te-va-a-analizar",
     title: "ChatGPT no te va a analizar",

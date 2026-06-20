@@ -216,6 +216,20 @@ export default function BlogPost() {
           >
             Agenda tu primera sesión
           </Link>
+          <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs">
+            <Link
+              to="/psicoanalista-olivos"
+              className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-sumi/70 hover:text-sumi"
+            >
+              Psicoanalista en Olivos
+            </Link>
+            <Link
+              to="/psicoanalisis-online"
+              className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-sumi/70 hover:text-sumi"
+            >
+              Psicoanálisis online
+            </Link>
+          </div>
         </div>
 
         {/* Prev / Next */}

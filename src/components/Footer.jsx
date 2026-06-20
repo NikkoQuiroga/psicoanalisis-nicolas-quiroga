@@ -8,6 +8,9 @@ return (
 <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-6 text-xs text-sumi/70 md:flex-row md:items-center md:justify-between">
 <p>© {new Date().getFullYear()} Nicolás Quiroga — Psicología. Confidencialidad y ética profesional.</p>
 <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-sumi/70">
+  <Link className="hover:text-sumi" to="/psicoanalista-olivos">Psicoanalista en Olivos</Link>
+  <Link className="hover:text-sumi" to="/psicoanalisis-online">Psicoanálisis online</Link>
+  <Link className="hover:text-sumi" to="/ubicacion">Ubicación</Link>
   <Link className="hover:text-sumi" to="/blog">Blog</Link>
   <Link className="hover:text-sumi" to="/legal/politica-de-privacidad">Política de privacidad</Link>
   <Link className="hover:text-sumi" to="/legal/terminos-y-condiciones">Términos y condiciones</Link>

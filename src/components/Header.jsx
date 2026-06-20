@@ -29,8 +29,9 @@ export default function Header() {
   const items = [
     ["Inicio", "/"],
     ["¿Cómo funciona?", "/faq"],
+    ["Olivos", "/psicoanalista-olivos"],
+    ["Online", "/psicoanalisis-online"],
     ["Testimonios", "/testimonios"],
-    ["Ubicación", "/ubicacion"],
     ["Blog", "/blog"],
     ["Contacto", "/contacto"],
   ];
@@ -73,7 +74,7 @@ export default function Header() {
         </div>
 
         {/* nav desktop */}
-        <nav className="hidden md:flex gap-6 text-sm text-sumi/75">
+        <nav className="hidden md:flex gap-4 text-sm text-sumi/75">
           {items.map(([label, href]) => (
             <NavLink key={href} to={href} className={({ isActive }) => (isActive ? "text-sumi" : "hover:text-sumi transition")}>
               {label}
