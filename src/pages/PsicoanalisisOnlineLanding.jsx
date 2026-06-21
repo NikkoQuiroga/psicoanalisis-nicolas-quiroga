@@ -54,28 +54,38 @@ export default function PsicoanalisisOnlineLanding() {
       </Helmet>
 
       <section className="border-b border-black/5 bg-white/60">
-        <div className="mx-auto max-w-5xl px-5 py-12 md:py-16">
-          <p className="text-xs uppercase tracking-[0.22em] text-gold">Argentina y exterior</p>
-          <h1 className="h-serif mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
-            Psicoanálisis online
-          </h1>
-          <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-            La modalidad online no es una versión menor del trabajo clínico. Si hay encuadre,
-            continuidad y transferencia, también puede haber análisis.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
-            >
-              Agendar primera sesión <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/blog/psicoanalisis-online-funciona"
-              className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium text-sumi hover:bg-white/80"
-            >
-              Leer sobre análisis online
-            </Link>
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[1.05fr_.95fr] md:items-center md:py-16">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-gold">Argentina y exterior</p>
+            <h1 className="h-serif mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
+              Psicoanálisis online
+            </h1>
+            <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
+              La modalidad online no es una versión menor del trabajo clínico. Si hay encuadre,
+              continuidad y transferencia, también puede haber análisis.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                to="/contacto"
+                className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
+              >
+                Agendar primera sesión <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/blog/psicoanalisis-online-funciona"
+                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium text-sumi hover:bg-white/80"
+              >
+                Leer sobre análisis online
+              </Link>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm">
+            <img
+              src="/media/lic-nicolas-quiroga-psicoanalisis-online.webp"
+              alt="Lic. Nicolás Quiroga, psicoanálisis online"
+              className="h-80 w-full object-cover"
+            />
           </div>
         </div>
       </section>

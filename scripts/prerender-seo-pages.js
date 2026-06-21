@@ -27,6 +27,7 @@ const staticPages = [
     priority: "0.9",
     changefreq: "monthly",
     lastmod: "2026-06-20",
+    image: "/media/lic-nicolas-quiroga-psicoanalista-olivos.webp",
   },
   {
     path: "/psicoanalisis-online",
@@ -37,6 +38,7 @@ const staticPages = [
     priority: "0.9",
     changefreq: "monthly",
     lastmod: "2026-06-20",
+    image: "/media/lic-nicolas-quiroga-psicoanalisis-online.webp",
   },
   {
     path: "/contacto",

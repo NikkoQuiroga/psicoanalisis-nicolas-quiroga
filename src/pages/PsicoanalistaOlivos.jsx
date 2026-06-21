@@ -84,7 +84,7 @@ export default function PsicoanalistaOlivos() {
 
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm">
             <img
-              src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
+              src="/media/lic-nicolas-quiroga-psicoanalista-olivos.webp"
               alt="Lic. Nicolás Quiroga, psicoanalista en Olivos"
               className="h-80 w-full object-cover"
             />
