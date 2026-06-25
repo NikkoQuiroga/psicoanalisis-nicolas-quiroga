@@ -2,7 +2,7 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-const EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "hola@tu-dominio.com";
+const EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "lic.nicolasquiroga@outlook.com";
 const WHATS = import.meta.env.VITE_WHATSAPP || "5491161402223";
 
 export default function Privacidad() {

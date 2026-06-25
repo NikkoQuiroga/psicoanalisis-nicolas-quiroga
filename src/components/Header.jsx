@@ -31,6 +31,7 @@ export default function Header() {
     ["¿Cómo funciona?", "/faq"],
     ["Olivos", "/psicoanalista-olivos"],
     ["Online", "/psicoanalisis-online"],
+    ["Sobre mí", "/sobre-mi"],
     ["Testimonios", "/testimonios"],
     ["Blog", "/blog"],
     ["Contacto", "/contacto"],

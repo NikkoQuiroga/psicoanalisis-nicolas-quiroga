@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, BookOpen, MessageCircle } from "lucide-react";
+import { MapPin, GraduationCap, BookOpen, ExternalLink, MessageCircle } from "lucide-react";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
 
@@ -118,6 +118,42 @@ export default function SobreMi() {
               </div>
             </li>
           </ul>
+        </motion.section>
+
+        {/* Proyecto periférico */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
+        >
+          <div className="mb-4 flex items-center gap-2">
+            <MessageCircle className="h-5 w-5 text-moss" />
+            <h2 className="text-lg font-semibold">Proyecto digital</h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-sumi/75">
+            <p>
+              También desarrollo <strong>CoachPsi</strong>, un proyecto periférico ligado a
+              tecnología, orientación y salud mental. Me interesa pensar qué puede hacer una
+              herramienta digital cuando no pretende reemplazar la clínica.
+            </p>
+            <p>
+              CoachPsi no es un tratamiento psicológico ni una consulta profesional. Funciona
+              como una exploración sobre acompañamiento, primeras orientaciones y derivación
+              responsable cuando hace falta hablar con alguien.
+            </p>
+          </div>
+          <a
+            href="https://coachpsi.com"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white"
+          >
+            Ver CoachPsi
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </motion.section>
 
         {/* Otros intereses */}

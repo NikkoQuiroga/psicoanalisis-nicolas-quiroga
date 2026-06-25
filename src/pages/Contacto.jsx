@@ -6,6 +6,7 @@ import AgendaForm from "../components/AgendaForm.jsx";
 
 export default function Contacto() {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
+  const email = import.meta.env.VITE_CONTACT_EMAIL || "lic.nicolasquiroga@outlook.com";
 
   return (
     <>
@@ -79,11 +80,11 @@ export default function Contacto() {
                   <span className="text-sumi/80 group-hover:text-sumi transition">WhatsApp</span>
                 </a>
                 <a
-                  href="mailto:contacto@nicolasquiroga.com.ar"
+                  href={`mailto:${email}`}
                   className="flex items-center gap-3 rounded-xl border border-black/5 bg-white/80 px-4 py-3 text-sm hover:bg-white transition group"
                 >
                   <Mail className="w-4 h-4 text-gold shrink-0" />
-                  <span className="text-sumi/80 group-hover:text-sumi transition">contacto@nicolasquiroga.com.ar</span>
+                  <span className="text-sumi/80 group-hover:text-sumi transition">{email}</span>
                 </a>
               </div>
             </div>

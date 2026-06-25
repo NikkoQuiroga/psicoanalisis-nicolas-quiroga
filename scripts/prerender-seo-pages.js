@@ -51,6 +51,16 @@ const staticPages = [
     lastmod: "2026-06-20",
   },
   {
+    path: "/sobre-mi",
+    title: "Sobre mí — Nicolás Quiroga, psicoanalista lacaniano",
+    description:
+      "Nicolás Quiroga, psicoanalista lacaniano. Formación, mirada clínica, lecturas, podcast y proyectos periféricos.",
+    type: "website",
+    priority: "0.8",
+    changefreq: "monthly",
+    lastmod: "2026-06-24",
+  },
+  {
     path: "/blog",
     title: "Blog de psicoanálisis lacaniano — Nicolás Quiroga",
     description:

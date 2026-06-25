@@ -56,6 +56,7 @@ export default function ProfileSlide({ open = false }) {
                 </div>
                 <p className="mt-3 text-sm text-sumi/80">
                   <li>Aikido</li>
+                  <li>Jiu-Jitsu Brasileño</li>
                   <li>Bonsai</li>
                 </p>
               </div>

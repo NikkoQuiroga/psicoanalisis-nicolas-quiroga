@@ -17,6 +17,7 @@ const Ubicacion       = lazy(() => import("./pages/Ubicacion.jsx"));
 const Contacto        = lazy(() => import("./pages/Contacto.jsx"));
 const PsicoanalistaOlivos = lazy(() => import("./pages/PsicoanalistaOlivos.jsx"));
 const PsicoanalisisOnlineLanding = lazy(() => import("./pages/PsicoanalisisOnlineLanding.jsx"));
+const SobreMi         = lazy(() => import("./pages/SobreMi.jsx"));
 const Blog            = lazy(() => import("./pages/Blog.jsx"));
 const BlogPost        = lazy(() => import("./pages/BlogPost.jsx"));
 const Privacidad      = lazy(() => import("./pages/legal/Privacidad.jsx"));
@@ -77,6 +78,7 @@ export default function App() {
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/psicoanalista-olivos" element={<PsicoanalistaOlivos />} />
               <Route path="/psicoanalisis-online" element={<PsicoanalisisOnlineLanding />} />
+              <Route path="/sobre-mi" element={<SobreMi />} />
 
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
