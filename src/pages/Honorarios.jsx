@@ -9,10 +9,10 @@ export default function Honorarios() {
   return (
     <>
       <Helmet>
-        <title>Honorarios — $35.000 ARS / USD 35</title>
+        <title>Honorarios — $40.000 ARS / USD 35</title>
         <meta
           name="description"
-          content="Honorarios claros. Argentina: $35.000 ARS por sesión. Exterior: USD 35. Presencial en Olivos y online."
+          content="Honorarios claros. Argentina: $40.000 ARS por sesión. Exterior: USD 35. Presencial en Olivos y online."
         />
       </Helmet>
 
@@ -21,7 +21,7 @@ export default function Honorarios() {
         {isAR ? (
           <ul className="mt-4 list-disc space-y-2 pl-6 text-sumi/80">
             <li>
-              Valor por sesión: <strong>$35.000 ARS</strong> (45 minutos).
+              Valor por sesión: <strong>$40.000 ARS</strong> (45 minutos).
             </li>
             <li>Presencial en Olivos u online con videollamada privada.</li>
             <li>Se confirma por WhatsApp luego de elegir tu horario.</li>

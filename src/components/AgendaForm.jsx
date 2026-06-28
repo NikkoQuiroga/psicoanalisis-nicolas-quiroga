@@ -3,7 +3,7 @@ import useGeo from "../hooks/useGeo.js";
 import { buildWhatsAppURL } from "../utils/wa.js";
 import { trackWA } from "../analytics/events.js";
 
-const AR_PRICE = 50000; // ARS
+const AR_PRICE = 40000; // ARS
 const EXT_PRICE = 35;   // USD
 
 export default function AgendaForm() {
