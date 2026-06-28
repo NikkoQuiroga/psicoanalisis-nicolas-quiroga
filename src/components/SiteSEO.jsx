@@ -9,6 +9,8 @@ export default function SiteSEO() {
   const pageUrl = `${site}${location.pathname}`;
   const defaultImage = `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
+  const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
+  const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
 
   const person = {
     "@context": "https://schema.org",
@@ -26,6 +28,11 @@ export default function SiteSEO() {
     },
     url: site,
     telephone: `+${phone}`,
+    sameAs: [
+      linkedInUrl,
+      academicWorkUrl,
+      `https://wa.me/${phone}`,
+    ],
     knowsAbout: [
       "Psicoanálisis lacaniano",
       "Lacan",
@@ -78,7 +85,7 @@ export default function SiteSEO() {
         closes: "21:00",
       },
     ],
-    sameAs: [`https://wa.me/${phone}`],
+    sameAs: [linkedInUrl, academicWorkUrl, `https://wa.me/${phone}`],
     description:
       "Psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta. Para quienes atraviesan momentos que no saben cómo nombrar.",
     availableService: [

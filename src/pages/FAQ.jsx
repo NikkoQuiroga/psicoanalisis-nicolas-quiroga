@@ -61,7 +61,7 @@ const categories = [
     items: [
       {
         q: "¿Cómo trabajás? ¿Qué orientación tenés?",
-        a: "Trabajo desde el psicoanálisis clínico, con formación en Freud y Lacan. Eso significa que tomamos en serio lo que el síntoma dice —por qué aparece, qué función cumple, qué historia carga. No trabajo con un manual de técnicas sino con hipótesis clínicas que se van ajustando sesión a sesión.",
+        a: "Trabajo desde una orientación lacaniana. No abordo el síntoma como algo a eliminar rápidamente, sino como una formación que tiene una lógica y una función en la vida de cada sujeto. La clínica no parte de recetas universales, sino de hipótesis conjeturales que se construyen caso por caso y se ajustan sesión a sesión, según lo que aparece en la palabra, la repetición y el cuerpo.",
       },
       {
         q: "¿El objetivo es sentirme mejor?",

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MapPin, GraduationCap, BookOpen, ExternalLink, MessageCircle } from "lucide-react";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
+const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
 
 export default function SobreMi() {
   return (
@@ -101,7 +102,7 @@ export default function SobreMi() {
             <li className="flex gap-3">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
               <div>
-                <strong>Psicoanálisis lacaniano</strong> — Formación en ALEF (Asociación Lacaniana de Estudio y Formación)
+                <strong>Psicoanálisis lacaniano</strong> — Formación de posgrado en ALEF (Asociación Latinoamericana de Estudios y Freudianos)
               </div>
             </li>
             <li className="flex gap-3">
@@ -118,6 +119,35 @@ export default function SobreMi() {
               </div>
             </li>
           </ul>
+        </motion.section>
+
+        {/* Producción académica */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <BookOpen className="h-5 w-5 text-moss" />
+            <h2 className="text-lg font-semibold">Producción académica</h2>
+          </div>
+          <p className="text-sm leading-relaxed text-sumi/75">
+            Participación en jornadas académicas de Psicopatología Cátedra II - Universidad de Buenos Aires, con trabajo disponible
+            en Acta Académica. Lo incluyo como parte del recorrido de formación y escritura
+            dentro del campo clínico.
+          </p>
+          <a
+            href={academicWorkUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white"
+          >
+            Ver en Acta Académica
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </motion.section>
 
         {/* Proyecto periférico */}
@@ -170,10 +200,7 @@ export default function SobreMi() {
             <h2 className="text-lg font-semibold">Lecturas e intereses</h2>
           </div>
           <p className="text-sm text-sumi/75 leading-relaxed">
-            Filosofía continental, crítica cultural, budismo zen, estética japonesa (
-            <em>mono no aware</em>, <em>wabi-sabi</em>), Žižek, Derrida, cine de autor.
-            Estas referencias aparecen en el blog — no como adorno, sino porque son parte
-            del mismo esfuerzo: entender lo que el lenguaje hace con el cuerpo y el deseo.
+            Mi lectura clínica dialoga con la filosofía continental, especialmente con sus vertientes materialistas: pensar el sujeto sin separarlo del cuerpo, el lenguaje y las condiciones concretas de vida. También integro referencias de Oriente, en particular de la estética japonesa. Las artes marciales —Aikido y Jiu-Jitsu Brasileño— forman parte de esa misma línea: una filosofía material y aplicada al cuerpo.
           </p>
         </motion.section>
 

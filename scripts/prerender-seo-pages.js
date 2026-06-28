@@ -6,6 +6,8 @@ const site = "https://nicolasquiroga.com.ar";
 const distDir = path.resolve("dist");
 const templatePath = path.join(distDir, "index.html");
 const defaultImage = "/media/lic-rodrigo-nicolas-quiroga-martinez.webp";
+const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
+const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
 
 const staticPages = [
   {
@@ -54,11 +56,11 @@ const staticPages = [
     path: "/sobre-mi",
     title: "Sobre mí — Nicolás Quiroga, psicoanalista lacaniano",
     description:
-      "Nicolás Quiroga, psicoanalista lacaniano. Formación, mirada clínica, lecturas, podcast y proyectos periféricos.",
+      "Nicolás Quiroga, psicoanalista lacaniano. Formación, mirada clínica, producción académica, lecturas, podcast y proyectos periféricos.",
     type: "website",
     priority: "0.8",
     changefreq: "monthly",
-    lastmod: "2026-06-24",
+    lastmod: "2026-06-28",
   },
   {
     path: "/blog",
@@ -201,6 +203,7 @@ function schemaForPage(page) {
           name: "Nicolás Quiroga",
           jobTitle: "Psicoanalista clínico",
           url: site,
+          sameAs: [linkedInUrl, academicWorkUrl],
         },
         publisher: {
           "@type": "Person",

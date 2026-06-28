@@ -1,6 +1,8 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { GraduationCap, BookOpen, Heart, MessageCircle } from "lucide-react";
+import { GraduationCap, BookOpen, Heart, MessageCircle, ExternalLink } from "lucide-react";
+
+const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
 
 export default function ProfileSlide({ open = false }) {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
@@ -22,7 +24,7 @@ export default function ProfileSlide({ open = false }) {
               C.V. breve para que veas cómo trabajo y quién soy.
             </p>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* CV corto */}
               <div className="rounded-2xl border border-black/5 bg-white/70 p-5">
                 <div className="flex items-center gap-2">
@@ -46,6 +48,26 @@ export default function ProfileSlide({ open = false }) {
                   <li>Actualización profesional en Logoterapia y Análisis Existencial (UCA - 2022).</li>
                   <li>Actualización profesional en Estudios Budistas (Japón - 2023)</li>
                 </ul>
+              </div>
+
+              {/* Producción académica */}
+              <div className="rounded-2xl border border-black/5 bg-white/70 p-5">
+                <div className="flex items-center gap-2">
+                  <ExternalLink className="w-5 h-5 text-moss" />
+                  <h4 className="font-medium">Producción académica</h4>
+                </div>
+                <p className="mt-3 text-sm text-sumi/80">
+                  Participación en jornadas de psicopatología, con trabajo disponible en Acta Académica.
+                </p>
+                <a
+                  href={academicWorkUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-sumi underline underline-offset-2"
+                >
+                  Ver publicación
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               </div>
 
               {/* Hobbies */}
