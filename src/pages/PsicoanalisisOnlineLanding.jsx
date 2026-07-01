@@ -40,13 +40,13 @@ export default function PsicoanalisisOnlineLanding() {
         <title>Psicoanálisis online en Argentina — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoanálisis online para Argentina y exterior. Sesiones individuales por videollamada con encuadre clínico, reserva absoluta y continuidad."
+          content="Psicoanálisis online para Argentina y exterior. Un espacio clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición."
         />
         <link rel="canonical" href={url} />
         <meta property="og:title" content="Psicoanálisis online en Argentina — Lic. Nicolás Quiroga" />
         <meta
           property="og:description"
-          content="Sesiones online de psicoanálisis para trabajar angustia, ansiedad, vínculos, duelos y repetición."
+          content="Sesiones online de psicoanálisis para trabajar la cabeza que no corta, angustia, ansiedad, insomnio y repetición."
         />
         <meta property="og:url" content={url} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
@@ -62,7 +62,8 @@ export default function PsicoanalisisOnlineLanding() {
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
               La modalidad online no es una versión menor del trabajo clínico. Si hay encuadre,
-              continuidad y transferencia, también puede haber análisis.
+              continuidad y transferencia, también puede haber análisis para eso que insiste:
+              la cabeza que no corta, la ansiedad, la exigencia o la repetición.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -140,6 +141,9 @@ export default function PsicoanalisisOnlineLanding() {
           <div className="flex flex-wrap gap-3 md:justify-end">
             <Link to="/psicoanalista-olivos" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
               Psicoanalista en Olivos
+            </Link>
+            <Link to="/sobrepensamiento-overthinking" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
+              Sobrepensamiento y ansiedad
             </Link>
             <a
               href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quería consultar por psicoanálisis online.")}`}

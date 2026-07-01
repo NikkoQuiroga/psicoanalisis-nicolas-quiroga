@@ -7,38 +7,29 @@ export default function TerapiaCrisisEconomica() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "¿Tiene sentido sostener terapia en crisis económica?",
+        name: "¿Tiene sentido sostener terapia en una crisis económica?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Sí. Aunque la terapia no resuelve por sí sola la crisis material, ayuda a ordenar la angustia, tomar decisiones más lúcidas y evitar la culpa individual por problemas estructurales.",
+            "Puede tener sentido si el espacio no se vive como una carga muda. La crisis material no se resuelve hablando, pero la angustia, la culpa y la vergüenza que produce sí necesitan elaboración.",
         },
       },
       {
         "@type": "Question",
-        name: "¿Con qué frecuencia conviene empezar un tratamiento?",
+        name: "¿Se puede hablar de honorarios en análisis?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "En muchos casos se comienza con una sesión semanal para delimitar el campo de trabajo, escuchar la historia singular y ubicar el síntoma.",
+            "Sí. Hablar de dinero también forma parte del encuadre. No es un detalle administrativo cuando toca culpa, deuda, vergüenza o miedo a depender.",
         },
       },
       {
         "@type": "Question",
-        name: "¿Qué hacer si no puedo pagar la frecuencia habitual?",
+        name: "¿Abandonar de golpe puede afectar el proceso?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Conviene conversarlo con el terapeuta para redefinir modalidad, frecuencia u honorarios posibles, sin abandonar el espacio de palabra.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿La ansiedad económica es un fracaso personal?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            "No. La angustia frente a la incertidumbre suele estar ligada a condiciones sociales y materiales concretas, no solo a decisiones individuales.",
+            "A veces sí. No porque haya que sostener todo a cualquier precio, sino porque una interrupción abrupta puede repetir una lógica de retirada, vergüenza o silencio.",
         },
       },
     ],
@@ -46,165 +37,127 @@ export default function TerapiaCrisisEconomica() {
 
   return (
     <article className="prose-lite">
-      <h1>Terapia en crisis económica: por qué sostener el proceso también es salud mental</h1>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+
+      <h1>Terapia en crisis económica: cuando hablar de plata también es clínica</h1>
 
       <p className="lead">
-        En tiempos de inflación, desempleo e incertidumbre, muchas personas se
-        preguntan si <strong>seguir terapia</strong> es un gasto prescindible. La
-        respuesta clínica suele ser otra: aun cuando la terapia no pueda resolver
-        la economía del país, sí puede ofrecer un marco para tramitar la
-        <strong> ansiedad</strong>, reducir decisiones impulsivas y no quedar a merced
-        del "todo depende de mí".
+        En una crisis económica, la plata deja de ser un tema práctico y se
+        vuelve clima. Entra en la casa, en el cuerpo, en las conversaciones, en
+        el sueño. También entra en el consultorio. Sería absurdo fingir que no.
       </p>
 
-      <h2>Respuesta breve (SEO snippet)</h2>
       <p>
-        Sostener terapia en una crisis económica ayuda a ordenar la angustia,
-        revisar la culpa individual y construir estrategias realistas con el
-        terapeuta (frecuencia, modalidad, honorarios), incluso cuando el contexto
-        material es adverso.
+        La pregunta “¿puedo seguir pagando?” rara vez es solo una cuenta. A
+        veces trae culpa. A veces vergüenza. A veces bronca. A veces miedo a
+        depender, a pedir, a decir que no se puede, a sentir que uno fracasó por
+        no poder sostener algo que antes sostenía.
       </p>
 
-      <h2>1) Lo que la terapia sí puede y lo que no puede hacer</h2>
+      <h2>La crisis material no se cura hablando</h2>
+
       <p>
-        Es importante ser rigurosos: ni el psicoanálisis ni la psicoterapia
-        "arreglan" salarios, precios o políticas públicas. Pero sí pueden abrir un
-        espacio para que el padecimiento no se transforme en aislamiento,
-        autoacusación o pánico sostenido.
-      </p>
-      <p>
-        En consulta, la pregunta no es solo "¿cómo hago para llegar a fin de mes?",
-        sino también: <em>¿qué hace esta coyuntura con mi historia, mi deseo y mis
-        vínculos?</em>
+        Hay que decirlo sin vueltas: el psicoanálisis no arregla salarios,
+        alquileres, inflación ni deudas. No reemplaza una política pública, ni
+        una red de apoyo, ni una decisión económica concreta. Cuando falta
+        plata, falta plata.
       </p>
 
-      <h2>2) Por qué al inicio suele proponerse una sesión semanal</h2>
       <p>
-        En muchos tratamientos, comenzar con una frecuencia semanal permite
-        delimitar el campo de trabajo: escuchar la historia, ubicar los
-        significantes que más insisten y leer el modo singular en que se organiza
-        el síntoma.
-      </p>
-      <p>
-        Ese primer encuadre no es rígido. Se conversa y se ajusta. En contextos de
-        crisis, sostener una regularidad posible suele ser más eficaz que sostener
-        una exigencia ideal e impracticable.
+        Pero la falta material no llega sola. Viene con fantasías, culpas,
+        escenas familiares, mandatos de autosuficiencia, terror a caer,
+        vergüenza de no poder, rabia por tener que elegir entre cosas que no
+        deberían competir.
       </p>
 
-      <h2>3) Hablar de honorarios también es parte del tratamiento</h2>
       <p>
-        Cuando la economía se complica, muchas personas interrumpen sin avisar por
-        vergüenza o culpa. Sin embargo, poder hablarlo con el terapeuta es un acto
-        clínico central.
-      </p>
-      <ul>
-        <li>Revisar frecuencia (semanal, quincenal o esquemas transitorios).</li>
-        <li>Reevaluar modalidad (presencial/virtual).</li>
-        <li>Establecer un marco económico cuidado y posible.</li>
-      </ul>
-      <p>
-        Negociar condiciones no "debilita" el proceso: muchas veces lo vuelve
-        sostenible.
+        Eso sí se trabaja. No para negar lo material, sino para que lo material
+        no se vuelva, además, una condena íntima.
       </p>
 
-      <h2>4) Contra la lógica de época: no todo es culpa individual</h2>
+      <h2>El dinero nunca es solo dinero</h2>
+
       <p>
-        En escenarios de recesión, el discurso dominante suele empujar a una
-        lectura moral: "si te va mal, no te esforzaste lo suficiente". Esta idea
-        puede intensificar ansiedad, vergüenza y retraimiento social.
-      </p>
-      <p>
-        Sostener terapia también sirve para poner palabras donde aparece la
-        autoacusación: distinguir responsabilidad subjetiva de condicionamientos
-        estructurales. Esa diferencia no victimiza: orienta.
+        En análisis, hablar de honorarios puede tocar zonas muy sensibles. Para
+        alguien, pagar puede ser una forma de sostener un lugar propio. Para
+        otro, puede vivirse como culpa. Para otro, como deuda. Para otro, como
+        una prueba de que merece o no merece cuidado.
       </p>
 
-      <h2>5) Riesgos frecuentes cuando se abandona de golpe</h2>
-      <ul>
-        <li>Aumento de rumiación y preocupación catastrófica.</li>
-        <li>Decisiones impulsivas en trabajo, dinero o vínculos.</li>
-        <li>Mayor aislamiento y dificultad para pedir ayuda.</li>
-        <li>Somatizaciones (insomnio, contracturas, agotamiento).</li>
-      </ul>
       <p>
-        No se trata de "depender" de la terapia, sino de no perder un recurso de
-        elaboración justo cuando más se necesita.
+        Por eso cuando alguien dice “no puedo seguir”, conviene escuchar
+        también cómo lo dice. Si lo dice con vergüenza. Si lo dice tarde. Si lo
+        dice como disculpa. Si desaparece antes de decirlo. Si arma una escena
+        donde la única salida posible es cortar.
       </p>
 
-      <h2>6) Una orientación clínica posible en tiempos de crisis</h2>
-      <ol>
-        <li>No interrumpas sin hablarlo: poné en palabras la dificultad económica.</li>
-        <li>
-          Acordá un plan de continuidad realista por 8 a 12 semanas y volvé a
-          evaluarlo.
-        </li>
-        <li>
-          Definí indicadores concretos de cuidado: sueño, ansiedad, claridad para
-          decidir y sostén vincular.
-        </li>
-      </ol>
-
-      <h2>Conclusión</h2>
       <p>
-        Sostener terapia en crisis económica no niega lo material; al contrario,
-        permite habitarlo con menos soledad, menos culpa y más capacidad de
-        decisión. No es un lujo para cuando "todo esté bien": para muchas personas,
-        es una herramienta de salud mental en el momento exacto en que el contexto
-        más presiona.
+        No porque todo deba interpretarse. Sino porque incluso las decisiones
+        necesarias pueden repetirse de una manera que deja al sujeto solo con su
+        síntoma.
       </p>
 
-      <h2>FAQ</h2>
-      <h3>¿Tiene sentido sostener terapia en crisis económica?</h3>
+      <h2>La culpa individual en una época rota</h2>
+
       <p>
-        Sí. Aunque la terapia no resuelve por sí sola la crisis material, ayuda a
-        ordenar la angustia y evitar la culpa individual por problemas
-        estructurales.
+        La época tiene una habilidad perversa: convierte problemas estructurales
+        en fallas personales. Si no llegás, administraste mal. Si estás
+        angustiado, no sos resiliente. Si no podés pagar, no priorizaste. Si te
+        caés, no te esforzaste suficiente.
       </p>
 
-      <h3>¿Con qué frecuencia conviene empezar?</h3>
       <p>
-        En muchos casos se empieza con una sesión semanal para delimitar el campo
-        de trabajo y ubicar el síntoma.
+        Esa lectura es cruel porque borra el contexto. Pero también porque deja
+        al sujeto encerrado en una culpa muda. La crisis deja de ser una
+        situación y pasa a ser identidad: “soy un desastre”, “no sirvo”, “no
+        puedo sostener nada”.
       </p>
 
-      <h3>¿Qué hago si no puedo pagar la frecuencia habitual?</h3>
       <p>
-        Lo mejor es hablarlo con el terapeuta para redefinir frecuencia, modalidad
-        u honorarios posibles, en lugar de abandonar abruptamente.
+        Un análisis puede discutir esa traducción. No para quitar
+        responsabilidad, sino para separar responsabilidad de castigo.
       </p>
 
-      <h3>¿La ansiedad económica es un fracaso personal?</h3>
+      <h2>No sostener todo a cualquier precio</h2>
+
       <p>
-        No. Muchas veces expresa condiciones sociales y materiales concretas, no
-        solo decisiones individuales.
+        Decir que el espacio puede ser importante no significa que haya que
+        sostenerlo siempre, de cualquier modo, aunque se vuelva inviable. Eso
+        también sería violento. Hay momentos en que hace falta pausar, cambiar
+        frecuencia, conversar posibilidades o buscar otro dispositivo.
       </p>
 
-      <h2>Bibliografía y fuentes recomendadas</h2>
-      <ul>
-        <li>
-          Organización Mundial de la Salud (2022). Aumento global de ansiedad y
-          depresión tras la pandemia:
-          https://www.who.int/es/news/item/02-03-2022-covid-19-pandemic-triggers-25-increase-in-prevalence-of-anxiety-and-depression-worldwide
-        </li>
-        <li>
-          American Psychological Association. Anxiety:
-          https://www.apa.org/topics/anxiety
-        </li>
-        <li>
-          NIMH. Generalized Anxiety Disorder:
-          https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad
-        </li>
-        <li>
-          World Health Organization (Comisión sobre Determinantes Sociales de la
-          Salud). Closing the gap in a generation (2008).
-        </li>
-        <li>
-          Wilkinson, R., &amp; Pickett, K. (2009). The Spirit Level: Why More Equal
-          Societies Almost Always Do Better.
-        </li>
-      </ul>
+      <p>
+        Lo clínicamente importante es que eso pueda decirse. Que no se convierta
+        en desaparición. Que la vergüenza no decida sola. Que la interrupción,
+        si ocurre, no sea otra escena de caída silenciosa.
+      </p>
 
-      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      <p>
+        A veces hablar de plata es la primera vez que alguien puede hablar de
+        deuda, miedo y necesidad sin tener que hacerse el fuerte.
+      </p>
+
+      <h2>La crisis también muestra cómo alguien se trata</h2>
+
+      <p>
+        Bajo presión aparece una verdad incómoda: el modo en que alguien se
+        habla cuando no llega. Hay quienes se insultan. Hay quienes se exigen
+        más. Hay quienes se comparan. Hay quienes se apagan. Hay quienes se
+        endeudan para no decepcionar a nadie.
+      </p>
+
+      <p>
+        La crisis económica no inventa todo eso, pero lo vuelve visible. Y lo
+        visible puede trabajarse.
+      </p>
+
+      <p>
+        No para romantizar la dificultad. Nadie necesita que le digan que la
+        crisis es una oportunidad. A veces la crisis es simplemente una crisis.
+        Pero incluso ahí, quizá sobre todo ahí, importa no quedar reducido a la
+        cuenta que no cierra.
+      </p>
     </article>
   );
 }

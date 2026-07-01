@@ -20,8 +20,9 @@ export default function Consentimiento() {
           <section>
             <h2 className="font-medium text-sumi">1) Marco de trabajo</h2>
             <p>
-              Trabajo desde el <strong>psicoanálisis</strong> y, cuando resulta pertinente, incorporo{" "}
-              <strong>herramientas basadas en evidencia</strong> para objetivos puntuales.
+              Trabajo desde el <strong>psicoanálisis</strong>. Mi recorrido formativo puede incluir otros campos,
+              pero este servicio se ofrece bajo un encuadre psicoanalítico: palabra, escucha clínica
+              y lectura caso por caso de lo que insiste.
             </p>
           </section>
 
@@ -35,7 +36,7 @@ export default function Consentimiento() {
 
           <section>
             <h2 className="font-medium text-sumi">3) Honorarios</h2>
-            <p>Honorarios vigentes informados al momento de coordinar por WhatsApp o contacto. El valor puede actualizarse.</p>
+            <p>Honorarios vigentes: <strong>$40.000 ARS</strong> por sesión para Argentina y <strong>USD 35</strong> para exterior. El valor puede actualizarse y se confirma al coordinar el turno.</p>
           </section>
 
           <section>

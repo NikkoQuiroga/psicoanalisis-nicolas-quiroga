@@ -4,42 +4,42 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Section from "../components/Section.jsx";
-import { CircleSlash, Activity, AlertTriangle, Compass } from "lucide-react";
+import { CircleSlash, Activity, AlertTriangle, Moon } from "lucide-react";
 
 const fadeUp = { hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } };
 
 const ITEMS = [
   {
     icon: CircleSlash,
-    title: "Inhibición",
+    title: "Sobrepensamiento",
     blurb:
-      "Cuando algo que podés hacer no sale: postergás, te trabás, “no me sale”. Leemos la escena que frena, sin culpas.",
+      "Cuando la cabeza no corta: revisás conversaciones, anticipás escenarios, dudás de decisiones y llegás agotado al final del día.",
     approach:
-      "Abordaje: conversación clínica + pequeños ensayos (si ayudan) para habilitar movimientos posibles.",
+      "Abordaje: leer qué función cumple ese pensamiento que insiste, sin reducirlo a una falla de control.",
   },
   {
     icon: Activity,
-    title: "Síntoma",
+    title: "Repetición",
     blurb:
-      "Molesta, pero también sostiene algo. Buscamos su función, historizamos y cambiamos la escena desde la palabra.",
+      "Algo vuelve aunque ya lo entendiste: una escena, una elección, una forma de exigirte o de quedar tomado por el deseo del otro.",
     approach:
-      "Abordaje: psicoanálisis con registro breve de repeticiones y decisiones concretas en lo cotidiano.",
+      "Abordaje: psicoanálisis, palabra y construcción caso por caso de una hipótesis clínica.",
   },
   {
     icon: AlertTriangle,
-    title: "Angustia / Ansiedad",
+    title: "Angustia y ansiedad",
     blurb:
-      "Nudo, vacío, alerta sin motivo claro. No es un defecto: es una señal. Ubicarla devuelve margen de maniobra.",
+      "Nudo, vacío, alerta sin causa clara. No como defecto personal, sino como señal de algo que pide ser leído.",
     approach:
-      "Abordaje: palabra + recursos puntuales (respiración 4–6, anclajes sensoriales) cuando sirven.",
+      "Abordaje: ubicar qué se juega en esa angustia, cómo aparece en el cuerpo y qué relación tiene con tu historia.",
   },
   {
-    icon: Compass,
-    title: "Desarrollo personal",
+    icon: Moon,
+    title: "Insomnio y autoexigencia",
     blurb:
-      "Entre ideales y miedos, ordenar proyectos. Sin recetas ni sobreexigencia: explorar lo que te mueve, paso a paso.",
+      "Cuando el día termina pero la cabeza sigue: pendientes, culpa, rendimiento, conversaciones imaginarias, error posible.",
     approach:
-      "Abordaje: entrevistas clínicas + experimentos acotados en la semana (si querés).",
+      "Abordaje: trabajar la exigencia y la lógica que sostiene ese estado de alerta.",
   },
 ];
 
@@ -47,10 +47,10 @@ export default function Servicios() {
   return (
     <>
       <Helmet>
-        <title>Servicios — Inhibición, síntoma y angustia | Nicolás Quiroga</title>
+        <title>Motivos de consulta — Sobrepensamiento y psicoanálisis | Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Trabajo clínico focal en inhibición, síntoma, angustia/ansiedad y desarrollo personal. Psicoanálisis con inspiración japonesa y recursos breves cuando son útiles."
+          content="Motivos de consulta en psicoanálisis: sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Atención online y presencial en Olivos."
         />
       </Helmet>
 
@@ -63,7 +63,7 @@ export default function Servicios() {
             animate="show"
             className="h-serif text-3xl md:text-4xl font-semibold"
           >
-            Inhibición, síntoma y angustia
+            Motivos de consulta
           </motion.h1>
           <motion.p
             variants={fadeUp}
@@ -72,7 +72,7 @@ export default function Servicios() {
             transition={{ delay: 0.05 }}
             className="mt-2 text-sumi/75 max-w-prose"
           >
-            Psicoanálisis con inspiración japonesa: menos receta, más espacio. Cuando ayuda, sumo recursos breves para el día a día.
+            No trabajo con recetas ni protocolos. Trabajo desde el psicoanálisis: una escucha clínica para leer lo que insiste, especialmente cuando pensar más ya no alcanza.
           </motion.p>
         </div>
       </Section>

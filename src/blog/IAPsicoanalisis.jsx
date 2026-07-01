@@ -52,7 +52,7 @@ export default function IAPsicoanalisis() {
         Desde que los modelos de lenguaje se volvieron accesibles, hay personas
         que los usan como espacio de descarga emocional. Le cuentan a ChatGPT
         lo que no pueden contarle a nadie. Le preguntan qué hacer con una
-        relación, cómo manejar la angustia, si lo que sienten es normal. Y la
+        relación, qué hacer con la angustia, si lo que sienten es normal. Y la
         máquina responde con algo que suena empático, ponderado, sin juicio.
       </p>
 
@@ -62,7 +62,7 @@ export default function IAPsicoanalisis() {
 
       <p>
         Antes de descartarlo, quiero tomarlo en serio. Porque si alguien
-        prefiere hablarle a una IA que a un terapeuta, algo está diciendo sobre
+        prefiere hablarle a una IA que a un analista, algo está diciendo sobre
         qué espera de ese espacio —y qué no encontró.
       </p>
 
@@ -137,14 +137,14 @@ export default function IAPsicoanalisis() {
       <h2>Por qué el atractivo de la IA dice algo clínico</h2>
 
       <p>
-        Que alguien prefiera la IA a un terapeuta no es solo una cuestión de
+        Que alguien prefiera la IA a un analista no es solo una cuestión de
         comodidad o acceso. A veces dice algo sobre el vínculo que esa persona
         espera: sin riesgo, sin que el otro tenga peso propio, sin que lo que
         uno diga pueda tener consecuencias en esa relación.
       </p>
 
       <p>
-        Eso es comprensible. Los vínculos reales tienen costo. Un terapeuta
+        Eso es comprensible. Los vínculos reales tienen costo. Un analista
         puede decepcionarte, puede no entender algo, puede tener un mal día. Una
         máquina no. Y para alguien que viene de vínculos donde el otro siempre
         fallaba, esa garantía de que nada va a fallar puede parecer un alivio.

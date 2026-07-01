@@ -6,6 +6,14 @@ import { motion } from "framer-motion";
 import { posts } from "../blog/posts.js";
 
 const sorted = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+const professionalProfiles = [
+  "https://www.psychologytoday.com/profile/1783533",
+  "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+  "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+  "https://buscopsi.com/psicologo/nicolas-quiroga/",
+  "https://www.linkedin.com/in/lic-nicolas-quiroga/",
+  "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101",
+];
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString("es-AR", {
@@ -66,6 +74,7 @@ export default function BlogPost() {
       name: "Nicolás Quiroga",
       jobTitle: "Psicoanalista clínico",
       url: site,
+      sameAs: professionalProfiles,
     },
     datePublished: date,
     image: hero ? [`${site}${hero}`] : undefined,

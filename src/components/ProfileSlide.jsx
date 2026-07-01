@@ -34,7 +34,7 @@ export default function ProfileSlide({ open = false }) {
                 <ul className="mt-3 list-disc pl-5 text-sm text-sumi/80 space-y-1">
                   <li>Lic. en Psicología (UBA - 2013).</li>
                   <li>Posgrado en Psicoanálisis Lacaniano (ALEF - 2015).</li>
-                  <li>Posgrado en Mindfulness, Meditación y Respiración Consciente (EESH - 2017).</li>
+                  <li>Formación y lectura clínica orientada por Freud y Lacan.</li>
                 </ul>
               </div>
 
@@ -45,8 +45,9 @@ export default function ProfileSlide({ open = false }) {
                   <h4 className="font-medium">Actualizaciones profesionales</h4>
                 </div>
                 <ul className="mt-3 list-disc pl-5 text-sm text-sumi/80 space-y-1">
-                  <li>Actualización profesional en Logoterapia y Análisis Existencial (UCA - 2022).</li>
-                  <li>Actualización profesional en Estudios Budistas (Japón - 2023)</li>
+                  <li>Seminarios de psicoanálisis, psicopatología y clínica contemporánea.</li>
+                  <li>Formaciones complementarias en campos afines como coaching, mindfulness y logoterapia.</li>
+                  <li>Interés teórico por cultura, síntoma y malestar de época.</li>
                 </ul>
               </div>
 

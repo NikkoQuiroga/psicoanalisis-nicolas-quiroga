@@ -11,34 +11,25 @@ export default function PsicoanalisisPseudociencia() {
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "No encaja de forma simple en esa etiqueta. No es una ciencia natural experimental, pero sí un campo con formalización, transmisión y discusión conceptual.",
+            "Depende de qué se entienda por ciencia y qué se le exija al psicoanálisis. Si se lo juzga como si fuera una técnica experimental de laboratorio, se pierde su objeto: el sujeto, el deseo, el síntoma y la palabra.",
         },
       },
       {
         "@type": "Question",
-        name: "¿Qué quiso decir Lacan con topología, toro y nudo borromeo?",
+        name: "¿Por qué el psicoanálisis no se evalúa igual que una terapia conductual?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Que el sujeto no se explica solo por variables biológicas o psicológicas, sino por una estructura formal de relaciones significantes.",
+            "Porque no trabaja el mismo objeto. Una terapia conductual puede medir reducción de conductas o síntomas. El psicoanálisis trabaja la posición subjetiva, el goce, la repetición y el deseo.",
         },
       },
       {
         "@type": "Question",
-        name: "¿En qué se diferencia psicoanálisis de conductismo o TCC?",
+        name: "¿Lacan rechazaba la formalización?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "En el objeto: conductismo y TCC priorizan conducta observable y reducción de síntomas; el psicoanálisis trabaja deseo, goce, repetición y posición subjetiva.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿Cómo se puede evaluar el psicoanálisis sin pedirle ser física?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            "Por coherencia interna, transmisión formal, revisión conceptual y sistematicidad clínica; también puede leerse como programa de investigación en sentido lakatosiano.",
+            "No. Lacan recurrió a la lógica, la matemática y la topología para formalizar problemas clínicos, aunque esa formalización no sea equivalente al método experimental clásico.",
         },
       },
     ],
@@ -46,174 +37,151 @@ export default function PsicoanalisisPseudociencia() {
 
   return (
     <article className="prose-lite">
-      <h1>
-        “El psicoanálisis es una pseudociencia”: una crítica popular, pero
-        conceptualmente floja
-      </h1>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+
+      <h1>¿El psicoanálisis es una pseudociencia?</h1>
 
       <p className="lead">
-        La frase <strong>“el psicoanálisis es una pseudociencia”</strong> se volvió
-        casi automática en redes. El problema es que suele mezclar dos discusiones
-        distintas: qué cuenta como ciencia natural y cómo se formaliza un saber
-        sobre el sujeto.
+        La acusación aparece cada tanto con tono de sentencia: el psicoanálisis
+        es pseudociencia. Se dice como quien cierra una puerta. El problema es
+        que muchas veces esa frase no piensa demasiado. Funciona más como
+        contraseña de época que como argumento.
       </p>
 
-      <h2>Una respuesta breve y directa</h2>
       <p>
-        El psicoanálisis no funciona como la física experimental, pero eso no
-        alcanza para llamarlo pseudociencia. En Lacan hay un intento explícito de
-        formalización (lógica, topología, matemas), con conceptos transmisibles y
-        discutibles públicamente.
+        No porque el psicoanálisis deba quedar exento de crítica. Al contrario:
+        una práctica clínica que no soporta preguntas se vuelve religión. Pero
+        criticar no es reducir. Y una buena crítica empieza por saber qué objeto
+        está criticando.
       </p>
 
-      <h2>Citas textuales clave (sin parafrasear)</h2>
-      <blockquote>
-        “El inconsciente está estructurado como un lenguaje”.
-      </blockquote>
+      <h2>El malentendido de pedirle laboratorio al inconsciente</h2>
+
       <p>
-        Jacques Lacan, “La instancia de la letra en el inconsciente”, en
-        <em> Escritos</em>.
+        Si alguien espera que el psicoanálisis funcione como una técnica médica
+        experimental, va a decepcionarse. El inconsciente no es una bacteria. El
+        deseo no se observa con microscopio. El goce no entra prolijamente en
+        una escala de medición.
       </p>
 
-      <blockquote>
-        “El deseo del hombre es el deseo del Otro”.
-      </blockquote>
       <p>
-        Jacques Lacan, Seminario 11, <em>Los cuatro conceptos fundamentales del
-        psicoanálisis</em>.
+        Eso no vuelve al psicoanálisis una superstición. Vuelve necesario
+        precisar su objeto. La clínica analítica trabaja con palabra, síntoma,
+        repetición, transferencia, historia singular. No se ocupa solamente de
+        reducir una conducta observable. Se ocupa de la posición de un sujeto
+        frente a eso que le pasa.
       </p>
 
-      <blockquote>
-        “L'inconscient, c'est la politique”.
-      </blockquote>
       <p>
-        Jacques Lacan, Seminario 14, <em>La lógica del fantasma</em>.
+        Cuando se borra esa diferencia, la discusión ya empieza mal.
       </p>
 
-      <h2>Qué hace Lacan cuando usa matemática y topología</h2>
+      <h2>No todo saber serio se parece a una prueba de laboratorio</h2>
+
       <p>
-        Cuando Lacan recurre al toro, a la banda de Möbius o al nudo borromeo, no
-        está describiendo el espacio físico. Está modelando relaciones formales de
-        la subjetividad: cómo se anudan lo simbólico, lo imaginario y lo real; cómo
-        lo íntimo puede aparecer “afuera” como extimidad.
-      </p>
-      <p>
-        En esa línea, formalizar no equivale a “medir todo”. Equivale a construir
-        un lenguaje riguroso para no depender solo del estilo personal del
-        terapeuta.
+        La modernidad nos dejó un ideal fuerte: si algo es verdadero, debe poder
+        medirse de cierta manera. Ese ideal produjo avances enormes. También
+        produjo una ceguera: creer que lo que no entra en ese molde no existe o
+        no merece ser pensado.
       </p>
 
-      <h2>Cuándo una teoría merece, de verdad, la etiqueta “pseudociencia”</h2>
       <p>
-        Una teoría se acerca a la pseudociencia cuando se vuelve inmune a revisión:
-        absorbe cualquier objeción sin modificarse, no explicita condiciones de
-        crítica y se protege de toda confrontación racional.
-      </p>
-      <p>
-        Por eso, para discutir psicoanálisis conviene preguntar:
-      </p>
-      <ul>
-        <li>¿Tiene coherencia conceptual interna?</li>
-        <li>¿Tiene transmisión formal (más allá del carisma)?</li>
-        <li>¿Puede revisar sus conceptos frente a la clínica?</li>
-        <li>¿Produce descripciones clínicas sistemáticas y comparables?</li>
-      </ul>
-
-      <h2>Psicoanálisis, TCC y conductismo: objetos distintos</h2>
-      <p>
-        El debate serio no es “quién gana” sino qué recorte de realidad trabaja
-        cada enfoque.
-      </p>
-      <ul>
-        <li>
-          <strong>TCC/conductismo:</strong> síntomas, conducta observable,
-          protocolos y métricas.
-        </li>
-        <li>
-          <strong>Psicoanálisis:</strong> repetición, deseo, goce y posición del
-          sujeto frente a su síntoma.
-        </li>
-      </ul>
-      <p>
-        Para ciertos cuadros agudos, una terapia protocolizada puede ser primera
-        línea. Para repeticiones subjetivas más profundas, un análisis puede abrir
-        otro tipo de trabajo. No es guerra de escuelas: es precisión clínica.
+        La pregunta no es si el psicoanálisis debe quedar fuera de todo rigor.
+        La pregunta es qué forma de rigor corresponde a una práctica que trabaja
+        con singularidad, lenguaje y transferencia.
       </p>
 
-      <h2>Una defensa más sólida: Lakatos</h2>
       <p>
-        Imre Lakatos propuso pensar la ciencia también en términos de
-        <em> programas de investigación</em>. Es decir, no solo por un experimento
-        aislado, sino por fecundidad teórica, consistencia y capacidad de producir
-        nuevos desarrollos en el tiempo.
-      </p>
-      <p>
-        Desde ese marco, el psicoanálisis puede discutirse críticamente sin
-        reducirlo ni a “religión” ni a “física fallida”.
+        No se analiza una repetición como se mide una presión arterial. No
+        porque una sea seria y la otra no, sino porque pertenecen a registros
+        distintos.
       </p>
 
-      <h2>Conclusión</h2>
+      <h2>Lacan no huyó de la formalización</h2>
+
       <p>
-        Llamar “pseudociencia” al psicoanálisis como reflejo automático empobrece
-        el debate. También lo empobrece defenderlo como dogma. La discusión adulta
-        pasa por su arquitectura conceptual, sus límites y su potencia clínica.
+        Quienes imaginan al psicoanálisis como pura interpretación literaria
+        suelen olvidar algo: Lacan intentó formalizar. Usó lógica, matemática,
+        grafos, topología. No para disfrazar la clínica de ciencia dura, sino
+        para no dejarla reducida a intuición personal.
       </p>
 
-      <h2>Bibliografía mínima recomendada</h2>
-      <ul>
-        <li>
-          Freud, S. (1915/2012). <em>Lo inconsciente</em>. En Obras Completas, Tomo
-          XIV. Buenos Aires: Amorrortu.
-        </li>
-        <li>
-          Lacan, J. (1966/2009). <em>Escritos 1 y 2</em>. Buenos Aires: Siglo XXI.
-        </li>
-        <li>
-          Lacan, J. (1964/1987). <em>El Seminario, Libro 11: Los cuatro conceptos
-          fundamentales del psicoanálisis</em>. Buenos Aires: Paidós.
-        </li>
-        <li>
-          Lacan, J. (1974-1975/2006). <em>El Seminario, Libro 22: RSI</em>.
-        </li>
-        <li>
-          Miller, J.-A. (comp.) (2005). <em>El partenaire-síntoma</em>. Buenos
-          Aires: Paidós.
-        </li>
-        <li>
-          Lakatos, I. (1978). <em>The Methodology of Scientific Research
-          Programmes</em>. Cambridge: Cambridge University Press.
-        </li>
-        <li>
-          Popper, K. (1963/2002). <em>Conjectures and Refutations</em>. London:
-          Routledge.
-        </li>
-      </ul>
-
-      <h2>FAQ</h2>
-      <h3>¿El psicoanálisis es una pseudociencia?</h3>
       <p>
-        No de forma simple. Puede criticarse y discutirse, pero no encaja de modo
-        automático en esa categoría.
+        El nudo borromeo, los matemas, los registros simbólico, imaginario y
+        real, no son adornos. Son intentos de escribir problemas clínicos. De
+        ubicar estructuras. De pensar cómo se anuda un sujeto y qué pasa cuando
+        algo se desanuda.
       </p>
 
-      <h3>¿Por qué Lacan usa matemática y topología?</h3>
       <p>
-        Para formalizar una teoría del sujeto y evitar que todo quede en intuición
-        clínica o estilo personal.
+        Puede discutirse si esos intentos convencen o no. Lo que no se puede
+        decir seriamente es que no hay esfuerzo de formalización.
       </p>
 
-      <h3>¿Se puede combinar con TCC?</h3>
+      <h2>La pregunta por la eficacia</h2>
+
       <p>
-        Sí, según diagnóstico, urgencia y objetivos terapéuticos.
+        Otra objeción aparece rápido: “pero, ¿funciona?”. La pregunta es válida.
+        También es tramposa si no se aclara qué quiere decir funcionar.
       </p>
 
-      <h3>¿Qué sería una crítica rigurosa al psicoanálisis?</h3>
       <p>
-        Mostrar inconsistencias lógicas, límites técnicos o fallas clínicas
-        argumentadas, no solo usar etiquetas.
+        Si funcionar significa borrar un síntoma en pocas sesiones, quizá el
+        psicoanálisis no sea siempre el dispositivo adecuado. Si funcionar
+        significa mover la posición de un sujeto frente a su deseo, su goce, su
+        historia y sus repeticiones, la medición se vuelve más compleja.
       </p>
 
-      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      <p>
+        Hay cambios que no entran bien en una planilla: dejar de obedecer a una
+        demanda familiar, poder separarse, no necesitar siempre el mismo tipo de
+        fracaso, soportar un deseo propio, no responder con el cuerpo a lo que
+        no se pudo decir.
+      </p>
+
+      <h2>El riesgo interno del psicoanálisis</h2>
+
+      <p>
+        Dicho esto: el psicoanálisis también puede volverse dogmático. Puede
+        esconderse detrás de jerga. Puede usar a Lacan como autoridad muerta.
+        Puede confundir oscuridad con profundidad. Puede volverse una cofradía
+        donde nadie entiende nada pero todos asienten.
+      </p>
+
+      <p>
+        Esa crítica hay que aceptarla. Porque existe. Y porque daña la clínica.
+        Un psicoanálisis vivo no necesita hablar difícil para parecer serio. La
+        complejidad no exige impostura.
+      </p>
+
+      <p>
+        La defensa del psicoanálisis no debería ser una defensa corporativa.
+        Debería ser una defensa del lugar que ocupa: el lugar donde la palabra
+        de un sujeto importa más que la rapidez con la que puede adaptarse.
+      </p>
+
+      <h2>La etiqueta “pseudociencia” a veces tranquiliza demasiado</h2>
+
+      <p>
+        Llamar pseudociencia al psicoanálisis puede funcionar como una manera
+        de no escuchar lo que incomoda de él. Porque el psicoanálisis insiste en
+        algo poco compatible con la época: no todo malestar es un error a
+        corregir, no todo síntoma es un enemigo, no toda cura consiste en volver
+        productivo al sujeto.
+      </p>
+
+      <p>
+        Tal vez por eso molesta. Porque no promete adaptación rápida. Porque no
+        convierte el deseo en objetivo. Porque no se entrega del todo al ideal
+        de transparencia.
+      </p>
+
+      <p>
+        La discusión seria no es si el psicoanálisis se parece lo suficiente a
+        una ciencia natural. La discusión seria es si todavía necesitamos un
+        lugar para escuchar aquello que no se deja reducir a conducta, dato o
+        rendimiento.
+      </p>
     </article>
   );
 }

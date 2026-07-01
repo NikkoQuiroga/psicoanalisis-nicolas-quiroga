@@ -28,6 +28,7 @@ export default function Header() {
 
   const items = [
     ["Inicio", "/"],
+    ["Sobrepensamiento", "/sobrepensamiento-overthinking"],
     ["¿Cómo funciona?", "/faq"],
     ["Olivos", "/psicoanalista-olivos"],
     ["Online", "/psicoanalisis-online"],

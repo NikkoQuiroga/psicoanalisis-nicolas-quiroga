@@ -52,18 +52,18 @@ export default function ProfileDrop({ open, onClose }) {
                 <ul className="mt-2 list-disc pl-5 space-y-1">
                   <li>Lic. en Psicología (UBA).</li>
                   <li>Formación en Psicoanálisis (ALEF).</li>
-                  <li>Práctica clínica: ansiedad, insomnio, vínculos, duelo.</li>
-                  <li>Enfoque: psicoanálisis + recursos basados en evidencia.</li>
+                  <li>Práctica clínica: sobrepensamiento, ansiedad, insomnio, vínculos, duelo.</li>
+                  <li>Enfoque: psicoanálisis lacaniano, caso por caso.</li>
                 </ul>
               </section>
 
               {/* Cursos */}
               <section>
-                <h4 className="font-medium text-sumi">Cursos y entrenamientos</h4>
+                <h4 className="font-medium text-sumi">Formación y recorrido</h4>
                 <ul className="mt-2 list-disc pl-5 space-y-1">
-                  <li>Mindfulness aplicado a clínica (curso breve).</li>
-                  <li>Logoterapia — intervenciones focalizadas.</li>
-                  <li>Seminarios de lectura (Freud/Lacan).</li>
+                  <li>Formación en Psicoanálisis (ALEF).</li>
+                  <li>Seminarios de lectura de Freud y Lacan.</li>
+                  <li>Formaciones complementarias en campos afines, sin desplazar el encuadre psicoanalítico.</li>
                 </ul>
               </section>
 

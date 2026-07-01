@@ -15,8 +15,26 @@ const Burnout                      = lazy(() => import("./Burnout.jsx"));
 const Insomnio                     = lazy(() => import("./Insomnio.jsx"));
 const IAPsicoanalisis              = lazy(() => import("./IAPsicoanalisis.jsx"));
 const PruebasDeFelicidad           = lazy(() => import("./PruebasDeFelicidad.jsx"));
+const ExitoDeseoDelOtro            = lazy(() => import("./ExitoDeseoDelOtro.jsx"));
 
 export const posts = [
+  {
+    slug: "exito-deseo-del-otro-vacio-ansiedad",
+    title: "El éxito como respuesta al deseo del Otro",
+    description:
+      "Llegás a donde el Otro quería que llegaras y te encontrás vacío, o más ansioso que antes. El síntoma no desaparece con el logro: a veces se intensifica.",
+    date: "2026-06-30",
+    tags: [
+      "Éxito",
+      "Deseo del Otro",
+      "Lacan",
+      "Ansiedad",
+      "Vacío",
+      "Psicoanálisis",
+    ],
+    readMinutes: 8,
+    Component: ExitoDeseoDelOtro,
+  },
   {
     slug: "pruebas-de-felicidad-posmodernidad-vacio",
     title: "Un tiempo en el que se piden pruebas de felicidad todo el tiempo",
@@ -104,16 +122,16 @@ export const posts = [
   },
   {
     slug: "diferencia-psicologo-psicoanalista-coach",
-    title: "Psicólogo, psicoanalista, coach: qué hace cada uno y cómo elegir",
+    title: "Psicólogo, psicoanalista, coach: no ofrecen lo mismo",
     description:
-      "Los tres trabajan con personas y cobran por hora, pero hacen cosas muy distintas. Una guía sin condescendencia para entender qué encuadre tiene sentido según lo que estás buscando.",
+      "No se trata de elegir una etiqueta profesional. Se trata de saber qué tipo de escucha buscás: rendimiento, alivio rápido o una lectura de eso que se repite.",
     date: "2026-05-17",
     tags: [
       "Diferencia psicólogo psicoanalista",
       "Coach vs psicólogo",
       "Psicoanálisis vs TCC",
       "Qué es un psicoanalista",
-      "Cómo elegir terapeuta",
+      "Encuadre clínico",
     ],
     readMinutes: 8,
     hero: "/media/diferencia-psicologo-psicoanalista-coach.webp",
@@ -138,9 +156,9 @@ export const posts = [
   {
     slug: "terapia-en-crisis-economica",
     title:
-      "Terapia en crisis económica: por qué sostener el proceso también es salud mental",
+      "Terapia en crisis económica: cuando hablar de plata también es clínica",
     description:
-      "Cómo sostener terapia durante una crisis económica: frecuencia posible, modalidad flexible y trabajo clínico para reducir ansiedad y culpa individual.",
+      "La crisis material no se resuelve hablando. Pero el modo en que la culpa, la vergüenza y el miedo toman el cuerpo también necesita un lugar.",
     date: "2026-03-06",
     tags: [
       "Terapia en crisis económica",
@@ -158,7 +176,7 @@ export const posts = [
     title:
       "¿El psicoanálisis es una pseudociencia? La respuesta incómoda que casi nadie explica bien",
     description:
-      "Debate serio sobre si el psicoanálisis es pseudociencia: Lacan, formalización, topología, criterios de cientificidad y diferencias con TCC/conductismo.",
+      "La acusación de pseudociencia suele decir más del ideal de ciencia que del psicoanálisis. Un texto para separar clínica, laboratorio y deseo.",
     date: "2026-03-04",
     tags: [
       "Psicoanálisis es pseudociencia",
@@ -176,9 +194,9 @@ export const posts = [
   },
   {
     slug: "ansiedad-vida-moderna-aumento-como-manejarla",
-    title: "Ansiedad en la vida moderna: por qué va en aumento y cómo manejarla",
+    title: "Ansiedad moderna: vivir como si siempre debieras responder",
     description:
-      "La ansiedad crece con estrés laboral, hiperconectividad e incertidumbre económica. Un análisis con Marx, Lacan y Žižek, y una práctica respiratoria breve.",
+      "No es solo que haya más pantallas o más trabajo. Es una época que te exige estar disponible, rendir, gozar y no fallar.",
     date: "2025-09-14",
     tags: [
       "Ansiedad en la vida moderna",
@@ -199,9 +217,9 @@ export const posts = [
   },
   {
     slug: "angustia-existencial-sentido-de-la-vida",
-    title: "Angustia existencial: cuando la vida pierde sentido y cómo encontrarlo",
+    title: "Angustia existencial: cuando nada alcanza para justificar la vida",
     description:
-      "Qué es la angustia existencial, por qué aparece aunque 'todo esté bien', y cómo recuperar sentido con Frankl, Hegel y Žižek.",
+      "A veces no falta un plan. Falta que algo tenga peso. La angustia existencial aparece cuando la vida funciona, pero no responde.",
     date: "2025-09-12",
     tags: [
       "Angustia existencial",
@@ -216,9 +234,9 @@ export const posts = [
   },
   {
     slug: "por-que-nos-autosaboteamos-romper-ciclo-autosabotaje",
-    title: "¿Por qué nos autosaboteamos? Cómo romper el ciclo del autosabotaje",
+    title: "Autosabotaje: cuando fracasar también cumple una función",
     description:
-      "Entendé por qué repetís conductas que te dañan: procrastinación, vínculos, proyectos. Goce, miedo al cambio y una guía práctica para cortar el ciclo.",
+      "No siempre repetimos lo que nos conviene. A veces repetimos lo que conserva una escena conocida, incluso cuando nos lastima.",
     date: "2025-09-10",
     tags: [
       "Autosabotaje",
@@ -235,7 +253,7 @@ export const posts = [
     slug: "oscura-verdad-budismo-zen",
     title: "La oscura verdad del budismo zen",
     description:
-      "Una lectura crítico-psicoanalítica del zen: desapego, metanarrativas y condiciones materiales del sufrimiento.",
+      "El desapego puede liberar. También puede volverse una forma elegante de no tocar nada de lo que produce sufrimiento.",
     date: "2025-09-07",
     tags: ["Budismo zen", "Psicoanálisis", "Crítica cultural", "Žižek", "Japón"],
     readMinutes: 7,
@@ -244,9 +262,9 @@ export const posts = [
   },
   {
     slug: "ikigai-formula-secreta-japonesa-felicidad",
-    title: "Ikigai, la 'fórmula secreta japonesa' para la felicidad",
+    title: "Ikigai: cuando el sentido se vende como fórmula",
     description:
-      "Qué es realmente el ikigai y cómo leerlo desde el psicoanálisis: menos receta universal, más causa que alimente el deseo.",
+      "La época ama las fórmulas de sentido. El deseo, por suerte o por desgracia, no entra tan fácil en un diagrama.",
     date: "2025-09-07",
     tags: ["Japón", "Ikigai", "Psicoanálisis", "Cultura"],
     readMinutes: 6,
@@ -255,9 +273,9 @@ export const posts = [
   },
   {
     slug: "nostalgia-puente-japon-psicoanalisis",
-    title: "La nostalgia: un puente entre Japón y el psicoanálisis",
+    title: "La nostalgia: no extrañás solo lo que perdiste",
     description:
-      "Mono no aware y psicoanálisis: cómo la nostalgia señala pérdidas y vacíos, y qué podemos hacer con eso en terapia.",
+      "La nostalgia no siempre habla del pasado. A veces señala una falta actual, algo que todavía no encontró forma.",
     date: "2025-09-05",
     tags: ["Psicoanálisis", "Japón", "Nostalgia", "mono no aware"],
     readMinutes: 6,

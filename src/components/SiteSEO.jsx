@@ -11,6 +11,14 @@ export default function SiteSEO() {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
   const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
   const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
+  const professionalProfiles = [
+    "https://www.psychologytoday.com/profile/1783533",
+    "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+    "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+    "https://buscopsi.com/psicologo/nicolas-quiroga/",
+    linkedInUrl,
+    academicWorkUrl,
+  ];
 
   const person = {
     "@context": "https://schema.org",
@@ -28,11 +36,7 @@ export default function SiteSEO() {
     },
     url: site,
     telephone: `+${phone}`,
-    sameAs: [
-      linkedInUrl,
-      academicWorkUrl,
-      `https://wa.me/${phone}`,
-    ],
+    sameAs: professionalProfiles,
     knowsAbout: [
       "Psicoanálisis lacaniano",
       "Lacan",
@@ -47,6 +51,16 @@ export default function SiteSEO() {
       "Psicoanálisis online",
       "Psicoanalista en Olivos",
       "Psicoanalista zona norte Buenos Aires",
+      "Sobrepensamiento",
+      "Overthinking",
+      "Pensar demasiado",
+      "No puedo apagar la cabeza",
+      "Ansiedad",
+      "Insomnio",
+      "Autoexigencia",
+      "Perfeccionismo",
+      "Dificultad para decidir",
+      "Burnout",
     ],
   };
 
@@ -85,7 +99,7 @@ export default function SiteSEO() {
         closes: "21:00",
       },
     ],
-    sameAs: [linkedInUrl, academicWorkUrl, `https://wa.me/${phone}`],
+    sameAs: [...professionalProfiles, `https://wa.me/${phone}`],
     description:
       "Psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta. Para quienes atraviesan momentos que no saben cómo nombrar.",
     availableService: [

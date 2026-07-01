@@ -12,11 +12,13 @@ export default function AgendaForm() {
 
   const [form, setForm] = useState({
     name: "",
+    age: "",
     contact: "",
     reason: "",
     urgency: "Esta semana",
     slot: "",
     mode: isAR ? "Online" : "Online",
+    risk: "No",
     canPay: false,
     note: "",
   });
@@ -68,6 +70,16 @@ export default function AgendaForm() {
       </label>
 
       <label className="grid gap-1 text-sm">
+        <span>Edad</span>
+        <input
+          className="border rounded px-3 py-2"
+          inputMode="numeric"
+          value={form.age}
+          onChange={(e) => setForm({ ...form, age: e.target.value })}
+        />
+      </label>
+
+      <label className="grid gap-1 text-sm">
         <span>Email o WhatsApp</span>
         <input
           className="border rounded px-3 py-2"
@@ -85,9 +97,13 @@ export default function AgendaForm() {
           onChange={(e) => setForm({ ...form, reason: e.target.value })}
         >
           <option value="">Elegí una opción</option>
-          <option>Angustia o síntoma sin nombre claro</option>
-          <option>Algo que se repite y no entiendo por qué</option>
-          <option>Ansiedad o crisis</option>
+          <option>Sobrepensamiento o no poder apagar la cabeza</option>
+          <option>Ansiedad o angustia</option>
+          <option>Insomnio por pensamientos</option>
+          <option>Autoexigencia o perfeccionismo</option>
+          <option>Dificultad para decidir</option>
+          <option>Desgaste laboral o burnout</option>
+          <option>Algo que se repite aunque ya lo entendí</option>
           <option>Duelo o pérdida</option>
           <option>Vínculos o relaciones</option>
           <option>Inhibición o bloqueo</option>
@@ -123,6 +139,28 @@ export default function AgendaForm() {
           </label>
         ))}
       </fieldset>
+
+      <fieldset className="grid gap-2 text-sm rounded-xl border border-black/5 bg-white/70 p-3">
+        <legend className="px-1">¿Estás atravesando una urgencia o riesgo actual de hacerte daño?</legend>
+        {["No", "Sí"].map((value) => (
+          <label key={value} className="inline-flex items-center gap-2">
+            <input
+              type="radio"
+              name="risk"
+              checked={form.risk === value}
+              onChange={() => setForm({ ...form, risk: value })}
+            />{" "}
+            {value}
+          </label>
+        ))}
+      </fieldset>
+
+      {form.risk === "Sí" && (
+        <div className="rounded-xl border border-red-900/20 bg-red-50 p-3 text-xs leading-relaxed text-red-900">
+          Este espacio no funciona como guardia ni dispositivo de urgencias. En caso de riesgo inmediato,
+          acudí a una guardia, llamá a emergencias o contactá servicios locales de asistencia en crisis.
+        </div>
+      )}
 
       <label className="grid gap-1 text-sm">
         <span>Franja horaria</span>

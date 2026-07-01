@@ -3,48 +3,119 @@ import React from "react";
 export default function Nostalgia() {
   return (
     <article className="prose-lite">
-      <p>
-        La nostalgia es una brújula emocional. Nos señala un lugar que creemos perdido, pero que en realidad nunca existió tal como lo recordamos.
+      <h1>La nostalgia: no extrañás solo lo que perdiste</h1>
+
+      <p className="lead">
+        La nostalgia parece mirar hacia atrás. Una casa, una época, alguien que
+        ya no está, una versión propia que parecía más liviana. Pero no siempre
+        extrañamos el pasado. A veces extrañamos una promesa que el pasado
+        todavía sostenía.
       </p>
 
-      <h2>La nostalgia en el psicoanálisis: la pérdida como brújula</h2>
       <p>
-        Freud, en su ensayo sobre el duelo y la melancolía, nos ofrece una clave fundamental: lo perdido nunca es simplemente un objeto, un lugar o un momento en el tiempo. Es siempre algo más profundo, un trozo de nuestra identidad. Cuando sentimos nostalgia, nos enfrentamos a esa pérdida no resuelta. El objeto de nuestro deseo puede parecer algo externo –una casa de la infancia, una relación, una época–, pero lo que realmente añoramos es la parte de nosotros mismos que quedó atrapada en ese recuerdo.
-      </p>
-      <p>
-        Lacan, siguiendo este hilo, habla del “sujeto supuesto al saber”, ese Otro imaginado al que le atribuimos las respuestas que buscamos. En el caso de la nostalgia, este “sujeto supuesto” puede ser el pasado, al que idealizamos como un lugar de completud. Pero Lacan nos recuerda algo crucial: ese pasado nunca existió como lo imaginamos. El deseo de volver allí no es más que el reflejo de nuestra búsqueda interminable de lo que creemos que nos falta.
+        Por eso la nostalgia puede doler incluso cuando sabemos que aquello no
+        era tan perfecto. No vuelve porque el pasado haya sido mejor. Vuelve
+        porque algo del presente quedó sin forma.
       </p>
 
-      <h2>Mono no aware: la nostalgia en clave japonesa</h2>
+      <h2>El pasado como pantalla</h2>
+
       <p>
-        En Japón, la nostalgia se vive desde un lugar diferente. Existe un término fascinante que encapsula esta sensibilidad: <em>mono no aware</em> (物の哀れ). Este concepto, difícil de traducir, puede entenderse como la tristeza melancólica ante la impermanencia de las cosas, pero también como una apreciación profunda de su belleza efímera.
-      </p>
-      <p>
-        Un ejemplo icónico de <em>mono no aware</em> es la contemplación de los cerezos en flor. Los japoneses celebran su breve florecimiento no con tristeza, sino con un asombro reverente. Saben que esas flores caerán pronto, y en esa fugacidad encuentran su valor. No se trata de añorar lo que se pierde, sino de aprender a habitar el presente con la conciencia de que nada dura para siempre.
-      </p>
-      <p>
-        En mi propio viaje, Japón no ha sido solo un lugar que visité, sino un espacio que llevo tatuado en mi piel. Mi cuerpo, marcado con un <em>horimono</em> tradicional japonés, es un puente silencioso entre mi experiencia psicoanalítica y la filosofía japonesa. Allí entendí que el vacío que Freud y Lacan describen en el inconsciente también resuena en la estética japonesa, donde el vacío no es algo que temer, sino algo que apreciar.
-      </p>
-      <p>
-        Los jardines zen son un ejemplo de esto. Diseñados para contemplar el espacio vacío entre las piedras, nos enseñan que lo importante no siempre está en lo que vemos, sino en lo que sentimos en los silencios, en los vacíos. Ese mismo principio se aplica a la nostalgia: lo que duele no es lo que falta, sino la forma en que habitamos ese vacío.
+        Hay recuerdos que funcionan como refugio. Uno vuelve ahí para no mirar
+        demasiado de cerca lo que falta ahora. La nostalgia ofrece una escena
+        cerrada: colores, olores, frases, lugares. El presente, en cambio, suele
+        ser más torpe. Más abierto. Menos narrable.
       </p>
 
-      <h2>La nostalgia como síntoma y como guía</h2>
       <p>
-        En el consultorio, la nostalgia aparece muchas veces disfrazada. Algunos la llaman tristeza, otros ansiedad. Pero, al escuchar atentamente, siempre emerge el deseo. Un deseo no solo de volver al pasado, sino de volver a conectarse con una parte olvidada de sí mismos. Freud hablaba de “las piedras de tropiezo” del inconsciente, esas pequeñas huellas que nos llevan a repetir lo que no logramos elaborar. La nostalgia es una de esas piedras: un síntoma que nos señala algo por resolver.
-      </p>
-      <p>
-        Japón, con su filosofía del <em>mono no aware</em>, nos ofrece otra forma de abordar este síntoma. En lugar de buscar respuestas definitivas o soluciones mágicas, nos invita a habitar las preguntas, aceptar la impermanencia y aprender a encontrar belleza en lo que no podemos retener. Este enfoque no contradice al psicoanálisis, sino que lo complementa: ambos reconocen que lo esencial no está en llenar el vacío, sino en comprenderlo.
+        El recuerdo ordena. El deseo desordena.
       </p>
 
-      <h2>La nostalgia como espejo</h2>
       <p>
-        Escribir sobre la nostalgia me lleva a reflexionar sobre mi propio recorrido. Desde el diván, donde he escuchado tantas historias de pérdidas, angustias y deseos, hasta Japón, donde aprendí a ver la belleza en lo fugaz, mi camino ha sido un diálogo constante entre estas dos perspectivas. La nostalgia, como puente entre lo individual y lo universal, nos enseña que lo que buscamos no está afuera, ni en el pasado, ni siquiera en los otros. Está en nuestra capacidad de mirar hacia adentro y encontrar, en el vacío, un espacio para habitar.
+        Por eso no siempre conviene apurarse a “superar” la nostalgia. A veces
+        hay que escuchar qué conserva. Qué intenta no perder del todo. Qué
+        pregunta actual está desplazada hacia una imagen antigua.
       </p>
 
-      <h2>Conclusión</h2>
+      <h2>Mono no aware: lo que conmueve porque pasa</h2>
+
       <p>
-        La nostalgia no es un defecto ni una debilidad. Es una brújula que nos conecta con lo que hemos sido y con lo que queremos ser. Tanto el psicoanálisis como la cultura japonesa nos invitan a mirarla de frente, no para resolverla, sino para comprenderla. Porque, al final, no hay respuestas fáciles, pero sí una certeza: la nostalgia, cuando la abrazamos, puede ser el espejo en el que descubrimos nuestra propia humanidad.
+        La sensibilidad japonesa del <em>mono no aware</em> nombra algo
+        delicado: la conmoción ante lo que es bello precisamente porque no dura.
+        No se trata de negar la pérdida, sino de percibir que la pérdida ya está
+        escrita en la belleza misma.
+      </p>
+
+      <p>
+        Hay algo clínicamente interesante ahí. Muchas veces sufrimos no porque
+        algo haya terminado, sino porque fantaseábamos que no debía terminar.
+        Como si el amor, la juventud, una casa, una amistad o una identidad
+        tuvieran que quedar fijos para ser verdaderos.
+      </p>
+
+      <p>
+        Pero lo vivo no queda fijo. Y esa es la herida.
+      </p>
+
+      <h2>La nostalgia también puede ser un síntoma</h2>
+
+      <p>
+        No toda nostalgia es poética. A veces se vuelve una forma de no vivir.
+        Una fidelidad al pasado que impide perderlo de verdad. El sujeto no
+        recuerda: queda retenido. Repite una escena, una edad, una versión de sí
+        mismo, un amor que ya no está pero sigue ocupando el lugar de todo lo
+        posible.
+      </p>
+
+      <p>
+        En esos casos, el pasado no acompaña. Gobierna. No es memoria, es
+        mandato: volver, comparar, medir el presente contra algo que ya no puede
+        responder.
+      </p>
+
+      <p>
+        El problema no es extrañar. El problema es que el deseo quede
+        secuestrado por lo que se extraña.
+      </p>
+
+      <h2>Qué se perdió realmente</h2>
+
+      <p>
+        Una pregunta analítica posible sería: qué se perdió con eso que se
+        perdió. No solo la persona, el lugar o la época. Qué lugar ocupabas ahí.
+        Qué versión de vos quedaba autorizada. Qué mirada recibías. Qué deuda
+        todavía no existía.
+      </p>
+
+      <p>
+        A veces se extraña una infancia porque todavía no había que responder
+        por el deseo. A veces se extraña una relación porque organizaba una
+        identidad. A veces se extraña una ciudad porque ahí el sujeto todavía
+        podía imaginarse otro.
+      </p>
+
+      <p>
+        La nostalgia habla del pasado, sí. Pero suele estar diciendo algo del
+        presente.
+      </p>
+
+      <h2>No se cura olvidando</h2>
+
+      <p>
+        No se trata de olvidar. El olvido, cuando se fuerza, también es una
+        forma de obediencia. Se trata de que el recuerdo deje de exigir
+        sacrificios. Que pueda tener un lugar sin ocupar todos los lugares.
+      </p>
+
+      <p>
+        Tal vez elaborar una pérdida sea eso: no borrar lo que fue, sino dejar
+        de vivir como si todo lo que viene después estuviera condenado a ser una
+        copia fallida.
+      </p>
+
+      <p>
+        La nostalgia puede ser una tumba o una brújula. Depende de si nos deja
+        volver al presente.
       </p>
     </article>
   );

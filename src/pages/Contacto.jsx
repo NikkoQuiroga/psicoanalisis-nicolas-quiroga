@@ -14,7 +14,7 @@ export default function Contacto() {
         <title>Contacto · Agendá tu primera sesión — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Agendá tu primera sesión con Nicolás Quiroga, psicoanalista clínico en Olivos y online. Formulario de contacto, WhatsApp y email. Reserva absoluta."
+          content="Agendá una primera consulta de psicoanálisis con Nicolás Quiroga. Atención en Olivos y online para sobrepensamiento, ansiedad, insomnio y repetición. Honorarios: $40.000 ARS / USD 35."
         />
       </Helmet>
 
@@ -28,8 +28,8 @@ export default function Contacto() {
             Agendá tu sesión
           </h1>
           <p className="text-base text-sumi/65 max-w-xl leading-relaxed">
-            La primera sesión no implica compromiso de continuidad. Es el punto
-            de partida para ver si podemos trabajar juntos.
+            Si sentís que no podés apagar la cabeza, la primera consulta sirve
+            para ubicar qué insiste y ver si este encuadre clínico tiene sentido.
           </p>
         </div>
       </section>
@@ -91,8 +91,8 @@ export default function Contacto() {
 
             <div className="rounded-2xl bg-sumi/4 border border-black/5 p-4 text-xs text-sumi/65 leading-relaxed space-y-1">
               <p className="font-semibold text-sumi/80 text-sm mb-1">Primer mes</p>
-              <p>Una sesión semanal para delimitar el campo de trabajo e identificar hipótesis clínicas.</p>
-              <p className="mt-2">Después, la frecuencia se ajusta según el proceso.</p>
+              <p>Honorarios: $40.000 ARS por sesión para Argentina y USD 35 para exterior.</p>
+              <p className="mt-2">La frecuencia se define según el encuadre posible y el proceso.</p>
             </div>
           </motion.div>
 

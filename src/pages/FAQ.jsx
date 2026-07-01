@@ -14,11 +14,11 @@ const categories = [
       },
       {
         q: "¿Para quién es el psicoanálisis clínico?",
-        a: "Para quien siente que algo no cierra: una angustia que no tiene causa clara, algo que se repite en los vínculos o en el trabajo, una sensación de estar estancado, un duelo que no avanza. No hace falta tener un diagnóstico ni haber estado en terapia antes.",
+        a: "Para quien siente que algo no cierra: sobrepensamiento, angustia, insomnio, autoexigencia, escenas que se repiten en los vínculos o en el trabajo, una sensación de estar estancado. No hace falta tener un diagnóstico ni haber estado antes en análisis.",
       },
       {
         q: "¿Cuánto dura el proceso?",
-        a: "Depende de cada caso. No hay un número de sesiones prefijado. Algunos trabajos son focales y duran meses; otros abren preguntas que llevan más tiempo. Lo que sí pasa es que bastante rápido empezás a notar movimiento —en cómo te sentís, en cómo hablás de lo que te pasa.",
+        a: "Depende de cada caso. No hay un número de sesiones prefijado. Algunos trabajos son focales y duran meses; otros abren preguntas que llevan más tiempo. Lo importante es que el proceso tenga una dirección clínica y que lo que insiste pueda empezar a leerse de otro modo.",
       },
     ],
   },
@@ -35,7 +35,7 @@ const categories = [
       },
       {
         q: "¿Cuánto cuesta una sesión?",
-        a: "Argentina: $50.000 ARS por sesión. Exterior: USD 35 por sesión. El valor exacto y las formas de pago se confirman por WhatsApp antes de la primera sesión.",
+        a: "Argentina: $40.000 ARS por sesión. Exterior: USD 35 por sesión. El valor y las formas de pago se confirman por WhatsApp antes de la primera sesión.",
       },
       {
         q: "¿Tienen obra social o prepaga?",
@@ -65,11 +65,11 @@ const categories = [
       },
       {
         q: "¿El objetivo es sentirme mejor?",
-        a: "Sí, y también entender por qué duele lo que duele. El alivio y el entendimiento no se oponen: muchas veces lo que produce el cambio más duradero es poder darle nombre a lo que antes era solo malestar. No se trata de suprimir el síntoma sino de escuchar lo que trae.",
+        a: "El alivio importa, pero no trabajo desde la promesa de borrar rápido un síntoma. En psicoanálisis se trata de leer qué función cumple eso que insiste: el pensamiento excesivo, la angustia, la repetición, la exigencia. A veces el cambio empieza cuando dejás de pelearte con el síntoma y empezás a escucharlo.",
       },
       {
         q: "¿Es psicoanálisis o terapia cognitiva?",
-        a: "Es psicoanálisis clínico. No es TCC, no es coaching, no es mindfulness. Si lo que buscás son técnicas para gestionar síntomas en el corto plazo, probablemente otro profesional sea más adecuado. Si te interesa entender tu historia y mover algo de raíz, es probable que el psicoanálisis tenga sentido para vos.",
+        a: "Es psicoanálisis clínico. Mi recorrido formativo puede incluir otros campos, pero la práctica que ofrezco acá no se organiza como coaching, autoayuda ni entrenamiento de técnicas. El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste.",
       },
     ],
   },
@@ -121,7 +121,7 @@ export default function FAQ() {
         <title>¿Cómo funciona? · Preguntas frecuentes · Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Todo lo que necesitás saber antes de tu primera sesión: modalidad online y presencial, honorarios, confidencialidad y cómo trabaja Nicolás Quiroga."
+          content="Preguntas frecuentes sobre psicoanálisis con Nicolás Quiroga: modalidad online y presencial, honorarios, confidencialidad y encuadre clínico."
         />
       </Helmet>
 

@@ -50,7 +50,7 @@ export default function Insomnio() {
       <p>
         El insomnio tiene mala prensa porque se lo trata como un problema de
         rendimiento. Dormís mal, rendís mal. Dormís bien, rendís bien. Y
-        entonces el objetivo se vuelve técnico: cómo optimizar el sueño,
+        entonces la pregunta se vuelve técnica: cómo optimizar el sueño,
         cuántas horas, qué temperatura en el cuarto, qué luz azul evitar.
       </p>
 

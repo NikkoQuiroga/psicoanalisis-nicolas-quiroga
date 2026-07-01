@@ -132,7 +132,7 @@ export default function Burnout() {
         pueden ser más angustiantes que el trabajo.
       </p>
 
-      <h2>Entonces, ¿qué hacer?</h2>
+      <h2>La pregunta no es solo cómo descansar</h2>
 
       <p>
         Descansar, sí. Urgente, si llegaste al límite. El cuerpo necesita

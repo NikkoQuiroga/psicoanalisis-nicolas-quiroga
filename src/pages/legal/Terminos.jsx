@@ -25,8 +25,9 @@ export default function Terminos() {
           <section>
             <h2 className="font-medium text-sumi">2) Agenda y honorarios</h2>
             <p>
-              La coordinación de turnos se realiza por formulario o WhatsApp. Los honorarios se informan al momento de
-              coordinar y pueden actualizarse sin previo aviso hasta la confirmación del turno.
+              La coordinación de turnos se realiza por formulario o WhatsApp. Honorarios vigentes:
+              <strong> $40.000 ARS</strong> por sesión para Argentina y <strong>USD 35</strong> para exterior.
+              El valor puede actualizarse y se confirma al coordinar el turno.
             </p>
           </section>
 

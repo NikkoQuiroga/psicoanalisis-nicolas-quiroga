@@ -3,66 +3,100 @@ import React from "react";
 export default function Ikigai() {
   return (
     <article className="prose-lite">
-      <h1>Ikigai, la “fórmula secreta japonesa” para la felicidad</h1>
+      <h1>Ikigai: cuando el sentido se vende como fórmula</h1>
 
-      <p>
-        En los últimos años, el concepto de <em>ikigai</em> ha cobrado relevancia a nivel global gracias al libro
-        <em> Ikigai: Los secretos de Japón para una vida larga y feliz</em> (García &amp; Miralles, 2016). El término
-        pasó a circular como una fórmula de coaching motivacional.
-      </p>
-
-      <p>
-        <em>Ikigai</em>, que podría traducirse como “la razón para levantarse por la mañana”, se origina en Okinawa,
-        conocida por su alta longevidad (Tsukasa, 2010). Sin embargo, en Japón no se entiende como una receta universal.
-        Más que un “propósito único”, puede adoptar formas simples: disfrutar un desayuno o compartir tiempo con un
-        amigo. Como señala Kobayashi Tsukasa (2010), el <em>ikigai</em> auténtico surge de la interacción entre
-        individuo, deseos y el valor que encuentra en sus relaciones y actividades cotidianas.
+      <p className="lead">
+        El ikigai se volvió una de esas palabras que Occidente toma de Japón
+        para tranquilizarse. Suena profundo, amable, antiguo. Se imprime en
+        diagramas. Se convierte en método. Cuatro círculos, una intersección y,
+        supuestamente, ahí estaría la vida con sentido.
       </p>
 
       <p>
-        Aun así, García y Miralles (2016) lo presentan como la intersección entre lo que amás, lo que sabés hacer, lo
-        que el mundo necesita y por lo que te pueden pagar. Inspirador, sí, pero reduce la riqueza del concepto a un
-        esquema rígido que desconoce la complejidad de la existencia.
+        El problema no es Japón. El problema es lo que hacemos con Japón cuando
+        necesitamos una respuesta rápida y con buena estética.
       </p>
 
-      <h2>Las trampas de la felicidad prefabricada</h2>
+      <h2>La fórmula como defensa</h2>
+
       <p>
-        La idea de que seremos felices cuando “encontremos nuestro propósito” es un mantra de la autoayuda. Desde el
-        psicoanálisis, hay objeciones. Freud sostuvo que somos expertos en sabotear la felicidad y que, en el mejor de
-        los casos, es un momento fugaz ( <em>El malestar en la cultura</em>, 1930). La felicidad irrumpe de manera
-        inesperada, no como resultado garantizado de un plan.
-      </p>
-      <p>
-        Žižek critica las fórmulas universales por ignorar el contexto (Žižek, 2008). ¿Cómo hablar de <em>ikigai</em> en
-        condiciones de pobreza o precarización? ¿Alcanza con seguir cuatro pasos?
+        Hay algo muy contemporáneo en convertir el sentido en una fórmula. Si
+        el malestar angustia, lo volvemos esquema. Si el deseo incomoda, lo
+        traducimos en propósito. Si el vacío aparece, dibujamos un mapa.
       </p>
 
-      <h2>Máscaras, narrativas y el vacío</h2>
       <p>
-        Para el psicoanálisis lacaniano, no hay un “yo verdadero” esperando ser descubierto: somos narrativas y máscaras
-        construidas con otros (Lacan, <em>Escritos</em>, 1966). “Ser quien realmente sos” puede volverse una trampa.
-        Desde aquí, el <em>ikigai</em> puede rescatarse como concepto flexible: pequeñas razones que alimentan el deseo,
-        más que un ideal rígido.
+        No está mal buscar orientación. Lo problemático es creer que el deseo se
+        deja ordenar con la misma prolijidad con la que se ordena una agenda.
+        La vida no siempre coincide con lo que amás, lo que el mundo necesita,
+        aquello por lo que te pagan y aquello que sabés hacer. A veces esos
+        círculos ni siquiera se hablan entre sí.
       </p>
 
-      <h2>Conclusión: una causa, no una receta</h2>
       <p>
-        Lejos de la versión comercial, <em>ikigai</em> abre un espacio para pensar lo que nos mueve, sin prometer
-        certezas. En vez de buscar una felicidad prefabricada, invita a abrazar la ambigüedad y encontrar sentido en lo
-        cotidiano. No siempre hay “propósito” claro, pero sí momentos de sentido.
-      </p>
-      <p>
-        Tal vez sea hora de dejar las recetas universales y construir nuestras propias narrativas: una causa que cause
-        deseo y permita que la felicidad irrumpa, aunque sea de manera fugaz e inesperada.
+        Y a veces lo que deseás no queda bien en ningún círculo.
       </p>
 
-      <h3>Referencias</h3>
-      <ul>
-        <li>Freud, S. (1930). <em>El malestar en la cultura</em>.</li>
-        <li>García, H., &amp; Miralles, F. (2016). <em>Ikigai</em>.</li>
-        <li>Kobayashi Tsukasa (2010). <em>The Japanese philosophy of ikigai</em>.</li>
-        <li>Žižek, S. (2008). <em>Violencia: Seis reflexiones marginales</em>.</li>
-      </ul>
+      <h2>El deseo no es una marca personal</h2>
+
+      <p>
+        La época quiere que todo deseo se vuelva narrable. Que puedas explicarlo
+        en una bio, en una entrevista, en un pitch, en una decisión profesional.
+        “Encontré mi propósito.” “Estoy alineado.” “Vivo de lo que amo.” Son
+        frases que suenan bien porque cierran.
+      </p>
+
+      <p>
+        El deseo, en cambio, suele abrir. No siempre da identidad. A veces la
+        rompe. No siempre mejora la productividad. A veces la incomoda. No
+        siempre coincide con la imagen que uno quiere sostener de sí mismo.
+      </p>
+
+      <p>
+        Por eso una fórmula de sentido puede ser tranquilizadora y, al mismo
+        tiempo, profundamente defensiva. Te da una respuesta para no escuchar la
+        pregunta.
+      </p>
+
+      <h2>El uso occidental de lo oriental</h2>
+
+      <p>
+        Hay una forma de consumir Oriente como si fuera farmacia simbólica:
+        zen para calmarse, ikigai para tener propósito, wabi-sabi para aceptar
+        imperfecciones, kintsugi para estetizar heridas. Todo puede servir, pero
+        todo puede volverse mercancía.
+      </p>
+
+      <p>
+        Cuando una tradición se vuelve producto motivacional, pierde rugosidad.
+        Se vuelve amable. Se vuelve decorativa. Ya no interroga nada: acompaña
+        la adaptación.
+      </p>
+
+      <p>
+        El punto no es rechazar esas ideas, sino desconfiar de su traducción
+        demasiado cómoda.
+      </p>
+
+      <h2>Una causa, no una receta</h2>
+
+      <p>
+        Desde el psicoanálisis, quizá la pregunta no sea “cuál es mi ikigai”,
+        sino qué causa sostiene mi deseo. Qué me mueve cuando no estoy
+        respondiendo a la demanda del Otro. Qué insiste incluso cuando no
+        conviene. Qué pierde sentido aunque sea razonable.
+      </p>
+
+      <p>
+        Esa causa no siempre es noble, clara o vendible. A veces aparece como
+        síntoma. A veces como repetición. A veces como un malestar que no deja
+        acomodarse del todo.
+      </p>
+
+      <p>
+        El sentido, si aparece, no llega como fórmula secreta. Llega más bien
+        cuando uno deja de traicionarse tan prolijamente.
+      </p>
     </article>
   );
 }

@@ -1,7 +1,30 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
-import { MapPin, MessageCircle, ShieldCheck, Clock, ArrowRight } from "lucide-react";
+import { MapPin, MessageCircle, ShieldCheck, Clock, ArrowRight, ExternalLink } from "lucide-react";
+
+const professionalProfiles = [
+  {
+    label: "Doctoralia",
+    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+  },
+  {
+    label: "Psychology Today",
+    href: "https://www.psychologytoday.com/profile/1783533",
+  },
+  {
+    label: "BuscoPsi",
+    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
+  },
+  {
+    label: "Psicólogos Buenos Aires",
+    href: "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/lic-nicolas-quiroga/",
+  },
+];
 
 export default function PsicoanalistaOlivos() {
   const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
@@ -27,6 +50,7 @@ export default function PsicoanalistaOlivos() {
       name: "Lic. Nicolás Quiroga",
       url: site,
       telephone: `+${phone}`,
+      sameAs: professionalProfiles.map((profile) => profile.href),
     },
     areaServed: [
       { "@type": "City", name: "Olivos" },
@@ -41,13 +65,13 @@ export default function PsicoanalistaOlivos() {
         <title>Psicoanalista en Olivos — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoanalista en Olivos, Vicente López. Sesiones presenciales y online con Nicolás Quiroga, M.N. 59.272. Primera entrevista para ubicar qué te está pasando."
+          content="Psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS."
         />
         <link rel="canonical" href={url} />
         <meta property="og:title" content="Psicoanalista en Olivos — Lic. Nicolás Quiroga" />
         <meta
           property="og:description"
-          content="Sesiones de psicoanálisis en Olivos y online. Un espacio clínico para trabajar angustia, ansiedad, vínculos, duelos y repetición."
+          content="Sesiones de psicoanálisis en Olivos. Un espacio clínico para trabajar sobrepensamiento, angustia, ansiedad, autoexigencia y repetición."
         />
         <meta property="og:url" content={url} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
@@ -62,9 +86,9 @@ export default function PsicoanalistaOlivos() {
               Psicoanalista en Olivos
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-              Un espacio presencial para trabajar eso que insiste: angustia, ansiedad, duelos,
-              vínculos que se repiten, decisiones difíciles o un malestar que no termina de
-              encontrar nombre.
+              Un espacio presencial para trabajar eso que insiste: la cabeza que no corta,
+              la ansiedad, el insomnio, la autoexigencia, los vínculos que se repiten o un
+              malestar que no termina de encontrar nombre.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -130,6 +154,37 @@ export default function PsicoanalistaOlivos() {
       </section>
 
       <section className="mx-auto max-w-5xl px-5 py-12">
+        <div className="grid gap-6 md:grid-cols-[.9fr_1.1fr] md:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-gold">Olivos · referencias</p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold">Perfiles donde también figuro</h2>
+          </div>
+          <div className="space-y-4">
+            <p className="text-sm leading-relaxed text-sumi/70">
+              Además de este sitio, podés encontrar mi perfil profesional en algunos directorios
+              y espacios públicos. La idea no es reemplazar la consulta por una vidriera, sino
+              dejar señales consistentes: Lic. Nicolás Quiroga, psicoanalista clínico en Olivos
+              y online.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {professionalProfiles.map((profile) => (
+                <a
+                  key={profile.href}
+                  href={profile.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
+                >
+                  {profile.label}
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-5 py-12">
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <h2 className="text-2xl font-semibold">También trabajo online</h2>
@@ -141,6 +196,9 @@ export default function PsicoanalistaOlivos() {
           <div className="flex flex-wrap gap-3 md:justify-end">
             <Link to="/psicoanalisis-online" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
               Psicoanálisis online
+            </Link>
+            <Link to="/sobrepensamiento-overthinking" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
+              Sobrepensamiento y ansiedad
             </Link>
             <a
               href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quería consultar por sesiones en Olivos.")}`}

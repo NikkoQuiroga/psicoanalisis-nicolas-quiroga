@@ -20,7 +20,7 @@ export default function ValeLaPenaPagarTerapia() {
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Un profesional con formación específica ofrece un espacio que no existe en ningún otro contexto: escucha sin agenda propia, confidencialidad absoluta, y un trabajo orientado exclusivamente a quien consulta. Eso tiene un valor que no es fácil de comparar con otros gastos.",
+            "Un analista ofrece un espacio que no existe en ningún otro contexto: escucha sin agenda propia, confidencialidad y un trabajo orientado por lo que aparece en la palabra de quien consulta.",
         },
       },
       {
@@ -39,16 +39,16 @@ export default function ValeLaPenaPagarTerapia() {
     <article className="prose-lite">
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
 
-      <h1>¿Vale la pena pagar por terapia?</h1>
+      <h1>¿Vale la pena pagar por análisis?</h1>
 
       <p className="lead">
-        La pregunta es razonable. La terapia no es barata, y en Argentina menos.
+        La pregunta es razonable. El análisis no es barato, y en Argentina menos.
         Antes de responderla, vale la pena girarla: ¿cuánto cuesta no hacerlo?
       </p>
 
       <p>
         No lo digo para provocar. Lo digo porque es la manera más honesta de
-        entrar al tema. El costo de la terapia es visible, concreto, aparece en
+        entrar al tema. El costo del análisis es visible, concreto, aparece en
         el resumen de la tarjeta. El costo del malestar sin atender es más
         difuso, se distribuye en el tiempo, y casi nunca se contabiliza.
       </p>
@@ -71,7 +71,7 @@ export default function ValeLaPenaPagarTerapia() {
       </p>
 
       <p>
-        No estoy diciendo que la terapia lo resuelve todo. Estoy diciendo que
+        No estoy diciendo que el análisis lo resuelve todo. Estoy diciendo que
         cuando alguien llega al consultorio después de cinco años de "lo estoy
         manejando solo", el relato casi siempre incluye una cuenta de lo que
         esos cinco años costaron. En vínculos, en trabajo, en salud.
@@ -106,13 +106,13 @@ export default function ValeLaPenaPagarTerapia() {
 
       <p>
         La comparación que más escucho es con el gym, con Netflix, con salidas.
-        "Por lo que pago en terapia podría hacer esto otro." Es una comparación
+        "Por lo que pago en análisis podría hacer esto otro." Es una comparación
         válida en términos de presupuesto, pero no en términos de qué compra
         cada cosa.
       </p>
 
       <p>
-        Lo que compra la terapia —si funciona— es un movimiento en algo que
+        Lo que compra el análisis —si funciona— es un movimiento en algo que
         estaba trabado. Un cambio en cómo una persona se para frente a ciertos
         problemas, ciertos vínculos, ciertos patrones. Eso no tiene precio de
         referencia porque es difícil de comparar con cualquier otra cosa.

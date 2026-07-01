@@ -13,11 +13,11 @@ export default function Ubicacion() {
         <title>Consultorio en Olivos y sesiones online | Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicólogo en Olivos (Vicente López): cómo llegar al consultorio, opciones de transporte y modalidad online para Argentina y exterior."
+          content="Psicoanalista en Olivos, Vicente López. Consultorio presencial y sesiones online para trabajar sobrepensamiento, ansiedad, insomnio y repetición."
         />
         <meta
           name="keywords"
-          content="psicólogo en Olivos, consultorio psicológico en Vicente López, terapia presencial Olivos, psicólogo online Argentina"
+          content="psicoanalista en Olivos, psicoanálisis Vicente López, psicoanálisis online Argentina, sobrepensamiento, ansiedad"
         />
       </Helmet>
 
@@ -40,7 +40,7 @@ export default function Ubicacion() {
           >
             Atiendo de forma presencial en Olivos (Vicente López), en una zona
             de fácil acceso, y también online por videollamada para quienes
-            prefieren sostener el proceso desde su casa o viven en otra ciudad.
+            prefieren sostener el análisis desde su casa o viven en otra ciudad.
           </motion.p>
         </div>
       </Section>
@@ -100,9 +100,9 @@ export default function Ubicacion() {
           >
             <h2 className="font-semibold">Sesiones online</h2>
             <p className="mt-1 text-sm text-sumi/80">
-              Si hacés terapia online, la propuesta es la misma: continuidad,
-              foco clínico y un espacio cuidado. Funciona muy bien cuando hay
-              una rutina clara de horarios.
+              Si hacés análisis online, la propuesta es la misma: continuidad,
+              escucha clínica y un espacio cuidado para trabajar eso que insiste.
+              Funciona muy bien cuando hay una rutina clara de horarios.
             </p>
             <ul className="mt-2 text-sm text-sumi/80 space-y-1">
               <li className="flex items-center gap-2">

@@ -130,7 +130,7 @@ export default function PsicoanalisisOnline() {
         nostalgia del diván que sobre la clínica efectiva.
       </p>
 
-      <h2>Entonces, ¿con cuál modalidad arranco?</h2>
+      <h2>La modalidad no decide por el sujeto</h2>
 
       <p>
         Si vivís cerca y podés venir, el presencial tiene cosas que vale la pena

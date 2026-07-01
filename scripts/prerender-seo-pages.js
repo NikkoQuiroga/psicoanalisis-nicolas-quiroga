@@ -8,13 +8,21 @@ const templatePath = path.join(distDir, "index.html");
 const defaultImage = "/media/lic-rodrigo-nicolas-quiroga-martinez.webp";
 const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
 const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
+const professionalProfiles = [
+  "https://www.psychologytoday.com/profile/1783533",
+  "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+  "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+  "https://buscopsi.com/psicologo/nicolas-quiroga/",
+  linkedInUrl,
+  academicWorkUrl,
+];
 
 const staticPages = [
   {
     path: "/",
-    title: "Lic. Nicolás Quiroga — Psicoanalista clínico en Olivos y online",
+    title: "Psicoanálisis para sobrepensamiento en Olivos y online — Nicolás Quiroga",
     description:
-      "Lic. Nicolás Quiroga (M.N. 59.272), psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta.",
+      "Psicoanálisis para adultos que no pueden apagar la cabeza. Atención online y presencial en Olivos para sobrepensamiento, ansiedad, autoexigencia, insomnio y repetición.",
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
@@ -24,7 +32,7 @@ const staticPages = [
     path: "/psicoanalista-olivos",
     title: "Psicoanalista en Olivos — Lic. Nicolás Quiroga",
     description:
-      "Psicoanalista en Olivos, Vicente López. Sesiones presenciales y online con Nicolás Quiroga, M.N. 59.272.",
+      "Psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
@@ -35,7 +43,7 @@ const staticPages = [
     path: "/psicoanalisis-online",
     title: "Psicoanálisis online en Argentina — Lic. Nicolás Quiroga",
     description:
-      "Psicoanálisis online para Argentina y exterior. Sesiones individuales por videollamada con encuadre clínico y reserva absoluta.",
+      "Psicoanálisis online para Argentina y exterior. Un espacio clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
@@ -46,11 +54,21 @@ const staticPages = [
     path: "/contacto",
     title: "Contacto · Agendá tu primera sesión — Lic. Nicolás Quiroga",
     description:
-      "Agendá tu primera sesión con Nicolás Quiroga, psicoanalista clínico en Olivos y online. Formulario de contacto, WhatsApp y email.",
+      "Agendá una primera consulta de psicoanálisis con Nicolás Quiroga. Atención en Olivos y online para sobrepensamiento, ansiedad, insomnio y repetición. Honorarios: $40.000 ARS / USD 35.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
     lastmod: "2026-06-20",
+  },
+  {
+    path: "/sobrepensamiento-overthinking",
+    title: "Sobrepensamiento y ansiedad | Psicoanalista en Olivos y online",
+    description:
+      "Psicoanálisis para adultos que no pueden apagar la cabeza. Atención online y presencial en Olivos para sobrepensamiento, ansiedad, insomnio, autoexigencia y dificultad para decidir.",
+    type: "website",
+    priority: "0.95",
+    changefreq: "monthly",
+    lastmod: "2026-06-29",
   },
   {
     path: "/sobre-mi",
@@ -76,7 +94,7 @@ const staticPages = [
     path: "/faq",
     title: "Preguntas frecuentes sobre psicoanálisis — Nicolás Quiroga",
     description:
-      "Modalidad online y presencial, primera sesión, honorarios, confidencialidad y forma de trabajo clínico.",
+      "Preguntas frecuentes sobre psicoanálisis con Nicolás Quiroga: modalidad online y presencial, honorarios, confidencialidad y encuadre clínico.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
@@ -86,7 +104,7 @@ const staticPages = [
     path: "/ubicacion",
     title: "Consultorio en Olivos y sesiones online — Nicolás Quiroga",
     description:
-      "Ubicación del consultorio en Olivos, Vicente López, y modalidad online para Argentina y exterior.",
+      "Psicoanalista en Olivos, Vicente López. Consultorio presencial y sesiones online para trabajar sobrepensamiento, ansiedad, insomnio y repetición.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
@@ -96,7 +114,7 @@ const staticPages = [
     path: "/testimonios",
     title: "Testimonios — Nicolás Quiroga",
     description:
-      "Experiencias de pacientes sobre el proceso terapéutico, la modalidad online y la atención clínica.",
+      "Experiencias de pacientes sobre el proceso analítico, la modalidad online y la atención clínica.",
     type: "website",
     priority: "0.6",
     changefreq: "monthly",
@@ -203,7 +221,7 @@ function schemaForPage(page) {
           name: "Nicolás Quiroga",
           jobTitle: "Psicoanalista clínico",
           url: site,
-          sameAs: [linkedInUrl, academicWorkUrl],
+          sameAs: professionalProfiles,
         },
         publisher: {
           "@type": "Person",

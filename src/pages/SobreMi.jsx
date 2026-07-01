@@ -6,6 +6,28 @@ import { MapPin, GraduationCap, BookOpen, ExternalLink, MessageCircle } from "lu
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
 const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
+const professionalProfiles = [
+  {
+    label: "Psychology Today",
+    href: "https://www.psychologytoday.com/profile/1783533",
+  },
+  {
+    label: "Doctoralia",
+    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+  },
+  {
+    label: "BuscoPsi",
+    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
+  },
+  {
+    label: "Psicólogos Buenos Aires",
+    href: "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/lic-nicolas-quiroga/",
+  },
+];
 
 export default function SobreMi() {
   return (
@@ -59,11 +81,18 @@ export default function SobreMi() {
           <h2 className="h-serif text-2xl font-semibold mb-4">Cómo pienso la clínica</h2>
           <div className="space-y-4 text-sumi/80 leading-relaxed">
             <p>
-              El psicoanálisis no apunta a que te sientas mejor cuanto antes: apunta a que puedas
-              leer lo que te pasa. El síntoma no es el problema a eliminar — es la entrada al trabajo.
+              La mayoría de las personas llega a análisis porque quiere sentirse mejor. Y es
+              lógico: cuando algo duele, cuando la cabeza no corta o cuando la angustia aprieta,
+              nadie quiere una teoría elegante. Quiere alivio.
             </p>
             <p>
-              Trabajo desde Lacan. Eso significa que en sesión el lenguaje importa: un lapsus, una
+              El psicoanálisis toma en serio ese alivio, pero no lo confunde con tapar rápido
+              el síntoma para que todo siga igual. El síntoma no es solo algo a eliminar: también
+              es una entrada para leer qué se repite, qué se calló demasiado tiempo y por qué eso
+              volvió justo ahora.
+            </p>
+            <p>
+              Trabajo desde la teoría de Jacques Lacan. Eso significa que en sesión el lenguaje importa: un lapsus, una
               imagen que vuelve, una frase que se repite sin que uno la busque — ahí está la materia.
               El inconsciente habla, y el análisis es un trabajo de escucha sobre ese texto.
             </p>
@@ -73,8 +102,9 @@ export default function SobreMi() {
               sesiones: dura lo que el analizante necesite.
             </p>
             <p>
-              No hago coaching. No hago autoayuda. No hago mindfulness ni terapia basada en
-              evidencia. Hago psicoanálisis — y en eso me concentro.
+              Mi recorrido incluye lecturas y formaciones diversas, pero el encuadre que ofrezco
+              hoy es psicoanalítico de corte lacaniano. No presento la consulta como coaching ni como autoayuda:
+              trabajo desde la palabra, la escucha y la singularidad de cada caso.
             </p>
           </div>
         </motion.section>
@@ -115,6 +145,14 @@ export default function SobreMi() {
             <li className="flex gap-3">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
               <div>
+                <strong>Formaciones complementarias</strong> — Cursos y lecturas en campos afines como
+                mindfulness, budismo y logoterapia. Forman parte de mi recorrido, pero no definen
+                el encuadre clínico que ofrezco.
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
+              <div>
                 <strong>Matrícula nacional activa</strong> — M.N. 59.272
               </div>
             </li>
@@ -148,6 +186,40 @@ export default function SobreMi() {
             Ver en Acta Académica
             <ExternalLink className="h-4 w-4" />
           </a>
+        </motion.section>
+
+        {/* Perfiles profesionales */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <ExternalLink className="h-5 w-5 text-moss" />
+            <h2 className="text-lg font-semibold">Perfiles profesionales</h2>
+          </div>
+          <p className="text-sm leading-relaxed text-sumi/75">
+            Algunos perfiles externos donde figura mi práctica clínica. Los incluyo como
+            referencias públicas de la misma actividad profesional: psicoanálisis en Olivos
+            y atención online.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {professionalProfiles.map((profile) => (
+              <a
+                key={profile.href}
+                href={profile.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
+              >
+                {profile.label}
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ))}
+          </div>
         </motion.section>
 
         {/* Proyecto periférico */}
