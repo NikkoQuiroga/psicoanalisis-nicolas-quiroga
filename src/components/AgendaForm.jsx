@@ -47,52 +47,52 @@ export default function AgendaForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-3">
-      <div className="text-xs text-sumi/75 p-3 rounded-xl bg-white border border-black/5 leading-relaxed flex items-start gap-2">
+    <form onSubmit={onSubmit} className="grid w-full min-w-0 gap-3">
+      <div className="flex w-full min-w-0 items-start gap-2 rounded-xl border border-black/5 bg-white p-3 text-xs leading-relaxed text-sumi/75">
         <span className="text-sm shrink-0">🔒</span>
-        <span>
+        <span className="min-w-0">
           <strong className="text-sumi/90">Reserva absoluta.</strong>{" "}
           Todo lo que compartás —ahora y en sesión— es estrictamente confidencial. No se comparte con terceros bajo ninguna circunstancia.
         </span>
       </div>
-      <div className="text-sm text-sumi/80 p-3 rounded-xl bg-washi border border-black/5">
+      <div className="w-full min-w-0 rounded-xl border border-black/5 bg-washi p-3 text-sm text-sumi/80">
         Honorario por sesión: <strong>{priceLabel}</strong>
       </div>
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Nombre</span>
         <input
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           required
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
         />
       </label>
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Edad</span>
         <input
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           inputMode="numeric"
           value={form.age}
           onChange={(e) => setForm({ ...form, age: e.target.value })}
         />
       </label>
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Email o WhatsApp</span>
         <input
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           required
           value={form.contact}
           onChange={(e) => setForm({ ...form, contact: e.target.value })}
         />
       </label>
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Motivo de consulta</span>
         <select
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           value={form.reason}
           onChange={(e) => setForm({ ...form, reason: e.target.value })}
         >
@@ -112,10 +112,10 @@ export default function AgendaForm() {
       </label>
 
       {isAR && (
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span>Modalidad</span>
           <select
-            className="border rounded px-3 py-2"
+            className="w-full min-w-0 rounded border px-3 py-2"
             value={form.mode}
             onChange={(e) => setForm({ ...form, mode: e.target.value })}
           >
@@ -125,7 +125,7 @@ export default function AgendaForm() {
         </label>
       )}
 
-      <fieldset className="grid gap-2 text-sm">
+      <fieldset className="grid min-w-0 gap-2 text-sm">
         <legend>Urgencia</legend>
         {["Hoy", "Esta semana", "Este mes"].map((u) => (
           <label key={u} className="inline-flex items-center gap-2">
@@ -140,7 +140,7 @@ export default function AgendaForm() {
         ))}
       </fieldset>
 
-      <fieldset className="grid gap-2 text-sm rounded-xl border border-black/5 bg-white/70 p-3">
+      <fieldset className="grid min-w-0 gap-2 rounded-xl border border-black/5 bg-white/70 p-3 text-sm">
         <legend className="px-1">¿Estás atravesando una urgencia o riesgo actual de hacerte daño?</legend>
         {["No", "Sí"].map((value) => (
           <label key={value} className="inline-flex items-center gap-2">
@@ -162,10 +162,10 @@ export default function AgendaForm() {
         </div>
       )}
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Franja horaria</span>
         <select
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           value={form.slot}
           onChange={(e) => setForm({ ...form, slot: e.target.value })}
         >
@@ -176,11 +176,11 @@ export default function AgendaForm() {
         </select>
       </label>
 
-      <label className="grid gap-1 text-sm">
+      <label className="grid min-w-0 gap-1 text-sm">
         <span>Si querés, contame en 1–2 líneas qué te está pasando</span>
         <textarea
           rows={3}
-          className="border rounded px-3 py-2"
+          className="w-full min-w-0 rounded border px-3 py-2"
           value={form.note}
           onChange={(e) => setForm({ ...form, note: e.target.value })}
           placeholder="Opcional"

@@ -19,9 +19,10 @@ import {
   BatteryWarning,
   Trophy,
   CircleHelp,
+  Star,
+  ExternalLink,
 } from "lucide-react";
 import AgendaForm from "../components/AgendaForm.jsx";
-import TestimonialCard from "../components/TestimonialCard.jsx";
 import Section from "../components/Section.jsx";
 import ProfileSlide from "../components/ProfileSlide.jsx";
 import { motion } from "framer-motion";
@@ -63,6 +64,29 @@ const overthinkingSignals = [
   {
     icon: Repeat2,
     text: "Ya entendiste muchas cosas, pero igual repetís lo mismo.",
+  },
+];
+
+const reviewProfiles = [
+  {
+    label: "Doctoralia",
+    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+    rating: "5/5",
+    count: "2 opiniones",
+  },
+  {
+    label: "Psychology Today",
+    href: "https://www.psychologytoday.com/profile/1783533",
+  },
+  {
+    label: "BuscoPsi",
+    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
+    rating: "5/5",
+    count: "3 reseñas",
+  },
+  {
+    label: "Psicólogos Buenos Aires",
+    href: "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
   },
 ];
 
@@ -141,7 +165,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-sumi/75">
               A veces ya entendiste lo que te pasa, lo hablaste, lo pensaste mil veces.
-              Y aun así vuelve. Ahí empieza otra pregunta: qué lugar ocupa esa insistencia.
+              Y aun así vuelve. Ahí empieza otra pregunta: ¿qué lugar ocupa esa insistencia?
             </p>
             <Link
               to="/sobrepensamiento-overthinking"
@@ -240,14 +264,14 @@ export default function Home() {
 
       {/* ─── 5. BLOG ─── */}
       <Section className="pb-10 md:pb-14">
-        <div className="mx-auto max-w-6xl border-y border-black/10 px-4 py-9 sm:px-6 md:py-11">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
           <div className="flex flex-col items-start gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-sumi/60">Últimas lecturas</p>
-              <h2 className="mt-1 h-serif text-3xl font-semibold md:text-4xl">Textos para seguir pensando</h2>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-sumi/70">
-                No son consejos rápidos. Son entradas clínicas y culturales para rodear eso
-                que insiste: ansiedad, deseo, éxito, vacío, repetición.
+              <p className="text-sm uppercase tracking-[0.2em] text-sumi/60">Lecturas</p>
+              <h2 className="mt-1 h-serif text-3xl font-semibold md:text-4xl">Blog de psicoanálisis</h2>
+              <p className="mt-2 max-w-lg text-sm leading-relaxed text-sumi/70">
+                Artículos sobre clínica, síntoma, cultura y deseo. Lecturas para pensar
+                eso que insiste y no se acomoda del todo.
               </p>
             </div>
             <Link
@@ -257,26 +281,39 @@ export default function Home() {
               Ver todos los artículos
             </Link>
           </div>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {blogPosts.map((post, i) => (
               <motion.article
                 key={post.slug}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, delay: 0.05 * i }}
-                className="border-t border-black/10 pt-4"
+                className="h-full"
               >
-                <Link to={`/blog/${post.slug}`} className="group block">
-                  <p className="text-xs text-sumi/50">
-                    {new Date(post.date).toLocaleDateString("es-AR")} · {post.readMinutes} min
-                  </p>
-                  <h3 className="mt-2 text-base font-semibold leading-snug group-hover:underline">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-sumi/65">{post.description}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-sumi/70">
-                    Leer texto <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-                  </span>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="group block h-full overflow-hidden rounded-2xl border border-black/5 bg-white/80 shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  {post.hero && (
+                    <img
+                      src={post.hero}
+                      alt={post.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-40 w-full object-cover"
+                    />
+                  )}
+                  <div className="p-4">
+                    <p className="text-xs text-sumi/50">
+                      {new Date(post.date).toLocaleDateString("es-AR")} · {post.readMinutes} min
+                    </p>
+                    <h3 className="mt-1 text-base font-semibold leading-snug group-hover:underline">
+                      {post.title}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-sumi/65">
+                      {post.description}
+                    </p>
+                  </div>
                 </Link>
               </motion.article>
             ))}
@@ -444,7 +481,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ─── 8. CREDENCIALES Y TESTIMONIOS ─── */}
+      {/* ─── 8. CREDENCIALES Y RESEÑAS EXTERNAS ─── */}
       <Section className="pb-10 md:pb-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -472,24 +509,76 @@ export default function Home() {
                 className="h-serif text-3xl font-semibold md:text-4xl"
                 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               >
-                Testimonios
+                Reseñas externas
               </motion.h2>
-              <div className="mt-4 grid gap-4 md:grid-cols-3 lg:grid-cols-1">
-                <TestimonialCard
-                  quote="Me sentí escuchada sin apuro. Con el tiempo empecé a entender patrones que se repetían hace años."
-                  name="M. S."
-                  meta="Paciente, Buenos Aires"
-                />
-                <TestimonialCard
-                  quote="Logré poner palabras a algo que cargaba en silencio. El proceso me ayudó a tomar decisiones con más claridad."
-                  name="J. R."
-                  meta="Paciente, online"
-                />
-                <TestimonialCard
-                  quote="Las sesiones online funcionaron mejor de lo que esperaba. Pude trabajar algo que venía postergando hace mucho."
-                  name="L. V."
-                  meta="Paciente, online"
-                />
+              <div className="mt-4 overflow-hidden rounded-3xl border border-black/5 bg-white/80 p-5 shadow-sm">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <div className="flex items-center gap-1 text-gold" aria-label="Cinco estrellas">
+                      {[0, 1, 2, 3, 4].map((star) => (
+                        <motion.span
+                          key={star}
+                          initial={{ opacity: 0, y: 4, scale: 0.9 }}
+                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                          viewport={{ once: true, amount: 0.6 }}
+                          transition={{ duration: 0.25, delay: star * 0.06 }}
+                        >
+                          <Star className="h-5 w-5 fill-current" />
+                        </motion.span>
+                      ))}
+                    </div>
+                    <h3 className="mt-3 text-base font-semibold">5/5 en reseñas públicas</h3>
+                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-sumi/70">
+                      Promedio consolidado a partir de las reseñas visibles en BuscoPsi y
+                      Doctoralia. Las opiniones completas se consultan en cada plataforma, con
+                      su contexto y fecha.
+                    </p>
+                  </div>
+                  <div className="min-w-40 rounded-2xl border border-black/5 bg-washi/60 p-4">
+                    <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-sumi/50">
+                      <span className="h-2 w-2 rounded-full bg-gold" />
+                      Consolidado
+                    </div>
+                    <div className="mt-3 flex items-end gap-2">
+                      <span className="text-4xl font-semibold leading-none text-sumi">5.0</span>
+                      <span className="pb-1 text-sm text-sumi/55">/ 5</span>
+                    </div>
+                    <div className="mt-3 h-2 overflow-hidden rounded-full bg-black/10">
+                      <motion.div
+                        className="h-full rounded-full bg-gold"
+                        initial={{ width: "18%" }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true, amount: 0.7 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                      />
+                    </div>
+                    <p className="mt-3 text-xs leading-relaxed text-sumi/55">
+                      5 reseñas públicas verificadas en perfiles externos.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {reviewProfiles.map((profile) => (
+                    <a
+                      key={profile.href}
+                      href={profile.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-white px-3 py-2 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
+                    >
+                      <span className="min-w-0">
+                        <span className="block truncate">{profile.label}</span>
+                        {profile.rating && (
+                          <span className="mt-0.5 block text-[11px] font-normal text-sumi/50 group-hover:text-white/65">
+                            {profile.rating} · {profile.count}
+                          </span>
+                        )}
+                      </span>
+                      <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -518,7 +607,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="md:w-1/2" id="agenda-form">
+              <div className="w-full min-w-0 md:w-1/2" id="agenda-form">
                 <AgendaForm />
               </div>
             </div>

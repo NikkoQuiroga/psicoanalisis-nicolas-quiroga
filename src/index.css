@@ -29,8 +29,19 @@
 
 
 :root { color-scheme: light; }
-html, body, #root { height: 100%; }
-body { background: var(--color-washi); color: var(--color-sumi); font-family: var(--font-sans); }
+html, body, #root {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: var(--color-washi);
+  color: var(--color-sumi);
+  font-family: var(--font-sans);
+}
+img, video, canvas, iframe {
+  max-width: 100%;
+}
 .h-serif { font-family: var(--font-serif); }
 
 
