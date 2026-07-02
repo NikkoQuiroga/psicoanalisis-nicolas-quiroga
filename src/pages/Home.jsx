@@ -82,7 +82,7 @@ const reviewProfiles = [
     label: "BuscoPsi",
     href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
     rating: "5/5",
-    count: "3 reseñas",
+    count: "4 reseñas",
   },
   {
     label: "Psicólogos Buenos Aires",
@@ -530,8 +530,7 @@ export default function Home() {
                     <h3 className="mt-3 text-base font-semibold">5/5 en reseñas públicas</h3>
                     <p className="mt-2 max-w-xl text-sm leading-relaxed text-sumi/70">
                       Promedio consolidado a partir de las reseñas visibles en BuscoPsi y
-                      Doctoralia. Las opiniones completas se consultan en cada plataforma, con
-                      su contexto y fecha.
+                      Doctoralia. Las opiniones completas se pueden consultar en cada plataforma.
                     </p>
                   </div>
                   <div className="min-w-40 rounded-2xl border border-black/5 bg-washi/60 p-4">
@@ -553,19 +552,19 @@ export default function Home() {
                       />
                     </div>
                     <p className="mt-3 text-xs leading-relaxed text-sumi/55">
-                      5 reseñas públicas verificadas en perfiles externos.
+                      6 reseñas públicas verificadas en perfiles externos.
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                <div className="mt-5 flex flex-wrap gap-2">
                   {reviewProfiles.map((profile) => (
                     <a
                       key={profile.href}
                       href={profile.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-white px-3 py-2 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
+                      className="group inline-flex items-center justify-between gap-3 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
                     >
                       <span className="min-w-0">
                         <span className="block truncate">{profile.label}</span>
@@ -579,6 +578,13 @@ export default function Home() {
                     </a>
                   ))}
                 </div>
+                <Link
+                  to="/testimonios"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4"
+                >
+                  Leer testimonios escritos
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>

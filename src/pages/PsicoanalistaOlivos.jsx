@@ -62,13 +62,13 @@ export default function PsicoanalistaOlivos() {
   return (
     <>
       <Helmet>
-        <title>Psicoanalista en Olivos — Lic. Nicolás Quiroga</title>
+        <title>Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS."
+          content="Psicólogo y psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS."
         />
         <link rel="canonical" href={url} />
-        <meta property="og:title" content="Psicoanalista en Olivos — Lic. Nicolás Quiroga" />
+        <meta property="og:title" content="Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga" />
         <meta
           property="og:description"
           content="Sesiones de psicoanálisis en Olivos. Un espacio clínico para trabajar sobrepensamiento, angustia, ansiedad, autoexigencia y repetición."
@@ -86,9 +86,10 @@ export default function PsicoanalistaOlivos() {
               Psicoanalista en Olivos
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-              Un espacio presencial para trabajar eso que insiste: la cabeza que no corta,
-              la ansiedad, el insomnio, la autoexigencia, los vínculos que se repiten o un
-              malestar que no termina de encontrar nombre.
+              Soy psicólogo y psicoanalista clínico. Atiendo en Olivos, Vicente López,
+              en un espacio presencial para trabajar eso que insiste: la cabeza que no
+              corta, la ansiedad, el insomnio, la autoexigencia, los vínculos que se
+              repiten o un malestar que no termina de encontrar nombre.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link

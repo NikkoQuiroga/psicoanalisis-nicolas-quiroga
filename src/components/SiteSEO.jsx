@@ -50,6 +50,8 @@ export default function SiteSEO() {
       "Deseo",
       "Psicoanálisis online",
       "Psicoanalista en Olivos",
+      "Psicólogo en Olivos",
+      "Psicologo Olivos",
       "Psicoanalista zona norte Buenos Aires",
       "Sobrepensamiento",
       "Overthinking",
@@ -67,7 +69,7 @@ export default function SiteSEO() {
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "Psychologist",
-    name: "Lic. Nicolás Quiroga — Psicoanalista clínico en Olivos y online",
+    name: "Lic. Nicolás Quiroga — Psicólogo y psicoanalista clínico en Olivos y online",
     url: site,
     telephone: `+${phone}`,
     image: defaultImage,
@@ -101,7 +103,7 @@ export default function SiteSEO() {
     ],
     sameAs: [...professionalProfiles, `https://wa.me/${phone}`],
     description:
-      "Psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta. Para quienes atraviesan momentos que no saben cómo nombrar.",
+      "Psicólogo y psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
     availableService: [
       {
         "@type": "MedicalTherapy",

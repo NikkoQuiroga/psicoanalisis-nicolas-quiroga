@@ -30,9 +30,9 @@ const staticPages = [
   },
   {
     path: "/psicoanalista-olivos",
-    title: "Psicoanalista en Olivos — Lic. Nicolás Quiroga",
+    title: "Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga",
     description:
-      "Psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS.",
+      "Psicólogo y psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
@@ -112,13 +112,13 @@ const staticPages = [
   },
   {
     path: "/testimonios",
-    title: "Testimonios — Nicolás Quiroga",
+    title: "Testimonios de pacientes — Psicoanalista en Olivos | Nicolás Quiroga",
     description:
-      "Experiencias de pacientes sobre el proceso analítico, la modalidad online y la atención clínica.",
+      "Reseñas públicas de pacientes sobre Nicolás Quiroga, psicoanalista en Olivos y online. 5/5 en BuscoPsi y Doctoralia.",
     type: "website",
     priority: "0.6",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
+    lastmod: "2026-07-01",
   },
   {
     path: "/legal/politica-de-privacidad",
