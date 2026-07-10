@@ -1,17 +1,15 @@
 # Media placeholders
 
-Este directorio queda sin imágenes binarias dentro del repositorio para mantener el historial liviano.
+Este directorio versiona únicamente archivos livianos de referencia y evita subir binarios pesados en PRs.
 
-## Nombres esperados para los héroes del blog
+## Estado actual del blog
 
-Subí acá tus archivos finales (idealmente `.webp`) con estos nombres:
+Hoy los posts están apuntando a estos assets que **sí existen en el repo**:
 
-- `psicoanalisis-es-pseudociencia-lacan.webp`
-- `ansiedad-vida-moderna-aumento-como-manejarla.webp`
-- `angustia-existencial-sentido-de-la-vida.webp`
-- `por-que-nos-autosaboteamos-romper-ciclo-autosabotaje.webp`
-- `oscura-verdad-budismo-zen.webp`
-- `ikigai-formula-secreta-japonesa-felicidad.webp`
-- `nostalgia-puente-japon-psicoanalisis.webp`
+- `lic-rodrigo-nicolas-quiroga-martinez.webp`
+- `autosabotaje-hero.svg`
+- `zen-hero.webp`
+- `ikigai-hero.webp`
+- `nostalgia-hero.webp`
 
-Con esos nombres, el front ya las toma automáticamente desde `src/blog/posts.js`.
+Si querés cambiar héroes por imágenes nuevas, primero subí los archivos a `public/media/` y después actualizá `src/blog/posts.js` para que el nombre coincida exactamente.
