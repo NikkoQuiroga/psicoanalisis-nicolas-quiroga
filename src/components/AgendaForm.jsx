@@ -1,43 +1,141 @@
 import React, { useEffect, useMemo, useState } from "react";
+import {
+  CalendarDays,
+  CheckCircle2,
+  Clock3,
+  Lock,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 import useGeo from "../hooks/useGeo.js";
 import { buildWhatsAppURL } from "../utils/wa.js";
 import { trackWA } from "../analytics/events.js";
 
-const AR_PRICE = 40000; // ARS
-const EXT_PRICE = 35;   // USD
+const AR_PRICE = 40000;
+const EXT_PRICE = 35;
+
+const SESSION_MINUTES = 40;
+const START_HOUR = 8;
+const END_HOUR = 21;
+const DAYS_TO_SHOW = 6;
+
+const blockedHoursByWeekday = {
+  1: [19, 20],
+  2: [8, 9, 10, 19, 20],
+  3: [17, 18, 19, 20],
+  4: [8, 9, 10, 19, 20],
+  5: [17, 18, 19, 20, 21],
+};
+
+const weekdayLabels = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+const monthLabels = [
+  "enero",
+  "febrero",
+  "marzo",
+  "abril",
+  "mayo",
+  "junio",
+  "julio",
+  "agosto",
+  "septiembre",
+  "octubre",
+  "noviembre",
+  "diciembre",
+];
+
+const reasons = [
+  "Sobrepensamiento",
+  "Ansiedad o angustia",
+  "Insomnio",
+  "Autoexigencia",
+  "Dificultad para decidir",
+  "Algo que se repite",
+];
+
+function buildUpcomingSlots() {
+  const today = new Date();
+  const slots = [];
+  const cursor = new Date(today);
+  cursor.setHours(0, 0, 0, 0);
+
+  while (slots.length < DAYS_TO_SHOW) {
+    const weekday = cursor.getDay();
+    const isWeekday = weekday >= 1 && weekday <= 5;
+
+    if (isWeekday) {
+      const blockedHours = blockedHoursByWeekday[weekday] || [];
+      const isToday = cursor.toDateString() === today.toDateString();
+      const times = [];
+
+      for (let hour = START_HOUR; hour <= END_HOUR; hour += 1) {
+        if (blockedHours.includes(hour)) continue;
+        if (isToday && hour <= today.getHours() + 1) continue;
+        times.push(`${String(hour).padStart(2, "0")}:00`);
+      }
+
+      if (times.length) {
+        const dayNumber = String(cursor.getDate()).padStart(2, "0");
+        const month = monthLabels[cursor.getMonth()];
+        const shortMonth = month.slice(0, 3);
+        slots.push({
+          key: cursor.toISOString().slice(0, 10),
+          day: weekdayLabels[weekday],
+          date: dayNumber,
+          month,
+          label: `${Number(dayNumber)} ${shortMonth}`,
+          times,
+        });
+      }
+    }
+
+    cursor.setDate(cursor.getDate() + 1);
+  }
+
+  return slots;
+}
 
 export default function AgendaForm() {
   const geo = useGeo();
   const isAR = useMemo(() => geo.cc === "AR", [geo.cc]);
-
-  const [form, setForm] = useState({
-    name: "",
-    age: "",
-    contact: "",
-    reason: "",
-    urgency: "Esta semana",
-    slot: "",
-    mode: isAR ? "Online" : "Online",
-    risk: "No",
-    canPay: false,
-    note: "",
-  });
-
-  useEffect(() => {
-    setForm((f) => ({ ...f, mode: isAR ? f.mode : "Online" }));
-  }, [isAR]);
-
   const priceLabel = isAR
     ? `$${AR_PRICE.toLocaleString("es-AR")} ARS`
     : `USD ${EXT_PRICE}`;
+  const upcomingSlots = useMemo(() => buildUpcomingSlots(), []);
 
-  function onSubmit(e) {
-    e.preventDefault();
-    if (!form.canPay) return;
+  const [selectedDayKey, setSelectedDayKey] = useState(upcomingSlots[0]?.key || "");
+  const selectedDay = upcomingSlots.find((slot) => slot.key === selectedDayKey) || upcomingSlots[0];
+  const [selectedTime, setSelectedTime] = useState(selectedDay?.times[0] || "");
+  const [mode, setMode] = useState(isAR ? "Online" : "Online");
+  const [reason, setReason] = useState(reasons[0]);
+
+  useEffect(() => {
+    if (!selectedDay) return;
+    if (!selectedDay.times.includes(selectedTime)) {
+      setSelectedTime(selectedDay.times[0]);
+    }
+  }, [selectedDay, selectedTime]);
+
+  function openWhatsApp() {
     const url = buildWhatsAppURL({
-      data: { ...form, isAR, city: geo.city, country: geo.country, tz: geo.tz },
+      data: {
+        name: "",
+        age: "",
+        contact: "",
+        reason,
+        urgency: "Esta semana",
+        slot: `${selectedDay.day} ${selectedDay.label} · ${selectedTime}`,
+        mode,
+        risk: "No informado",
+        canPay: true,
+        note: "Vengo desde la agenda visual del sitio.",
+        isAR,
+        city: geo.city,
+        country: geo.country,
+        tz: geo.tz,
+      },
     });
-    trackWA("agenda_form", {
+
+    trackWA("agenda_calendar", {
       country: geo.country,
       city: geo.city,
       tz: geo.tz,
@@ -47,172 +145,128 @@ export default function AgendaForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid w-full min-w-0 gap-3">
-      <div className="flex w-full min-w-0 items-start gap-2 rounded-xl border border-black/5 bg-white p-3 text-xs leading-relaxed text-sumi/75">
-        <span className="text-sm shrink-0">🔒</span>
-        <span className="min-w-0">
-          <strong className="text-sumi/90">Reserva absoluta.</strong>{" "}
-          Todo lo que compartás —ahora y en sesión— es estrictamente confidencial. No se comparte con terceros bajo ninguna circunstancia.
-        </span>
+    <div className="grid w-full min-w-0 gap-4">
+      <div className="grid gap-3 rounded-2xl border border-black/5 bg-white p-4">
+        <div className="flex items-start gap-2 text-xs leading-relaxed text-sumi/75">
+          <Lock className="mt-0.5 h-4 w-4 shrink-0 text-moss" />
+          <span>
+            <strong className="text-sumi/90">Reserva absoluta.</strong> Todo lo que
+            compartás ahora y en sesión es confidencial.
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2 text-xs text-sumi/70">
+          <span className="inline-flex items-center gap-1 rounded-full bg-washi px-3 py-1">
+            <Clock3 className="h-3.5 w-3.5" />
+            {SESSION_MINUTES} minutos
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-washi px-3 py-1">
+            <MapPin className="h-3.5 w-3.5" />
+            Online / Olivos
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full bg-washi px-3 py-1">
+            Honorario: <strong>{priceLabel}</strong>
+          </span>
+        </div>
       </div>
-      <div className="w-full min-w-0 rounded-xl border border-black/5 bg-washi p-3 text-sm text-sumi/80">
-        Honorario por sesión: <strong>{priceLabel}</strong>
+
+      <div className="grid gap-2">
+        <div className="flex items-center gap-2 text-sm font-semibold">
+          <CalendarDays className="h-4 w-4 text-gold" />
+          Próximos turnos disponibles
+        </div>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+          {upcomingSlots.map((slot) => {
+            const active = selectedDay.key === slot.key;
+            return (
+              <button
+                key={slot.key}
+                type="button"
+                onClick={() => {
+                  setSelectedDayKey(slot.key);
+                  setSelectedTime(slot.times[0]);
+                }}
+                className={`rounded-2xl border p-3 text-left transition ${
+                  active
+                    ? "border-sumi bg-sumi text-white"
+                    : "border-black/10 bg-white text-sumi hover:border-gold/60"
+                }`}
+              >
+                <span className="block text-[11px] uppercase tracking-[0.16em] opacity-60">
+                  {slot.day}
+                </span>
+                <span className="mt-1 block text-2xl font-semibold leading-none">
+                  {slot.date}
+                </span>
+                <span className="mt-1 block text-xs opacity-70">{slot.month}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Nombre</span>
-        <input
-          className="w-full min-w-0 rounded border px-3 py-2"
-          required
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-        />
-      </label>
+      <div className="grid gap-2">
+        <p className="text-sm font-semibold">Horarios para {selectedDay.label}</p>
+        <div className="flex flex-wrap gap-2">
+          {selectedDay.times.map((time) => {
+            const active = selectedTime === time;
+            return (
+              <button
+                key={time}
+                type="button"
+                onClick={() => setSelectedTime(time)}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${
+                  active
+                    ? "border-gold bg-gold text-sumi"
+                    : "border-black/10 bg-white text-sumi/75 hover:border-gold/60"
+                }`}
+              >
+                {active && <CheckCircle2 className="h-4 w-4" />}
+                {time}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Edad</span>
-        <input
-          className="w-full min-w-0 rounded border px-3 py-2"
-          inputMode="numeric"
-          value={form.age}
-          onChange={(e) => setForm({ ...form, age: e.target.value })}
-        />
-      </label>
-
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Email o WhatsApp</span>
-        <input
-          className="w-full min-w-0 rounded border px-3 py-2"
-          required
-          value={form.contact}
-          onChange={(e) => setForm({ ...form, contact: e.target.value })}
-        />
-      </label>
-
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Motivo de consulta</span>
-        <select
-          className="w-full min-w-0 rounded border px-3 py-2"
-          value={form.reason}
-          onChange={(e) => setForm({ ...form, reason: e.target.value })}
-        >
-          <option value="">Elegí una opción</option>
-          <option>Sobrepensamiento o no poder apagar la cabeza</option>
-          <option>Ansiedad o angustia</option>
-          <option>Insomnio por pensamientos</option>
-          <option>Autoexigencia o perfeccionismo</option>
-          <option>Dificultad para decidir</option>
-          <option>Desgaste laboral o burnout</option>
-          <option>Algo que se repite aunque ya lo entendí</option>
-          <option>Duelo o pérdida</option>
-          <option>Vínculos o relaciones</option>
-          <option>Inhibición o bloqueo</option>
-          <option>Otro</option>
-        </select>
-      </label>
-
-      {isAR && (
-        <label className="grid min-w-0 gap-1 text-sm">
-          <span>Modalidad</span>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="grid gap-1 text-sm">
+          <span>Motivo principal</span>
           <select
-            className="w-full min-w-0 rounded border px-3 py-2"
-            value={form.mode}
-            onChange={(e) => setForm({ ...form, mode: e.target.value })}
+            value={reason}
+            onChange={(event) => setReason(event.target.value)}
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2"
           >
-            <option>Online</option>
-            <option>Presencial en Olivos</option>
+            {reasons.map((item) => (
+              <option key={item}>{item}</option>
+            ))}
           </select>
         </label>
-      )}
-
-      <fieldset className="grid min-w-0 gap-2 text-sm">
-        <legend>Urgencia</legend>
-        {["Hoy", "Esta semana", "Este mes"].map((u) => (
-          <label key={u} className="inline-flex items-center gap-2">
-            <input
-              type="radio"
-              name="urgency"
-              checked={form.urgency === u}
-              onChange={() => setForm({ ...form, urgency: u })}
-            />{" "}
-            {u}
-          </label>
-        ))}
-      </fieldset>
-
-      <fieldset className="grid min-w-0 gap-2 rounded-xl border border-black/5 bg-white/70 p-3 text-sm">
-        <legend className="px-1">¿Estás atravesando una urgencia o riesgo actual de hacerte daño?</legend>
-        {["No", "Sí"].map((value) => (
-          <label key={value} className="inline-flex items-center gap-2">
-            <input
-              type="radio"
-              name="risk"
-              checked={form.risk === value}
-              onChange={() => setForm({ ...form, risk: value })}
-            />{" "}
-            {value}
-          </label>
-        ))}
-      </fieldset>
-
-      {form.risk === "Sí" && (
-        <div className="rounded-xl border border-red-900/20 bg-red-50 p-3 text-xs leading-relaxed text-red-900">
-          Este espacio no funciona como guardia ni dispositivo de urgencias. En caso de riesgo inmediato,
-          acudí a una guardia, llamá a emergencias o contactá servicios locales de asistencia en crisis.
-        </div>
-      )}
-
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Franja horaria</span>
-        <select
-          className="w-full min-w-0 rounded border px-3 py-2"
-          value={form.slot}
-          onChange={(e) => setForm({ ...form, slot: e.target.value })}
-        >
-          <option value="">Elegí una opción</option>
-          <option>Mañana</option>
-          <option>Tarde</option>
-          <option>Noche</option>
-        </select>
-      </label>
-
-      <label className="grid min-w-0 gap-1 text-sm">
-        <span>Si querés, contame en 1–2 líneas qué te está pasando</span>
-        <textarea
-          rows={3}
-          className="w-full min-w-0 rounded border px-3 py-2"
-          value={form.note}
-          onChange={(e) => setForm({ ...form, note: e.target.value })}
-          placeholder="Opcional"
-        />
-      </label>
-
-      <label className="mt-1 inline-flex items-start gap-2 text-sm">
-        <input
-          type="checkbox"
-          checked={form.canPay}
-          onChange={(e) => setForm({ ...form, canPay: e.target.checked })}
-          required
-        />
-        <span>
-          Confirmo que puedo sostener el valor de la sesión:{" "}
-          <strong>{priceLabel}</strong>.
-        </span>
-      </label>
-
-      {!form.canPay && (
-        <p className="text-xs text-red-700/80">
-          Para coordinar la sesión es necesario poder sostener el valor
-          indicado.
-        </p>
-      )}
+        <label className="grid gap-1 text-sm">
+          <span>Modalidad</span>
+          <select
+            value={mode}
+            onChange={(event) => setMode(event.target.value)}
+            className="w-full rounded-xl border border-black/10 bg-white px-3 py-2"
+          >
+            <option>Online</option>
+            {isAR && <option>Presencial en Olivos</option>}
+          </select>
+        </label>
+      </div>
 
       <button
-        disabled={!form.canPay}
-        className="rounded-2xl px-4 py-3 bg-gold text-sumi hover:bg-gold2 transition-transform duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+        type="button"
+        onClick={openWhatsApp}
+        className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gold px-4 py-3 text-sm font-semibold text-sumi transition hover:bg-gold2 hover:shadow-md"
       >
-        Abrir WhatsApp y enviar
+        <MessageCircle className="h-4 w-4" />
+        Consultar este turno por WhatsApp
       </button>
-    </form>
+
+      <p className="text-xs leading-relaxed text-sumi/55">
+        Este espacio no funciona como guardia ni dispositivo de urgencias. En caso
+        de riesgo inmediato, acudí a una guardia o contactá emergencias.
+      </p>
+    </div>
   );
 }

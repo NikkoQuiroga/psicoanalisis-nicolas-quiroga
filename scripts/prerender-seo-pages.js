@@ -1,60 +1,50 @@
 import fs from "node:fs";
 import path from "node:path";
-import { posts } from "../src/blog/posts.js";
 
 const site = "https://nicolasquiroga.com.ar";
 const distDir = path.resolve("dist");
 const templatePath = path.join(distDir, "index.html");
-const defaultImage = "/media/lic-rodrigo-nicolas-quiroga-martinez.webp";
-const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
-const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
-const professionalProfiles = [
-  "https://www.psychologytoday.com/profile/1783533",
-  "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
-  "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
-  "https://buscopsi.com/psicologo/nicolas-quiroga/",
-  linkedInUrl,
-  academicWorkUrl,
-];
+const defaultImage = "/media/nicolas-quiroga-estudio-clinico.webp";
 
 const staticPages = [
   {
     path: "/",
-    title: "Psicoanálisis para sobrepensamiento en Olivos y online — Nicolás Quiroga",
+    title: "Psicólogo en Olivos y psicoanalista clínico — Nicolás Quiroga",
     description:
-      "Psicoanálisis para adultos que no pueden apagar la cabeza. Atención online y presencial en Olivos para sobrepensamiento, ansiedad, autoexigencia, insomnio y repetición.",
+      "Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad, insomnio y repetición.",
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
+    lastmod: "2026-07-27",
+    image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
     path: "/psicoanalista-olivos",
-    title: "Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga",
+    title: "Psicólogo en Olivos | Psicoanalista clínico — Nicolás Quiroga",
     description:
-      "Psicólogo y psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS.",
+      "Psicólogo en Olivos, Vicente López. Psicoanalista clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
-    image: "/media/lic-nicolas-quiroga-psicoanalista-olivos.webp",
+    lastmod: "2026-07-27",
+    image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
   },
   {
     path: "/psicoanalisis-online",
-    title: "Psicoanálisis online en Argentina — Lic. Nicolás Quiroga",
+    title: "Psicólogo online | Psicoanálisis para sobrepensamiento",
     description:
-      "Psicoanálisis online para Argentina y exterior. Un espacio clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
+      "Psicólogo online y psicoanalista clínico. Sesiones para sobrepensamiento, ansiedad, insomnio y repetición en Argentina y exterior.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
-    image: "/media/lic-nicolas-quiroga-psicoanalisis-online.webp",
+    lastmod: "2026-07-27",
+    image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
     path: "/contacto",
-    title: "Contacto · Agendá tu primera sesión — Lic. Nicolás Quiroga",
+    title: "Contacto | Psicólogo en Olivos — Lic. Nicolás Quiroga",
     description:
-      "Agendá una primera consulta de psicoanálisis con Nicolás Quiroga. Atención en Olivos y online para sobrepensamiento, ansiedad, insomnio y repetición. Honorarios: $40.000 ARS / USD 35.",
+      "Contacto para primera consulta con Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad e insomnio.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
@@ -62,39 +52,42 @@ const staticPages = [
   },
   {
     path: "/sobrepensamiento-overthinking",
-    title: "Sobrepensamiento y ansiedad | Psicoanalista en Olivos y online",
+    title: "Sobrepensamiento y ansiedad | Psicólogo en Olivos",
     description:
-      "Psicoanálisis para adultos que no pueden apagar la cabeza. Atención online y presencial en Olivos para sobrepensamiento, ansiedad, insomnio, autoexigencia y dificultad para decidir.",
+      "Psicólogo en Olivos y online para sobrepensamiento, ansiedad, insomnio y autoexigencia. Psicoanálisis clínico con recursos de mindfulness cuando ayudan.",
     type: "website",
     priority: "0.95",
     changefreq: "monthly",
-    lastmod: "2026-06-29",
+    lastmod: "2026-07-27",
+    image: "/media/nicolas-quiroga-estudio-clinico.webp",
+  },
+  {
+    path: "/no-puedo-apagar-la-cabeza",
+    title: "No podés apagar la cabeza | Psicólogo en Olivos y online",
+    description:
+      "Psicólogo en Olivos y online para adultos con sobrepensamiento, ansiedad e insomnio. Psicoanálisis clínico con recursos de mindfulness y meditación.",
+    type: "website",
+    priority: "0.95",
+    changefreq: "monthly",
+    lastmod: "2026-07-27",
+    image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
     path: "/sobre-mi",
-    title: "Sobre mí — Nicolás Quiroga, psicoanalista lacaniano",
+    title: "Sobre mí — Nicolás Quiroga, psicólogo en Olivos",
     description:
-      "Nicolás Quiroga, psicoanalista lacaniano. Formación, mirada clínica, producción académica, lecturas, podcast y proyectos periféricos.",
+      "Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Formación UBA, psicoanálisis lacaniano, mindfulness, meditación y budismo japonés.",
     type: "website",
     priority: "0.8",
     changefreq: "monthly",
-    lastmod: "2026-06-28",
-  },
-  {
-    path: "/blog",
-    title: "Blog de psicoanálisis lacaniano — Nicolás Quiroga",
-    description:
-      "Artículos sobre psicoanálisis lacaniano, clínica, síntoma, angustia y cultura. Lecturas para pensar lo que no cierra.",
-    type: "website",
-    priority: "0.9",
-    changefreq: "weekly",
-    lastmod: "2026-06-20",
+    lastmod: "2026-07-27",
+    image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
     path: "/faq",
-    title: "Preguntas frecuentes sobre psicoanálisis — Nicolás Quiroga",
+    title: "Preguntas frecuentes | Psicólogo en Olivos — Nicolás Quiroga",
     description:
-      "Preguntas frecuentes sobre psicoanálisis con Nicolás Quiroga: modalidad online y presencial, honorarios, confidencialidad y encuadre clínico.",
+      "Preguntas frecuentes sobre atención psicológica y psicoanálisis con Nicolás Quiroga en Olivos y online: modalidad, honorarios, confidencialidad y encuadre.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
@@ -102,9 +95,9 @@ const staticPages = [
   },
   {
     path: "/ubicacion",
-    title: "Consultorio en Olivos y sesiones online — Nicolás Quiroga",
+    title: "Psicólogo en Olivos | Ubicación del consultorio — Nicolás Quiroga",
     description:
-      "Psicoanalista en Olivos, Vicente López. Consultorio presencial y sesiones online para trabajar sobrepensamiento, ansiedad, insomnio y repetición.",
+      "Consultorio de Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial en Vicente López y sesiones online.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
@@ -112,9 +105,9 @@ const staticPages = [
   },
   {
     path: "/testimonios",
-    title: "Testimonios de pacientes — Psicoanalista en Olivos | Nicolás Quiroga",
+    title: "Testimonios de pacientes — Psicólogo en Olivos | Nicolás Quiroga",
     description:
-      "Reseñas públicas de pacientes sobre Nicolás Quiroga, psicoanalista en Olivos y online. 5/5 en BuscoPsi y Doctoralia.",
+      "Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. 5/5 en BuscoPsi y Doctoralia.",
     type: "website",
     priority: "0.6",
     changefreq: "monthly",
@@ -149,19 +142,7 @@ const staticPages = [
   },
 ];
 
-const blogPages = posts.map((post) => ({
-  path: `/blog/${post.slug}`,
-  title: `${post.title} — Nicolás Quiroga`,
-  description: post.description,
-  type: "article",
-  image: post.hero,
-  priority: "0.8",
-  changefreq: "yearly",
-  lastmod: post.date,
-  article: post,
-}));
-
-const pages = [...staticPages, ...blogPages];
+const pages = [...staticPages];
 
 function escapeAttribute(value) {
   return String(value)
@@ -187,50 +168,16 @@ function replaceOrInsert(html, pattern, replacement, before = "</head>") {
 
 function schemaForPage(page) {
   const url = absoluteUrl(page.path);
-  const image = absoluteAsset(page.image);
   const breadcrumbs = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: absoluteUrl("/") },
-      ...(page.path.startsWith("/blog/")
-        ? [
-            { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
-            { "@type": "ListItem", position: 3, name: page.article?.title || page.title, item: url },
-          ]
-        : page.path === "/"
+      ...(page.path === "/"
           ? []
           : [{ "@type": "ListItem", position: 2, name: page.title.replace(" — Nicolás Quiroga", ""), item: url }]),
     ],
   };
-
-  if (page.type === "article" && page.article) {
-    return [
-      breadcrumbs,
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: page.article.title,
-        description: page.article.description,
-        image: [image],
-        datePublished: page.article.date,
-        dateModified: page.article.date,
-        mainEntityOfPage: { "@type": "WebPage", "@id": url },
-        author: {
-          "@type": "Person",
-          name: "Nicolás Quiroga",
-          jobTitle: "Psicoanalista clínico",
-          url: site,
-          sameAs: professionalProfiles,
-        },
-        publisher: {
-          "@type": "Person",
-          name: "Nicolás Quiroga",
-          url: site,
-        },
-      },
-    ];
-  }
 
   return [
     breadcrumbs,
@@ -315,6 +262,8 @@ for (const page of pages) {
   fs.writeFileSync(path.join(outputDir, "index.html"), renderPage(template, page));
 }
 
-fs.writeFileSync(path.join(distDir, "sitemap.xml"), renderSitemap());
+const sitemap = renderSitemap();
+fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
+fs.writeFileSync(path.resolve("public/sitemap.xml"), sitemap);
 
 console.log(`Generated SEO HTML for ${pages.length} routes and sitemap.xml.`);

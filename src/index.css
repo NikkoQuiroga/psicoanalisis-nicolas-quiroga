@@ -15,16 +15,16 @@
 --font-serif: "EB Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
 
---color-sumi: #191919;
---color-washi: #d6d4d1;
---color-gold: #8c847a;
---color-gold2: #777067;
---color-moss: #5f656b;
---color-clay: #b6ada3;
+--color-sumi: #1A1A1D;
+--color-washi: #F1E9DC;
+--color-gold: #C5A072;
+--color-gold2: #D65C39;
+--color-moss: #4F3420;
+--color-clay: #A0A0A9;
 
 
 --radius-3xl: 1.5rem;
---shadow-soft: 0 12px 34px rgba(16, 16, 16, 0.16);
+--shadow-soft: 0 14px 36px rgba(26, 26, 29, 0.16);
 }
 
 

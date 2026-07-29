@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Header from "./components/Header.jsx";
@@ -18,9 +18,8 @@ const Contacto        = lazy(() => import("./pages/Contacto.jsx"));
 const PsicoanalistaOlivos = lazy(() => import("./pages/PsicoanalistaOlivos.jsx"));
 const PsicoanalisisOnlineLanding = lazy(() => import("./pages/PsicoanalisisOnlineLanding.jsx"));
 const SobrepensamientoOverthinking = lazy(() => import("./pages/SobrepensamientoOverthinking.jsx"));
+const NoPuedoApagarLaCabeza = lazy(() => import("./pages/NoPuedoApagarLaCabeza.jsx"));
 const SobreMi         = lazy(() => import("./pages/SobreMi.jsx"));
-const Blog            = lazy(() => import("./pages/Blog.jsx"));
-const BlogPost        = lazy(() => import("./pages/BlogPost.jsx"));
 const Privacidad      = lazy(() => import("./pages/legal/Privacidad.jsx"));
 const Terminos        = lazy(() => import("./pages/legal/Terminos.jsx"));
 const Consentimiento  = lazy(() => import("./pages/legal/Consentimiento.jsx"));
@@ -78,12 +77,13 @@ export default function App() {
               <Route path="/ubicacion" element={<Ubicacion />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/sobrepensamiento-overthinking" element={<SobrepensamientoOverthinking />} />
+              <Route path="/no-puedo-apagar-la-cabeza" element={<NoPuedoApagarLaCabeza />} />
               <Route path="/psicoanalista-olivos" element={<PsicoanalistaOlivos />} />
               <Route path="/psicoanalisis-online" element={<PsicoanalisisOnlineLanding />} />
               <Route path="/sobre-mi" element={<SobreMi />} />
 
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/blog" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />
+              <Route path="/blog/*" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />
 
               <Route path="/legal/politica-de-privacidad" element={<Privacidad />} />
               <Route path="/legal/terminos-y-condiciones" element={<Terminos />} />

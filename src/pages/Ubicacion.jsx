@@ -10,14 +10,14 @@ export default function Ubicacion() {
   return (
     <>
       <Helmet>
-        <title>Consultorio en Olivos y sesiones online | Nicolás Quiroga</title>
+        <title>Psicólogo en Olivos | Ubicación del consultorio — Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicoanalista en Olivos, Vicente López. Consultorio presencial y sesiones online para trabajar sobrepensamiento, ansiedad, insomnio y repetición."
+          content="Consultorio de Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial en Vicente López y sesiones online."
         />
         <meta
           name="keywords"
-          content="psicoanalista en Olivos, psicoanálisis Vicente López, psicoanálisis online Argentina, sobrepensamiento, ansiedad"
+          content="psicólogo Olivos, psicologo olivos, psicólogo Vicente López, psicoanalista en Olivos, psicoanálisis online Argentina, sobrepensamiento, ansiedad"
         />
       </Helmet>
 
@@ -29,7 +29,7 @@ export default function Ubicacion() {
             initial="hidden"
             animate="show"
           >
-            Ubicación del consultorio en Olivos y modalidad online
+            Psicólogo en Olivos: consultorio y modalidad online
           </motion.h1>
           <motion.p
             className="mt-2 text-sumi/75 max-w-prose"
@@ -38,7 +38,7 @@ export default function Ubicacion() {
             animate="show"
             transition={{ delay: 0.05 }}
           >
-            Atiendo de forma presencial en Olivos (Vicente López), en una zona
+            Atiendo como psicólogo y psicoanalista en Olivos (Vicente López), en una zona
             de fácil acceso, y también online por videollamada para quienes
             prefieren sostener el análisis desde su casa o viven en otra ciudad.
           </motion.p>

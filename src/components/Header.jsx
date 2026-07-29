@@ -28,13 +28,11 @@ export default function Header() {
 
   const items = [
     ["Inicio", "/"],
-    ["Sobrepensamiento", "/sobrepensamiento-overthinking"],
-    ["¿Cómo funciona?", "/faq"],
-    ["Olivos", "/psicoanalista-olivos"],
+    ["No apagar la cabeza", "/no-puedo-apagar-la-cabeza"],
+    ["Psicólogo Olivos", "/psicoanalista-olivos"],
     ["Online", "/psicoanalisis-online"],
     ["Sobre mí", "/sobre-mi"],
     ["Testimonios", "/testimonios"],
-    ["Blog", "/blog"],
     ["Contacto", "/contacto"],
   ];
 
@@ -71,7 +69,7 @@ export default function Header() {
 
           <Link to="/" className="leading-tight">
             <p className="text-sm tracking-wide text-sumi/80">Lic. Nicolás Quiroga</p>
-            <p className="text-xs text-sumi/60">Psicoanalista clínico · M.N. 59.272</p>
+            <p className="text-xs text-sumi/60">Psicólogo · Psicoanalista clínico · M.N. 59.272</p>
           </Link>
         </div>
 

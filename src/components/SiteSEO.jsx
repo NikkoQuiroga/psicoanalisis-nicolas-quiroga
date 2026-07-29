@@ -7,7 +7,7 @@ export default function SiteSEO() {
   const location = useLocation();
   const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
   const pageUrl = `${site}${location.pathname}`;
-  const defaultImage = `${site}/media/lic-rodrigo-nicolas-quiroga-martinez.webp`;
+  const defaultImage = `${site}/media/nicolas-quiroga-estudio-clinico.webp`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
   const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
   const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
@@ -26,6 +26,8 @@ export default function SiteSEO() {
     name: "Nicolás Quiroga",
     alternateName: "Rodrigo Nicolás Quiroga Martínez",
     jobTitle: "Psicoanalista clínico",
+    description:
+      "Psicólogo en Olivos y psicoanalista clínico. Atiende presencial en Vicente López y online.",
     identifier: "M.N. 59.272",
     image: defaultImage,
     address: {
@@ -52,6 +54,9 @@ export default function SiteSEO() {
       "Psicoanalista en Olivos",
       "Psicólogo en Olivos",
       "Psicologo Olivos",
+      "Psicólogo Olivos",
+      "Psicologo en Olivos",
+      "Psicólogo Vicente López",
       "Psicoanalista zona norte Buenos Aires",
       "Sobrepensamiento",
       "Overthinking",
@@ -63,6 +68,11 @@ export default function SiteSEO() {
       "Perfeccionismo",
       "Dificultad para decidir",
       "Burnout",
+      "Mindfulness clínico",
+      "Meditación",
+      "Budismo japonés",
+      "Minobu",
+      "Suminagashi",
     ],
   };
 
@@ -103,16 +113,16 @@ export default function SiteSEO() {
     ],
     sameAs: [...professionalProfiles, `https://wa.me/${phone}`],
     description:
-      "Psicólogo y psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
+      "Psicólogo y psicoanalista clínico en Olivos y online. Sesiones individuales para sobrepensamiento, ansiedad e insomnio, incorporando mindfulness y meditación cuando ayudan a ubicar cuerpo y respiración.",
     availableService: [
       {
         "@type": "MedicalTherapy",
-        name: "Psicoanálisis clínico presencial",
+        name: "Psicoanálisis clínico presencial para sobrepensamiento",
         areaServed: { "@type": "City", name: "Olivos" },
       },
       {
         "@type": "MedicalTherapy",
-        name: "Psicoanálisis clínico online",
+        name: "Psicoanálisis clínico online con recursos de mindfulness",
         areaServed: { "@type": "Country", name: "Argentina" },
       },
     ],
@@ -121,28 +131,18 @@ export default function SiteSEO() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Lic. Nicolás Quiroga — Psicoanalista clínico",
+    name: "Lic. Nicolás Quiroga — Psicólogo en Olivos y psicoanalista clínico",
     url: site,
     inLanguage: "es-AR",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${site}/blog?query={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (
     <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="theme-color" content="#F8F7F2" />
+      <meta name="theme-color" content="#F1E9DC" />
       <meta name="author" content="Nicolás Quiroga" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <link rel="canonical" href={pageUrl} />
-      <meta
-        name="description"
-        content="Lic. Nicolás Quiroga (M.N. 59.272), psicoanalista clínico en Olivos y online. Sesiones individuales con reserva absoluta."
-      />
-
       {/* OG por defecto */}
       <meta property="og:site_name" content="Lic. Nicolás Quiroga · Psicoanalista clínico (M.N. 59.272)" />
       <meta property="og:type" content="website" />
@@ -151,7 +151,7 @@ export default function SiteSEO() {
       <meta property="og:image" content={defaultImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Nicolás Quiroga, psicoanalista lacaniano en Olivos" />
+      <meta property="og:image:alt" content="Nicolás Quiroga, psicoanalista clínico en su estudio" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={defaultImage} />

@@ -2,30 +2,58 @@ import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, BookOpen, ExternalLink, MessageCircle } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  ExternalLink,
+  GraduationCap,
+  MapPin,
+  Waves,
+} from "lucide-react";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
-const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
-const professionalProfiles = [
+const academicWorkUrl =
+  "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
+
+const profiles = [
+  ["Psychology Today", "https://www.psychologytoday.com/profile/1783533"],
+  ["Doctoralia", "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos"],
+  ["BuscoPsi", "https://buscopsi.com/psicologo/nicolas-quiroga/"],
+  ["LinkedIn", "https://www.linkedin.com/in/lic-nicolas-quiroga/"],
+  [
+    "Psicólogos Buenos Aires",
+    "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
+  ],
+];
+
+const japanCards = [
   {
-    label: "Psychology Today",
-    href: "https://www.psychologytoday.com/profile/1783533",
+    src: "/media/minobu-templo-ceremonia.webp",
+    title: "Shukubo en Minobu",
+    text: "Dormir en un templo no tuvo para mí el tono de una postal espiritual. Fue más bien entrar en otro ritmo: levantarse temprano, caminar, escuchar, repetir.",
   },
   {
-    label: "Doctoralia",
-    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
+    src: "/media/minobu-peregrinacion-bosque.webp",
+    title: "El cuerpo en la práctica",
+    text: "En Minobu entendí algo sencillo y difícil: no todo se ordena pensando más. A veces el cuerpo llega antes que la explicación.",
   },
   {
-    label: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
+    src: "/media/minobu-jardin-koi.webp",
+    title: "Atención sin consigna",
+    text: "Ese recorrido vuelve en mi trabajo como una sensibilidad: sostener una pausa, no correr a cerrar, dejar que algo tome forma.",
+  },
+];
+
+const meditations = [
+  {
+    title: "Meditación guiada para dormir",
+    href: "https://youtu.be/IQmN2RUYNac",
+    embed: "https://www.youtube.com/embed/IQmN2RUYNac",
   },
   {
-    label: "Psicólogos Buenos Aires",
-    href: "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/lic-nicolas-quiroga/",
+    title: "Meditación para dejar de sobrepensar",
+    href: "https://youtu.be/hk6bPL0cWYg",
+    embed: "https://www.youtube.com/embed/hk6bPL0cWYg",
   },
 ];
 
@@ -33,280 +61,267 @@ export default function SobreMi() {
   return (
     <>
       <Helmet>
-        <title>Sobre mí — Nicolás Quiroga, psicoanalista lacaniano</title>
+        <title>Sobre mí — Nicolás Quiroga, psicólogo en Olivos</title>
         <meta
           name="description"
-          content="Nicolás Quiroga, psicoanalista lacaniano (M.N. 59.272). Cómo pienso la clínica, mi formación y por qué trabajo desde Lacan."
+          content="Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Formación UBA, psicoanálisis lacaniano, mindfulness, meditación y budismo japonés."
         />
       </Helmet>
 
-      {/* Header */}
-      <div className="border-b border-black/5 bg-white/60">
-        <div className="mx-auto max-w-4xl px-5 py-10 md:py-14">
-          <div className="flex flex-col-reverse gap-6 md:flex-row md:items-center md:gap-10">
-            <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-sumi/60">Sobre mí</p>
-              <h1 className="h-serif mt-1 text-3xl md:text-4xl font-semibold">
-                Nicolás Quiroga
-              </h1>
-              <p className="mt-1 text-sumi/60 text-sm">
-                Psicoanalista lacaniano · M.N. 59.272
-              </p>
-              <p className="mt-3 flex items-center gap-1.5 text-sm text-sumi/70">
-                <MapPin className="h-4 w-4 shrink-0" />
-                Olivos (Vicente López) y online para toda Argentina
-              </p>
-            </div>
-            <div className="mx-auto md:mx-0 h-36 w-36 md:h-44 md:w-44 shrink-0 overflow-hidden rounded-full border border-black/5 shadow-md ring-4 ring-white">
-              <img
-                src="/media/lic-rodrigo-nicolas-quiroga-martinez.webp"
-                alt="Nicolás Quiroga, psicoanalista lacaniano"
-                className="h-full w-full object-cover [filter:saturate(.9)_contrast(1.05)]"
-              />
+      <section className="relative overflow-hidden border-b border-black/10 bg-[#F1E9DC]">
+        <img
+          src="/media/suminagashi-tinta-pensamiento.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.07] mix-blend-multiply"
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[0.85fr_1.15fr] md:items-center md:py-16">
+          <div className="overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-soft">
+            <img
+              src="/media/nicolas-quiroga-estudio-clinico.webp"
+              alt="Nicolás Quiroga en su estudio"
+              className="aspect-[4/5] w-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Sobre mí</p>
+            <h1 className="h-serif mt-3 text-4xl font-semibold leading-tight md:text-6xl">
+              Nicolás Quiroga
+            </h1>
+            <p className="mt-3 text-lg text-sumi/75">
+              Psicólogo · Psicoanalista clínico · M.N. 59.272
+            </p>
+            <p className="mt-3 flex items-center gap-2 text-sm text-sumi/65">
+              <MapPin className="h-4 w-4" />
+              Consultorio en Vicente López y atención online
+            </p>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-sumi/75">
+              Trabajo con personas tomadas por el sobrepensamiento, la ansiedad, la
+              autoexigencia y la repetición. Mi eje es el psicoanálisis clínico; en
+              algunos procesos incorporo recursos de mindfulness y meditación cuando
+              ayudan a ubicar cuerpo y respiración.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
+        <div className="grid gap-10 md:grid-cols-[0.82fr_1.18fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Clínica</p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
+              El síntoma no es solo algo a eliminar.
+            </h2>
+          </div>
+          <div className="space-y-4 text-base leading-relaxed text-sumi/78">
+            <p>
+              La mayoría llega porque quiere sentirse mejor. Y tiene razón: cuando la
+              cabeza no corta o la angustia aprieta, nadie quiere una teoría elegante.
+              Quiere alivio.
+            </p>
+            <p>
+              El psicoanálisis toma en serio ese alivio, pero no lo confunde con tapar
+              rápido lo que aparece. A veces el síntoma es también la puerta de entrada
+              para leer una repetición, una exigencia o una manera de responderle al
+              Otro que empezó a volverse demasiado costosa.
+            </p>
+            <p>
+              No trabajo desde protocolos universales ni frases motivacionales. Trabajo
+              desde una escucha caso por caso: qué se dice, qué vuelve, qué lugar ocupa
+              el cuerpo, cómo aparece la ansiedad y qué se juega en cada decisión.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-black/10 bg-white/60">
+        <img
+          src="/media/suminagashi-tinta-pensamiento.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.045] mix-blend-multiply"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-10 md:py-16">
+          <div className="mb-6 max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">
+              Mindfulness, meditación y budismo
+            </p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
+              No llegué a la meditación para vender calma.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-sumi/70 md:text-base">
+              Llegué por otro camino: por el cuerpo, por la respiración, por la
+              pregunta de qué pasa cuando alguien ya entendió demasiado y aun así no
+              puede descansar. Mindfulness y meditación entran en mi clínica desde
+              ahí, como recursos posibles, nunca como mandato de serenidad.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {japanCards.map((card) => (
+              <article key={card.src} className="overflow-hidden rounded-2xl border border-black/10 bg-white/70">
+                <img src={card.src} alt={card.title} loading="lazy" className="h-56 w-full object-cover" />
+                <div className="p-4">
+                  <h3 className="font-semibold">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-sumi/65">{card.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              icon: GraduationCap,
+              title: "Formación",
+              text: "Lic. en Psicología por la Universidad de Buenos Aires. Posgrado en Psicoanálisis Lacaniano en ALEF.",
+            },
+            {
+              icon: Waves,
+              title: "Mindfulness y meditación",
+              text: "Posgrado en Mindfulness, Meditación y Respiración Consciente (EESH - 2017).",
+            },
+            {
+              icon: BookOpen,
+              title: "Producción académica",
+              text: "Participación en jornadas de Psicopatología Cátedra II - UBA, con trabajo disponible en Acta Académica.",
+            },
+          ].map(({ icon: Icon, title, text }) => (
+            <motion.article
+              key={title}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.45 }}
+              className="rounded-2xl border border-black/10 bg-white/70 p-5"
+            >
+              <Icon className="h-5 w-5 text-moss" />
+              <h2 className="mt-3 font-semibold">{title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-sumi/65">{text}</p>
+            </motion.article>
+          ))}
+        </div>
+        <a
+          href={academicWorkUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white"
+        >
+          Ver publicación académica
+          <ExternalLink className="h-4 w-4" />
+        </a>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-black/10 bg-[#F1E9DC]">
+        <img
+          src="/media/suminagashi-tinta-pensamiento.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.075] mix-blend-multiply"
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[0.82fr_1.18fr] md:py-16">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Illusioterapia</p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
+              Meditaciones guiadas para dormir y dejar de sobrepensar.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-sumi/70 md:text-base">
+              Escribo y grabo prácticas para Illusioterapia, un canal de YouTube con
+              más de 1 millón de suscriptores. Ahí el trabajo es más directo:
+              acompañar a alguien que está despierto a la noche, acelerado, tomado por
+              la cabeza.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {meditations.map((item) => (
+              <article key={item.href} className="overflow-hidden rounded-2xl border border-black/10 bg-white/80 shadow-sm">
+                <iframe
+                  title={item.title}
+                  src={item.embed}
+                  loading="lazy"
+                  className="aspect-video w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+                <div className="flex items-center justify-between gap-3 p-4">
+                  <h3 className="text-sm font-semibold">{item.title}</h3>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 text-xs font-semibold underline underline-offset-4"
+                  >
+                    YouTube
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
+        <div className="grid gap-8 md:grid-cols-[0.72fr_1.28fr]">
+          <div className="rounded-3xl border border-black/10 bg-white/75 p-6">
+            <h2 className="font-semibold">Recorrido</h2>
+            <p className="mt-2 text-sm leading-relaxed text-sumi/70">
+              UBA, psicoanálisis lacaniano, mindfulness, meditación y una experiencia
+              de práctica budista en Japón. No como mezcla decorativa, sino como una
+              pregunta que se fue armando con los años: qué hacer cuando pensar más ya
+              no alcanza.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-black/10 bg-white/75 p-6">
+            <h2 className="font-semibold">Perfiles profesionales</h2>
+            <p className="mt-2 text-sm leading-relaxed text-sumi/70">
+              Referencias externas donde figura mi práctica clínica, reseñas y perfiles
+              públicos vinculados al consultorio.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {profiles.map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
+                >
+                  {label}
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-4xl px-5 py-10 md:py-14 space-y-10">
-
-        {/* Cómo pienso la clínica */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="h-serif text-2xl font-semibold mb-4">Cómo pienso la clínica</h2>
-          <div className="space-y-4 text-sumi/80 leading-relaxed">
-            <p>
-              La mayoría de las personas llega a análisis porque quiere sentirse mejor. Y es
-              lógico: cuando algo duele, cuando la cabeza no corta o cuando la angustia aprieta,
-              nadie quiere una teoría elegante. Quiere alivio.
-            </p>
-            <p>
-              El psicoanálisis toma en serio ese alivio, pero no lo confunde con tapar rápido
-              el síntoma para que todo siga igual. El síntoma no es solo algo a eliminar: también
-              es una entrada para leer qué se repite, qué se calló demasiado tiempo y por qué eso
-              volvió justo ahora.
-            </p>
-            <p>
-              Trabajo desde la teoría de Jacques Lacan. Eso significa que en sesión el lenguaje importa: un lapsus, una
-              imagen que vuelve, una frase que se repite sin que uno la busque — ahí está la materia.
-              El inconsciente habla, y el análisis es un trabajo de escucha sobre ese texto.
-            </p>
-            <p>
-              No ofrezco protocolos ni técnicas. Ofrezco presencia, escucha y una apuesta por el
-              sujeto que está más allá de sus síntomas. El análisis no tiene un número fijo de
-              sesiones: dura lo que el analizante necesite.
-            </p>
-            <p>
-              Mi recorrido incluye lecturas y formaciones diversas, pero el encuadre que ofrezco
-              hoy es psicoanalítico de corte lacaniano. No presento la consulta como coaching ni como autoayuda:
-              trabajo desde la palabra, la escucha y la singularidad de cada caso.
-            </p>
-          </div>
-        </motion.section>
-
-        {/* Formación */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
-        >
-          <div className="flex items-center gap-2 mb-5">
-            <GraduationCap className="h-5 w-5 text-moss" />
-            <h2 className="text-lg font-semibold">Formación</h2>
-          </div>
-          <ul className="space-y-3 text-sm text-sumi/80">
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
-              <div>
-                <strong>Licenciado en Psicología</strong> — Universidad de Buenos Aires (UBA)
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
-              <div>
-                <strong>Psicoanálisis lacaniano</strong> — Formación de posgrado en ALEF (Asociación Latinoamericana de Estudios y Freudianos)
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
-              <div>
-                <strong>13 años de clínica</strong> — Trayectoria sostenida en procesos analíticos individuales,
-                presencial y online
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
-              <div>
-                <strong>Formaciones complementarias</strong> — Cursos y lecturas en campos afines como
-                mindfulness, budismo y logoterapia. Forman parte de mi recorrido, pero no definen
-                el encuadre clínico que ofrezco.
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-moss/70" />
-              <div>
-                <strong>Matrícula nacional activa</strong> — M.N. 59.272
-              </div>
-            </li>
-          </ul>
-        </motion.section>
-
-        {/* Producción académica */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="h-5 w-5 text-moss" />
-            <h2 className="text-lg font-semibold">Producción académica</h2>
-          </div>
-          <p className="text-sm leading-relaxed text-sumi/75">
-            Participación en jornadas académicas de Psicopatología Cátedra II - Universidad de Buenos Aires, con trabajo disponible
-            en Acta Académica. Lo incluyo como parte del recorrido de formación y escritura
-            dentro del campo clínico.
-          </p>
-          <a
-            href={academicWorkUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white"
-          >
-            Ver en Acta Académica
-            <ExternalLink className="h-4 w-4" />
-          </a>
-        </motion.section>
-
-        {/* Perfiles profesionales */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <ExternalLink className="h-5 w-5 text-moss" />
-            <h2 className="text-lg font-semibold">Perfiles profesionales</h2>
-          </div>
-          <p className="text-sm leading-relaxed text-sumi/75">
-            Algunos perfiles externos donde figura mi práctica clínica. Los incluyo como
-            referencias públicas de la misma actividad profesional: psicoanálisis en Olivos
-            y atención online.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {professionalProfiles.map((profile) => (
-              <a
-                key={profile.href}
-                href={profile.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-sumi/75 transition hover:bg-sumi hover:text-white"
-              >
-                {profile.label}
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Proyecto periférico */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
-        >
-          <div className="mb-4 flex items-center gap-2">
-            <MessageCircle className="h-5 w-5 text-moss" />
-            <h2 className="text-lg font-semibold">Proyecto digital</h2>
-          </div>
-          <div className="space-y-3 text-sm leading-relaxed text-sumi/75">
-            <p>
-              También desarrollo <strong>CoachPsi</strong>, un proyecto periférico ligado a
-              tecnología, orientación y salud mental. Me interesa pensar qué puede hacer una
-              herramienta digital cuando no pretende reemplazar la clínica.
-            </p>
-            <p>
-              CoachPsi no es un tratamiento psicológico ni una consulta profesional. Funciona
-              como una exploración sobre acompañamiento, primeras orientaciones y derivación
-              responsable cuando hace falta hablar con alguien.
-            </p>
-          </div>
-          <a
-            href="https://coachpsi.com"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium transition hover:bg-sumi hover:text-white"
-          >
-            Ver CoachPsi
-            <ExternalLink className="h-4 w-4" />
-          </a>
-        </motion.section>
-
-        {/* Otros intereses */}
-        <motion.section
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="h-5 w-5 text-moss" />
-            <h2 className="text-lg font-semibold">Lecturas e intereses</h2>
-          </div>
-          <p className="text-sm text-sumi/75 leading-relaxed">
-            Mi lectura clínica dialoga con la filosofía continental, especialmente con sus vertientes materialistas: pensar el sujeto sin separarlo del cuerpo, el lenguaje y las condiciones concretas de vida. También integro referencias de Oriente, en particular de la estética japonesa. Las artes marciales —Aikido y Jiu-Jitsu Brasileño— forman parte de esa misma línea: una filosofía material y aplicada al cuerpo.
-          </p>
-        </motion.section>
-
-        {/* CTA */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-gold/30 bg-gold/5 p-6 text-center"
-        >
-          <p className="text-sumi/80 font-medium">
-            Si algo de esto resuena, podemos trabajarlo.
-          </p>
+      <section className="mx-auto max-w-6xl px-5 pb-12 md:pb-16">
+        <div className="rounded-3xl border border-gold/30 bg-gold/5 p-6 text-center">
+          <p className="text-sumi/80 font-medium">Si algo de esto resuena, podemos trabajarlo.</p>
           <p className="mt-1 text-sm text-sumi/60">
-            Primera sesión sin compromiso de continuidad.
+            Primera entrevista para ubicar qué está pasando y si este encuadre tiene sentido.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <a
               href="/#agenda"
               className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
             >
-              Agenda tu sesión
+              Ver turnos disponibles
             </a>
             <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/90"
+              to="/sobrepensamiento-overthinking"
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium"
             >
-              Leer el blog
+              Sobrepensamiento
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
     </>
   );
 }

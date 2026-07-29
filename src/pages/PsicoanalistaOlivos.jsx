@@ -43,11 +43,12 @@ export default function PsicoanalistaOlivos() {
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Psicoanálisis presencial en Olivos",
-    serviceType: "Psicoanálisis clínico",
+    name: "Psicólogo en Olivos y psicoanálisis presencial",
+    serviceType: "Psicología clínica y psicoanálisis",
     provider: {
       "@type": "Psychologist",
       name: "Lic. Nicolás Quiroga",
+      jobTitle: "Psicólogo y psicoanalista clínico",
       url: site,
       telephone: `+${phone}`,
       sameAs: professionalProfiles.map((profile) => profile.href),
@@ -62,34 +63,34 @@ export default function PsicoanalistaOlivos() {
   return (
     <>
       <Helmet>
-        <title>Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga</title>
+        <title>Psicólogo en Olivos | Psicoanalista clínico — Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Psicólogo y psicoanalista en Olivos, Vicente López. Psicoanálisis para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición. Honorarios: $40.000 ARS."
+          content="Psicólogo en Olivos, Vicente López. Psicoanalista clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición."
         />
         <link rel="canonical" href={url} />
-        <meta property="og:title" content="Psicólogo y psicoanalista en Olivos — Lic. Nicolás Quiroga" />
+        <meta property="og:title" content="Psicólogo en Olivos | Psicoanalista clínico — Nicolás Quiroga" />
         <meta
           property="og:description"
-          content="Sesiones de psicoanálisis en Olivos. Un espacio clínico para trabajar sobrepensamiento, angustia, ansiedad, autoexigencia y repetición."
+          content="Sesiones en Olivos. Un espacio clínico para trabajar sobrepensamiento, angustia, ansiedad, autoexigencia y repetición."
         />
         <meta property="og:url" content={url} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
         <script type="application/ld+json">{JSON.stringify(service)}</script>
       </Helmet>
 
-      <section className="border-b border-black/5 bg-white/60">
+      <section className="border-b border-black/10 bg-white/60">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[1.1fr_.9fr] md:items-center md:py-16">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-gold">Olivos · Vicente López</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/55">Olivos · Vicente López</p>
             <h1 className="h-serif mt-3 text-4xl font-semibold leading-tight md:text-5xl">
-              Psicoanalista en Olivos
+              Psicólogo en Olivos. Psicoanalista clínico.
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-              Soy psicólogo y psicoanalista clínico. Atiendo en Olivos, Vicente López,
-              en un espacio presencial para trabajar eso que insiste: la cabeza que no
-              corta, la ansiedad, el insomnio, la autoexigencia, los vínculos que se
-              repiten o un malestar que no termina de encontrar nombre.
+              Atiendo en un consultorio presencial en Olivos, Vicente López. Trabajo
+              con personas tomadas por el sobrepensamiento, la ansiedad, el insomnio,
+              la autoexigencia, vínculos que se repiten o un malestar que todavía no
+              encuentra nombre.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -109,8 +110,8 @@ export default function PsicoanalistaOlivos() {
 
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm">
             <img
-              src="/media/lic-nicolas-quiroga-psicoanalista-olivos.webp"
-              alt="Lic. Nicolás Quiroga, psicoanalista en Olivos"
+              src="/media/consultorio-psicoanalisis-olivos-divan.webp"
+              alt="Consultorio de psicoanálisis en Olivos"
               className="h-80 w-full object-cover"
             />
           </div>
@@ -120,7 +121,7 @@ export default function PsicoanalistaOlivos() {
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { icon: MapPin, title: "Consultorio en Olivos", text: "La dirección exacta se comparte al confirmar el turno. Zona de acceso cómodo desde Vicente López y alrededores." },
+            { icon: MapPin, title: "Psicólogo en Olivos", text: "La dirección exacta se comparte al confirmar el turno. Zona de acceso cómodo desde Vicente López, La Lucila, Florida y Martínez." },
             { icon: Clock, title: "Encuadre claro", text: "Primera entrevista para ubicar la consulta, definir modalidad y decidir si tiene sentido iniciar un proceso." },
             { icon: ShieldCheck, title: "Reserva absoluta", text: "El trabajo clínico requiere intimidad, tiempo y cuidado. La confidencialidad no es un detalle administrativo." },
           ].map(({ icon: Icon, title, text }) => (
@@ -164,8 +165,8 @@ export default function PsicoanalistaOlivos() {
             <p className="text-sm leading-relaxed text-sumi/70">
               Además de este sitio, podés encontrar mi perfil profesional en algunos directorios
               y espacios públicos. La idea no es reemplazar la consulta por una vidriera, sino
-              dejar señales consistentes: Lic. Nicolás Quiroga, psicoanalista clínico en Olivos
-              y online.
+              dejar señales consistentes: Lic. Nicolás Quiroga, psicólogo en Olivos,
+              psicoanalista clínico y atención online.
             </p>
             <div className="flex flex-wrap gap-2">
               {professionalProfiles.map((profile) => (

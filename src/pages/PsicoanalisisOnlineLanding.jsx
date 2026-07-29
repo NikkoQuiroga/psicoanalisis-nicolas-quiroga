@@ -37,13 +37,13 @@ export default function PsicoanalisisOnlineLanding() {
   return (
     <>
       <Helmet>
-        <title>Psicoanálisis online en Argentina — Lic. Nicolás Quiroga</title>
+        <title>Psicólogo online | Psicoanálisis para sobrepensamiento</title>
         <meta
           name="description"
-          content="Psicoanálisis online para Argentina y exterior. Un espacio clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición."
+          content="Psicólogo online y psicoanalista clínico. Sesiones para sobrepensamiento, ansiedad, insomnio y repetición en Argentina y exterior."
         />
         <link rel="canonical" href={url} />
-        <meta property="og:title" content="Psicoanálisis online en Argentina — Lic. Nicolás Quiroga" />
+        <meta property="og:title" content="Psicólogo online y psicoanalista clínico — Nicolás Quiroga" />
         <meta
           property="og:description"
           content="Sesiones online de psicoanálisis para trabajar la cabeza que no corta, angustia, ansiedad, insomnio y repetición."
@@ -53,17 +53,17 @@ export default function PsicoanalisisOnlineLanding() {
         <script type="application/ld+json">{JSON.stringify(service)}</script>
       </Helmet>
 
-      <section className="border-b border-black/5 bg-white/60">
+      <section className="border-b border-black/10 bg-white/60">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[1.05fr_.95fr] md:items-center md:py-16">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-gold">Argentina y exterior</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-sumi/55">Psicólogo online · Argentina y exterior</p>
             <h1 className="h-serif mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
-              Psicoanálisis online
+              Psicoanálisis online para cuando la cabeza no corta.
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-              La modalidad online no es una versión menor del trabajo clínico. Si hay encuadre,
-              continuidad y transferencia, también puede haber análisis para eso que insiste:
-              la cabeza que no corta, la ansiedad, la exigencia o la repetición.
+              La modalidad online no es una versión menor. Si hay encuadre,
+              continuidad y palabra, puede haber trabajo clínico para eso que insiste:
+              la ansiedad, la exigencia, el insomnio o la repetición.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -73,18 +73,18 @@ export default function PsicoanalisisOnlineLanding() {
                 Agendar primera sesión <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/blog/psicoanalisis-online-funciona"
+                to="/sobrepensamiento-overthinking"
                 className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium text-sumi hover:bg-white/80"
               >
-                Leer sobre análisis online
+                Ver enfoque clínico
               </Link>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm">
             <img
-              src="/media/lic-nicolas-quiroga-psicoanalisis-online.webp"
-              alt="Lic. Nicolás Quiroga, psicoanálisis online"
+              src="/media/nicolas-quiroga-estudio-clinico.webp"
+              alt="Nicolás Quiroga, psicoanalista clínico"
               className="h-80 w-full object-cover"
             />
           </div>

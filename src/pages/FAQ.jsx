@@ -69,7 +69,7 @@ const categories = [
       },
       {
         q: "¿Es psicoanálisis o terapia cognitiva?",
-        a: "Es psicoanálisis clínico. Mi recorrido formativo puede incluir otros campos, pero la práctica que ofrezco acá no se organiza como coaching, autoayuda ni entrenamiento de técnicas. El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste.",
+        a: "El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste. Mi recorrido incluye mindfulness, meditación y otros campos, pero los incorporo solo cuando tienen sentido dentro del trabajo clínico.",
       },
     ],
   },
@@ -118,10 +118,10 @@ export default function FAQ() {
   return (
     <>
       <Helmet>
-        <title>¿Cómo funciona? · Preguntas frecuentes · Lic. Nicolás Quiroga</title>
+        <title>Preguntas frecuentes | Psicólogo en Olivos — Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Preguntas frecuentes sobre psicoanálisis con Nicolás Quiroga: modalidad online y presencial, honorarios, confidencialidad y encuadre clínico."
+          content="Preguntas frecuentes sobre atención psicológica y psicoanálisis con Nicolás Quiroga en Olivos y online: modalidad, honorarios, confidencialidad y encuadre."
         />
       </Helmet>
 

@@ -11,10 +11,10 @@ export default function Contacto() {
   return (
     <>
       <Helmet>
-        <title>Contacto · Agendá tu primera sesión — Lic. Nicolás Quiroga</title>
+        <title>Contacto | Psicólogo en Olivos — Lic. Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Agendá una primera consulta de psicoanálisis con Nicolás Quiroga. Atención en Olivos y online para sobrepensamiento, ansiedad, insomnio y repetición. Honorarios: $40.000 ARS / USD 35."
+          content="Contacto para primera consulta con Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad e insomnio."
         />
       </Helmet>
 
@@ -22,14 +22,15 @@ export default function Contacto() {
       <section className="bg-washi border-b border-black/5">
         <div className="mx-auto max-w-5xl px-5 py-14 md:py-18">
           <p className="text-xs font-medium uppercase tracking-widest text-gold mb-3">
-            Primera sesión
+            Psicólogo en Olivos · primera consulta
           </p>
           <h1 className="h-serif text-4xl md:text-5xl font-semibold text-sumi leading-tight mb-3">
-            Agendá tu sesión
+            Agendá una primera consulta
           </h1>
           <p className="text-base text-sumi/65 max-w-xl leading-relaxed">
-            Si sentís que no podés apagar la cabeza, la primera consulta sirve
-            para ubicar qué insiste y ver si este encuadre clínico tiene sentido.
+            Si no podés apagar la cabeza, si la ansiedad insiste o si venís
+            postergando consultar, podemos ubicar qué está pasando y ver si este
+            encuadre tiene sentido para vos.
           </p>
         </div>
       </section>
@@ -96,14 +97,14 @@ export default function Contacto() {
             </div>
           </motion.div>
 
-          {/* Columna derecha — formulario */}
+          {/* Columna derecha — agenda */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.1 }}
             className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm"
           >
-            <p className="text-sm font-semibold text-sumi/80 mb-4">Completá el formulario</p>
+            <p className="text-sm font-semibold text-sumi/80 mb-4">Elegí un turno disponible</p>
             <AgendaForm />
           </motion.div>
         </div>

@@ -73,10 +73,10 @@ export default function Testimonios() {
   return (
     <>
       <Helmet>
-        <title>Testimonios de pacientes — Psicoanalista en Olivos | Nicolás Quiroga</title>
+        <title>Testimonios de pacientes — Psicólogo en Olivos | Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Reseñas públicas de pacientes sobre Nicolás Quiroga, psicoanalista en Olivos y online. 5/5 en BuscoPsi y Doctoralia."
+          content="Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. 5/5 en BuscoPsi y Doctoralia."
         />
         <link rel="canonical" href={url} />
         <meta property="og:title" content="Testimonios de pacientes — Nicolás Quiroga" />
