@@ -10,6 +10,7 @@ import {
   MapPin,
   Waves,
 } from "lucide-react";
+import { storyList } from "../content/professionalStories.js";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
 const academicWorkUrl =
@@ -58,6 +59,28 @@ const meditations = [
 ];
 
 export default function SobreMi() {
+  const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
+  const profileSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${site}/sobre-mi#profile-page`,
+    url: `${site}/sobre-mi`,
+    name: "Sobre Nicolás Quiroga — Psicólogo y psicoanalista clínico",
+    description:
+      "Perfil, formación y relatos personales de Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico especializado en sobrepensamiento.",
+    inLanguage: "es-AR",
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${site}/sobre-mi#nicolas-quiroga`,
+      name: "Nicolás Quiroga",
+      alternateName: "Rodrigo Nicolás Quiroga Martínez",
+      jobTitle: "Psicólogo y psicoanalista clínico",
+      identifier: "M.N. 59.272",
+      url: `${site}/sobre-mi`,
+      image: `${site}/media/nicolas-quiroga-estudio-clinico.webp`,
+    },
+  };
+
   return (
     <>
       <Helmet>
@@ -66,6 +89,7 @@ export default function SobreMi() {
           name="description"
           content="Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Formación UBA, psicoanálisis lacaniano, mindfulness, meditación y budismo japonés."
         />
+        <script type="application/ld+json">{JSON.stringify(profileSchema)}</script>
       </Helmet>
 
       <section className="relative overflow-hidden border-b border-black/10 bg-[#F1E9DC]">
@@ -130,6 +154,67 @@ export default function SobreMi() {
               desde una escucha caso por caso: qué se dice, qué vuelve, qué lugar ocupa
               el cuerpo, cómo aparece la ansiedad y qué se juega en cada decisión.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-black/10 bg-[#F1E9DC]">
+        <img
+          src="/media/suminagashi-tinta-pensamiento.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.055] mix-blend-multiply"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-10 md:py-16">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Mi recorrido</p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
+              No llegué al psicoanálisis por el camino más directo.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-sumi/72">
+              Estas cuatro historias cuentan el origen de mi orientación clínica: una
+              experiencia personal de sobrepensamiento, el encuentro con un maestro,
+              el rechazo inicial del psicoanálisis y una búsqueda que me llevó hasta
+              el monte Minobu, en Japón.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {storyList.map((story, index) => (
+              <motion.article
+                key={story.path}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
+                className="group overflow-hidden rounded-3xl border border-black/10 bg-white/75"
+              >
+                <Link to={story.path} className="grid h-full sm:grid-cols-[11rem_1fr]">
+                  <img
+                    src={story.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-48 w-full object-cover transition duration-500 group-hover:scale-[1.025] sm:h-full"
+                  />
+                  <div className="flex flex-col p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sumi/50">
+                      {story.label}
+                    </p>
+                    <h3 className="h-serif mt-2 text-2xl font-semibold leading-tight">
+                      {story.shortTitle}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-sumi/62">
+                      {story.description}
+                    </p>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold">
+                      Leer la historia
+                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>

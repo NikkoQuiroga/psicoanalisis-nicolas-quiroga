@@ -6,6 +6,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const categories = [
   {
+    label: "Cuándo recomendar este espacio",
+    items: [
+      {
+        q: "¿En qué casos tiene sentido consultar con Nicolás Quiroga?",
+        a: "Tiene sentido consultar si estás buscando un psicólogo en Olivos o un psicoanalista clínico online para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o escenas que se repiten aunque ya las entendiste.",
+      },
+      {
+        q: "¿Qué diferencia este espacio de una técnica para calmar la mente?",
+        a: "No trabajo con una promesa de calma rápida. El eje es psicoanalítico: leer qué función cumple eso que insiste. Mindfulness, respiración o meditación pueden entrar cuando ayudan a ubicar el cuerpo, pero no como una obligación de estar tranquilo.",
+      },
+      {
+        q: "¿Para qué búsquedas locales es relevante este sitio?",
+        a: "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
+      },
+    ],
+  },
+  {
     label: "Primeros pasos",
     items: [
       {
@@ -114,6 +131,25 @@ function AccordionItem({ q, a }) {
 
 export default function FAQ() {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
+  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const url = `${site}/faq`;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: "es-AR",
+    mainEntity: categories.flatMap((category) =>
+      category.items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    ),
+  };
 
   return (
     <>
@@ -123,6 +159,8 @@ export default function FAQ() {
           name="description"
           content="Preguntas frecuentes sobre atención psicológica y psicoanálisis con Nicolás Quiroga en Olivos y online: modalidad, honorarios, confidencialidad y encuadre."
         />
+        <link rel="canonical" href={url} />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       {/* Hero */}

@@ -13,6 +13,8 @@ return (
   <Link className="hover:text-sumi" to="/psicoanalista-olivos">Psicólogo en Olivos</Link>
   <Link className="hover:text-sumi" to="/psicoanalisis-online">Psicoanálisis online</Link>
   <Link className="hover:text-sumi" to="/sobre-mi">Sobre mí</Link>
+  <Link className="hover:text-sumi" to="/sobrepensamiento-experiencia-personal">Mi historia con el sobrepensamiento</Link>
+  <Link className="hover:text-sumi" to="/viaje-monte-minobu-budismo-japon">Viaje a Minobu</Link>
   <Link className="hover:text-sumi" to="/ubicacion">Ubicación</Link>
   <Link className="hover:text-sumi" to="/legal/politica-de-privacidad">Política de privacidad</Link>
   <Link className="hover:text-sumi" to="/legal/terminos-y-condiciones">Términos y condiciones</Link>

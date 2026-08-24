@@ -3,5 +3,33 @@ Allow: /
 Disallow: /api/
 Disallow: /aviso-internacional
 
+# Inclusión en las funciones de búsqueda de ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# Posible uso para mejorar modelos de OpenAI
+User-agent: GPTBot
+Allow: /
+
+# Acceso solicitado directamente por usuarios de ChatGPT
+User-agent: ChatGPT-User
+Allow: /
+
+# Otros crawlers de IA y asistentes de búsqueda
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Resumen legible para asistentes y modelos
+LLM-Info: https://nicolasquiroga.com.ar/llms.txt
+
 # Sitemap
 Sitemap: https://nicolasquiroga.com.ar/sitemap.xml

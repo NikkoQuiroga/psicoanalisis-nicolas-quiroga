@@ -20,6 +20,7 @@ const PsicoanalisisOnlineLanding = lazy(() => import("./pages/PsicoanalisisOnlin
 const SobrepensamientoOverthinking = lazy(() => import("./pages/SobrepensamientoOverthinking.jsx"));
 const NoPuedoApagarLaCabeza = lazy(() => import("./pages/NoPuedoApagarLaCabeza.jsx"));
 const SobreMi         = lazy(() => import("./pages/SobreMi.jsx"));
+const ProfessionalStory = lazy(() => import("./pages/ProfessionalStory.jsx"));
 const Privacidad      = lazy(() => import("./pages/legal/Privacidad.jsx"));
 const Terminos        = lazy(() => import("./pages/legal/Terminos.jsx"));
 const Consentimiento  = lazy(() => import("./pages/legal/Consentimiento.jsx"));
@@ -81,6 +82,22 @@ export default function App() {
               <Route path="/psicoanalista-olivos" element={<PsicoanalistaOlivos />} />
               <Route path="/psicoanalisis-online" element={<PsicoanalisisOnlineLanding />} />
               <Route path="/sobre-mi" element={<SobreMi />} />
+              <Route
+                path="/sobrepensamiento-experiencia-personal"
+                element={<ProfessionalStory slug="sobrepensamiento-experiencia-personal" />}
+              />
+              <Route
+                path="/rechazo-psicoanalisis-descubrimiento-lacan"
+                element={<ProfessionalStory slug="rechazo-psicoanalisis-descubrimiento-lacan" />}
+              />
+              <Route
+                path="/viaje-monte-minobu-budismo-japon"
+                element={<ProfessionalStory slug="viaje-monte-minobu-budismo-japon" />}
+              />
+              <Route
+                path="/juan-jose-tapia-fortunato-maestro-psiquiatria"
+                element={<ProfessionalStory slug="juan-jose-tapia-fortunato-maestro-psiquiatria" />}
+              />
 
               <Route path="/blog" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />
               <Route path="/blog/*" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />

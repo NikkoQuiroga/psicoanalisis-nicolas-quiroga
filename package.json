@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender-seo-pages.js",
     "seo:prerender": "node scripts/prerender-seo-pages.js",
     "lint": "eslint .",
     "preview": "vite preview"

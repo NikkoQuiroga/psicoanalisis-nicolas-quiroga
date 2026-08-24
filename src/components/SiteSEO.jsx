@@ -11,6 +11,7 @@ export default function SiteSEO() {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
   const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";
   const academicWorkUrl = "https://www.aacademica.org/jornadas.psicopatologia.30.aniversario/101";
+  const contactUrl = `${site}/contacto`;
   const professionalProfiles = [
     "https://www.psychologytoday.com/profile/1783533",
     "https://psicologosbuenosaires.com/nicolas-quiroga-psicoanalista-clinico-para-sobrepensamiento-y-ansiedad-2144",
@@ -23,6 +24,7 @@ export default function SiteSEO() {
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${site}/sobre-mi#nicolas-quiroga`,
     name: "Nicolás Quiroga",
     alternateName: "Rodrigo Nicolás Quiroga Martínez",
     jobTitle: "Psicoanalista clínico",
@@ -30,15 +32,53 @@ export default function SiteSEO() {
       "Psicólogo en Olivos y psicoanalista clínico. Atiende presencial en Vicente López y online.",
     identifier: "M.N. 59.272",
     image: defaultImage,
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad de Buenos Aires",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Licenciatura",
+        name: "Licenciatura en Psicología",
+        recognizedBy: {
+          "@type": "CollegeOrUniversity",
+          name: "Universidad de Buenos Aires",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Posgrado",
+        name: "Posgrado en Psicoanálisis Lacaniano en ALEF",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Posgrado",
+        name: "Posgrado en Mindfulness, Meditación y Respiración Consciente (EESH - 2017)",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Olivos",
       addressRegion: "Buenos Aires",
       addressCountry: "AR",
     },
-    url: site,
+    url: `${site}/sobre-mi`,
     telephone: `+${phone}`,
     sameAs: professionalProfiles,
+    subjectOf: [
+      { "@type": "WebPage", name: "Sobre mí", url: `${site}/sobre-mi` },
+      {
+        "@type": "Article",
+        name: "Conocí el sobrepensamiento antes de estudiarlo",
+        url: `${site}/sobrepensamiento-experiencia-personal`,
+      },
+      {
+        "@type": "Article",
+        name: "En Minobu entendí que no todo se resuelve pensando más",
+        url: `${site}/viaje-monte-minobu-budismo-japon`,
+      },
+    ],
     knowsAbout: [
       "Psicoanálisis lacaniano",
       "Lacan",
@@ -79,6 +119,7 @@ export default function SiteSEO() {
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "Psychologist",
+    "@id": `${site}/#practice`,
     name: "Lic. Nicolás Quiroga — Psicólogo y psicoanalista clínico en Olivos y online",
     url: site,
     telephone: `+${phone}`,
@@ -103,6 +144,8 @@ export default function SiteSEO() {
       { "@type": "Country", name: "Argentina" },
     ],
     priceRange: "$$$",
+    email: "lic.nicolasquiroga@outlook.com",
+    founder: { "@id": `${site}/sobre-mi#nicolas-quiroga` },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -114,26 +157,79 @@ export default function SiteSEO() {
     sameAs: [...professionalProfiles, `https://wa.me/${phone}`],
     description:
       "Psicólogo y psicoanalista clínico en Olivos y online. Sesiones individuales para sobrepensamiento, ansiedad e insomnio, incorporando mindfulness y meditación cuando ayudan a ubicar cuerpo y respiración.",
+    knowsAbout: [
+      "Psicólogo en Olivos",
+      "Psicoanalista en Olivos",
+      "Sobrepensamiento",
+      "Ansiedad",
+      "Insomnio",
+      "Autoexigencia",
+      "Psicoanálisis online",
+      "Mindfulness clínico",
+    ],
     availableService: [
       {
         "@type": "MedicalTherapy",
-        name: "Psicoanálisis clínico presencial para sobrepensamiento",
+        "@id": `${site}/psicoanalista-olivos#service`,
+        name: "Psicólogo en Olivos y psicoanálisis clínico presencial",
+        description:
+          "Atención presencial en Olivos, Vicente López, para adultos con sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
         areaServed: { "@type": "City", name: "Olivos" },
+        url: `${site}/psicoanalista-olivos`,
       },
       {
         "@type": "MedicalTherapy",
-        name: "Psicoanálisis clínico online con recursos de mindfulness",
+        "@id": `${site}/psicoanalisis-online#service`,
+        name: "Psicoanálisis clínico online",
+        description:
+          "Sesiones online para Argentina y exterior, con encuadre psicoanalítico y recursos de mindfulness o meditación cuando tienen sentido clínico.",
         areaServed: { "@type": "Country", name: "Argentina" },
+        url: `${site}/psicoanalisis-online`,
+      },
+      {
+        "@type": "MedicalTherapy",
+        "@id": `${site}/no-puedo-apagar-la-cabeza#service`,
+        name: "Consulta por sobrepensamiento y ansiedad",
+        description:
+          "Primera entrevista para ubicar sobrepensamiento, ansiedad, insomnio, autoexigencia o dificultad para apagar la cabeza.",
+        areaServed: [
+          { "@type": "City", name: "Olivos" },
+          { "@type": "Country", name: "Argentina" },
+        ],
+        url: `${site}/no-puedo-apagar-la-cabeza`,
       },
     ],
+    potentialAction: {
+      "@type": "ContactAction",
+      target: [contactUrl, `https://wa.me/${phone}`],
+      name: "Agendar primera entrevista",
+    },
   };
 
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${site}/#website`,
     name: "Lic. Nicolás Quiroga — Psicólogo en Olivos y psicoanalista clínico",
     url: site,
     inLanguage: "es-AR",
+    about: { "@id": `${site}/#practice` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${site}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const aiProfilePage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${site}/llms.txt#ai-summary`,
+    name: "Resumen para asistentes de IA sobre Nicolás Quiroga",
+    url: `${site}/llms.txt`,
+    inLanguage: "es-AR",
+    about: { "@id": `${site}/#practice` },
+    mainEntity: { "@id": `${site}/sobre-mi#nicolas-quiroga` },
   };
 
   return (
@@ -143,6 +239,8 @@ export default function SiteSEO() {
       <meta name="author" content="Nicolás Quiroga" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <link rel="canonical" href={pageUrl} />
+      <link rel="alternate" type="text/plain" href={`${site}/llms.txt`} title="Resumen para asistentes de IA" />
+      <link rel="alternate" type="application/json" href={`${site}/ai-profile.json`} title="Perfil estructurado de Nicolás Quiroga" />
       {/* OG por defecto */}
       <meta property="og:site_name" content="Lic. Nicolás Quiroga · Psicoanalista clínico (M.N. 59.272)" />
       <meta property="og:type" content="website" />
@@ -160,6 +258,7 @@ export default function SiteSEO() {
       <script type="application/ld+json">{JSON.stringify(person)}</script>
       <script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
       <script type="application/ld+json">{JSON.stringify(website)}</script>
+      <script type="application/ld+json">{JSON.stringify(aiProfilePage)}</script>
     </Helmet>
   );
 }

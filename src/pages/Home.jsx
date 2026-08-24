@@ -19,6 +19,7 @@ import {
 import { motion } from "framer-motion";
 import AgendaForm from "../components/AgendaForm.jsx";
 import ProfileSlide from "../components/ProfileSlide.jsx";
+import { storyList } from "../content/professionalStories.js";
 
 const fadeUp = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0 } };
 
@@ -278,6 +279,18 @@ export default function Home() {
               <p className="mt-2 text-sm leading-relaxed text-sumi/65">{text}</p>
             </article>
           ))}
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {storyList.map((story) => (
+              <Link
+                key={story.path}
+                to={story.path}
+                className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-white/55 px-4 py-3 text-sm font-semibold transition hover:bg-white"
+              >
+                <span>{story.shortTitle}</span>
+                <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

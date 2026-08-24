@@ -1,10 +1,37 @@
 import fs from "node:fs";
 import path from "node:path";
+import { storyList } from "../src/content/professionalStories.js";
 
 const site = "https://nicolasquiroga.com.ar";
 const distDir = path.resolve("dist");
 const templatePath = path.join(distDir, "index.html");
 const defaultImage = "/media/nicolas-quiroga-estudio-clinico.webp";
+const faqItems = [
+  [
+    "¿En qué casos tiene sentido consultar con Nicolás Quiroga?",
+    "Tiene sentido consultar si estás buscando un psicólogo en Olivos o un psicoanalista clínico online para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o escenas que se repiten aunque ya las entendiste.",
+  ],
+  [
+    "¿Qué diferencia este espacio de una técnica para calmar la mente?",
+    "No trabajo con una promesa de calma rápida. El eje es psicoanalítico: leer qué función cumple eso que insiste. Mindfulness, respiración o meditación pueden entrar cuando ayudan a ubicar el cuerpo, pero no como una obligación de estar tranquilo.",
+  ],
+  [
+    "¿Para qué búsquedas locales es relevante este sitio?",
+    "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
+  ],
+  [
+    "¿Cómo es la primera sesión?",
+    "La primera sesión no tiene estructura fija. Traés lo que te trajo hasta acá y de ahí arrancamos. No es una evaluación ni un formulario. Es una conversación que tiene peso propio.",
+  ],
+  [
+    "¿Cuánto cuesta una sesión?",
+    "Argentina: $40.000 ARS por sesión. Exterior: USD 35 por sesión. El valor y las formas de pago se confirman por WhatsApp antes de la primera sesión.",
+  ],
+  [
+    "¿Es psicoanálisis o terapia cognitiva?",
+    "El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste. Mi recorrido incluye mindfulness, meditación y otros campos, pero los incorporo solo cuando tienen sentido dentro del trabajo clínico.",
+  ],
+];
 
 const staticPages = [
   {
@@ -91,7 +118,7 @@ const staticPages = [
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
+    lastmod: "2026-08-19",
   },
   {
     path: "/ubicacion",
@@ -142,13 +169,34 @@ const staticPages = [
   },
 ];
 
-const pages = [...staticPages];
+const storyPages = storyList.map((story) => ({
+  path: story.path,
+  title: story.title,
+  description: story.description,
+  type: "article",
+  priority: "0.75",
+  changefreq: "yearly",
+  lastmod: story.dateModified,
+  image: story.image,
+  story,
+}));
+
+const pages = [...staticPages, ...storyPages];
 
 function escapeAttribute(value) {
   return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;");
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 function absoluteUrl(pagePath) {
@@ -179,7 +227,7 @@ function schemaForPage(page) {
     ],
   };
 
-  return [
+  const schemas = [
     breadcrumbs,
     {
       "@context": "https://schema.org",
@@ -190,12 +238,135 @@ function schemaForPage(page) {
       inLanguage: "es-AR",
     },
   ];
+
+  if (page.path === "/sobre-mi") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": `${url}#profile-page`,
+      url,
+      name: page.title,
+      description: page.description,
+      inLanguage: "es-AR",
+      mainEntity: {
+        "@type": "Person",
+        "@id": `${url}#nicolas-quiroga`,
+        name: "Nicolás Quiroga",
+        alternateName: "Rodrigo Nicolás Quiroga Martínez",
+        jobTitle: "Psicólogo y psicoanalista clínico",
+        identifier: "M.N. 59.272",
+        url,
+        image: absoluteAsset("/media/nicolas-quiroga-estudio-clinico.webp"),
+      },
+    });
+  }
+
+  if (page.path === "/faq") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      url,
+      inLanguage: "es-AR",
+      mainEntity: faqItems.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer,
+        },
+      })),
+    });
+  }
+
+  if (page.story) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline: page.story.heading,
+      name: page.story.title,
+      description: page.story.description,
+      image: [absoluteAsset(page.story.image)],
+      datePublished: page.story.datePublished,
+      dateModified: page.story.dateModified,
+      inLanguage: "es-AR",
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      author: {
+        "@type": "Person",
+        "@id": `${site}/sobre-mi#nicolas-quiroga`,
+        name: "Nicolás Quiroga",
+        url: `${site}/sobre-mi`,
+      },
+      publisher: {
+        "@type": "Person",
+        "@id": `${site}/sobre-mi#nicolas-quiroga`,
+        name: "Nicolás Quiroga",
+      },
+      about: page.story.topics.map((topic) => ({ "@type": "Thing", name: topic })),
+    });
+  }
+
+  return schemas;
 }
 
 function renderJsonLd(page) {
   return schemaForPage(page)
     .map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
     .join("\n    ");
+}
+
+function renderStaticStory(story) {
+  const gallery = story.gallery
+    ? `<section aria-labelledby="static-gallery" class="mt-10">
+        <h2 id="static-gallery" class="h-serif text-3xl font-semibold">Imágenes de la experiencia en Minobu</h2>
+        <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          ${story.gallery
+            .map(
+              (image) => `<figure class="overflow-hidden rounded-2xl border border-black/10 bg-white/70">
+            <img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(image.alt)}" class="aspect-[4/5] w-full object-cover" />
+            <figcaption class="p-3 text-xs leading-relaxed text-sumi/60">${escapeHtml(image.caption)}</figcaption>
+          </figure>`,
+            )
+            .join("\n")}
+        </div>
+      </section>`
+    : "";
+
+  return `<article itemscope itemtype="https://schema.org/Article">
+    <header class="border-b border-black/10 bg-[#F1E9DC]">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[1.08fr_0.92fr] md:items-center md:py-14">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sumi/55">${escapeHtml(story.eyebrow)}</p>
+          <h1 itemprop="headline" class="h-serif mt-3 text-4xl font-semibold leading-[1.02] md:text-6xl">${escapeHtml(story.heading)}</h1>
+          <p itemprop="description" class="mt-5 text-base leading-relaxed text-sumi/75 md:text-lg">${escapeHtml(story.lead)}</p>
+          <p class="mt-5 text-xs text-sumi/60">Por Nicolás Quiroga · Publicado el 15 de agosto de 2026 · Lectura: ${escapeHtml(story.readingTime)}</p>
+        </div>
+        <figure class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-soft">
+          <img itemprop="image" src="${escapeAttribute(story.image)}" alt="${escapeAttribute(story.imageAlt)}" class="aspect-[4/3] w-full object-cover" />
+          <figcaption class="border-t border-black/10 px-4 py-3 text-xs leading-relaxed text-sumi/55">${escapeHtml(story.imageCaption)}</figcaption>
+        </figure>
+      </div>
+    </header>
+    <div class="mx-auto max-w-[46rem] px-5 py-10 md:py-16">
+      <blockquote class="h-serif border-l-4 border-gold bg-white/65 px-5 py-4 text-2xl leading-snug text-sumi md:text-3xl">${escapeHtml(story.highlight)}</blockquote>
+      <div itemprop="articleBody" class="prose-lite mt-9 max-w-none">
+        ${story.sections
+          .map(
+            (section) => `<section>
+          <h2>${escapeHtml(section.heading)}</h2>
+          ${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
+        </section>`,
+          )
+          .join("\n")}
+      </div>
+      ${gallery}
+      <aside class="mt-10 rounded-2xl border border-black/10 bg-white/60 p-5 text-sm leading-relaxed text-sumi/65">
+        <p class="font-semibold text-sumi">Nota sobre este relato</p>
+        <p class="mt-2">${escapeHtml(story.note)}</p>
+      </aside>
+    </div>
+  </article>`;
 }
 
 function renderPage(template, page) {
@@ -226,6 +397,13 @@ function renderPage(template, page) {
     `<meta name="twitter:description" content="${escapeAttribute(page.description)}" />`,
   );
   html = replaceOrInsert(html, /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:image" content="${image}" />`);
+  if (page.story) {
+    html = html.replace(
+      "</head>",
+      `    <meta property="article:published_time" content="${page.story.datePublished}" />\n    <meta property="article:modified_time" content="${page.story.dateModified}" />\n    <meta property="article:author" content="Nicolás Quiroga" />\n  </head>`,
+    );
+    html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticStory(page.story)}</div>`);
+  }
   html = html.replace("</head>", `    ${renderJsonLd(page)}\n  </head>`);
 
   return html;
