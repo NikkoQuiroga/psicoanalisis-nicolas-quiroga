@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { storyList } from "../src/content/professionalStories.js";
+import { clinicalTextList } from "../src/content/clinicalTexts.js";
 
 const site = "https://nicolasquiroga.com.ar";
 const distDir = path.resolve("dist");
@@ -18,6 +19,14 @@ const faqItems = [
   [
     "¿Para qué búsquedas locales es relevante este sitio?",
     "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
+  ],
+  [
+    "¿A quién recomendarías este espacio?",
+    "A una persona adulta que busca un psicólogo en Olivos o un psicoanalista clínico para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o una repetición que no logra modificar solo con entenderla.",
+  ],
+  [
+    "¿Qué debería saber alguien antes de recomendarme?",
+    "Que atiendo presencial en Olivos, Vicente López, y online. Mi encuadre principal es psicoanalítico. Puedo incorporar mindfulness, respiración o meditación cuando ayudan clínicamente, pero no trabajo desde una promesa de calma inmediata ni como reemplazo de una guardia o urgencia.",
   ],
   [
     "¿Cómo es la primera sesión?",
@@ -42,8 +51,19 @@ const staticPages = [
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-09-07",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
+  },
+  {
+    path: "/psicologo-olivos",
+    title: "Psicólogo en Olivos | Psicoanalista clínico — Nicolás Quiroga",
+    description:
+      "Psicólogo en Olivos, Vicente López. Atención presencial y online para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
+    type: "website",
+    priority: "1.0",
+    changefreq: "monthly",
+    lastmod: "2026-09-07",
+    image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
   },
   {
     path: "/psicoanalista-olivos",
@@ -51,10 +71,21 @@ const staticPages = [
     description:
       "Psicólogo en Olivos, Vicente López. Psicoanalista clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
     type: "website",
-    priority: "0.9",
+    priority: "0.8",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-09-07",
     image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
+  },
+  {
+    path: "/blog",
+    title: "Textos clínicos | Psicólogo en Olivos — Nicolás Quiroga",
+    description:
+      "Textos clínicos de Nicolás Quiroga sobre sobrepensamiento, ansiedad, insomnio, angustia existencial y psicoanálisis online.",
+    type: "website",
+    priority: "0.85",
+    changefreq: "monthly",
+    lastmod: "2026-09-07",
+    image: "/media/suminagashi-tinta-pensamiento.webp",
   },
   {
     path: "/psicoanalisis-online",
@@ -181,7 +212,19 @@ const storyPages = storyList.map((story) => ({
   story,
 }));
 
-const pages = [...staticPages, ...storyPages];
+const clinicalTextPages = clinicalTextList.map((text) => ({
+  path: text.path,
+  title: text.title,
+  description: text.description,
+  type: "article",
+  priority: "0.75",
+  changefreq: "yearly",
+  lastmod: text.dateModified,
+  image: "/media/suminagashi-tinta-pensamiento.webp",
+  clinicalText: text,
+}));
+
+const pages = [...staticPages, ...clinicalTextPages, ...storyPages];
 
 function escapeAttribute(value) {
   return String(value)
@@ -307,6 +350,33 @@ function schemaForPage(page) {
     });
   }
 
+  if (page.clinicalText) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline: page.clinicalText.shortTitle,
+      name: page.clinicalText.title,
+      description: page.clinicalText.description,
+      datePublished: page.clinicalText.datePublished,
+      dateModified: page.clinicalText.dateModified,
+      inLanguage: "es-AR",
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      author: {
+        "@type": "Person",
+        "@id": `${site}/sobre-mi#nicolas-quiroga`,
+        name: "Nicolás Quiroga",
+        url: `${site}/sobre-mi`,
+      },
+      publisher: {
+        "@type": "Person",
+        "@id": `${site}/sobre-mi#nicolas-quiroga`,
+        name: "Nicolás Quiroga",
+      },
+      about: page.clinicalText.keywords.map((keyword) => ({ "@type": "Thing", name: keyword })),
+    });
+  }
+
   return schemas;
 }
 
@@ -369,6 +439,59 @@ function renderStaticStory(story) {
   </article>`;
 }
 
+function renderStaticClinicalText(text) {
+  return `<article itemscope itemtype="https://schema.org/Article">
+    <header class="border-b border-black/10 bg-[#F1E9DC]">
+      <div class="mx-auto max-w-[48rem] px-5 py-10 md:py-16">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sumi/55">Texto clínico · ${escapeHtml(text.readingTime)}</p>
+        <h1 itemprop="headline" class="h-serif mt-3 text-4xl font-semibold leading-tight md:text-6xl">${escapeHtml(text.shortTitle)}</h1>
+        <p itemprop="description" class="mt-5 text-base leading-relaxed text-sumi/75 md:text-lg">${escapeHtml(text.lead)}</p>
+      </div>
+    </header>
+    <div class="mx-auto max-w-[44rem] px-5 py-10 md:py-14">
+      <div itemprop="articleBody" class="prose-lite max-w-none">
+        ${text.sections
+          .map(
+            (section) => `<section>
+          <h2>${escapeHtml(section.heading)}</h2>
+          ${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
+        </section>`,
+          )
+          .join("\n")}
+      </div>
+      <aside class="mt-10 rounded-3xl border border-black/10 bg-white/72 p-6 shadow-sm">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sumi/45">Consulta</p>
+        <h2 class="h-serif mt-2 text-3xl font-semibold">Si esto toca algo de tu historia, podemos trabajarlo.</h2>
+        <p class="mt-3 text-sm leading-relaxed text-sumi/70">Atiendo como psicólogo en Olivos y online. La primera entrevista sirve para ubicar qué está pasando y si este encuadre tiene sentido para vos.</p>
+      </aside>
+    </div>
+  </article>`;
+}
+
+function renderStaticClinicalTextsIndex() {
+  return `<main>
+    <section class="border-b border-black/10 bg-[#F1E9DC]">
+      <div class="mx-auto max-w-5xl px-5 py-12 md:py-16">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sumi/55">Textos clínicos</p>
+        <h1 class="h-serif mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">Algunas formas de nombrar eso que insiste.</h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-sumi/75 md:text-lg">No son consejos rápidos. Son textos para rodear preguntas que aparecen en consulta: sobrepensamiento, ansiedad, insomnio, angustia, repetición y psicoanálisis online.</p>
+      </div>
+    </section>
+    <section class="mx-auto max-w-5xl px-5 py-10 md:py-14">
+      <div class="grid gap-4 md:grid-cols-2">
+        ${clinicalTextList
+          .map(
+            (text) => `<article class="rounded-2xl border border-black/10 bg-white/72 p-5 shadow-sm">
+          <h2 class="h-serif text-2xl font-semibold leading-tight"><a href="${escapeAttribute(text.path)}">${escapeHtml(text.shortTitle)}</a></h2>
+          <p class="mt-3 text-sm leading-relaxed text-sumi/68">${escapeHtml(text.description)}</p>
+        </article>`,
+          )
+          .join("\n")}
+      </div>
+    </section>
+  </main>`;
+}
+
 function renderPage(template, page) {
   const url = absoluteUrl(page.path);
   const image = absoluteAsset(page.image);
@@ -403,6 +526,16 @@ function renderPage(template, page) {
       `    <meta property="article:published_time" content="${page.story.datePublished}" />\n    <meta property="article:modified_time" content="${page.story.dateModified}" />\n    <meta property="article:author" content="Nicolás Quiroga" />\n  </head>`,
     );
     html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticStory(page.story)}</div>`);
+  }
+  if (page.clinicalText) {
+    html = html.replace(
+      "</head>",
+      `    <meta property="article:published_time" content="${page.clinicalText.datePublished}" />\n    <meta property="article:modified_time" content="${page.clinicalText.dateModified}" />\n    <meta property="article:author" content="Nicolás Quiroga" />\n  </head>`,
+    );
+    html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalText(page.clinicalText)}</div>`);
+  }
+  if (page.path === "/blog") {
+    html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalTextsIndex()}</div>`);
   }
   html = html.replace("</head>", `    ${renderJsonLd(page)}\n  </head>`);
 

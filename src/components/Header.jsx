@@ -29,10 +29,11 @@ export default function Header() {
   const items = [
     ["Inicio", "/"],
     ["No apagar la cabeza", "/no-puedo-apagar-la-cabeza"],
-    ["Psicólogo Olivos", "/psicoanalista-olivos"],
+    ["Psicólogo Olivos", "/psicologo-olivos"],
     ["Online", "/psicoanalisis-online"],
     ["Sobre mí", "/sobre-mi"],
     ["Testimonios", "/testimonios"],
+    ["Textos", "/blog"],
     ["Contacto", "/contacto"],
   ];
 

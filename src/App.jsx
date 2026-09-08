@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense } from "react";
-import { Navigate, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Header from "./components/Header.jsx";
@@ -21,6 +21,8 @@ const SobrepensamientoOverthinking = lazy(() => import("./pages/Sobrepensamiento
 const NoPuedoApagarLaCabeza = lazy(() => import("./pages/NoPuedoApagarLaCabeza.jsx"));
 const SobreMi         = lazy(() => import("./pages/SobreMi.jsx"));
 const ProfessionalStory = lazy(() => import("./pages/ProfessionalStory.jsx"));
+const ClinicalTexts = lazy(() => import("./pages/ClinicalTexts.jsx"));
+const ClinicalTextArticle = lazy(() => import("./pages/ClinicalTextArticle.jsx"));
 const Privacidad      = lazy(() => import("./pages/legal/Privacidad.jsx"));
 const Terminos        = lazy(() => import("./pages/legal/Terminos.jsx"));
 const Consentimiento  = lazy(() => import("./pages/legal/Consentimiento.jsx"));
@@ -79,6 +81,7 @@ export default function App() {
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/sobrepensamiento-overthinking" element={<SobrepensamientoOverthinking />} />
               <Route path="/no-puedo-apagar-la-cabeza" element={<NoPuedoApagarLaCabeza />} />
+              <Route path="/psicologo-olivos" element={<PsicoanalistaOlivos />} />
               <Route path="/psicoanalista-olivos" element={<PsicoanalistaOlivos />} />
               <Route path="/psicoanalisis-online" element={<PsicoanalisisOnlineLanding />} />
               <Route path="/sobre-mi" element={<SobreMi />} />
@@ -99,8 +102,8 @@ export default function App() {
                 element={<ProfessionalStory slug="juan-jose-tapia-fortunato-maestro-psiquiatria" />}
               />
 
-              <Route path="/blog" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />
-              <Route path="/blog/*" element={<Navigate to="/sobrepensamiento-overthinking" replace />} />
+              <Route path="/blog" element={<ClinicalTexts />} />
+              <Route path="/blog/:slug" element={<ClinicalTextArticle />} />
 
               <Route path="/legal/politica-de-privacidad" element={<Privacidad />} />
               <Route path="/legal/terminos-y-condiciones" element={<Terminos />} />

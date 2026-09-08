@@ -10,8 +10,9 @@ return (
 <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-sumi/70">
   <Link className="hover:text-sumi" to="/sobrepensamiento-overthinking">Sobrepensamiento</Link>
   <Link className="hover:text-sumi" to="/no-puedo-apagar-la-cabeza">No puedo apagar la cabeza</Link>
-  <Link className="hover:text-sumi" to="/psicoanalista-olivos">Psicólogo en Olivos</Link>
+  <Link className="hover:text-sumi" to="/psicologo-olivos">Psicólogo en Olivos</Link>
   <Link className="hover:text-sumi" to="/psicoanalisis-online">Psicoanálisis online</Link>
+  <Link className="hover:text-sumi" to="/blog">Textos clínicos</Link>
   <Link className="hover:text-sumi" to="/sobre-mi">Sobre mí</Link>
   <Link className="hover:text-sumi" to="/sobrepensamiento-experiencia-personal">Mi historia con el sobrepensamiento</Link>
   <Link className="hover:text-sumi" to="/viaje-monte-minobu-budismo-japon">Viaje a Minobu</Link>

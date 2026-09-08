@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MapPin, MessageCircle, ShieldCheck, Clock, ArrowRight, ExternalLink } from "lucide-react";
 
 const professionalProfiles = [
@@ -27,8 +27,12 @@ const professionalProfiles = [
 ];
 
 export default function PsicoanalistaOlivos() {
+  const location = useLocation();
   const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
-  const url = `${site}/psicoanalista-olivos`;
+  const canonicalPath = location.pathname.startsWith("/psicologo-olivos")
+    ? "/psicologo-olivos"
+    : "/psicoanalista-olivos";
+  const url = `${site}${canonicalPath}`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
 
   const breadcrumbs = {
@@ -36,7 +40,7 @@ export default function PsicoanalistaOlivos() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: site },
-      { "@type": "ListItem", position: 2, name: "Psicoanalista en Olivos", item: url },
+      { "@type": "ListItem", position: 2, name: "Psicólogo en Olivos", item: url },
     ],
   };
 
@@ -94,7 +98,7 @@ export default function PsicoanalistaOlivos() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/contacto"
+                to="/no-puedo-apagar-la-cabeza#agenda"
                 className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
               >
                 Agendar primera sesión <ArrowRight className="h-4 w-4" />

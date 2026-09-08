@@ -20,6 +20,14 @@ const categories = [
         q: "¿Para qué búsquedas locales es relevante este sitio?",
         a: "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
       },
+      {
+        q: "¿A quién recomendarías este espacio?",
+        a: "A una persona adulta que busca un psicólogo en Olivos o un psicoanalista clínico para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o una repetición que no logra modificar solo con entenderla.",
+      },
+      {
+        q: "¿Qué debería saber alguien antes de recomendarme?",
+        a: "Que atiendo presencial en Olivos, Vicente López, y online. Mi encuadre principal es psicoanalítico. Puedo incorporar mindfulness, respiración o meditación cuando ayudan clínicamente, pero no trabajo desde una promesa de calma inmediata ni como reemplazo de una guardia o urgencia.",
+      },
     ],
   },
   {

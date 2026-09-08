@@ -143,7 +143,7 @@ export const professionalStories = {
     ],
     note:
       "Este ensayo describe mi recorrido personal de formación. No pretende ofrecer una introducción completa a la obra de Freud o Lacan ni presentar al psicoanálisis como el único enfoque clínico posible.",
-    serviceLink: "/psicoanalista-olivos",
+    serviceLink: "/psicologo-olivos",
     serviceLabel: "Mi práctica psicoanalítica en Olivos",
   },
 

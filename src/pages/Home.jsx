@@ -20,6 +20,7 @@ import { motion } from "framer-motion";
 import AgendaForm from "../components/AgendaForm.jsx";
 import ProfileSlide from "../components/ProfileSlide.jsx";
 import { storyList } from "../content/professionalStories.js";
+import { clinicalTextList } from "../content/clinicalTexts.js";
 
 const fadeUp = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0 } };
 
@@ -231,7 +232,7 @@ export default function Home() {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/psicoanalista-olivos"
+                to="/psicologo-olivos"
                 className="rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white"
               >
                 Consultorio en Olivos
@@ -336,6 +337,38 @@ export default function Home() {
                   </a>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
+        <div className="grid gap-6 md:grid-cols-[0.82fr_1.18fr] md:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Textos clínicos</p>
+            <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
+              Algunas entradas para seguir la pregunta.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-sumi/70">
+              No vuelvo al blog como vidriera. Dejo algunos textos que ya responden
+              búsquedas reales y pueden orientar una consulta.
+            </p>
+            <Link to="/blog" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4">
+              Ver textos clínicos
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid gap-3">
+            {clinicalTextList.slice(0, 3).map((text) => (
+              <Link
+                key={text.slug}
+                to={text.path}
+                className="group rounded-2xl border border-black/10 bg-white/72 p-4 shadow-sm transition hover:-translate-y-1 hover:bg-white"
+              >
+                <p className="text-xs uppercase tracking-[0.18em] text-sumi/45">{text.readingTime}</p>
+                <h3 className="h-serif mt-1 text-2xl font-semibold">{text.shortTitle}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-sumi/65">{text.description}</p>
+              </Link>
             ))}
           </div>
         </div>

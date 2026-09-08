@@ -170,12 +170,12 @@ export default function SiteSEO() {
     availableService: [
       {
         "@type": "MedicalTherapy",
-        "@id": `${site}/psicoanalista-olivos#service`,
+        "@id": `${site}/psicologo-olivos#service`,
         name: "Psicólogo en Olivos y psicoanálisis clínico presencial",
         description:
           "Atención presencial en Olivos, Vicente López, para adultos con sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
         areaServed: { "@type": "City", name: "Olivos" },
-        url: `${site}/psicoanalista-olivos`,
+        url: `${site}/psicologo-olivos`,
       },
       {
         "@type": "MedicalTherapy",
@@ -214,11 +214,6 @@ export default function SiteSEO() {
     url: site,
     inLanguage: "es-AR",
     about: { "@id": `${site}/#practice` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${site}/?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const aiProfilePage = {

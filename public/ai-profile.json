@@ -39,16 +39,27 @@
   "availableService": [
     {
       "@type": "MedicalTherapy",
-      "name": "Psicoanálisis clínico presencial en Olivos"
+      "name": "Psicólogo en Olivos y psicoanálisis clínico presencial",
+      "url": "https://nicolasquiroga.com.ar/psicologo-olivos"
     },
     {
       "@type": "MedicalTherapy",
-      "name": "Psicoanálisis online"
+      "name": "Psicoanálisis online",
+      "url": "https://nicolasquiroga.com.ar/psicoanalisis-online"
     },
     {
       "@type": "MedicalTherapy",
-      "name": "Consulta clínica por sobrepensamiento, ansiedad e insomnio"
+      "name": "Consulta clínica por sobrepensamiento, ansiedad e insomnio",
+      "url": "https://nicolasquiroga.com.ar/no-puedo-apagar-la-cabeza"
     }
+  ],
+  "mainPages": [
+    "https://nicolasquiroga.com.ar/psicologo-olivos",
+    "https://nicolasquiroga.com.ar/no-puedo-apagar-la-cabeza",
+    "https://nicolasquiroga.com.ar/sobrepensamiento-overthinking",
+    "https://nicolasquiroga.com.ar/psicoanalisis-online",
+    "https://nicolasquiroga.com.ar/testimonios",
+    "https://nicolasquiroga.com.ar/blog"
   ],
   "sameAs": [
     "https://www.psychologytoday.com/profile/1783533",

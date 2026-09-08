@@ -145,7 +145,7 @@ export default function SobrepensamientoOverthinking() {
               Las sesiones son de 40 minutos.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              <Link to="/psicoanalista-olivos" className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium">
+              <Link to="/psicologo-olivos" className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium">
                 <MapPin className="h-4 w-4" />
                 Olivos
               </Link>

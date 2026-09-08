@@ -139,7 +139,7 @@ export default function PsicoanalisisOnlineLanding() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
-            <Link to="/psicoanalista-olivos" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
+            <Link to="/psicologo-olivos" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
               Psicoanalista en Olivos
             </Link>
             <Link to="/sobrepensamiento-overthinking" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
