@@ -1,7 +1,8 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
+import AgendaForm from "../components/AgendaForm.jsx";
 import { Link } from "react-router-dom";
-import { ArrowRight, Laptop, Lock, MessageCircle, Wifi } from "lucide-react";
+import { ArrowRight, Laptop, Lock, Wifi } from "lucide-react";
 
 export default function PsicoanalisisOnlineLanding() {
   const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
@@ -37,7 +38,7 @@ export default function PsicoanalisisOnlineLanding() {
   return (
     <>
       <Helmet>
-        <title>Psicólogo online | Psicoanálisis para sobrepensamiento</title>
+        <title>Psicoanálisis online en Argentina | Nicolás Quiroga</title>
         <meta
           name="description"
           content="Psicólogo online y psicoanalista clínico. Sesiones para sobrepensamiento, ansiedad, insomnio y repetición en Argentina y exterior."
@@ -61,17 +62,17 @@ export default function PsicoanalisisOnlineLanding() {
               Psicoanálisis online para cuando la cabeza no corta.
             </h1>
             <p className="mt-4 max-w-2xl text-sumi/75 leading-relaxed">
-              La modalidad online no es una versión menor. Si hay encuadre,
-              continuidad y palabra, puede haber trabajo clínico para eso que insiste:
-              la ansiedad, la exigencia, el insomnio o la repetición.
+              Quizás vivís lejos de Olivos, te mudaste a otro país o preferís
+              encontrarnos por videollamada. Podés consultar por sobrepensamiento,
+              ansiedad, dificultad para dormir o algo que todavía te cuesta explicar.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/contacto"
+              <a
+                href="#agenda"
                 className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
               >
-                Agendar primera sesión <ArrowRight className="h-4 w-4" />
-              </Link>
+                Consultar primera entrevista online <ArrowRight className="h-4 w-4" />
+              </a>
               <Link
                 to="/sobrepensamiento-overthinking"
                 className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium text-sumi hover:bg-white/80"
@@ -94,7 +95,7 @@ export default function PsicoanalisisOnlineLanding() {
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { icon: Laptop, title: "Por videollamada", text: "Un espacio privado, estable y con horario acordado. No es chat ni acompañamiento improvisado." },
+            { icon: Laptop, title: "Por videollamada", text: "Nos encontramos por videollamada, en un horario que acordamos antes de la sesión." },
             { icon: Lock, title: "Confidencialidad", text: "La reserva profesional también rige online. Conviene elegir un lugar donde puedas hablar sin interrupciones." },
             { icon: Wifi, title: "Continuidad", text: "Sirve para quienes viven lejos, viajan, están en otra provincia o necesitan sostener el proceso desde el exterior." },
           ].map(({ icon: Icon, title, text }) => (
@@ -109,17 +110,18 @@ export default function PsicoanalisisOnlineLanding() {
 
       <section className="border-y border-black/5 bg-white/50">
         <div className="mx-auto max-w-3xl px-5 py-12">
-          <h2 className="h-serif text-3xl font-semibold">Qué cambia y qué no</h2>
+          <h2 className="h-serif text-3xl font-semibold">Cómo es una sesión online</h2>
           <div className="mt-5 space-y-4 text-sumi/75 leading-relaxed">
             <p>
-              Cambia el dispositivo material: no estamos en el mismo consultorio. Pero no
-              necesariamente cambia lo esencial del trabajo: la palabra, la escucha, la
-              repetición, el síntoma, la transferencia y el modo singular en que alguien sufre.
+              Nos conectamos en el horario que acordamos y empezamos a hablar.
+              Podés contar lo que te trajo a consultar o algo que pasó durante
+              la semana. Yo escucho, pregunto y voy interviniendo. No necesitás
+              preparar un tema antes de cada encuentro.
             </p>
             <p>
-              Para algunas personas, empezar online facilita hablar. Para otras, lo presencial
-              ofrece una escena más clara. No hay una regla universal. La primera entrevista
-              sirve también para pensar qué modalidad conviene.
+              Necesitás un lugar donde puedas hablar con privacidad y sin estar
+              atendiendo otras tareas. Si la conexión o las condiciones para hablar
+              dificultan el encuentro, lo conversamos y revisamos cómo seguir.
             </p>
             <p>
               Atiendo online a personas en Argentina y, según disponibilidad y normativa local,
@@ -129,32 +131,27 @@ export default function PsicoanalisisOnlineLanding() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-5 py-12">
-        <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
-          <div>
-            <h2 className="text-2xl font-semibold">También hay atención presencial en Olivos</h2>
-            <p className="mt-3 text-sm leading-relaxed text-sumi/70">
-              Si estás en zona norte o preferís un consultorio físico, podés consultar por la
-              modalidad presencial en Olivos, Vicente López.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Link to="/psicologo-olivos" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
-              Psicoanalista en Olivos
-            </Link>
-            <Link to="/sobrepensamiento-overthinking" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-white/80">
-              Sobrepensamiento y ansiedad
-            </Link>
-            <a
-              href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quería consultar por psicoanálisis online.")}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-sumi shadow hover:bg-gold2"
-            >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
-          </div>
+      <section className="mx-auto max-w-3xl px-5 py-12">
+        <h2 className="h-serif text-3xl font-semibold">Cómo empezar psicoanálisis online</h2>
+        <div className="mt-5 space-y-5 text-sumi/75 leading-relaxed">
+          <p>Podés consultar desde cualquier provincia de Argentina. Coordinamos una primera entrevista por videollamada para conversar sobre lo que te trae y evaluar si esta modalidad resulta adecuada para vos.</p>
+          <h3 className="text-xl font-semibold">Qué necesitás para la videollamada</h3>
+          <p>Un lugar privado donde puedas hablar sin interrupciones, conexión estable y un teléfono o computadora con cámara y micrófono. El medio de conexión se acuerda al confirmar la entrevista.</p>
+          <h3 className="text-xl font-semibold">Honorarios y horarios</h3>
+          <p>La sesión dura 40 minutos. El honorario es de $40.000 ARS por sesión para Argentina y USD 35 para exterior. Antes de empezar acordamos horario y forma de pago.</p>
+          <h3 className="text-xl font-semibold">Si vivís fuera de Argentina</h3>
+          <p>Las sesiones son en español. Al escribir, indicá en qué país vivís y tu disponibilidad: así podemos coordinar la diferencia horaria y confirmar si es posible atenderte desde allí. El honorario para exterior es USD 35 por sesión; la forma de pago se acuerda antes de la primera entrevista.</p>
+          <h3 className="text-xl font-semibold">Qué pasa después de la primera entrevista</h3>
+          <p>Conversamos sobre la frecuencia y las condiciones para sostener el trabajo. La primera entrevista no te obliga a continuar. Si la modalidad online no resulta adecuada, lo hablamos.</p>
+          <Link to="/blog/psicoanalisis-online-funciona" className="inline-block font-semibold underline underline-offset-4">Leer más sobre el encuadre del psicoanálisis online</Link>
         </div>
+      </section>
+      <section id="agenda" className="mx-auto max-w-3xl scroll-mt-28 px-5 pb-12">
+        <div id="agenda-form" className="rounded-3xl border border-black/10 bg-white/85 p-5 shadow-sm">
+          <h2 className="h-serif mb-5 text-3xl font-semibold">Coordinemos tu primera entrevista online</h2>
+          <AgendaForm onlineOnly />
+        </div>
+        <p className="mt-6 text-sm text-sumi/65">Si preferís atención presencial, podés consultar por el <Link to="/psicologo-olivos" className="underline">consultorio en Olivos</Link>.</p>
       </section>
     </>
   );

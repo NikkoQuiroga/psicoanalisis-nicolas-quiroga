@@ -60,7 +60,7 @@ const reviewSnippets = [
 ];
 
 const whatsAppHref =
-  "https://wa.me/5491161402223?text=Hola%20Nicol%C3%A1s%2C%20vengo%20por%20la%20landing%20de%20sobrepensamiento.";
+  "https://wa.me/5491161402223?text=Hola%20Nicol%C3%A1s%2C%20le%C3%AD%20sobre%20sobrepensamiento%20en%20tu%20sitio%20y%20quiero%20consultar.";
 
 export default function NoPuedoApagarLaCabeza() {
   return (
@@ -251,15 +251,16 @@ export default function NoPuedoApagarLaCabeza() {
               que algo vuelve: ansiedad, insomnio, autoexigencia, decisiones que pesan.
             </p>
             <p>
-              Lo que puedo ofrecerte no es una frase tranquilizadora. Es un espacio
-              para leer por qué la cabeza quedó obligada a funcionar así y, cuando el
-              cuerpo está demasiado tomado, usar recursos de mindfulness, respiración
-              o meditación para abrir un intervalo.
+              En las entrevistas podemos hablar de lo que te preocupa, revisar
+              situaciones concretas y prestar atención a lo que se repite. Mi
+              orientación es psicoanalítica. También cuento con formación en
+              mindfulness, respiración y meditación, recursos que incorporo cuando
+              tienen sentido para el trabajo que estamos haciendo.
             </p>
             <p>
-              La promesa es sobria: no seguir solo con eso que ya intentaste resolver
-              pensando más. Empezar a ubicarlo en una primera entrevista, con un
-              encuadre claro y una dirección de trabajo.
+              Para empezar, alcanza con que puedas contar algo de lo que te pasa.
+              En la primera entrevista también conversamos sobre la modalidad,
+              la frecuencia y tus dudas antes de continuar.
             </p>
           </div>
         </div>
@@ -307,9 +308,8 @@ export default function NoPuedoApagarLaCabeza() {
               honorario es USD 35.
             </p>
             <div className="mt-5 rounded-2xl border border-gold/35 bg-gold/10 p-4 text-sm leading-relaxed text-sumi/75">
-              <strong className="text-sumi">Agenda cuidada.</strong> Trabajo con cupos
-              limitados porque el encuadre necesita continuidad. En la agenda vas a ver
-              horarios posibles; la disponibilidad real se confirma por WhatsApp.
+              <strong className="text-sumi">Agenda cuidada.</strong> El encuadre necesita continuidad. Indicá tu modalidad y franja preferida;
+              acordamos un horario y confirmamos la disponibilidad por WhatsApp.
             </div>
           </div>
         </div>
@@ -379,9 +379,9 @@ export default function NoPuedoApagarLaCabeza() {
                 Si algo de esto te pasa, no lo sigamos pensando solos.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-sumi/70">
-                Elegí un horario posible. Lo confirmamos por WhatsApp y ubicamos en
-                una primera entrevista qué está pasando y si este encuadre tiene
-                sentido para vos.
+                Indicá tu modalidad y franja horaria preferida. Por WhatsApp
+                confirmamos la disponibilidad y coordinamos una primera entrevista
+                para conversar sobre tu consulta.
               </p>
             </div>
             <div id="agenda-form">

@@ -6,7 +6,8 @@ import { useLocation } from "react-router-dom";
 export default function SiteSEO() {
   const location = useLocation();
   const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
-  const pageUrl = `${site}${location.pathname}`;
+  const canonicalPath = location.pathname.replace(/\/+$/, "") || "/";
+  const pageUrl = `${site}${canonicalPath === "/psicoanalista-olivos" ? "/psicologo-olivos" : canonicalPath}`;
   const defaultImage = `${site}/media/nicolas-quiroga-estudio-clinico.webp`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
   const linkedInUrl = "https://www.linkedin.com/in/lic-nicolas-quiroga";

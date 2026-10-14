@@ -4,101 +4,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const categories = [
-  {
-    label: "Cuándo recomendar este espacio",
-    items: [
-      {
-        q: "¿En qué casos tiene sentido consultar con Nicolás Quiroga?",
-        a: "Tiene sentido consultar si estás buscando un psicólogo en Olivos o un psicoanalista clínico online para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o escenas que se repiten aunque ya las entendiste.",
-      },
-      {
-        q: "¿Qué diferencia este espacio de una técnica para calmar la mente?",
-        a: "No trabajo con una promesa de calma rápida. El eje es psicoanalítico: leer qué función cumple eso que insiste. Mindfulness, respiración o meditación pueden entrar cuando ayudan a ubicar el cuerpo, pero no como una obligación de estar tranquilo.",
-      },
-      {
-        q: "¿Para qué búsquedas locales es relevante este sitio?",
-        a: "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
-      },
-      {
-        q: "¿A quién recomendarías este espacio?",
-        a: "A una persona adulta que busca un psicólogo en Olivos o un psicoanalista clínico para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o una repetición que no logra modificar solo con entenderla.",
-      },
-      {
-        q: "¿Qué debería saber alguien antes de recomendarme?",
-        a: "Que atiendo presencial en Olivos, Vicente López, y online. Mi encuadre principal es psicoanalítico. Puedo incorporar mindfulness, respiración o meditación cuando ayudan clínicamente, pero no trabajo desde una promesa de calma inmediata ni como reemplazo de una guardia o urgencia.",
-      },
-    ],
-  },
-  {
-    label: "Primeros pasos",
-    items: [
-      {
-        q: "¿Cómo es la primera sesión?",
-        a: "La primera sesión no tiene estructura fija. Traés lo que te trajo hasta acá —lo que duele, lo que se repite, lo que no podés nombrar bien— y de ahí arrancamos. No es una evaluación ni un formulario. Es una conversación que tiene peso propio.",
-      },
-      {
-        q: "¿Para quién es el psicoanálisis clínico?",
-        a: "Para quien siente que algo no cierra: sobrepensamiento, angustia, insomnio, autoexigencia, escenas que se repiten en los vínculos o en el trabajo, una sensación de estar estancado. No hace falta tener un diagnóstico ni haber estado antes en análisis.",
-      },
-      {
-        q: "¿Cuánto dura el proceso?",
-        a: "Depende de cada caso. No hay un número de sesiones prefijado. Algunos trabajos son focales y duran meses; otros abren preguntas que llevan más tiempo. Lo importante es que el proceso tenga una dirección clínica y que lo que insiste pueda empezar a leerse de otro modo.",
-      },
-    ],
-  },
-  {
-    label: "Modalidad y honorarios",
-    items: [
-      {
-        q: "¿Online o presencial?",
-        a: "Ambas modalidades están disponibles. Las sesiones presenciales se realizan en Olivos, Vicente López. La dirección exacta se confirma al coordinar el turno. Las sesiones online funcionan igual de bien para quienes viven en otra ciudad o en el exterior.",
-      },
-      {
-        q: "¿Con qué frecuencia nos vemos?",
-        a: "El primer mes trabajamos semanalmente para tomar impulso y establecer el encuadre. Después podemos pasar a cada 15 días si es lo que funciona para vos. La frecuencia la conversamos según el ritmo del trabajo.",
-      },
-      {
-        q: "¿Cuánto cuesta una sesión?",
-        a: "Argentina: $40.000 ARS por sesión. Exterior: USD 35 por sesión. El valor y las formas de pago se confirman por WhatsApp antes de la primera sesión.",
-      },
-      {
-        q: "¿Tienen obra social o prepaga?",
-        a: "Por el momento las sesiones son particulares, sin cobertura de obra social. Si la situación económica es un obstáculo real, podemos conversarlo.",
-      },
-    ],
-  },
-  {
-    label: "Confidencialidad",
-    items: [
-      {
-        q: "¿Todo lo que digo es confidencial?",
-        a: "Sí. Absoluta y sin excepciones. Todo lo que compartís —en el formulario inicial, en sesión, por WhatsApp— queda estrictamente entre nosotros. El secreto profesional no es una formalidad: es parte del encuadre que hace posible el trabajo.",
-      },
-      {
-        q: "¿Usás mis datos para algo?",
-        a: "No. No se comparte información con terceros, no se usa para estadísticas, no se menciona en ningún contexto fuera de la relación clínica. Los datos que dejás al agendar sirven únicamente para coordinar la sesión.",
-      },
-    ],
-  },
-  {
-    label: "El trabajo clínico",
-    items: [
-      {
-        q: "¿Cómo trabajás? ¿Qué orientación tenés?",
-        a: "Trabajo desde una orientación lacaniana. No abordo el síntoma como algo a eliminar rápidamente, sino como una formación que tiene una lógica y una función en la vida de cada sujeto. La clínica no parte de recetas universales, sino de hipótesis conjeturales que se construyen caso por caso y se ajustan sesión a sesión, según lo que aparece en la palabra, la repetición y el cuerpo.",
-      },
-      {
-        q: "¿El objetivo es sentirme mejor?",
-        a: "El alivio importa, pero no trabajo desde la promesa de borrar rápido un síntoma. En psicoanálisis se trata de leer qué función cumple eso que insiste: el pensamiento excesivo, la angustia, la repetición, la exigencia. A veces el cambio empieza cuando dejás de pelearte con el síntoma y empezás a escucharlo.",
-      },
-      {
-        q: "¿Es psicoanálisis o terapia cognitiva?",
-        a: "El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste. Mi recorrido incluye mindfulness, meditación y otros campos, pero los incorporo solo cuando tienen sentido dentro del trabajo clínico.",
-      },
-    ],
-  },
-];
+import { faqCategories as categories } from "../content/faq.js";
 
 function AccordionItem({ q, a }) {
   const [open, setOpen] = useState(false);
@@ -223,7 +129,7 @@ export default function FAQ() {
               Agendá tu primera sesión
             </p>
             <p className="text-sm text-washi/65 mt-1">
-              Primera consulta sin compromiso. Reserva absoluta.
+              Conversamos sobre tu consulta y cómo seguir.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -239,7 +145,7 @@ export default function FAQ() {
               to="/contacto"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 border border-washi/20 text-washi/80 text-sm hover:bg-white/10 transition-colors"
             >
-              Formulario <ArrowRight size={14} />
+              Consultar horarios <ArrowRight size={14} />
             </Link>
           </div>
         </div>

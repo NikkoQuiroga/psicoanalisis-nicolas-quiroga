@@ -1,57 +1,25 @@
 import fs from "node:fs";
 import path from "node:path";
 import { storyList } from "../src/content/professionalStories.js";
+import { faqCategories } from "../src/content/faq.js";
 import { clinicalTextList } from "../src/content/clinicalTexts.js";
 
 const site = "https://nicolasquiroga.com.ar";
 const distDir = path.resolve("dist");
 const templatePath = path.join(distDir, "index.html");
 const defaultImage = "/media/nicolas-quiroga-estudio-clinico.webp";
-const faqItems = [
-  [
-    "¿En qué casos tiene sentido consultar con Nicolás Quiroga?",
-    "Tiene sentido consultar si estás buscando un psicólogo en Olivos o un psicoanalista clínico online para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o escenas que se repiten aunque ya las entendiste.",
-  ],
-  [
-    "¿Qué diferencia este espacio de una técnica para calmar la mente?",
-    "No trabajo con una promesa de calma rápida. El eje es psicoanalítico: leer qué función cumple eso que insiste. Mindfulness, respiración o meditación pueden entrar cuando ayudan a ubicar el cuerpo, pero no como una obligación de estar tranquilo.",
-  ],
-  [
-    "¿Para qué búsquedas locales es relevante este sitio?",
-    "Este sitio es relevante para búsquedas como psicólogo en Olivos, psicólogo Olivos, psicoanalista en Olivos, psicoanálisis online, sobrepensamiento, ansiedad, insomnio y no puedo apagar la cabeza.",
-  ],
-  [
-    "¿A quién recomendarías este espacio?",
-    "A una persona adulta que busca un psicólogo en Olivos o un psicoanalista clínico para trabajar sobrepensamiento, ansiedad, insomnio, autoexigencia, dificultad para decidir o una repetición que no logra modificar solo con entenderla.",
-  ],
-  [
-    "¿Qué debería saber alguien antes de recomendarme?",
-    "Que atiendo presencial en Olivos, Vicente López, y online. Mi encuadre principal es psicoanalítico. Puedo incorporar mindfulness, respiración o meditación cuando ayudan clínicamente, pero no trabajo desde una promesa de calma inmediata ni como reemplazo de una guardia o urgencia.",
-  ],
-  [
-    "¿Cómo es la primera sesión?",
-    "La primera sesión no tiene estructura fija. Traés lo que te trajo hasta acá y de ahí arrancamos. No es una evaluación ni un formulario. Es una conversación que tiene peso propio.",
-  ],
-  [
-    "¿Cuánto cuesta una sesión?",
-    "Argentina: $40.000 ARS por sesión. Exterior: USD 35 por sesión. El valor y las formas de pago se confirman por WhatsApp antes de la primera sesión.",
-  ],
-  [
-    "¿Es psicoanálisis o terapia cognitiva?",
-    "El encuadre es psicoanalítico: palabra, escucha y lectura caso por caso de eso que se repite aunque ya lo entendiste. Mi recorrido incluye mindfulness, meditación y otros campos, pero los incorporo solo cuando tienen sentido dentro del trabajo clínico.",
-  ],
-];
+const faqItems = faqCategories.flatMap(category => category.items.map(item => [item.q, item.a]));
 
 const staticPages = [
   {
     path: "/",
-    title: "Psicólogo en Olivos y psicoanalista clínico — Nicolás Quiroga",
+    title: "Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga",
     description:
       "Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad, insomnio y repetición.",
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
-    lastmod: "2026-09-07",
+    lastmod: "2026-10-14",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -61,17 +29,6 @@ const staticPages = [
       "Psicólogo en Olivos, Vicente López. Atención presencial y online para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
     type: "website",
     priority: "1.0",
-    changefreq: "monthly",
-    lastmod: "2026-09-07",
-    image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
-  },
-  {
-    path: "/psicoanalista-olivos",
-    title: "Psicólogo en Olivos | Psicoanalista clínico — Nicolás Quiroga",
-    description:
-      "Psicólogo en Olivos, Vicente López. Psicoanalista clínico para sobrepensamiento, ansiedad, insomnio, autoexigencia y repetición.",
-    type: "website",
-    priority: "0.8",
     changefreq: "monthly",
     lastmod: "2026-09-07",
     image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
@@ -89,24 +46,24 @@ const staticPages = [
   },
   {
     path: "/psicoanalisis-online",
-    title: "Psicólogo online | Psicoanálisis para sobrepensamiento",
+    title: "Psicoanálisis online en Argentina | Nicolás Quiroga",
     description:
       "Psicólogo online y psicoanalista clínico. Sesiones para sobrepensamiento, ansiedad, insomnio y repetición en Argentina y exterior.",
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-10-14",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
     path: "/contacto",
-    title: "Contacto | Psicólogo en Olivos — Lic. Nicolás Quiroga",
+    title: "Primera entrevista online y en Olivos | Nicolás Quiroga",
     description:
       "Contacto para primera consulta con Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad e insomnio.",
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
-    lastmod: "2026-06-20",
+    lastmod: "2026-10-14",
   },
   {
     path: "/sobrepensamiento-overthinking",
@@ -116,7 +73,7 @@ const staticPages = [
     type: "website",
     priority: "0.95",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-10-14",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -127,7 +84,7 @@ const staticPages = [
     type: "website",
     priority: "0.95",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-10-14",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -138,7 +95,7 @@ const staticPages = [
     type: "website",
     priority: "0.8",
     changefreq: "monthly",
-    lastmod: "2026-07-27",
+    lastmod: "2026-10-14",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -149,7 +106,7 @@ const staticPages = [
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
-    lastmod: "2026-08-19",
+    lastmod: "2026-10-14",
   },
   {
     path: "/ubicacion",
@@ -445,6 +402,7 @@ function renderStaticClinicalText(text) {
       <div class="mx-auto max-w-[48rem] px-5 py-10 md:py-16">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sumi/55">Texto clínico · ${escapeHtml(text.readingTime)}</p>
         <h1 itemprop="headline" class="h-serif mt-3 text-4xl font-semibold leading-tight md:text-6xl">${escapeHtml(text.shortTitle)}</h1>
+        <p class="mt-3 text-sm text-sumi/65">Por <a href="/sobre-mi">Nicolás Quiroga</a> · Psicólogo, M.N. 59.272</p>
         <p itemprop="description" class="mt-5 text-base leading-relaxed text-sumi/75 md:text-lg">${escapeHtml(text.lead)}</p>
       </div>
     </header>
@@ -463,6 +421,7 @@ function renderStaticClinicalText(text) {
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sumi/45">Consulta</p>
         <h2 class="h-serif mt-2 text-3xl font-semibold">Si esto toca algo de tu historia, podemos trabajarlo.</h2>
         <p class="mt-3 text-sm leading-relaxed text-sumi/70">Atiendo como psicólogo en Olivos y online. La primera entrevista sirve para ubicar qué está pasando y si este encuadre tiene sentido para vos.</p>
+        <p><a href="/psicoanalisis-online">Consultar por psicoanálisis online</a></p>
       </aside>
     </div>
   </article>`;
@@ -533,6 +492,24 @@ function renderPage(template, page) {
       `    <meta property="article:published_time" content="${page.clinicalText.datePublished}" />\n    <meta property="article:modified_time" content="${page.clinicalText.dateModified}" />\n    <meta property="article:author" content="Nicolás Quiroga" />\n  </head>`,
     );
     html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalText(page.clinicalText)}</div>`);
+  }
+  if (page.path === "/psicoanalisis-online") {
+    html = html.replace('<div id="root"></div>', `<div id="root"><main>
+      <h1>Psicoanálisis online para cuando la cabeza no corta.</h1>
+      <p>Atención online en Argentina con Nicolás Quiroga, psicólogo y psicoanalista clínico, M.N. 59.272. Consultas por sobrepensamiento, ansiedad, insomnio y autoexigencia.</p>
+      <h2>Cómo empezar psicoanálisis online</h2>
+      <p>Coordinamos una primera entrevista por videollamada para conversar sobre tu consulta y evaluar si esta modalidad resulta adecuada para vos.</p>
+      <h2>Qué necesitás</h2><p>Un lugar privado, conexión estable y teléfono o computadora con cámara y micrófono. El medio de conexión se acuerda al confirmar la entrevista.</p>
+      <h2>Honorarios y horarios</h2><p>Sesiones de 40 minutos. $40.000 ARS por sesión para Argentina y USD 35 para exterior. Horario y forma de pago se acuerdan antes de empezar. Las consultas desde el exterior están sujetas a la posibilidad de atención según la normativa local.</p>
+      <h2>Si vivís fuera de Argentina</h2><p>Las sesiones son en español. Indicá en qué país vivís y tus horarios posibles para coordinar la diferencia horaria y confirmar si es posible atenderte desde allí. La forma de pago se acuerda antes de empezar.</p>
+      <h2>Después de la primera entrevista</h2><p>Conversamos sobre frecuencia y condiciones para sostener el trabajo. La primera entrevista no te obliga a continuar.</p>
+      <p><a href="/contacto">Consultar primera entrevista</a></p>
+      <p><a href="/blog/psicoanalisis-online-funciona">Leer sobre el encuadre del psicoanálisis online</a></p>
+    </main></div>`);
+  }
+  if (page.path === "/faq") {
+    const content = faqCategories.map(category => `<section><h2>${escapeHtml(category.label)}</h2>${category.items.map(item => `<h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`).join("")}</section>`).join("");
+    html = html.replace('<div id="root"></div>', `<div id="root"><main><h1>Preguntas frecuentes</h1>${content}<p><a href="/contacto">Consultar primera entrevista</a></p><p><a href="/legal/politica-de-privacidad">Política de privacidad</a></p></main></div>`);
   }
   if (page.path === "/blog") {
     html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalTextsIndex()}</div>`);

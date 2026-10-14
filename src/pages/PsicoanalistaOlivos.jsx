@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MapPin, MessageCircle, ShieldCheck, Clock, ArrowRight, ExternalLink } from "lucide-react";
 
 const professionalProfiles = [
@@ -27,11 +27,8 @@ const professionalProfiles = [
 ];
 
 export default function PsicoanalistaOlivos() {
-  const location = useLocation();
   const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
-  const canonicalPath = location.pathname.startsWith("/psicologo-olivos")
-    ? "/psicologo-olivos"
-    : "/psicoanalista-olivos";
+  const canonicalPath = "/psicologo-olivos";
   const url = `${site}${canonicalPath}`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
 

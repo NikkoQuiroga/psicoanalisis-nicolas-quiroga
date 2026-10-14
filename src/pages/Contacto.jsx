@@ -11,7 +11,7 @@ export default function Contacto() {
   return (
     <>
       <Helmet>
-        <title>Contacto | Psicólogo en Olivos — Lic. Nicolás Quiroga</title>
+        <title>Primera entrevista online y en Olivos | Nicolás Quiroga</title>
         <meta
           name="description"
           content="Contacto para primera consulta con Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad e insomnio."
@@ -22,7 +22,7 @@ export default function Contacto() {
       <section className="bg-washi border-b border-black/5">
         <div className="mx-auto max-w-5xl px-5 py-14 md:py-18">
           <p className="text-xs font-medium uppercase tracking-widest text-gold mb-3">
-            Psicólogo en Olivos · primera consulta
+            Online y Olivos · primera consulta
           </p>
           <h1 className="h-serif text-4xl md:text-5xl font-semibold text-sumi leading-tight mb-3">
             Agendá una primera consulta
@@ -104,7 +104,7 @@ export default function Contacto() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm"
           >
-            <p className="text-sm font-semibold text-sumi/80 mb-4">Elegí un turno disponible</p>
+            <p className="text-sm font-semibold text-sumi/80 mb-4">Consultá los próximos horarios</p>
             <AgendaForm />
           </motion.div>
         </div>

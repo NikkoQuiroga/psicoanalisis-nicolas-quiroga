@@ -1,7 +1,8 @@
 import React, { useEffect, lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
+import { trackWA } from "./analytics/events.js";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import WhatsAppFab from "./components/WhatsAppFab.jsx";
@@ -56,6 +57,21 @@ export default function App() {
   const location = useLocation();
   usePageAnalytics();
 
+  useEffect(() => {
+    function trackContact(event) {
+      const link = event.target.closest?.('a[href]');
+      if (!link) return;
+      const url = new URL(link.href, window.location.origin);
+      if (url.hostname !== "wa.me" && url.hostname !== "api.whatsapp.com") return;
+      trackWA(link.dataset.waLocation || "direct_link", {
+        modality: link.dataset.waModality ||
+          (window.location.pathname.replace(/\/$/, "") === "/psicoanalisis-online" ? "online" : "unspecified"),
+      });
+    }
+    document.addEventListener("click", trackContact);
+    return () => document.removeEventListener("click", trackContact);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-washi text-sumi relative">
       <BackgroundInk />
@@ -82,7 +98,7 @@ export default function App() {
               <Route path="/sobrepensamiento-overthinking" element={<SobrepensamientoOverthinking />} />
               <Route path="/no-puedo-apagar-la-cabeza" element={<NoPuedoApagarLaCabeza />} />
               <Route path="/psicologo-olivos" element={<PsicoanalistaOlivos />} />
-              <Route path="/psicoanalista-olivos" element={<PsicoanalistaOlivos />} />
+              <Route path="/psicoanalista-olivos" element={<Navigate to="/psicologo-olivos" replace />} />
               <Route path="/psicoanalisis-online" element={<PsicoanalisisOnlineLanding />} />
               <Route path="/sobre-mi" element={<SobreMi />} />
               <Route

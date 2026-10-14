@@ -22,7 +22,7 @@ const sections = [
   {
     title: "No es falta de inteligencia",
     body:
-      "El sobrepensamiento suele aparecer en personas lúcidas, responsables y exigentes. El problema no es pensar poco o mucho: es quedar atrapado en una lógica que exige control, anticipación o respuesta permanente.",
+      "Podés reconocer que ya revisaste una situación muchas veces y aun así sentir que necesitás volver a hacerlo. Me interesa escuchar qué buscás aclarar, qué temés que pase y cuánto tiempo te está llevando.",
   },
   {
     title: "Psicoanálisis, cuerpo y pausa",
@@ -32,7 +32,7 @@ const sections = [
   {
     title: "Qué se trabaja",
     body:
-      "Ansiedad, insomnio, autoexigencia, dificultad para decidir, escenas que se repiten, exigencias heredadas y formas de responder al deseo del Otro que se volvieron demasiado costosas.",
+      "Podemos hablar de las decisiones que postergás, la dificultad para descansar, el miedo a equivocarte o las exigencias que sentís en el trabajo y en tus vínculos. Cada consulta tiene su propia historia.",
   },
 ];
 
@@ -67,15 +67,16 @@ export default function SobrepensamientoOverthinking() {
               No poder apagar la cabeza también es un modo de sufrir.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-sumi/75">
-              No se trata de dejar la mente en blanco. Se trata de ubicar por qué
-              vuelve, a quién responde esa exigencia y qué lugar ocupa en tu vida.
+              Revisar lo que dijiste, anticipar problemas o buscar una certeza antes
+              de decidir puede ocupar gran parte del día. Podemos conversar sobre
+              cuándo te pasa y qué te cuesta dejar de revisar.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#consulta" className="rounded-full bg-sumi px-5 py-3 text-sm font-semibold text-white">
-                Ver turnos disponibles
+                Consultar primera entrevista
               </a>
               <Link to="/no-puedo-apagar-la-cabeza" className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">
-                Ver landing directa
+                Reconocer lo que te pasa
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -113,7 +114,7 @@ export default function SobrepensamientoOverthinking() {
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Enfoque</p>
             <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
-              El pensamiento no se combate: se lee.
+              Qué podemos trabajar en consulta
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -165,7 +166,7 @@ export default function SobrepensamientoOverthinking() {
                 Primera consulta
               </p>
               <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-4xl">
-                Podemos empezar por eso que vuelve.
+                Podés empezar contando lo que te preocupa.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-sumi/70">
                 La primera entrevista sirve para ubicar qué está pasando y si este

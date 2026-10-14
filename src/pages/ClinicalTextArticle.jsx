@@ -72,6 +72,7 @@ export default function ClinicalTextArticle() {
             <h1 className="h-serif mt-3 text-4xl font-semibold leading-tight md:text-6xl">
               {text.shortTitle}
             </h1>
+            <p className="mt-3 text-sm text-sumi/65">Por <Link to="/sobre-mi" className="underline underline-offset-4">Nicolás Quiroga</Link> · Psicólogo, M.N. 59.272</p>
             <p className="mt-5 text-base leading-relaxed text-sumi/75 md:text-lg">
               {text.lead}
             </p>
@@ -111,8 +112,8 @@ export default function ClinicalTextArticle() {
                 <MessageCircle className="h-4 w-4" />
                 WhatsApp
               </a>
-              <Link to="/psicologo-olivos" className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">
-                Psicólogo en Olivos
+              <Link to="/psicoanalisis-online" className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold">
+                Consultar por psicoanálisis online
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

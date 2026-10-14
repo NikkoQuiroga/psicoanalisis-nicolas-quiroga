@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Psicólogo en Olivos y psicoanalista clínico — Nicolás Quiroga</title>
+        <title>Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga</title>
         <meta
           name="description"
           content="Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad, insomnio y repetición."
@@ -85,7 +85,7 @@ export default function Home() {
         />
         <meta
           property="og:title"
-          content="Psicólogo en Olivos y psicoanalista clínico — Nicolás Quiroga"
+          content="Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga"
         />
         <meta
           property="og:description"
@@ -114,29 +114,29 @@ export default function Home() {
             className="max-w-3xl"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sumi/55">
-              Psicólogo en Olivos · Psicoanalista clínico
+              Psicoanálisis online · Presencial en Olivos
             </p>
             <h1 className="h-serif mt-4 text-4xl font-semibold leading-[0.98] text-sumi sm:text-5xl md:text-7xl">
-              Psicólogo en Olivos para cuando la cabeza no corta.
+              Psicoanálisis para cuando la cabeza no corta.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-sumi/75 md:text-lg">
-              Soy Nicolás Quiroga, psicólogo y psicoanalista clínico. Atiendo en
-              Olivos y online a personas que llegan con sobrepensamiento, ansiedad,
-              insomnio, autoexigencia o una repetición que ya no quieren seguir
-              sosteniendo igual.
+              Soy Nicolás Quiroga, psicólogo y psicoanalista clínico. Quizás
+              llegaste hasta acá porque te cuesta dejar de pensar, descansar o
+              tomar una decisión. Podés contarme qué te está pasando. Atiendo
+              online y en mi consultorio en Olivos.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#agenda"
                 className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-sumi/90"
               >
-                Ver turnos disponibles
+                Consultar primera entrevista
               </a>
               <Link
                 to="/no-puedo-apagar-la-cabeza"
                 className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 px-5 py-3 text-sm font-semibold text-sumi transition hover:bg-white"
               >
-                Landing sobre sobrepensamiento
+                Cuando no podés dejar de pensar
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -175,12 +175,12 @@ export default function Home() {
               Sobrepensamiento
             </p>
             <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
-              Pensar mucho no es el problema. Quedar atrapado ahí, sí.
+              Le das vueltas, lo volvés a revisar… y seguís en el mismo lugar.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-sumi/70 md:text-base">
-              A veces la cabeza trabaja sin descanso porque intenta resolver algo que
-              no se resuelve solo pensando más. La consulta abre un lugar para leer esa
-              exigencia, esa duda, esa escena que vuelve.
+              Revisás una conversación, anticipás lo que podría salir mal o volvés
+              sobre una decisión que ya tomaste. En consulta podemos detenernos en
+              esos momentos y conversar sobre lo que te preocupa.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -216,13 +216,13 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Consultorio</p>
             <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
-              Un consultorio en Olivos para hablar sin actuar enseguida.
+              Un espacio para hablar de lo que te está pasando.
             </h2>
             <div className="mt-5 space-y-4 text-sm leading-relaxed text-sumi/75 md:text-base">
               <p>
-                La mayoría consulta porque quiere sentirse mejor. Es lógico. La
-                diferencia está en no tapar rápido el síntoma para que todo vuelva al
-                mismo lugar.
+                Podés llegar con una preocupación concreta o sin saber bien por dónde
+                empezar. En la primera entrevista conversamos sobre lo que te trae,
+                desde cuándo te pasa y cómo está afectando tu vida.
               </p>
               <p>
                 El encuadre es psicoanalítico. En algunos procesos incorporo recursos
