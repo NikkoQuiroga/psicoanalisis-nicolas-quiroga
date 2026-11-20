@@ -22,7 +22,7 @@ export default function AgendaForm({ onlineOnly = false }) {
         <p className="mt-3 flex items-center gap-2 text-sm text-sumi/70"><Clock3 className="h-4 w-4" /> 40 minutos · Online{!onlineOnly && " / Olivos"}</p>
         <p className="mt-2 text-sm text-sumi/70">Honorarios por sesión: <strong>$40.000 ARS</strong> para Argentina / <strong>USD 35</strong> para exterior.</p>
       </div>
-      <a href={`https://wa.me/${phone}?text=${encodeURIComponent(onlineOnly ? "Hola Nicolás, quisiera consultar por una primera entrevista online." : "Hola Nicolás, quisiera consultar por una primera entrevista.")}`} target="_blank" rel="noreferrer" data-wa-location="contact_direct" data-wa-modality={onlineOnly ? "online" : "unspecified"} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-sumi px-4 py-3 text-base font-semibold text-white hover:bg-sumi/90"><MessageCircle className="h-4 w-4" /> Consultar por WhatsApp</a>
+      <a href={`https://wa.me/${phone}?text=${encodeURIComponent(onlineOnly ? "Hola Nicolás, quisiera consultar por una primera entrevista online." : "Hola Nicolás, quisiera consultar por una primera entrevista.")}`} target="_blank" rel="noreferrer" data-wa-location="contact_direct" data-wa-modality={onlineOnly ? "online" : "unspecified"} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-sumi px-4 py-3 text-base font-semibold text-white hover:bg-sumi/90"><MessageCircle className="h-4 w-4" /> Consultar primera entrevista</a>
       <details className="rounded-2xl border border-black/10 p-4">
       <summary className="cursor-pointer text-sm font-semibold">Si preferís, indicá modalidad y horarios</summary>
       <div className="mt-4">

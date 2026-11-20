@@ -7,7 +7,7 @@ import "./index.css";
 
 // Let Helmet replace prerendered SEO tags during route changes instead of
 // appending another canonical/description beside the server-rendered fallback.
-document.head.querySelectorAll('link[rel="canonical"], meta[name="description"], meta[property^="og:"], meta[name^="twitter:"]').forEach(tag => {
+document.head.querySelectorAll('link[rel="canonical"], meta[name="description"], meta[property^="og:"], meta[name^="twitter:"], script[type="application/ld+json"]').forEach(tag => {
   tag.setAttribute("data-rh", "true");
 });
 

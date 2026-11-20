@@ -1,3 +1,5 @@
+import { homeFaqs } from "../src/content/homeFaqs.js";
+import { reviewHighlights, reviewProfiles } from "../src/content/testimonials.js";
 import fs from "node:fs";
 import path from "node:path";
 import { storyList } from "../src/content/professionalStories.js";
@@ -15,7 +17,7 @@ const staticPages = [
     path: "/",
     title: "Psicólogo en Olivos y psicoanálisis online | Nicolás Quiroga",
     description:
-      "Nicolás Quiroga, psicólogo UBA y psicoanalista. Atención en Olivos y online. Conocé cómo es la primera entrevista, modalidades y honorarios. Consultá por WhatsApp.",
+      "Nicolás Quiroga, psicólogo UBA y psicoanalista. Atención en Olivos y online para ansiedad y sobrepensamiento. Sesiones de 40 minutos. Honorarios y primera entrevista.",
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
@@ -122,7 +124,7 @@ const staticPages = [
     path: "/testimonios",
     title: "Testimonios de pacientes — Psicólogo en Olivos | Nicolás Quiroga",
     description:
-      "Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. 5/5 en BuscoPsi y Doctoralia.",
+      "Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. Opiniones publicadas en BuscoPsi y Doctoralia.",
     type: "website",
     priority: "0.6",
     changefreq: "monthly",
@@ -493,7 +495,25 @@ function renderPage(template, page) {
     );
     html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalText(page.clinicalText)}</div>`);
   }
-  if (page.path === "/" || page.path === "/psicologo-olivos" || page.path === "/contacto") {
+  if (page.path === "/") {
+    const reviewHtml = reviewHighlights.map(review => `<figure><blockquote>${escapeHtml(review.quote)}</blockquote><figcaption>${escapeHtml(review.name)} · <a href="${escapeAttribute(review.href)}">${escapeHtml(review.source)}</a></figcaption></figure>`).join("");
+    const profileHtml = reviewProfiles.map(profile => `<a href="${escapeAttribute(profile.href)}">${escapeHtml(profile.name)} · ${escapeHtml(profile.rating)} · ${escapeHtml(profile.count)}</a>`).join(" · ");
+    const questions = homeFaqs.map(faq => `<details><summary>${escapeHtml(faq.question)}</summary><p>${escapeHtml(faq.answer)}</p></details>`).join("");
+    html = html.replace('<div id="root"></div>', `<div id="root"><main class="mx-auto max-w-6xl px-5 py-10">
+      <p>Psicólogo en Olivos · Atención online</p><h1 class="h-serif mt-4 text-4xl font-semibold">Cuando pensar tanto no te deja estar bien.</h1>
+      <p>Soy Nicolás Quiroga, psicólogo UBA y psicoanalista. Atiendo a adultos con ansiedad, dificultad para descansar o conflictos que se repiten. Podemos empezar por lo que te está pasando hoy.</p>
+      <p>Sesiones de 40 minutos. $40.000 ARS por sesión para Argentina · USD 35 para exterior. Universidad de Buenos Aires · M.N. 59.272.</p>
+      <p><a data-wa-location="static_contact" href="https://wa.me/5491161402223?text=${encodeURIComponent("Hola Nicolás, quisiera consultar por una primera entrevista.")}">Consultar primera entrevista</a></p>
+      <h2>Qué cuentan quienes consultaron.</h2><p>${profileHtml}</p>${reviewHtml}<p>Fragmentos de reseñas públicas. Cada experiencia es personal.</p><a href="/testimonios">Leer las opiniones completas</a>
+      <h2>¿Te pasa algo de esto?</h2><p>Revisás conversaciones, anticipás problemas o dudás de cada decisión. Te cuesta descansar. Ciertos conflictos o exigencias se repiten. También podés consultar por algo que todavía te cuesta explicar.</p>
+      <h2>¿Cómo empiezo?</h2><ol><li>Me escribís por WhatsApp para consultar disponibilidad o hacer una pregunta.</li><li>Coordinamos modalidad, horario y forma de pago antes de empezar.</li><li>Conversamos sobre lo que te trae y vemos cómo seguir. La primera entrevista no te obliga a continuar.</li></ol>
+      <h2>¿Dónde nos encontramos?</h2><p><a href="/psicologo-olivos">Presencial en Olivos, Vicente López</a> o <a href="/psicoanalisis-online">online por videollamada</a>. La dirección exacta se comparte al confirmar el turno. Las consultas desde el exterior están sujetas a la posibilidad de atención.</p>
+      <h2>Antes de consultar</h2>${questions}<a href="/faq">Ver todas las preguntas frecuentes</a>
+      <h2>Consultá por una primera entrevista.</h2><p>Lunes a viernes, de 9 a 21 h, según disponibilidad. <a href="/contacto">Contacto</a> · <a href="/sobre-mi">Mi formación y recorrido</a></p>
+    </main></div>`);
+    html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: homeFaqs.map(faq => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) })}</script></head>`);
+  }
+  if (page.path === "/psicologo-olivos" || page.path === "/contacto") {
     const local = page.path === "/psicologo-olivos";
     const heading = local ? "Psicólogo en Olivos. Psicoanalista clínico." : page.path === "/contacto" ? "Consultá por una primera entrevista" : "Un espacio para hablar de lo que te está pasando.";
     const message = local ? "Hola Nicolás, quisiera consultar por una primera entrevista presencial en Olivos." : "Hola Nicolás, quisiera consultar por una primera entrevista.";

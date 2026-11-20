@@ -1,3 +1,4 @@
+import { testimonials, reviewProfiles } from "../content/testimonials.js";
 import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
@@ -8,49 +9,7 @@ import { motion } from "framer-motion";
 const fadeUp = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } };
 const MotionArticle = motion.article;
 
-const testimonials = [
-  {
-    name: "Jacqueline",
-    source: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
-    quote:
-      "Nicolás es un analista muy avispado con intervenciones muy certeras. Viniendo de una tradición familiar de psicoanalistas soy una mujer muy exigente en relación a ello y realmente un hallazgo haberlo encontrado !!",
-  },
-  {
-    name: "P.",
-    source: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
-    quote: "Un excelente profesional. El unico que supo escucharme diria.",
-  },
-  {
-    name: "Alfonso",
-    source: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
-    quote:
-      "Llegué con la cabeza tomada por exceso de análisis, la presion y la responsabilidad de decidir todo el tiempo. Tuve coachs y otros psicologos, pero Nicolás me ayudó a ordenar ese ruido desde un trabajo profundo, serio y muy humanizante. Pienso que es un espacio para entender para quién pensaba tanto y como dejar de quedar atrapado en eso.",
-  },
-  {
-    name: "Juan Pablo",
-    source: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
-    quote:
-      "Las primeras sesiones estuve un poco reacio, nunca había hecho terapia era como de loco para mi familia. A medida que fue pasando el tiempo me empece a dar cuenta de que \"loco\" tocaba un lugar muy importante en mi vida. No me había dado cuenta que siempre me trataron de loco. Siempre hice \"locuras\". Fueron pasando los meses de terapia con el dr. Nicolás y algo empezó a cambiar, me empece a sentir libre, menos pesado, menos loco. Ahora estamos en una pausa y me tomé el tiempo para hacer esta reseña porque realmente se los recomiendo pues estoy muy agradecido.",
-  },
-  {
-    name: "Francisca",
-    source: "Doctoralia",
-    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
-    quote:
-      "Un espacio muy cuidado el de Nicolás. Siempre estuve tomada por exceso de pensamiento, me recomendo una interconsulta con una colega psiquiatra y entre los dos por primera vez en mucho tiempo me siento bien. Gracias Nico!!!",
-  },
-  {
-    name: "S.",
-    source: "Doctoralia",
-    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
-    quote:
-      "Siempre supe que había algo que me costaba auqnue siempre me fue bien. En el colegio, en la Universidad, en el trabajo. Siempre bien. Eso que me costaba fue lo que me llevó al psicoanálisis y súper recomiendo el espacio de Nicolás. Muchas gracias.",
-  },
-];
+
 
 export default function Testimonios() {
   const site = SITE_URL;
@@ -77,7 +36,7 @@ export default function Testimonios() {
         <title>Testimonios de pacientes — Psicólogo en Olivos | Nicolás Quiroga</title>
         <meta
           name="description"
-          content="Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. 5/5 en BuscoPsi y Doctoralia."
+          content="Reseñas públicas de pacientes sobre Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico online. Opiniones publicadas en BuscoPsi y Doctoralia."
         />
         <link rel="canonical" href={url} />
         <meta property="og:title" content="Testimonios de pacientes — Nicolás Quiroga" />
@@ -103,34 +62,9 @@ export default function Testimonios() {
 
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <aside className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm">
-            <div className="flex items-center gap-1 text-gold" aria-label="5 estrellas">
-              {[0, 1, 2, 3, 4].map((star) => (
-                <Star key={star} className="h-6 w-6 fill-current" />
-              ))}
-            </div>
-            <p className="mt-4 text-4xl font-semibold leading-none">5.0/5</p>
-            <p className="mt-2 text-sm leading-relaxed text-sumi/65">
-              Promedio consolidado sobre 6 reseñas públicas visibles en BuscoPsi y Doctoralia.
-            </p>
-            <div className="mt-5 grid gap-2 text-sm">
-              <a
-                href="https://buscopsi.com/psicologo/nicolas-quiroga/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-3 py-2 hover:bg-white/80"
-              >
-                <span>BuscoPsi · 5/5 · 4 reseñas</span>
-                <ExternalLink className="h-4 w-4" />
-              </a>
-              <a
-                href="https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-3 py-2 hover:bg-white/80"
-              >
-                <span>Doctoralia · 5/5 · 2 opiniones</span>
-                <ExternalLink className="h-4 w-4" />
-              </a>
+            <h2 className="text-xl font-semibold">Opiniones por plataforma</h2>
+            <div className="mt-5 grid gap-3 text-sm">
+              {reviewProfiles.map(profile => <a key={profile.name} href={profile.href} target="_blank" rel="noreferrer" className="rounded-2xl border border-black/10 bg-white p-4 hover:border-gold"><span className="block font-semibold">{profile.name} · {profile.rating}</span><span className="mt-1 block text-sumi/70">{profile.count} · Leer en la plataforma</span></a>)}
             </div>
           </aside>
 
