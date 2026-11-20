@@ -16,7 +16,11 @@ export default function WhatsAppFab({
     const update = () => {
       const el = document.getElementById(anchorId);
       const rect = el?.getBoundingClientRect();
-      setHidden(rect ? rect.top < window.innerHeight - showAboveOffset && rect.bottom > 0 : false);
+      const directVisible = [...document.querySelectorAll('a[data-wa-location]:not([data-wa-location="floating"])')].some(link => {
+        const box = link.getBoundingClientRect();
+        return box.width > 0 && box.height > 0 && box.top >= 0 && box.bottom <= window.innerHeight;
+      });
+      setHidden(directVisible || (rect ? rect.top < window.innerHeight - showAboveOffset && rect.bottom > 0 : false));
     };
     const onScroll = () => {
       cancelAnimationFrame(raf.current);
@@ -39,6 +43,8 @@ export default function WhatsAppFab({
   return (
     <motion.a
       href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, ¿coordinamos una sesión?")}`}
+      data-wa-location="floating"
+      aria-label="Consultar por WhatsApp"
       target="_blank"
       rel="noreferrer"
       // Sin animación inicial; solo animamos cuando cambia "hidden"

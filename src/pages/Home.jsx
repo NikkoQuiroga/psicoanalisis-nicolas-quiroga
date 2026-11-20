@@ -1,448 +1,73 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  BadgeCheck,
-  BookOpen,
-  Brain,
-  CircleHelp,
-  ExternalLink,
-  GraduationCap,
-  MessageSquareText,
-  Moon,
-  Repeat2,
-  Sparkles,
-  Star,
-  Waves,
-} from "lucide-react";
-import { motion } from "framer-motion";
 import AgendaForm from "../components/AgendaForm.jsx";
-import ProfileSlide from "../components/ProfileSlide.jsx";
-import { storyList } from "../content/professionalStories.js";
-import { clinicalTextList } from "../content/clinicalTexts.js";
-
-const fadeUp = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0 } };
-
-const signals = [
-  { icon: Brain, text: "Pensás demasiado y no podés cortar." },
-  { icon: Moon, text: "La cabeza se enciende justo cuando intentás descansar." },
-  { icon: MessageSquareText, text: "Anticipás conversaciones, errores o escenas posibles." },
-  { icon: CircleHelp, text: "Te va bien desde afuera, pero algo no termina de cerrar." },
-  { icon: Repeat2, text: "Ya entendiste muchas cosas, pero igual repetís lo mismo." },
-];
-
-const reviewProfiles = [
-  {
-    label: "Doctoralia",
-    href: "https://www.doctoraliar.com/nicolas-quiroga/psicologo/olivos",
-    rating: "5/5",
-    count: "2 opiniones",
-  },
-  {
-    label: "BuscoPsi",
-    href: "https://buscopsi.com/psicologo/nicolas-quiroga/",
-    rating: "5/5",
-    count: "4 reseñas",
-  },
-  {
-    label: "Psychology Today",
-    href: "https://www.psychologytoday.com/profile/1783533",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/lic-nicolas-quiroga/",
-  },
-];
-
-const meditations = [
-  {
-    title: "Meditación guiada",
-    href: "https://youtu.be/IQmN2RUYNac",
-    embed: "https://www.youtube.com/embed/IQmN2RUYNac",
-  },
-  {
-    title: "Práctica de respiración y presencia",
-    href: "https://youtu.be/hk6bPL0cWYg",
-    embed: "https://www.youtube.com/embed/hk6bPL0cWYg",
-  },
-];
 
 export default function Home() {
-  const [openCV, setOpenCV] = useState(false);
-
+  const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
+  const whatsapp = `https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quisiera consultar por una primera entrevista.")}`;
   return (
     <>
       <Helmet>
-        <title>Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga</title>
-        <meta
-          name="description"
-          content="Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad, insomnio y repetición."
-        />
-        <meta
-          name="keywords"
-          content="psicólogo Olivos, psicologo olivos, psicólogo en Olivos, psicoanalista Olivos, psicoanalista clínico, sobrepensamiento, ansiedad, psicoanálisis online, no puedo apagar la cabeza"
-        />
-        <meta
-          property="og:title"
-          content="Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga"
-        />
-        <meta
-          property="og:description"
-          content="Atención presencial en Olivos y online para sobrepensamiento, ansiedad, insomnio y repetición."
-        />
-        <meta property="og:image" content="/media/nicolas-quiroga-estudio-clinico.webp" />
-        <meta
-          property="og:image:alt"
-          content="Nicolás Quiroga, psicoanalista clínico, en su estudio"
-        />
+        <title>Psicólogo en Olivos y psicoanálisis online | Nicolás Quiroga</title>
+        <meta name="description" content="Nicolás Quiroga, psicólogo UBA y psicoanalista. Atención en Olivos y online. Conocé cómo es la primera entrevista, modalidades y honorarios. Consultá por WhatsApp." />
+        <meta property="og:title" content="Psicólogo en Olivos y psicoanálisis online | Nicolás Quiroga" />
+        <meta property="og:description" content="Un espacio para hablar de lo que te está pasando. Atención presencial en Olivos y online. Primera entrevista con Nicolás Quiroga." />
+        <meta property="og:image" content="https://nicolasquiroga.com.ar/media/nicolas-quiroga-estudio-clinico.webp" />
       </Helmet>
-
-      <section className="relative overflow-hidden border-b border-black/10 bg-[#F1E9DC]">
-        <img
-          src="/media/suminagashi-tinta-pensamiento.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.08] mix-blend-multiply"
-        />
-        <div className="relative mx-auto grid min-h-[calc(100vh-84px)] max-w-6xl gap-8 px-5 py-10 md:grid-cols-[1fr_0.86fr] md:items-center md:py-16">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sumi/55">
-              Psicoanálisis online · Presencial en Olivos
-            </p>
-            <h1 className="h-serif mt-4 text-4xl font-semibold leading-[0.98] text-sumi sm:text-5xl md:text-7xl">
-              Psicoanálisis para cuando la cabeza no corta.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-sumi/75 md:text-lg">
-              Soy Nicolás Quiroga, psicólogo y psicoanalista clínico. Quizás
-              llegaste hasta acá porque te cuesta dejar de pensar, descansar o
-              tomar una decisión. Podés contarme qué te está pasando. Atiendo
-              online y en mi consultorio en Olivos.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#agenda"
-                className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-sumi/90"
-              >
-                Consultar primera entrevista
-              </a>
-              <Link
-                to="/no-puedo-apagar-la-cabeza"
-                className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 px-5 py-3 text-sm font-semibold text-sumi transition hover:bg-white"
-              >
-                Cuando no podés dejar de pensar
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.1 }}
-            className="relative"
-          >
-            <div className="overflow-hidden rounded-[1.5rem] border border-black/10 bg-white shadow-soft">
-              <img
-                src="/media/nicolas-quiroga-estudio-clinico.webp"
-                alt="Lic. Nicolás Quiroga, psicoanalista clínico"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="aspect-[1/1] w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-5 left-5 right-5 rounded-2xl border border-black/10 bg-white/90 p-4 text-sm shadow backdrop-blur">
-              <p className="font-semibold">M.N. 59.272 · Universidad de Buenos Aires</p>
-              <p className="mt-1 text-sumi/65">
-                Consultorio en Olivos, Vicente López. Atención online para Argentina y exterior.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
-        <div className="grid gap-8 md:grid-cols-[0.78fr_1.22fr] md:items-start">
+      <section className="border-b border-black/10">
+        <div className="mx-auto grid max-w-6xl gap-9 px-5 py-10 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-16">
           <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">
-              Sobrepensamiento
-            </p>
-            <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
-              Le das vueltas, lo volvés a revisar… y seguís en el mismo lugar.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-sumi/70 md:text-base">
-              Revisás una conversación, anticipás lo que podría salir mal o volvés
-              sobre una decisión que ya tomaste. En consulta podemos detenernos en
-              esos momentos y conversar sobre lo que te preocupa.
-            </p>
+            <p className="text-sm font-semibold text-moss">Psicólogo en Olivos · Atención online</p>
+            <h1 className="h-serif mt-4 max-w-2xl text-4xl font-semibold leading-[1.08] sm:text-5xl md:text-6xl">Un espacio para hablar de lo que te está pasando.</h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-sumi/80 md:text-lg">Soy Nicolás Quiroga, psicólogo y psicoanalista. Si te cuesta dejar de pensar, sentís ansiedad o algo se repite en tus vínculos, podemos empezar por escucharlo.</p>
+            <a href={whatsapp} target="_blank" rel="noreferrer" data-wa-location="home_hero" className="mt-6 inline-flex rounded-full bg-sumi px-6 py-3 text-base font-semibold text-white hover:bg-sumi/90">Consultar por WhatsApp</a>
+            <p className="mt-3 text-sm text-sumi/70">Coordinamos una primera entrevista. No necesitás tener claro por dónde empezar.</p>
+            <p className="mt-5 text-sm text-sumi/70">Lic. en Psicología · UBA · M.N. 59.272</p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {signals.map(({ icon: Icon, text }, index) => (
-              <motion.article
-                key={text}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.35, delay: index * 0.05 }}
-                className="flex min-h-24 gap-3 border-t border-black/10 py-4"
-              >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-black/10 bg-white">
-                  <Icon className="h-4 w-4 text-moss" />
-                </span>
-                <p className="text-sm leading-relaxed text-sumi/75">{text}</p>
-              </motion.article>
-            ))}
-          </div>
+          <img src="/media/nicolas-quiroga-estudio-clinico.webp" alt="Nicolás Quiroga en su consultorio" width="640" height="640" fetchPriority="high" className="aspect-square w-full rounded-3xl object-cover" />
         </div>
       </section>
-
-      <section id="enfoque" className="border-y border-black/10 bg-white/55">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-16">
-          <div>
-            <img
-              src="/media/consultorio-psicoanalisis-olivos-divan.webp"
-              alt="Consultorio de psicoanálisis en Olivos"
-              loading="lazy"
-              className="h-auto w-full rounded-2xl object-contain"
-            />
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Consultorio</p>
-            <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
-              Un espacio para hablar de lo que te está pasando.
-            </h2>
-            <div className="mt-5 space-y-4 text-sm leading-relaxed text-sumi/75 md:text-base">
-              <p>
-                Podés llegar con una preocupación concreta o sin saber bien por dónde
-                empezar. En la primera entrevista conversamos sobre lo que te trae,
-                desde cuándo te pasa y cómo está afectando tu vida.
-              </p>
-              <p>
-                El encuadre es psicoanalítico. En algunos procesos incorporo recursos
-                de mindfulness y meditación cuando ayudan a ubicar el cuerpo, la
-                respiración y la relación con el pensamiento.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/psicologo-olivos"
-                className="rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white"
-              >
-                Consultorio en Olivos
-              </Link>
-              <Link
-                to="/sobre-mi"
-                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium"
-              >
-                Ver recorrido
-              </Link>
-            </div>
-          </div>
+      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-2 md:py-14">
+        <div>
+          <h2 className="h-serif text-3xl font-semibold md:text-4xl">¿Qué te trae a consultar?</h2>
+          <p className="mt-4 text-base leading-relaxed text-sumi/80">Tal vez una preocupación concreta, una dificultad para descansar o un malestar que todavía no sabés cómo explicar. No hace falta esperar a estar desbordado para hablar.</p>
         </div>
+        <ul className="space-y-3 text-base leading-relaxed text-sumi/80">
+          <li className="border-b border-black/10 pb-3">Le das vueltas a todo y te cuesta parar o tomar decisiones.</li>
+          <li className="border-b border-black/10 pb-3">La ansiedad, la angustia o el insomnio afectan tus días.</li>
+          <li>Se repiten conflictos en tus vínculos o te exigís incluso cuando estás agotado.</li>
+        </ul>
       </section>
-
-      <section className="relative overflow-hidden border-y border-black/10 bg-[#F1E9DC]">
-        <img
-          src="/media/suminagashi-tinta-pensamiento.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.08] mix-blend-multiply"
-        />
-        <div className="relative mx-auto max-w-6xl px-5 py-10 md:py-16">
-          <div className="grid gap-4 md:grid-cols-3">
-          {[
-            {
-              icon: GraduationCap,
-              title: "Psicoanalista clínico",
-              text: "Lic. en Psicología por la Universidad de Buenos Aires. Posgrado en Psicoanálisis Lacaniano en ALEF. M.N. 59.272.",
-            },
-            {
-              icon: Waves,
-              title: "Mindfulness y meditación",
-              text: "Posgrado en Mindfulness, Meditación y Respiración Consciente (EESH - 2017). Lo incorporo solo cuando ayuda a ubicar cuerpo y respiración.",
-            },
-            {
-              icon: BookOpen,
-              title: "Budismo y Japón",
-              text: "En Minobu hice una experiencia de Shukubo: templo, silencio, ritual y práctica. No como promesa espiritual, sino como otra forma de escuchar el ritmo del cuerpo.",
-            },
-          ].map(({ icon: Icon, title, text }) => (
-            <article key={title} className="rounded-2xl border border-black/10 bg-white/65 p-5 shadow-soft backdrop-blur">
-              <Icon className="h-5 w-5 text-moss" />
-              <h3 className="mt-3 font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-sumi/65">{text}</p>
-            </article>
-          ))}
-          </div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {storyList.map((story) => (
-              <Link
-                key={story.path}
-                to={story.path}
-                className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-white/55 px-4 py-3 text-sm font-semibold transition hover:bg-white"
-              >
-                <span>{story.shortTitle}</span>
-                <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="border-y border-black/10 bg-white/55">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[0.9fr_1.1fr] md:py-16">
-          <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Illusioterapia</p>
-            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-5xl">
-              Meditaciones guiadas para dormir y dejar de sobrepensar.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-sumi/70">
-              Produzco meditaciones guiadas para dormir, bajar la activación mental
-              y dejar de sobrepensar para Illusioterapia, un canal de YouTube con más
-              de 1 millón de suscriptores. No reemplazan un análisis: funcionan como
-              un recurso complementario para volver al cuerpo cuando la cabeza queda
-              tomada.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {meditations.map((item) => (
-              <article key={item.href} className="overflow-hidden rounded-2xl border border-black/10 bg-white">
-                <iframe
-                  title={item.title}
-                  src={item.embed}
-                  loading="lazy"
-                  className="aspect-video w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-                <div className="flex items-center justify-between gap-3 p-4">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="h-4 w-4 text-gold" />
-                    <h3 className="text-sm font-semibold">{item.title}</h3>
-                  </div>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="shrink-0 text-xs font-semibold underline underline-offset-4"
-                  >
-                    YouTube
-                  </a>
-                </div>
-              </article>
-            ))}
+        <div className="mx-auto max-w-6xl px-5 py-10 md:py-14">
+          <h2 className="h-serif text-3xl font-semibold md:text-4xl">Cómo es la primera entrevista</h2>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-sumi/80">Conversamos sobre lo que te preocupa y cómo está afectando tu vida. Podés preguntarme cómo trabajo. Antes de empezar acordamos el horario y la forma de pago; después conversamos sobre cómo seguir. La primera entrevista no te obliga a continuar.</p>
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
+            <article className="rounded-2xl border border-black/10 bg-white/70 p-5">
+              <h3 className="text-xl font-semibold">Presencial en Olivos</h3>
+              <p className="mt-3 text-base leading-relaxed text-sumi/80">Consultorio en Olivos, Vicente López. La dirección exacta se comparte al confirmar el turno.</p>
+              <Link to="/psicologo-olivos" className="mt-4 inline-block font-semibold underline underline-offset-4">Conocer el consultorio en Olivos</Link>
+            </article>
+            <article className="rounded-2xl border border-black/10 bg-white/70 p-5">
+              <h3 className="text-xl font-semibold">Psicoanálisis online</h3>
+              <p className="mt-3 text-base leading-relaxed text-sumi/80">Por videollamada, desde un lugar privado. Atención en Argentina y consultas desde el exterior según posibilidad de atención.</p>
+              <Link to="/psicoanalisis-online" className="mt-4 inline-block font-semibold underline underline-offset-4">Conocer la atención online</Link>
+            </article>
           </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
-        <div className="grid gap-6 md:grid-cols-[0.82fr_1.18fr] md:items-start">
-          <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Textos clínicos</p>
-            <h2 className="h-serif mt-2 text-3xl font-semibold leading-tight md:text-5xl">
-              Algunas entradas para seguir la pregunta.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-sumi/70">
-              No vuelvo al blog como vidriera. Dejo algunos textos que ya responden
-              búsquedas reales y pueden orientar una consulta.
-            </p>
-            <Link to="/blog" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4">
-              Ver textos clínicos
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="grid gap-3">
-            {clinicalTextList.slice(0, 3).map((text) => (
-              <Link
-                key={text.slug}
-                to={text.path}
-                className="group rounded-2xl border border-black/10 bg-white/72 p-4 shadow-sm transition hover:-translate-y-1 hover:bg-white"
-              >
-                <p className="text-xs uppercase tracking-[0.18em] text-sumi/45">{text.readingTime}</p>
-                <h3 className="h-serif mt-1 text-2xl font-semibold">{text.shortTitle}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-sumi/65">{text.description}</p>
-              </Link>
-            ))}
+      <section id="agenda" className="mx-auto grid max-w-6xl scroll-mt-28 gap-8 px-5 py-10 md:grid-cols-2 md:py-14">
+        <div>
+          <h2 className="h-serif text-3xl font-semibold md:text-4xl">Consultá por una primera entrevista</h2>
+          <p className="mt-4 text-base leading-relaxed text-sumi/80">Escribime para consultar disponibilidad o hacer una pregunta antes de empezar. Atiendo de lunes a viernes, de 9 a 21 h, según los horarios disponibles.</p>
+          <div className="mt-8 border-t border-black/10 pt-5">
+            <p className="font-semibold">Formación y recorrido</p>
+            <p className="mt-2 text-base leading-relaxed text-sumi/80">Licenciado en Psicología por la Universidad de Buenos Aires. Posgrado en Psicoanálisis Lacaniano en ALEF.</p>
+            <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold underline underline-offset-4"><Link to="/sobre-mi">Sobre mí</Link><Link to="/testimonios">Reseñas y testimonios</Link><Link to="/faq">Preguntas frecuentes</Link></div>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 pb-10 md:pb-16">
-        <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-3xl border border-black/10 bg-white/75 p-5">
-            <div className="flex items-center gap-1 text-gold" aria-label="Cinco estrellas">
-              {[0, 1, 2, 3, 4].map((star) => (
-                <Star key={star} className="h-5 w-5 fill-current" />
-              ))}
-            </div>
-            <h2 className="h-serif mt-3 text-3xl font-semibold">Reseñas externas</h2>
-            <p className="mt-2 text-sm leading-relaxed text-sumi/65">
-              5/5 en reseñas públicas visibles en BuscoPsi y Doctoralia, con enlaces a cada plataforma.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {reviewProfiles.map((profile) => (
-                <a
-                  key={profile.href}
-                  href={profile.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium"
-                >
-                  {profile.label}
-                  {profile.rating ? ` · ${profile.rating}` : ""}
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
-            <Link to="/testimonios" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4">
-              Leer testimonios escritos
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div id="agenda" className="rounded-3xl border border-black/10 bg-white/85 p-5 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.24em] text-sumi/55">Primera entrevista</p>
-            <h2 className="h-serif mt-2 text-3xl font-semibold md:text-4xl">
-              Si algo de esto te toca, podemos ubicarlo en una primera consulta.
-            </h2>
-            <div id="agenda-form" className="mt-5">
-              <AgendaForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-5 pb-10">
-        <button
-          onClick={() => {
-            const next = !openCV;
-            setOpenCV(next);
-            if (next) {
-              setTimeout(
-                () =>
-                  document
-                    .getElementById("cv-anchor")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" }),
-                50,
-              );
-            }
-          }}
-          aria-expanded={openCV}
-          aria-controls="cv-anchor"
-          className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs hover:bg-white"
-        >
-          <BadgeCheck className="h-4 w-4" />
-          {openCV ? "Ocultar C.V. completo" : "Ver C.V. completo"}
-        </button>
-        <div id="cv-anchor" className="mt-3" />
-        <ProfileSlide open={openCV} />
+        <div id="agenda-form" className="rounded-3xl border border-black/10 bg-white/80 p-5 md:p-6"><AgendaForm /></div>
       </section>
     </>
   );

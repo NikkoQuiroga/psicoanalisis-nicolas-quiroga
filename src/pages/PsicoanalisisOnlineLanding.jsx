@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import AgendaForm from "../components/AgendaForm.jsx";
 import { Link } from "react-router-dom";
-import { ArrowRight, Laptop, Lock, Wifi } from "lucide-react";
+import { Laptop, Lock, Wifi } from "lucide-react";
 
 export default function PsicoanalisisOnlineLanding() {
   const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
@@ -68,10 +68,11 @@ export default function PsicoanalisisOnlineLanding() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="#agenda"
+                href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quisiera consultar por una primera entrevista online.")}`}
+                target="_blank" rel="noreferrer" data-wa-location="online_hero" data-wa-modality="online"
                 className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
               >
-                Consultar primera entrevista online <ArrowRight className="h-4 w-4" />
+                Consultar por WhatsApp
               </a>
               <Link
                 to="/sobrepensamiento-overthinking"

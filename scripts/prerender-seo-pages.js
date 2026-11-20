@@ -13,13 +13,13 @@ const faqItems = faqCategories.flatMap(category => category.items.map(item => [i
 const staticPages = [
   {
     path: "/",
-    title: "Psicoanálisis online y psicólogo en Olivos — Nicolás Quiroga",
+    title: "Psicólogo en Olivos y psicoanálisis online | Nicolás Quiroga",
     description:
-      "Nicolás Quiroga, psicólogo en Olivos y psicoanalista clínico. Atención presencial y online para sobrepensamiento, ansiedad, insomnio y repetición.",
+      "Nicolás Quiroga, psicólogo UBA y psicoanalista. Atención en Olivos y online. Conocé cómo es la primera entrevista, modalidades y honorarios. Consultá por WhatsApp.",
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
-    lastmod: "2026-10-14",
+    lastmod: "2026-11-20",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -30,7 +30,7 @@ const staticPages = [
     type: "website",
     priority: "1.0",
     changefreq: "monthly",
-    lastmod: "2026-09-07",
+    lastmod: "2026-11-20",
     image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
   },
   {
@@ -52,7 +52,7 @@ const staticPages = [
     type: "website",
     priority: "0.9",
     changefreq: "monthly",
-    lastmod: "2026-10-14",
+    lastmod: "2026-11-20",
     image: "/media/nicolas-quiroga-estudio-clinico.webp",
   },
   {
@@ -63,7 +63,7 @@ const staticPages = [
     type: "website",
     priority: "0.7",
     changefreq: "monthly",
-    lastmod: "2026-10-14",
+    lastmod: "2026-11-20",
   },
   {
     path: "/sobrepensamiento-overthinking",
@@ -492,6 +492,22 @@ function renderPage(template, page) {
       `    <meta property="article:published_time" content="${page.clinicalText.datePublished}" />\n    <meta property="article:modified_time" content="${page.clinicalText.dateModified}" />\n    <meta property="article:author" content="Nicolás Quiroga" />\n  </head>`,
     );
     html = html.replace('<div id="root"></div>', `<div id="root">${renderStaticClinicalText(page.clinicalText)}</div>`);
+  }
+  if (page.path === "/" || page.path === "/psicologo-olivos" || page.path === "/contacto") {
+    const local = page.path === "/psicologo-olivos";
+    const heading = local ? "Psicólogo en Olivos. Psicoanalista clínico." : page.path === "/contacto" ? "Consultá por una primera entrevista" : "Un espacio para hablar de lo que te está pasando.";
+    const message = local ? "Hola Nicolás, quisiera consultar por una primera entrevista presencial en Olivos." : "Hola Nicolás, quisiera consultar por una primera entrevista.";
+    html = html.replace('<div id="root"></div>', `<div id="root"><main class="mx-auto max-w-6xl px-5 py-10">
+      <h1 class="h-serif text-4xl font-semibold">${heading}</h1>
+      <p class="mt-5">Soy Nicolás Quiroga, psicólogo y psicoanalista. Licenciado en Psicología por la UBA, M.N. 59.272. Atención presencial en Olivos, Vicente López, y online.</p>
+      <p class="mt-4">Podés consultar por sobrepensamiento, ansiedad, insomnio o dificultades en tus vínculos, aunque todavía no sepas cómo explicar lo que te pasa.</p>
+      <h2 class="h-serif mt-8 text-3xl font-semibold">Cómo es la primera entrevista</h2>
+      <p class="mt-4">Conversamos sobre lo que te preocupa y cómo está afectando tu vida. Podés preguntarme cómo trabajo. La primera entrevista no te obliga a continuar.</p>
+      <h2 class="h-serif mt-8 text-3xl font-semibold">Modalidades y honorarios</h2>
+      <p class="mt-4">Sesiones de 40 minutos. $40.000 ARS por sesión para Argentina y USD 35 para exterior. Lunes a viernes, de 9 a 21 h, según disponibilidad. Acordamos horario y forma de pago antes de empezar. La dirección del consultorio se comparte al confirmar el turno.</p>
+      <p class="mt-5"><a data-wa-location="static_contact" href="https://wa.me/5491161402223?text=${encodeURIComponent(message)}">Consultar por WhatsApp</a></p>
+      <nav class="mt-5 flex flex-wrap gap-5"><a href="/psicologo-olivos">Psicólogo en Olivos</a><a href="/psicoanalisis-online">Psicoanálisis online</a><a href="/sobre-mi">Sobre mí</a><a href="/faq">Preguntas frecuentes</a><a href="/blog">Textos clínicos</a></nav>
+    </main></div>`);
   }
   if (page.path === "/psicoanalisis-online") {
     html = html.replace('<div id="root"></div>', `<div id="root"><main>

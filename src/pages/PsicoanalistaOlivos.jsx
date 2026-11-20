@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
-import { MapPin, MessageCircle, ShieldCheck, Clock, ArrowRight, ExternalLink } from "lucide-react";
+import { MapPin, MessageCircle, ShieldCheck, Clock, ExternalLink } from "lucide-react";
 
 const professionalProfiles = [
   {
@@ -94,12 +94,13 @@ export default function PsicoanalistaOlivos() {
               encuentra nombre.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/no-puedo-apagar-la-cabeza#agenda"
+              <a
+                href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quisiera consultar por una primera entrevista presencial en Olivos.")}`}
+                target="_blank" rel="noreferrer" data-wa-location="olivos_hero" data-wa-modality="presencial"
                 className="inline-flex items-center gap-2 rounded-full bg-sumi px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-sumi/90"
               >
-                Agendar primera sesión <ArrowRight className="h-4 w-4" />
-              </Link>
+                Consultar por WhatsApp
+              </a>
               <Link
                 to="/ubicacion"
                 className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium text-sumi hover:bg-white/80"
@@ -119,6 +120,9 @@ export default function PsicoanalistaOlivos() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 pt-8 text-base leading-relaxed text-sumi/80">
+        <p>Sesiones de 40 minutos · $40.000 ARS por sesión. Lunes a viernes, de 9 a 21 h, según disponibilidad. Antes de empezar acordamos horario y forma de pago.</p>
+      </section>
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="grid gap-4 md:grid-cols-3">
           {[
@@ -205,6 +209,7 @@ export default function PsicoanalistaOlivos() {
             </Link>
             <a
               href={`https://wa.me/${phone}?text=${encodeURIComponent("Hola Nicolás, quería consultar por sesiones en Olivos.")}`}
+              data-wa-location="olivos_footer" data-wa-modality="presencial"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-sumi shadow hover:bg-gold2"

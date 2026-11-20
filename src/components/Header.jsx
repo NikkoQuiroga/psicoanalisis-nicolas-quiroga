@@ -21,19 +21,16 @@ export default function Header() {
 
   // cerrar si pasa a desktop
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
+    const onResize = () => { if (window.innerWidth >= 1024) setMobileOpen(false); };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
   const items = [
     ["Inicio", "/"],
-    ["No apagar la cabeza", "/no-puedo-apagar-la-cabeza"],
     ["Psicólogo Olivos", "/psicologo-olivos"],
     ["Online", "/psicoanalisis-online"],
     ["Sobre mí", "/sobre-mi"],
-    ["Testimonios", "/testimonios"],
-    ["Textos", "/blog"],
     ["Contacto", "/contacto"],
   ];
 
@@ -54,13 +51,13 @@ export default function Header() {
             onClick={() => setMobileOpen(v => !v)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
-            className="md:cursor-default inline-flex items-center justify-center"
+            className="lg:cursor-default inline-flex items-center justify-center"
             title="Abrir menú"
           >
-            <div className="h-8 w-8 rounded-full bg-gold/80 ring-1 ring-sumi/10 relative md:pointer-events-none">
+            <div className="h-8 w-8 rounded-full bg-gold/80 ring-1 ring-sumi/10 relative lg:pointer-events-none">
               <ChevronDown
                 className={[
-                  "absolute -bottom-3 left-1/2 -translate-x-1/2 md:hidden transition-transform",
+                  "absolute -bottom-3 left-1/2 -translate-x-1/2 lg:hidden transition-transform",
                   mobileOpen ? "rotate-180" : "rotate-0",
                 ].join(" ")}
                 size={16}
@@ -75,7 +72,7 @@ export default function Header() {
         </div>
 
         {/* nav desktop */}
-        <nav className="hidden md:flex gap-4 text-sm text-sumi/75">
+        <nav className="hidden lg:flex gap-4 text-sm text-sumi/75">
           {items.map(([label, href]) => (
             <NavLink key={href} to={href} className={({ isActive }) => (isActive ? "text-sumi" : "hover:text-sumi transition")}>
               {label}
@@ -88,6 +85,7 @@ export default function Header() {
           href={`https://wa.me/${import.meta.env.VITE_WHATSAPP || "5491161402223"}?text=${encodeURIComponent(
             "Hola Nicolás, ¿coordinamos una sesión?"
           )}`}
+          data-wa-location="header"
           target="_blank"
           rel="noreferrer"
           className="hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 bg-gold text-sumi shadow hover:bg-gold2 transition-transform duration-300 hover:scale-[1.02]"
@@ -105,7 +103,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="md:hidden border-t border-black/5 bg-white/80"
+            className="lg:hidden border-t border-black/5 bg-white/80"
           >
             <div className="mx-auto max-w-6xl px-5 py-3 grid grid-cols-2 gap-2 text-sm">
               {items.map(([label, href]) => (
