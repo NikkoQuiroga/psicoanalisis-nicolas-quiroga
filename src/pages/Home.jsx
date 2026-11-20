@@ -3,6 +3,7 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
 import { Brain, Moon, Repeat2, MessageCircle, CalendarDays, MessagesSquare, MapPin, Video, GraduationCap, ShieldCheck, Clock3 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import InkVideo from "../components/InkVideo.jsx";
 import AgendaForm from "../components/AgendaForm.jsx";
 
 function Reveal({ children, className = "" }) {
@@ -74,7 +75,7 @@ export default function Home() {
             <article className="p-6 md:p-7"><p className="home-eyebrow"><MapPin aria-hidden="true" size={17} /> Olivos · Vicente López</p><h3 className="h-serif mt-3 text-3xl font-semibold">Presencial, en el consultorio.</h3><p className="mt-3 text-base leading-relaxed text-sumi/75">Un espacio reservado para conversar. La dirección exacta se comparte al confirmar el turno.</p><Link to="/psicologo-olivos" className="home-text-link">Conocer el consultorio en Olivos</Link></article>
           </Reveal>
           <Reveal className="home-online overflow-hidden rounded-3xl">
-            <div className="home-video-visual" aria-hidden="true"><div className="home-video-orbit" /><div className="home-video-frame"><Video strokeWidth={1} size={56} /><span>Un encuentro, a la distancia.</span></div></div>
+            <div className="home-video-visual"><InkVideo /><div className="home-video-orbit" aria-hidden="true" /><div className="home-video-frame" aria-hidden="true"><Video strokeWidth={1} size={56} /><span>Un encuentro, a la distancia.</span></div></div>
             <article className="relative p-6 md:p-7"><p className="home-eyebrow"><Video aria-hidden="true" size={17} /> Por videollamada</p><h3 className="h-serif mt-3 text-3xl font-semibold">Online, desde tu espacio.</h3><p className="mt-3 text-base leading-relaxed text-sumi/80">Desde un lugar donde puedas hablar con privacidad. Atención en Argentina y consultas desde el exterior según posibilidad de atención.</p><Link to="/psicoanalisis-online" className="home-text-link">Conocer la atención online</Link></article>
           </Reveal>
         </div>

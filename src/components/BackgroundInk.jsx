@@ -3,14 +3,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function BackgroundInk() {
   const { scrollYProgress } = useScroll();
-  const darkness = useTransform(scrollYProgress, [0, 1], [0.13, 0.2]);
+  const darkness = useTransform(scrollYProgress, [0, 1], [0.06, 0.09]);
   return (
     <motion.div aria-hidden className="pointer-events-none fixed inset-0 z-0" style={{ opacity: darkness }}>
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(241,233,220,0.82), rgba(241,233,220,0.96)), url('/media/suminagashi-tinta-pensamiento.webp')",
+            "linear-gradient(180deg, rgba(241,233,220,0.82), rgba(241,233,220,0.96)), url('/media/suminagashi-papel.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "soft-light",

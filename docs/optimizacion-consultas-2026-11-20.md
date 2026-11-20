@@ -47,3 +47,9 @@ La portada incorpora iconos de Lucide para motivos de consulta, modalidades y se
 Se sustituyeron los fondos oscuros de online y contacto por el suminagashi WebP existente con desenfoque CSS y una capa clara para mantener legibilidad. No se agregaron imágenes ni dependencias. El texto sigue siendo HTML independiente del fondo.
 
 Se unificó el origen público en src/seo/site.js para evitar canónicas locales desde las variables de desarrollo. Helmet ahora gestiona las etiquetas SEO del HTML inicial al navegar, evitando canónicas y metadatos duplicados entre el HTML prerenderizado y React. Validación del build: las 24 URLs del sitemap tienen una sola canónica pública, un título, una descripción y JSON-LD válido. La validación técnica local no verifica posicionamiento ni sustituye la inspección de indexación en Search Console después de publicar.
+
+## Video suminagashi comprimido
+
+Se reemplazó la textura difuminada por un fotograma del video aportado y un acento animado solo en la ilustración de atención online. El MP4 pasó de 12.660.836 a 261.440 bytes (97,9% menos): H.264, 640×360, 15 fps, 10 segundos, sin audio y faststart. Respaldo WebP: aproximadamente 58 KB. No se incluye el original en el repositorio ni en la publicación.
+
+InkVideo monta el video únicamente cuando el acento está visible y la pantalla tiene al menos 768 px, sin preferencia de movimiento reducido ni ahorro de datos ni conexión lenta reportada. Incluye pausa manual y conserva la imagen fija como fondo. Al salir de pantalla se desmonta el video. No hay video de fondo de página ni descarga del MP4 en móvil. Se mantuvieron texto HTML, canónicas y metadatos. Se verificó reproducción silenciosa, pausa y ausencia de elemento video en móvil. No se midieron Core Web Vitals de producción.
