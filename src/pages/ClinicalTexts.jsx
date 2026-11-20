@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -5,7 +6,7 @@ import { ArrowRight, BookOpen, MessageCircle } from "lucide-react";
 import { clinicalTextList } from "../content/clinicalTexts.js";
 
 export default function ClinicalTexts() {
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
   const url = `${site}/blog`;
 
   return (

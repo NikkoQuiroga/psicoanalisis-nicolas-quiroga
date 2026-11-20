@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 // src/components/SiteSEO.jsx
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
@@ -5,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 export default function SiteSEO() {
   const location = useLocation();
-  const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
+  const site = SITE_URL;
   const canonicalPath = location.pathname.replace(/\/+$/, "") || "/";
   const pageUrl = `${site}${canonicalPath === "/psicoanalista-olivos" ? "/psicologo-olivos" : canonicalPath}`;
   const defaultImage = `${site}/media/nicolas-quiroga-estudio-clinico.webp`;

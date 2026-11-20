@@ -41,3 +41,9 @@ Comparar los 28 días completos posteriores con los 28 previos a la publicación
 ## Refinamiento visual
 
 La portada incorpora iconos de Lucide para motivos de consulta, modalidades y señales de confianza; un recorrido de tres pasos; retrato con marco y firma; foto del consultorio con encuadre ajustado; una composición gráfica para videollamada y un cierre de contacto con fondo oscuro. Mantiene enlaces, honorarios y evento wa_click. Las entradas visuales respetan prefers-reduced-motion y los iconos decorativos están ocultos a lectores de pantalla. Revisado en 390 y 1024 píxeles, sin elementos del contenido fuera del ancho móvil.
+
+## Suminagashi y consolidación SEO
+
+Se sustituyeron los fondos oscuros de online y contacto por el suminagashi WebP existente con desenfoque CSS y una capa clara para mantener legibilidad. No se agregaron imágenes ni dependencias. El texto sigue siendo HTML independiente del fondo.
+
+Se unificó el origen público en src/seo/site.js para evitar canónicas locales desde las variables de desarrollo. Helmet ahora gestiona las etiquetas SEO del HTML inicial al navegar, evitando canónicas y metadatos duplicados entre el HTML prerenderizado y React. Validación del build: las 24 URLs del sitemap tienen una sola canónica pública, un título, una descripción y JSON-LD válido. La validación técnica local no verifica posicionamiento ni sustituye la inspección de indexación en Search Console después de publicar.

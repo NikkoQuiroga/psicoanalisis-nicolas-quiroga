@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -59,7 +60,7 @@ const meditations = [
 ];
 
 export default function SobreMi() {
-  const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
+  const site = SITE_URL;
   const profileSchema = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",

@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React, { useState } from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -45,7 +46,7 @@ function AccordionItem({ q, a }) {
 
 export default function FAQ() {
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
   const url = `${site}/faq`;
   const faqSchema = {
     "@context": "https://schema.org",

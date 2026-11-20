@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -28,7 +29,7 @@ export default function ProfessionalStory({ slug }) {
   if (!story) return null;
 
   const nextStory = getNextStory(slug);
-  const site = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(/\/$/, "");
+  const site = SITE_URL;
   const pageUrl = `${site}${story.path}`;
   const imageUrl = `${site}${story.image}`;
   const authorId = `${site}/sobre-mi#nicolas-quiroga`;

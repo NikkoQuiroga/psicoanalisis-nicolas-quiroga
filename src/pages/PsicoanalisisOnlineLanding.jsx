@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import AgendaForm from "../components/AgendaForm.jsx";
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Laptop, Lock, Wifi } from "lucide-react";
 
 export default function PsicoanalisisOnlineLanding() {
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
   const url = `${site}/psicoanalisis-online`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
 

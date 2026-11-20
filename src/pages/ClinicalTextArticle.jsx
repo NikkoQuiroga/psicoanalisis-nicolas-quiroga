@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -7,7 +8,7 @@ import { clinicalTexts } from "../content/clinicalTexts.js";
 export default function ClinicalTextArticle() {
   const { slug } = useParams();
   const text = clinicalTexts[slug];
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
 
   if (!text) return <Navigate to="/blog" replace />;
 

@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -52,7 +53,7 @@ const testimonials = [
 ];
 
 export default function Testimonios() {
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
   const url = `${site}/testimonios`;
 
   const reviewSchema = {

@@ -92,15 +92,18 @@ section.snap-start { scroll-margin-top: 64px; }
 .home-icon { display: inline-grid; place-items: center; width: 3.3rem; height: 3.3rem; border-radius: 1.1rem; background: #e9dece; color: var(--color-moss); }
 .home-step-icon { position: relative; z-index: 1; display: inline-grid; place-items: center; width: 3.5rem; height: 3.5rem; border: 1px solid #c5a07280; border-radius: 50%; background: #f7f2e9; color: var(--color-moss); }
 .home-steps { position: relative; }
-.home-online { background: #28332f; color: #fbf7ef; }
-.home-video-visual { position: relative; display: grid; place-items: center; aspect-ratio: 16/10; overflow: hidden; background: radial-gradient(ellipse at center, #52644f80, transparent 68%); }
-.home-video-frame { position: relative; z-index: 1; width: 68%; height: 65%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; border: 1px solid #d9c4a855; border-radius: 1.3rem; background: #ffffff06; color: #ead7ba; }
+.home-online { position: relative; isolation: isolate; background: #eee4d4; color: var(--color-sumi); border: 1px solid #5f493225; }
+.home-video-visual { position: relative; display: grid; place-items: center; aspect-ratio: 16/10; overflow: hidden; background: radial-gradient(ellipse at center, #fff8, transparent 70%); }
+.home-video-frame { position: relative; z-index: 1; width: 68%; height: 65%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; border: 1px solid #755a3e55; border-radius: 1.3rem; background: #fffcf270; color: var(--color-moss); backdrop-filter: blur(4px); }
 .home-video-frame span { font-size: .875rem; }
-.home-video-orbit { position: absolute; width: 82%; aspect-ratio: 1; border: 1px solid #d9c4a81c; border-radius: 50%; }
-.home-video-orbit::after { content: ''; position: absolute; inset: 1.5rem; border: 1px solid #d9c4a81c; border-radius: 50%; }
+.home-video-orbit { position: absolute; width: 82%; aspect-ratio: 1; border: 1px solid #755a3e22; border-radius: 50%; }
+.home-video-orbit::after { content: ''; position: absolute; inset: 1.5rem; border: 1px solid #755a3e22; border-radius: 50%; }
 .home-text-link { display: inline-block; margin-top: 1.3rem; font-size: .875rem; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
-.home-closing { background: #2c302b; color: #faf6ee; border-top: 1px solid #fff2; }
+.home-closing { position: relative; isolation: isolate; overflow: hidden; background: #eee4d4; color: var(--color-sumi); border-top: 1px solid #5f493225; }
 .home-contact:focus-visible, .home-text-link:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 5px; }
 @media (min-width: 768px) { .home-steps::before { content: ''; position: absolute; top: 1.75rem; left: 1.75rem; right: 20%; border-top: 1px solid #c5a07266; } }
 @media (prefers-reduced-motion: reduce) { .home-contact, .home-reason { transition: none; } .home-contact:hover { transform: none; } }
-.home-online .home-eyebrow, .home-closing .home-eyebrow { color: #ddc5a6; }
+/* Decorative ink stays in CSS: content and SEO do not depend on this image. */
+.home-online::before, .home-closing::before { content: ''; position: absolute; inset: -18px; z-index: -1; pointer-events: none; background: linear-gradient(115deg, #f8f2e7b8, #eee0cbc4), url('/media/suminagashi-tinta-pensamiento.webp') center / cover; filter: blur(8px); }
+.home-online .home-eyebrow, .home-closing .home-eyebrow { color: var(--color-moss); }
+.home-online article { background: #fffaf24d; }

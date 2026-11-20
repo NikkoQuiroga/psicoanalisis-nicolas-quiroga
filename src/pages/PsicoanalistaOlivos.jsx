@@ -1,3 +1,4 @@
+import { SITE_URL } from "../seo/site.js";
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
@@ -27,7 +28,7 @@ const professionalProfiles = [
 ];
 
 export default function PsicoanalistaOlivos() {
-  const site = (import.meta.env.VITE_SITE_URL || "https://nicolasquiroga.com.ar").replace(/\/$/, "");
+  const site = SITE_URL;
   const canonicalPath = "/psicologo-olivos";
   const url = `${site}${canonicalPath}`;
   const phone = import.meta.env.VITE_WHATSAPP || "5491161402223";
