@@ -37,3 +37,7 @@ En GTM/GA4: comprobar wa_click en Realtime/DebugView, verificar que el contenedo
 Registrar semanalmente, en un lugar privado, estos conteos agregados: visitas por canal y página de entrada; wa_click por ubicación y modalidad; consultas efectivamente recibidas por canal; primeras entrevistas acordadas; primeras entrevistas realizadas. Preguntar cómo llegó la persona cuando no se conozca el origen. No usar nombres, mensajes ni motivos clínicos en este registro de marketing.
 
 Comparar los 28 días completos posteriores con los 28 previos a la publicación, considerando el retraso de Search Console. Revisar por separado Olivos, online y búsquedas por nombre. Medir consultas recibidas / visitas y entrevistas realizadas / consultas recibidas solo cuando los registros correspondan al mismo canal y periodo; no mezclar todos los pacientes con solo clics orgánicos. La muestra actual es pequeña: evaluar consultas reales antes de atribuir variaciones al diseño.
+
+## Refinamiento visual
+
+La portada incorpora iconos de Lucide para motivos de consulta, modalidades y señales de confianza; un recorrido de tres pasos; retrato con marco y firma; foto del consultorio con encuadre ajustado; una composición gráfica para videollamada y un cierre de contacto con fondo oscuro. Mantiene enlaces, honorarios y evento wa_click. Las entradas visuales respetan prefers-reduced-motion y los iconos decorativos están ocultos a lectores de pantalla. Revisado en 390 y 1024 píxeles, sin elementos del contenido fuera del ancho móvil.
