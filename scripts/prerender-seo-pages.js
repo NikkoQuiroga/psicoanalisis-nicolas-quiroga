@@ -22,7 +22,7 @@ const staticPages = [
     priority: "1.0",
     changefreq: "monthly",
     lastmod: "2026-11-20",
-    image: "/media/nicolas-quiroga-estudio-clinico.webp",
+    image: "/media/consultorio-psicoanalisis-olivos-divan.webp",
   },
   {
     path: "/psicologo-olivos",

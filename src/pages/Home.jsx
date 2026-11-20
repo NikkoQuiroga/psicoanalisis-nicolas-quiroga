@@ -26,7 +26,8 @@ export default function Home() {
       <meta name="description" content="Nicolás Quiroga, psicólogo UBA y psicoanalista. Atención en Olivos y online para ansiedad y sobrepensamiento. Sesiones de 40 minutos. Honorarios y primera entrevista." />
       <meta property="og:title" content="Psicólogo en Olivos y psicoanálisis online | Nicolás Quiroga" />
       <meta property="og:description" content="Cuando pensar tanto no te deja estar bien. Atención en Olivos y online con Nicolás Quiroga. Conocé honorarios, opiniones y cómo empezar." />
-      <meta property="og:image" content="https://nicolasquiroga.com.ar/media/nicolas-quiroga-estudio-clinico.webp" />
+      <meta name="twitter:image" content="https://nicolasquiroga.com.ar/media/consultorio-psicoanalisis-olivos-divan.webp" />
+      <meta property="og:image" content="https://nicolasquiroga.com.ar/media/consultorio-psicoanalisis-olivos-divan.webp" />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>
     <section className="border-b border-black/10">
@@ -42,7 +43,7 @@ export default function Home() {
           <p className="mt-5 flex items-center gap-2 text-sm text-sumi/70"><GraduationCap aria-hidden="true" size={19} /> Universidad de Buenos Aires · M.N. 59.272</p>
         </div>
         <div className="home-portrait">
-          <img src="/media/nicolas-quiroga-estudio-clinico.webp" alt="Nicolás Quiroga, psicólogo y psicoanalista en Olivos" width="640" height="640" fetchPriority="high" className="aspect-[5/6] w-full object-cover" />
+          <img src="/media/consultorio-psicoanalisis-olivos-divan.webp" alt="Nicolás Quiroga sentado en el diván de su consultorio en Olivos" width="1024" height="1536" fetchPriority="high" className="aspect-[5/6] w-full object-cover object-[center_30%]" />
           <div className="home-portrait-caption"><p className="h-serif text-2xl font-semibold">Nicolás Quiroga</p><p className="mt-1 text-sm">Psicólogo · Psicoanalista</p></div>
         </div>
       </div>
